@@ -1,6 +1,8 @@
 Object oriented programmeing and design with Python (oopython)
 ===================
 
+[![Join the chat at https://gitter.im/mosbth/oopython](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/oopython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
 Relased as part of a University course presented at:
