@@ -4,11 +4,11 @@
 Test pydoc
 """
 
-def returnName(name):
+def return_name(name):
     """Returns string"""
 
     return "Hello " + str(name)
 
-def addNumbers(a, b):
-    """Adds the numbers a and b"""
-    return a + b
+def add_numbers(num_one, num_two):
+    """Adds the numbers num_one and num_two"""
+    return num_one + num_two

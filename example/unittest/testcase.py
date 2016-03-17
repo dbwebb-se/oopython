@@ -5,27 +5,33 @@
 import unittest
 import main
 
-class testingMyFunction(unittest.TestCase):
+class Testcase(unittest.TestCase):
+    """Class Testcase"""
 
     def test_return(self):
-        self.assertEqual(main.returnName("Kalle"), "Hello Kalle")
+        """test on function returnName"""
+        self.assertEqual(main.return_name("Kalle"), "Hello Kalle")
 
     def test_add(self):
-        self.assertEqual(main.addNumbers(14, 6), 20)
+        """test on function addNumbers"""
+        self.assertEqual(main.add_numbers(14, 6), 20)
 
     def test_upper(self):
+        """test uppercase"""
         self.assertEqual('foo'.upper(), 'FOO')
 
     def test_isupper(self):
+        """test if uppercase (boolean)"""
         self.assertTrue('FOO'.isupper())
         self.assertFalse('Foo'.isupper())
 
     def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
+        """test split"""
+        str1 = 'hello world'
+        self.assertEqual(str1.split(), ['hello', 'world'])
         # check that s.split fails when the separator is not a string
         with self.assertRaises(TypeError):
-            s.split(2)
+            str1.split(2)
 
 if __name__ == '__main__':
     unittest.main()
