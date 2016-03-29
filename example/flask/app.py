@@ -4,13 +4,16 @@ Flask test in python
 """
 
 from flask import Flask, render_template
+from car import Car
 
 app = Flask(__name__)
 
-@app.route("/")
+volvo = Car("volvo", 1998, "green")
+test = volvo.make_sound()
 
+@app.route("/")
 def main():
-    return render_template("index.html")
+    return render_template("index.html", test444=test)
 
 @app.route('/about')
 def show_about():
