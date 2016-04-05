@@ -243,7 +243,7 @@ Write your code below and put the answer into the variable ANSWER.
 """
 
 cat1.nrOfPaws = 2
-ANSWER = "Misty have " + str(cat1.nrOfPaws) + " paws but cats have " + str(Cat.nrOfPaws) + " paws"
+ANSWER = "Misty has " + str(cat1.nrOfPaws) + " paws but cats has " + str(Cat.nrOfPaws) + " paws"
 
 # Is the answer as expected?
 # When you get stuck - change False to True to get a hint.
@@ -263,6 +263,8 @@ ANSWER = cat1.catPaws()
 # Is the answer as expected?
 # When you get stuck - change False to True to get a hint.
 print(dbwebb.assertEqual("1.12", ANSWER, False))
+
+
 
 """
 --------------------------------------------------------------------------
