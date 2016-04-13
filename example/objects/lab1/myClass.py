@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import abc
 
 class BankAccount:
     """
-    Class for handling a banck account
+    Class for handling a bank account
     """
 
     def __init__(self, owner):
@@ -44,7 +45,7 @@ class BankAccount:
         self._balance = self._addOther(other)
         return self
 
-    def _addOther(self,other):
+    def _addOther(self, other):
         """
         Used by add, iadd to add self with other
         """
@@ -53,8 +54,26 @@ class BankAccount:
         else:
             return float("{0:.2f}".format(self._balance + other._balance))
 
+class Animal(object):
+    """
+    Parent class for dog and cat
+    """
 
-class Cat:
+    def __init__(self, name, eColor):
+        """
+        Init for animal class
+        """
+        self.name = name
+        self.eyeColor = eColor
+
+    @abc.abstractmethod
+    def speak(self):
+        raise NotImplementedError()
+
+    def speakTwice(self):
+        return self.speak() + " " + self.speak()
+
+class Cat(Animal):
     """
     Cat class for lab1 in oopython
     """
@@ -65,8 +84,7 @@ class Cat:
         """
         Constructor for Cat class
         """
-        self.name = name
-        self.eyeColor = eColor
+        super(Cat, self).__init__(name, eColor)
         self.livesLeft = -1
         self._evil = evil
 
@@ -89,8 +107,11 @@ class Cat:
         """
         return self._evil
 
+    def speak(self):
+        return "Meow"
 
-class Dog:
+
+class Dog(Animal):
     """
     Dog class for lab1 in oopython
     """
@@ -99,8 +120,7 @@ class Dog:
         """
         Constructor for dog class
         """
-        self.name = name
-        self.eyeColor = eColor
+        super(Dog, self).__init__(name, eColor)
         self.livesLeft = 1
 
     def description(self):
@@ -108,3 +128,13 @@ class Dog:
         Returns a string containing a description of the dog
         """
         return 'My dogs name is %s, has %s eyes and has %s lives left to live.' % (self.name, self.eyeColor, self.livesLeft)
+
+    def speak(self):
+        return "Voff"
+
+    @staticmethod
+    def interact(otherCls):
+        if "Cat" in str(type(otherCls)):
+            return "Chase!"
+        else:
+            return "Lick!"

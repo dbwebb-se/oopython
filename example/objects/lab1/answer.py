@@ -125,7 +125,7 @@ print(dbwebb.assertEqual("1.5", ANSWER, False))
 """
 Exercise 1.6
 
-Create a function that takes cat1 as an argument. If evil for cat1 is true, return 'All cats are evil!' otherwise return 'This cat is not evil!'
+In the code below create a function that takes cat as an argument. If attribute evil for cat is true, return 'All cats are evil!' otherwise return 'This cat is not evil!'
 Answer with the returned string.
 
 Write your code below and put the answer into the variable ANSWER.
@@ -146,16 +146,18 @@ print(dbwebb.assertEqual("1.6", ANSWER, False))
 """
 Exercise 1.7
 
-Create a new class called BankAccount. It should have the attributes balance and owner, owner should be private.
-The constructor should take the name for the owner, <Andreas>, and balance should be initalized to <0.0>.
+Create a new class called BankAccount. It give it the attributes balance and owner. Owner should be private.
+The constructor should take the name for the owner. Balance should be initalized to <0.0> in the constructor. Balance shall always have 2 decimals.
 
 It should also have three functions, showBalance, depositMoney and withdrawMoney.
-showBalance returns 'Andreas has '<currentBalance>' kr'.
+showBalance returns '<Owner> has '<Balance>' kr'.
 depositMoney adds the amount of money sent as argument to balance
-withdraw money draws the amount of moeny sent as an argument from balance
+withdraw money draws the amount of money sent as an argument from balance
 
-create a function where you create a new instance of the class BankAccount, that takes the owner name as argument, and returns the objects.
-deposit <102.23> kr to the account and answer with the showBalance function.
+In the code below create a function, where you create a new instance of the class BankAccount, that takes the owner name as argument, and returns the objects.
+
+Create a new variable called bankAccount1 and initialize it with the create bank account function, Name the owner <Andreas>.
+Deposit <102.23> kr to the account and answer with the showBalance function.
 
 Write your code below and put the answer into the variable ANSWER.
 """
@@ -177,18 +179,18 @@ print(dbwebb.assertEqual("1.7", ANSWER, False))
 """
 Exercise 1.8
 
-Overload the add(+) function for the BankAccount class. It should work with the currentBalance of the account.
-The function should be able to add two bank accounts together(add togehter the balance of the accounts), BankAccount + int and BankAccount 0 float.
+Overload the add(+) function for the BankAccount class. It should work with the attribute balance of the account.
+The function should be able to sum the balance of two bank accounts(BankAccount + BankAccount), BankAccount + int and BankAccount + float.
 It should return a float with 2 decimals
 
-Initiate a new BankAccount called ba2 with the owner <Zeldah> and deposit <100.00> kr to it.
-Answer with ba + ba2
+Initiate a new BankAccount called bankAccount2 with the owner <Zeldah> and withdraw <100.00> kr from it.
+Answer with bankAccount1 + bankAccount2
 
 Write your code below and put the answer into the variable ANSWER.
 """
 
 ba2 = createBankAccount("Zeldah")
-ba2.depositMoney(100.00)
+ba2.withdrawMoney(100.00)
 ANSWER = ba + ba2
 
 # Is the answer as expected?
@@ -234,10 +236,10 @@ print(dbwebb.assertEqual("1.10", ANSWER, False))
 """
 Exercise 1.11
 
-Create a static variable for the Cat class. It should be an int that contains the number of paws a cat has, 4.
+Create a static variable in the Cat class. It should be an int that contains the number of paws a cat has, 4.
 In the code below assign the variable for cat1 to <2>.
 
-Answer with the string '<Misty> have <cat1.nrOfPaws> paws but cats have <Cat.nrOfpaws> paws'
+Answer with the string '<Misty> has cat1.nrOfPaws paws but cats have Cat.nrOfpaws paws'
 
 Write your code below and put the answer into the variable ANSWER.
 """
@@ -264,27 +266,51 @@ ANSWER = cat1.catPaws()
 # When you get stuck - change False to True to get a hint.
 print(dbwebb.assertEqual("1.12", ANSWER, False))
 
-
-
 """
---------------------------------------------------------------------------
-Section 5. Iteration and loops
+Exercise 1.13
 
-For-loops and while-loops.
-"""
-
-"""
-Exercise 5.1
-
-Create a while-loop that adds 3 to the number 19, 51 times. Answer with the
-result.
+Create a new class, Animal, that will act as a parent to Cat and Dog. It shall have the attributes name and eye color.
+Rewrite Dog and Cat so that they inherit from Animal. Answer with the description from cat1 and dog, seperated with space.
 
 Write your code below and put the answer into the variable ANSWER.
 """
 
+ANSWER = cat1.description() + " " + dog.description()
 
 # Is the answer as expected?
 # When you get stuck - change False to True to get a hint.
-#print(dbwebb.assertEqual("5.1", person, False))
+print(dbwebb.assertEqual("1.13", ANSWER, False))
+
+"""
+Exercise 1.14
+
+create a new function in Animal named speak, it should be abstract. Overwrite it in Dog and Cat, in dog return 'Voff' and in cat 'Meow'.
+Create another function in Animal called speakTwice. It should return a string where self.speak has been called twice, with space as seperation betwee nthe two.
+
+Answer with <dog>'s speakTwice function
+Write your code below and put the answer into the variable ANSWER.
+"""
+
+ANSWER = dog.speakTwice()
+
+# Is the answer as expected?
+# When you get stuck - change False to True to get a hint.
+print(dbwebb.assertEqual("1.14", ANSWER, False))
+
+"""
+Exercise 1.15
+
+Create a static method in Dog called interact. Its input parameter should be a class, If the class is of type Cat the string 'Chase!' should be returned otherwise
+return 'Lick!'
+
+Answer with <dog>'s interact function
+Write your code below and put the answer into the variable ANSWER.
+"""
+
+ANSWER = dog.interact(cat1)
+
+# Is the answer as expected?
+# When you get stuck - change False to True to get a hint.
+print(dbwebb.assertEqual("1.15", ANSWER, False))
 
 dbwebb.exitWithSummary()
