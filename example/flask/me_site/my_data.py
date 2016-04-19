@@ -9,8 +9,8 @@ class Data:
     Data class
     """
     title = ""
-    owner = "Kenneth"
-    images = ["static/monkey.png"]
+    owner = "OOPython"
+    images = ["static/snake.png"]
     links = [
         ("Hem", "/"),
         ("Redovisning", "/reports"),

@@ -26,4 +26,5 @@ body {
 
 .me_image {
     height: 150px;
+    float: right;
 }

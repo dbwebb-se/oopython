@@ -4,7 +4,7 @@ Flask test in python
 """
 
 from flask import Flask, render_template
-from myData import Data
+from my_data import Data
 from person import Person
 
 app = Flask(__name__)
