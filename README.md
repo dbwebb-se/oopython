@@ -2,6 +2,7 @@ Object oriented programmeing and design with Python (oopython)
 ===================
 
 [![Join the chat at https://gitter.im/mosbth/oopython](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/oopython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/dbwebb-se/oopython.svg?branch=master)](https://travis-ci.org/dbwebb-se/oopython)
 
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
@@ -32,7 +33,7 @@ History
 
 v0.0.1 (2016-05-11)
 
-* First tag, halway through the course.
+* First tag, halfway through the course.
 * Started work in October 2015, planned release winter 2017.
 
 
