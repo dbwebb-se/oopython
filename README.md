@@ -30,8 +30,9 @@ Feel free to help builing up the repository with more content suited for trainin
 History
 -------------------
 
-v0.0.0x (2015-10-01)
+v0.0.1 (2016-05-11)
 
+* First tag, halway through the course.
 * Started work in October 2015, planned release winter 2017.
 
 
