@@ -58,7 +58,7 @@ before_script:
     - pip3 install pylint
  
     # Install validation tools
-    - npm install -g htmlhint csslint jshint jscs jsonlint js-yaml html-minifier@0.8.0 clean-css uglify-js
+    - npm install -g htmlhint@0.9.12 csslint jshint jscs jsonlint js-yaml html-minifier@0.8.0 clean-css uglify-js
     
     # Install phpcs
     #- curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
