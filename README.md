@@ -32,11 +32,11 @@ History
 
 v0.0.0x (2015-10-01)
 
-* Started work in october 2015, planned release winter 2017.
+* Started work in October 2015, planned release winter 2017.
 
 
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015 Mikael Roos, me@mikaelroos.se   
+..:  Copyright (c) 2015-2016 Mikael Roos, me@mikaelroos.se   
 ```                                                            
