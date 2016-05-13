@@ -1,0 +1,36 @@
+# Init
+dbwebb init-me
+
+
+
+#### Kmom01
+# lab1
+dbwebb recreate lab1
+cd me/kmom01/lab1 && ./answer.py; [[ $? = 1 ]]
+#dbwebb validate lab1
+
+# flask
+test -d me/kmom01/flask
+dbwebb validate flask
+
+
+
+#### Kmom02
+# lab2
+dbwebb recreate lab2
+cd me/kmom02/lab2 && ./answer.py; [[ $? = 1 ]]
+dbwebb validate lab2
+
+# minizoo
+test -d me/kmom02/minizoo
+dbwebb validate minizoo
+
+# test
+test -d me/kmom02/test
+dbwebb validate test
+
+# uml
+test -d me/kmom02/uml
+cp example/uml/*.py me/kmom02/uml/
+cd me/kmom02/uml/ && ./Controller.py
+dbwebb validate uml
