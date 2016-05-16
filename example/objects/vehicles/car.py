@@ -1,4 +1,7 @@
-from abc import ABCMeta, abstractmethod
+#!/usr/bin/env python3
+
+""" Car class """
+
 from vehicle import Vehicle
 
 class Car(Vehicle):

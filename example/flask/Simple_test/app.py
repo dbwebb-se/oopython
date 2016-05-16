@@ -13,10 +13,12 @@ test = volvo.make_sound()
 
 @app.route("/")
 def main():
+    """ Main route """
     return render_template("index.html", test444=test)
 
 @app.route('/about')
 def show_about():
+    """ About route """
     return render_template('about.html')
 
 
