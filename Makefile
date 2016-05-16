@@ -12,7 +12,7 @@ WARN_COLOR=\033[33;01m
 ACTION=$(TARGET_COLOR)--> 
 
 # Add local bin path for test tools
-PATH  := "$(PWD)/build/bin:$(PWD)/build/node_modules/.bin:$(PATH)"
+export PATH := "$(PWD)/build/bin:$(PWD)/build/node_modules/.bin:$(PATH)"
 
 
 
