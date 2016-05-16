@@ -131,6 +131,7 @@ Answer with the returned string.
 Write your code below and put the answer into the variable ANSWER.
 """
 def catsAreEvil(catr):
+    """ Checks if the cat is evil """
     if catr.isEvil():
         return "All cats are evil!"
     else:

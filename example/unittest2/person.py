@@ -35,4 +35,5 @@ class Person:
                 ".".format(name=self.name, b=self.born, age=self.age)
 
     def is_alive(self):
+        """ Returns bool based on if person is alive """
         return self.alive

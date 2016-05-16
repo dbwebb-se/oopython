@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+""" BankAccount Class """
+
 import abc
 
 class BankAccount:
@@ -68,9 +71,11 @@ class Animal(object):
 
     @abc.abstractmethod
     def speak(self):
+        """ Speak method """
         raise NotImplementedError()
 
     def speakTwice(self):
+        """ SpeakTwice method """
         return self.speak() + " " + self.speak()
 
 class Cat(Animal):
@@ -130,10 +135,12 @@ class Dog(Animal):
         return 'My dogs name is %s, has %s eyes and has %s lives left to live.' % (self.name, self.eyeColor, self.livesLeft)
 
     def speak(self):
+        """ Speak method """
         return "Voff"
 
     @staticmethod
     def interact(otherCls):
+        """ Interact method """
         if "Cat" in str(type(otherCls)):
             return "Chase!"
         else:
