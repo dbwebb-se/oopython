@@ -45,6 +45,14 @@ clean:
 
 
 
+# target: clean-me      - Remove me-directory.
+.PHONY:  clean-me
+clean-me:
+	@echo "$(ACTION)Remove me-directory$(NO_COLOR)"
+	rm -rf me
+
+
+
 # target: clean-all     - Remove all installed files.
 .PHONY:  clean-all
 clean-all: clean
@@ -61,14 +69,15 @@ dbwebb-install: build-prepare
 	@echo "$(ACTION)Download and install dbwebb$(NO_COLOR)"
 	wget --quiet -O bin/dbwebb https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2
 	chmod 755 bin/dbwebb
+	export PATH=$(PATH) && dbwebb config create noinput && dbwebb --version
 
 
 
-# target: dbwebb-testrepo        - Test course repo.
+# target: dbwebb-testrepo         - Test course repo.
 .PHONY: dbwebb-testrepo
 dbwebb-testrepo: dbwebb-install
 	@echo "$(ACTION)Test course repo$(NO_COLOR)"
-	export PATH=$(PATH) && dbwebb --silent testrepo
+	export PATH=$(PATH) && dbwebb --silent --local testrepo
 
 
 
@@ -78,6 +87,7 @@ dbwebb-validate-install: build-prepare
 	@echo "$(ACTION)Download and install dbwebb-validate$(NO_COLOR)"
 	wget --quiet -O bin/dbwebb-validate https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2-validate
 	chmod 755 bin/dbwebb-validate
+	export PATH=$(PATH) && dbwebb-validate --version
 
 
 
@@ -145,7 +155,7 @@ tools-update-dev: composer-update-dev npm-update-dev
 
 # target: automated-tests-prepare - Prepare for automated tests.
 .PHONY: automated-tests-prepare
-automated-tests-prepare: build-prepare dbwebb-validate-install npm-install-dev composer-install-dev
+automated-tests-prepare: build-prepare dbwebb-validate-install dbwebb-install npm-install-dev composer-install-dev
 	@echo "$(ACTION)Prepared for automated tests$(NO_COLOR)"
 
 
@@ -159,15 +169,15 @@ automated-tests-check: dbwebb-validate-check
 
 # target: automated-tests-run     - Run all automated tests.
 .PHONY: automated-tests-run
-automated-tests-run: dbwebb-validate-run
+automated-tests-run: dbwebb-validate-run dbwebb-testrepo
 	@echo "$(ACTION)Executed all automated tests$(NO_COLOR)"
 
 
 
 # target: test                    - Install test tools & run tests.
 .PHONY: test
-test: automated-tests-prepare automated-tests-check automated-tests-run dbwebb-install dbwebb-testrepo
-	@echo "$(ACTION)Install test tools & run tests$(NO_COLOR)"
+test: automated-tests-prepare automated-tests-check automated-tests-run dbwebb-testrepo
+	@echo "$(ACTION)Installed test tools & executed tests$(NO_COLOR)"
 
 
 
