@@ -47,7 +47,6 @@ matrix:
 
 
 before_script:
-
     # install pylint
     - pip3 install pylint
  

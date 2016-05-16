@@ -12,7 +12,7 @@ WARN_COLOR=\033[33;01m
 ACTION=$(TARGET_COLOR)--> 
 
 # Add local bin path for test tools
-export PATH := "$(PWD)/build/bin:$(PWD)/build/node_modules/.bin:$(PATH)"
+PATH := "$(PWD)/build/bin:$(PWD)/build/node_modules/.bin:$(PATH)"
 
 
 
@@ -65,8 +65,7 @@ dbwebb-validate-install: build-prepare
 .PHONY: dbwebb-validate-check
 dbwebb-validate-check:
 	@echo "$(ACTION)Check version and environment for dbwebb-validate$(NO_COLOR)"
-	dbwebb-validate --version
-	export PATH=$(PATH) && dbwebb-validate --check
+	export PATH=$(PATH) && dbwebb-validate --version && dbwebb-validate --check
 
 
 
