@@ -147,7 +147,14 @@ automated-tests-run: dbwebb-validate-run
 
 
 
-# target: dbwebb-validate     - Execute this tool.
+# target: test                   - Install test tools & run tests.
+.PHONY: test
+test: automated-tests-prepare automated-tests-check automated-tests-run
+	@echo "$(ACTION)Install test tools & run tests$(NO_COLOR)"
+
+
+
+# target: dbwebb-validate     - Execute command with arg1=what.
 .PHONY: dbwebb-validate
 dbwebb-validate:
 	@echo "$(ACTION)Executed all automated tests$(NO_COLOR)"
