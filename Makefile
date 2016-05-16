@@ -12,7 +12,7 @@ WARN_COLOR=\033[33;01m
 ACTION=$(TARGET_COLOR)--> 
 
 # Add local bin path for test tools
-PATH := "$(PWD)/build/bin:$(PWD)/build/node_modules/.bin:$(PATH)"
+PATH := "$(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)"
 
 
 
@@ -27,11 +27,20 @@ help:
 
 
 
+# target: build-prepare - Prepare the build directory.
+.PHONY: build-prepare
+build-prepare:
+	@echo "$(ACTION)Prepare the build directory$(NO_COLOR)"
+	install -d build
+	install -d bin
+
+
+
 # target: clean         - Remove all generated files.
 .PHONY:  clean
 clean:
 	@echo "$(ACTION)Remove all generated files$(NO_COLOR)"
-	rm -rf build/
+	rm -rf build
 	rm -f npm-debug.log
 
 
@@ -40,15 +49,9 @@ clean:
 .PHONY:  clean-all
 clean-all: clean
 	@echo "$(ACTION)Remove all installed files$(NO_COLOR)"
-
-
-
-# target: build-prepare - Prepare the build directory.
-.PHONY: build-prepare
-build-prepare:
-	@echo "$(ACTION)Prepare the build directory$(NO_COLOR)"
-	install -d build/bin
-	install .package.json build/package.json
+	rm -rf bin
+	rm -rf node_modules
+	rm -rf vendor
 
 
 
@@ -56,8 +59,8 @@ build-prepare:
 .PHONY: dbwebb-validate-install
 dbwebb-validate-install: build-prepare
 	@echo "$(ACTION)Download and install dbwebb-validate$(NO_COLOR)"
-	wget --quiet -O build/bin/dbwebb-validate https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2-validate
-	chmod 755 build/bin/dbwebb-validate
+	wget --quiet -O bin/dbwebb-validate https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2-validate
+	chmod 755 bin/dbwebb-validate
 
 
 
@@ -81,7 +84,7 @@ dbwebb-validate-run:
 .PHONY: npm-install-dev
 npm-install-dev: build-prepare
 	@echo "$(ACTION)Install npm packages for development$(NO_COLOR)"
-	npm install --only=dev --prefix build
+	npm install --only=dev
 
 
 
@@ -89,13 +92,43 @@ npm-install-dev: build-prepare
 .PHONY: npm-update-dev
 npm-update-dev:
 	@echo "$(ACTION)Update npm packages for development$(NO_COLOR)"
-	npm update --only=dev --prefix build
+	npm update --only=dev
+
+
+
+# target: composer-install-dev - Install composer packages for development.
+.PHONY: composer-install-dev
+composer-install-dev: build-prepare
+	@echo "$(ACTION)Install composer packages for development$(NO_COLOR)"
+	if [ -f composer.json ]; then composer install; fi
+
+
+
+# target: composer-update-dev  - Update composer packages for development.
+.PHONY: composer-update-dev
+composer-update-dev:
+	@echo "$(ACTION)Update composer packages for development$(NO_COLOR)"
+	if [ -f composer.json ]; composer update; fi
+
+
+
+# target: tools-install-dev - Install tools for development.
+.PHONY: tools-install-dev
+tools-install-dev: build-prepare composer-install-dev npm-install-dev
+	@echo "$(ACTION)Install tools for development$(NO_COLOR)"
+
+
+
+# target: tools-update-dev  - Update tools for development.
+.PHONY: tools-update-dev
+tools-update-dev: composer-update-dev npm-update-dev
+	@echo "$(ACTION)Update tools for development$(NO_COLOR)"
 
 
 
 # target: automated-tests-prepare - Prepare for automated tests.
 .PHONY: automated-tests-prepare
-automated-tests-prepare: build-prepare dbwebb-validate-install npm-install-dev
+automated-tests-prepare: build-prepare dbwebb-validate-install npm-install-dev composer-install-dev
 	@echo "$(ACTION)Prepared for automated tests$(NO_COLOR)"
 
 
@@ -111,3 +144,11 @@ automated-tests-check: dbwebb-validate-check
 .PHONY: automated-tests-run
 automated-tests-run: dbwebb-validate-run
 	@echo "$(ACTION)Executed all automated tests$(NO_COLOR)"
+
+
+
+# target: dbwebb-validate     - Execute this tool.
+.PHONY: dbwebb-validate
+dbwebb-validate:
+	@echo "$(ACTION)Executed all automated tests$(NO_COLOR)"
+	export PATH=$(PATH) && dbwebb-validate --publish --publish-to build/webroot/ $(arg1)
