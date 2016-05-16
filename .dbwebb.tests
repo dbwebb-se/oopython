@@ -36,8 +36,8 @@ dbwebb validate flask
 #
 # lab2 http://dbwebb.se/oopython/kmom02???/lab2
 #
-dbwebb recreate lab2
-cd me/kmom02/lab2 && ./answer.py; [[ $? = 42 ]]
+#dbwebb recreate lab2
+#cd me/kmom02/lab2 && ./answer.py; [[ $? = 42 ]]
 dbwebb validate lab2
 
 
