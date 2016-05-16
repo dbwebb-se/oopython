@@ -12,16 +12,16 @@ dbwebb init-me
 #
 
 #
-# lab1
+# lab1 http://dbwebb.se/uppgift/lab1
 #
 dbwebb recreate lab1
-cd me/kmom01/lab1 && ./answer.py; [[ $? = 1 ]]
+cd me/kmom01/lab1 && ./answer.py; [[ $? = 42 ]]
 dbwebb validate lab1
 
 
 
 #
-# flask
+# flask http://dbwebb.se/uppgift/en-me-sida-med-python-och-flask
 #
 test -d me/kmom01/flask
 dbwebb validate flask
@@ -34,16 +34,16 @@ dbwebb validate flask
 #
 
 #
-# lab2
+# lab2 http://dbwebb.se/oopython/kmom02???/lab2
 #
 dbwebb recreate lab2
-cd me/kmom02/lab2 && ./answer.py; [[ $? = 1 ]]
+cd me/kmom02/lab2 && ./answer.py; [[ $? = 42 ]]
 dbwebb validate lab2
 
 
 
 #
-# minizoo
+# minizoo http://dbwebb.se/uppgift/skapa-objekt-efter-uml
 #
 test -d me/kmom02/minizoo
 dbwebb validate minizoo
@@ -51,7 +51,7 @@ dbwebb validate minizoo
 
 
 #
-# test
+# test http://dbwebb.se/uppgift/skriv-testfall-for-ett-objekt
 #
 test -d me/kmom02/test
 dbwebb validate test
@@ -59,9 +59,44 @@ dbwebb validate test
 
 
 #
-# uml
+# uml http://dbwebb.se/uppgift/skapa-objekt-efter-uml
 #
 test -d me/kmom02/uml
 cp example/uml/*.py me/kmom02/uml/
 cd me/kmom02/uml/ && ./Controller.py
 dbwebb validate uml
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom03
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom04
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom05
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom06
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom10
+#
