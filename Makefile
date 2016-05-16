@@ -32,7 +32,7 @@ help:
 build-prepare:
 	@echo "$(ACTION)Prepare the build directory$(NO_COLOR)"
 	install -d build
-	install -d bin
+	install -d bin/pip
 
 
 
@@ -164,7 +164,7 @@ automated-tests-run: dbwebb-validate-run
 
 
 
-# target: test                   - Install test tools & run tests.
+# target: test                    - Install test tools & run tests.
 .PHONY: test
 test: automated-tests-prepare automated-tests-check automated-tests-run dbwebb-install dbwebb-testrepo
 	@echo "$(ACTION)Install test tools & run tests$(NO_COLOR)"
