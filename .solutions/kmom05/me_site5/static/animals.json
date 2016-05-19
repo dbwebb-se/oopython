@@ -1,0 +1,100 @@
+{
+    "animals": [
+        {
+            "id": 1,
+            "species": "Kangaroo",
+            "legs": 2,
+            "habitat": ["Australia"]
+        },
+        {
+            "id": 2,
+            "species": "Panda",
+            "legs": 4,
+            "habitat": ["Asia"]
+        },
+        {
+            "id": 3,
+            "species": "Dingo",
+            "legs": 4,
+            "habitat": ["Australia"]
+        },
+        {
+            "id": 4,
+            "species": "Moose",
+            "legs": 4,
+            "habitat": ["North America", "Europe"]
+        },
+        {
+            "id": 5,
+            "species": "Black ant",
+            "legs": 6,
+            "habitat": ["North America", "South America", "Europe", "Asia", "Australia", "Africa"]
+        },
+        {
+            "id": 6,
+            "species": "Bullet ant",
+            "legs": 6,
+            "habitat": ["South America"]
+        },
+        {
+            "id": 7,
+            "species": "Devil lizard",
+            "legs": 4,
+            "habitat": ["Australia"]
+        },
+        {
+            "id": 8,
+            "species": "Texas blind salamander",
+            "legs": 0,
+            "habitat": ["North America"]
+        },
+        {
+            "id": 9,
+            "species": "Gelada",
+            "legs": 2,
+            "habitat": ["Africa"]
+        },
+        {
+            "id": 10,
+            "species": "Lion",
+            "legs": 4,
+            "habitat": ["Africa"]
+        },
+        {
+            "id": 11,
+            "species": "Ozelot",
+            "legs": 4,
+            "habitat": ["North America", "South America"]
+        },
+        {
+            "id": 12,
+            "species": "Emperor penguin",
+            "legs": 2,
+            "habitat": ["Antarctica"]
+        },
+        {
+            "id": 13,
+            "species": "Grizzly bear",
+            "legs": 4,
+            "habitat": ["North America"]
+        },
+        {
+            "id": 14,
+            "species": "Snow leopard",
+            "legs": 4,
+            "habitat": ["Asia"]
+        },
+        {
+            "id": 15,
+            "species": "Komodo dragon",
+            "legs": 4,
+            "habitat": ["Australia/Oceania"]
+        },
+        {
+            "id": 16,
+            "species": "Lynx",
+            "legs": 4,
+            "habitat": ["Europe", "Asia"]
+        }
+    ]
+}
