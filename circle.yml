@@ -1,7 +1,6 @@
 machine:
     python:
         version: 3.5.1
-
     pre:
         - sudo pip install virtualenv
         #- if [ ! -e '/home/ubuntu/virtualenvs/venv-3.5.1' ]; then mkdir -p '/home/ubuntu/virtualenvs'; pushd '/home/ubuntu/virtualenvs'; virtualenv venv-3.5.1; popd; fi
@@ -10,6 +9,8 @@ machine:
 
 dependencies:
     pre:
+        -pyenv global 3.5.1
+    override:
         - pip3 install -r requirements.txt
 
 
