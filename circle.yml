@@ -10,14 +10,16 @@ machine:
 
 dependencies:
     pre:
-        - pyenv global 3.5.1
+        #- pyenv global 3.5.1
     override:
         #- sudo pip3 install -r requirements.txt
-        - "pip3 install -r requirements.txt"
         - whereis pip3
         - pylint --version
         - pip --version
         - python --version
+        - pip3 --version
+        - python3 --version
+        - pip3 install -r requirements.txt
 
 
 
