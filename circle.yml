@@ -12,7 +12,7 @@ dependencies:
     pre:
         - pyenv global 3.5.1
     override:
-        - pip3 install -r requirements.txt
+        - sudo pip3 install -r requirements.txt
 
 
 
