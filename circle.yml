@@ -5,15 +5,17 @@ machine:
 
 
 dependencies:
+    pre:
+        - sudo apt-get install python-pip3
     override:
         #- sudo pip3 install -r requirements.txt
         - whereis pip3
-        - pylint --version
         - pip --version
         - python --version
         - pip3 --version
         - python3 --version
         - pip3 install -r requirements.txt
+        - pylint --version
 
 
 test:
