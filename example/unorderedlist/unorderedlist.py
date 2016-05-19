@@ -45,28 +45,35 @@ class UnorderedList:
         """
         Set node-data in list at specific index
         """
-        # insert method
+        # Här gäller det att sätta nodens data till 'newdata' på rätt
+        # index-position. För att stega i listan kan du titta på metoden 'count()'
 
     def get(self, index):
         """
         Returns node data based on index
         """
-        # insert method
+        # Likt 'set()' gäller det att traversera listan men här ska du
+        # returnera datan för värdet på rätt index-plats
 
     def search(self, item):
         """
         Returns True if item found, else return False
         """
-        # insert method
+        # Här ska du returnera en bool (True/False)
+        # beroende på om 'item' finns i listan
 
     def print_list(self):
         """
         Prints each item in list
         """
-        # insert method
+        # Traversera listan och gör en print() på varje element
 
     def remove(self, item):
         """
         Removes item from list
         """
-        # insert method
+        # Traversera listan och håll koll på föregående nod
+        # och nästa nod. Om nuvarande 'data' är samma som 'item'
+        # gäller det att koppla ihop föregående med nästa.
+
+        # Tips! Om föregående är 'None' gäller det att koppla 'self.head' till nästa nod.
