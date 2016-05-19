@@ -1,0 +1,11 @@
+machine:
+    python:
+        version: 3.4.4
+
+
+
+test:
+    override:
+    #- mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+    #- phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
+    - make test
