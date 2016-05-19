@@ -1,7 +1,8 @@
 machine:
     python:
         version: 3.4.3
-
+    pre:
+        - python3 -m pip isntall virtualenv
 
 
 dependencies:
