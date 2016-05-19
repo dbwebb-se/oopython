@@ -1,3 +1,9 @@
+bin/
+build/
+nod_modules/
+vendor/
+me/
+
 __pycache__
 
 # Mac OS
