@@ -6,7 +6,7 @@ machine:
 
 dependencies:
     pre:
-        - sudo apt-get install python-pip3
+        - sudo apt-get install python3-pip
     override:
         #- sudo pip3 install -r requirements.txt
         - whereis pip3
