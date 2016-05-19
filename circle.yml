@@ -3,7 +3,7 @@ machine:
         version: 3.5.1
 
     pre:
-        - sudo pip3 install virtualenv
+        - sudo pip install virtualenv
         #- if [ ! -e '/home/ubuntu/virtualenvs/venv-3.5.1' ]; then mkdir -p '/home/ubuntu/virtualenvs'; pushd '/home/ubuntu/virtualenvs'; virtualenv venv-3.5.1; popd; fi
 
 
