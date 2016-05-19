@@ -3,6 +3,7 @@ Object oriented programming and design with Python (oopython)
 
 [![Join the chat at https://gitter.im/mosbth/oopython](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/oopython?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/dbwebb-se/oopython.svg?branch=master)](https://travis-ci.org/dbwebb-se/oopython)
+[![CircleCI](https://circleci.com/gh/dbwebb-se/oopython.svg?style=svg)](https://circleci.com/gh/dbwebb-se/oopython)
 
 Course material for course, aimed at a swedish target audience being software engineering / computer science students at University level. 
 
@@ -30,6 +31,11 @@ Feel free to help building up the repository with more content suited for traini
 
 History
 -------------------
+
+v0.1.0* (2016-05-19)
+
+* Running all tests on circleci.
+
 
 v0.1.0 (2016-05-16)
 
