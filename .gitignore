@@ -1,6 +1,6 @@
 bin/
 build/
-nod_modules/
+node_modules/
 vendor/
 me/
 
