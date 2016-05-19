@@ -4,7 +4,7 @@ machine:
 
     pre:
         #- sudo pip install virtualenv
-        - if [ ! -e '/home/ubuntu/virtualenvs/venv-3.5.1' ]; then mkdir -p '/home/ubuntu/virtualenvs'; pushd '/home/ubuntu/virtualenvs'; virtualenv venv-3.5.1; popd; fi
+        - if [ ! -e '/home/ubuntu/virtualenvs/venv-3.5.0' ]; then mkdir -p '/home/ubuntu/virtualenvs'; pushd '/home/ubuntu/virtualenvs'; virtualenv venv-3.5.0; popd; fi
 
 
 
