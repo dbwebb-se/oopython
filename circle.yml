@@ -8,6 +8,12 @@ machine:
 
 
 
+dependencies:
+    pre:
+        - pip3 install -r requirements.txt
+
+
+
 test:
     override:
         - make test
