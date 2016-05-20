@@ -13,15 +13,23 @@ me/kmom02/lab2
 me/kmom02/minizoo
 me/kmom02/test
 me/kmom02/uml
+me/kmom02/flask2
 
 # kmom03
 me/kmom03
+me/kmom03/flask3
 
 # kmom04
 me/kmom04
+me/kmom04/lab4
+me/kmom04/flask4
+me/kmom04/flask4/db
 
 # kmom05
 me/kmom05
+me/kmom05/lab5
+me/kmom05/unorderedlist
+me/kmom05/flask5
 
 # kmom06
 me/kmom06
