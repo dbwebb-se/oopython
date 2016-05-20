@@ -37,7 +37,10 @@ dependencies:
         - pip3 --version
         - which pip3
 
+        - which pylint
         - python3 -m pip install -r requirements.txt
+        - pylint --version
+        - pip3 install -r requirements.txt
         - pylint --version
 
 
