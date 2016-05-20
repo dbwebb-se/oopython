@@ -3,15 +3,21 @@ machine:
         version: 3.5.1
     #pre:
     #    - python3 -m pip install virtualenv
-
+    post:
+        - pyenv global
+        - pyenv local
+        - pyenv shell
 
 dependencies:
     pre:
         - pyenv local 3.5.1
         - pyenv global 3.5.1
+        - pyenv shell 3.5.1
     override:
         - python --version
+        - which python
         - pip --version
+        - which pip
         - python -m pip install -r requirements.txt
         - pylint --version
 
