@@ -68,10 +68,27 @@ dbwebb validate uml
 
 
 
+#
+# flask2 http://dbwebb.se/oopython/kmom02
+#
+test -d me/kmom02/flask2
+dbwebb validate flask2
+
+
+
 # --------------------------------------------------------------------------
 #
 # Kmom03
 #
+
+
+
+#
+# flask3 http://dbwebb.se/uppgift/skapa-dataobjekt-till-me-sida
+# flask3 http://dbwebb.se/uppgift/skapa-personobjekt-till-me-sida
+#
+test -d me/kmom03/flask3
+dbwebb validate flask3
 
 
 
@@ -82,10 +99,55 @@ dbwebb validate uml
 
 
 
+#
+# lab4 http://dbwebb.se/uppgift/lab4
+#
+#dbwebb recreate lab4
+#cd me/kmom04/lab4 && ./answer.py; [[ $? = 42 ]]
+dbwebb validate lab4
+
+
+
+#
+# flask4 http://dbwebb.se/uppgift/skapa-en-bondgards-databas
+# flask4 http://dbwebb.se/uppgift/visa-bondgarden-pa-me-sida
+#
+install -d me/kmom04/db
+test -d me/kmom04/flask4
+test -d me/kmom04/flask4/db
+dbwebb validate flask4
+
+
+
 # --------------------------------------------------------------------------
 #
 # Kmom05
 #
+
+
+
+#
+# lab5 http://dbwebb.se/uppgift/lab5
+#
+#dbwebb recreate lab5
+#cd me/kmom05/lab5 && ./answer.py; [[ $? = 42 ]]
+dbwebb validate lab5
+
+
+
+#
+# unorderedlist http://dbwebb.se/uppgift/terminalprogram-med-sortering-av-lista
+#
+test -d me/kmom05/unorderedlist
+dbwebb validate unorderedlist
+
+
+
+#
+# flask5 http://dbwebb.se/oopython/kmom05
+#
+test -d me/kmom05/flask5
+dbwebb validate flask5
 
 
 
