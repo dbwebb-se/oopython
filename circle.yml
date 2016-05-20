@@ -23,6 +23,8 @@ dependencies:
         - pyenv global
         - pyenv local
         - pyenv shell
+        - pyenv which python
+        - pyenv which pip
         - python --version
         - which python
         - pip --version
