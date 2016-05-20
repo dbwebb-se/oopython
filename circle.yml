@@ -6,8 +6,8 @@ machine:
 
 
 dependencies:
-#    pre:
-#        - pyenv local 3.5.1
+    pre:
+        - pyenv local 3.5.1
     override:
         - python --version
         - pip --version
