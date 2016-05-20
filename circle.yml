@@ -1,13 +1,17 @@
 machine:
     python:
-        version: 3.4.3
-    pre:
-        - python3 -m pip install virtualenv
+        version: 3.5.1
+    #pre:
+    #    - python3 -m pip install virtualenv
 
 
 dependencies:
+#    pre:
+#        - pyenv local 3.5.1
     override:
-        - python3 -m pip install -r requirements.txt
+        - python --version
+        - pip --version
+        - python -m pip install -r requirements.txt
         - pylint --version
 
 
