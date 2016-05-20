@@ -17,6 +17,9 @@ dependencies:
         - pyenv local
         - pyenv shell
     override:
+        - pyenv local 3.5.1
+        - pyenv global 3.5.1
+        - pyenv shell 3.5.1
         - pyenv global
         - pyenv local
         - pyenv shell
