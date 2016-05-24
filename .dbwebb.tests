@@ -129,8 +129,8 @@ dbwebb validate flask4
 #
 # lab5 http://dbwebb.se/uppgift/lab5
 #
-#dbwebb recreate lab5
-#cd me/kmom05/lab5 && ./answer.py; [[ $? = 42 ]]
+dbwebb recreate lab5
+cd me/kmom05/lab5 && ./answer.py; [[ $? = 42 ]]
 dbwebb validate lab5
 
 
