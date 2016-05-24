@@ -15,7 +15,6 @@ dependencies:
 
         - pyenv which python3
         - pyenv which pip3
-        - pyenv which pylint
         - python3 --version
         - which python3
         - pip3 --version
