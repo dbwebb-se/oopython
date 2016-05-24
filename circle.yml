@@ -2,7 +2,11 @@ machine:
     python:
         version: 3.5.1
 
-#dependencies:
+dependencies:
+    post:
+        - pip --version
+        - pylint --version
+
 #    override:
         #- pyenv global 3.5.1
         #- pyenv global
