@@ -2,14 +2,14 @@ machine:
     python:
         version: 3.5.1
 
-#dependencies:
-    #post:
+dependencies:
+    post:
 #        - pip --version
 #        - pip3 --version
 #        - pylint --version
 
-#    override:
-#        - pip3 install
+    override:
+        - pip3 install
         #- pyenv global 3.5.1
         #- pyenv global
         #- pyenv which python
