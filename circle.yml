@@ -5,9 +5,11 @@ machine:
 dependencies:
     post:
         - pip --version
+        - pip3 --version
         - pylint --version
 
-#    override:
+    override:
+        - pip3 install
         #- pyenv global 3.5.1
         #- pyenv global
         #- pyenv which python
