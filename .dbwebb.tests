@@ -12,7 +12,7 @@ dbwebb init-me
 #
 
 #
-# lab1 http://dbwebb.se/uppgift/lab1
+# lab1 http://dbwebb.se/uppgift/python-med-objekt-och-klasser
 #
 dbwebb recreate lab1
 cd me/kmom01/lab1 && ./answer.py; [[ $? = 42 ]]
@@ -34,7 +34,7 @@ dbwebb validate flask
 #
 
 #
-# lab2 http://dbwebb.se/oopython/kmom02???/lab2
+# lab2 http://dbwebb.se/python-med-mer-objekt-och-klasser
 #
 dbwebb recreate lab2
 cd me/kmom02/lab2 && ./answer.py; [[ $? = 42 ]]
@@ -100,11 +100,11 @@ dbwebb validate flask3
 
 
 #
-# lab4 http://dbwebb.se/uppgift/lab4
+# lab4 http://dbwebb.se/uppgift/python-med-regex
 #
-#dbwebb recreate lab4
-#cd me/kmom04/lab4 && ./answer.py; [[ $? = 42 ]]
-dbwebb validate lab4
+dbwebb recreate lab3
+cd me/kmom04/lab3 && ./answer.py; [[ $? = 42 ]]
+dbwebb validate lab3
 
 
 
@@ -127,11 +127,11 @@ dbwebb validate flask4
 
 
 #
-# lab5 http://dbwebb.se/uppgift/lab5
+# lab5 http://dbwebb.se/uppgift/python-med-rekursiva-funktioner
 #
-dbwebb recreate lab5
-cd me/kmom05/lab5 && ./answer.py; [[ $? = 42 ]]
-dbwebb validate lab5
+dbwebb recreate lab4
+cd me/kmom05/lab4 && ./answer.py; [[ $? = 42 ]]
+dbwebb validate lab4
 
 
 
