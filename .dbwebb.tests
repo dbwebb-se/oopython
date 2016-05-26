@@ -158,6 +158,13 @@ dbwebb validate flask5
 
 
 
+# booking http://dbwebb.se/uppgift/bokningssystem
+#
+test -d me/kmom06/booking
+dbwebb validate booking
+
+
+
 # --------------------------------------------------------------------------
 #
 # Kmom10
