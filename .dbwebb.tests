@@ -163,9 +163,22 @@ dbwebb validate flask5
 test -d me/kmom06/booking
 dbwebb validate booking
 
+test -d me/kmom06/flask6
+dbwebb validate flask6
+
 
 
 # --------------------------------------------------------------------------
 #
 # Kmom10
 #
+
+
+
+# blackops http://dbwebb.se/oopython/kmom10
+#
+test -d me/kmom10/blackops
+dbwebb validate blackops
+
+test -d me/kmom10/flask7
+dbwebb validate flask7
