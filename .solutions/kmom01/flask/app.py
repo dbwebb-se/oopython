@@ -10,10 +10,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
+    """ main route """
     return render_template("index.html")
 
 @app.route("/about")
 def show_about():
+    """ route to about page """
     return render_template("about.html")
 
 
