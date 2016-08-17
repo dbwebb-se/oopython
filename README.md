@@ -32,7 +32,7 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
-v0.1.0* (2016-05-19)
+v0.1.0* (2016-08-17)
 
 * Running all tests on circleci.
 
