@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Example of function using regex on lists.
+"""
 import re
 #line = "barbary, froufrou, mathematic, damnably, corundum, pouchlike"
 
@@ -30,9 +33,10 @@ def regexOnList(shouldMatch, shouldntMatch, patter, index=0):
 
 #line = "Ross McFluff: 0456-45324: 155 Elm Street\nRonald Heathmore: 5543-23464: 445 Finley Avenue"
 
-line="https://dbwebb.se/kunskap/uml#sequence, ftp://bth.com:32/files/im.jpeg, file://localhost:8585/zipit, http://v2-dbwebb.se/do%hack"
+line = "https://dbwebb.se/kunskap/uml#sequence, ftp://bth.com:32/files/im.jpeg,\
+        file://localhost:8585/zipit, http://v2-dbwebb.se/do%hack"
 
-match = re.findall(r"(\w+)://([\w\-\.]+).(\d+)?" ,line)
+match = re.findall(r"(\w+)://([\w\-\.]+).(\d+)?", line)
 print(str(match))
 
 

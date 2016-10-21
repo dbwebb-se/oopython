@@ -12,6 +12,11 @@ dbwebb init-me
 #
 
 #
+# Kom igång med flask https://dbwebb.se/kunskap/kom-igang-med-flask
+#
+mkdir me/kmom01/my_app && touch me/kmom01/my_app/app.py
+
+#
 # lab1 http://dbwebb.se/uppgift/python-med-objekt-och-klasser
 #
 dbwebb recreate lab1
@@ -46,6 +51,7 @@ dbwebb validate lab2
 # minizoo http://dbwebb.se/uppgift/skapa-objekt-efter-uml
 #
 test -d me/kmom02/minizoo
+cd me/kmom02/minizoo && touch mini_zoo.py animal.py house.py bird.py fish.py mammal.py
 dbwebb validate minizoo
 
 
@@ -53,6 +59,8 @@ dbwebb validate minizoo
 #
 # test http://dbwebb.se/uppgift/skriv-testfall-for-ett-objekt
 #
+cp -ri me/kmom02/minizoo/*.py me/kmom02/test/
+touch me/kmom02/test/test_zoo.py
 test -d me/kmom02/test
 dbwebb validate test
 
@@ -62,7 +70,7 @@ dbwebb validate test
 # uml http://dbwebb.se/uppgift/skapa-objekt-efter-uml
 #
 test -d me/kmom02/uml
-cp example/uml/*.py me/kmom02/uml/
+cp -ri example/uml/*.py me/kmom02/uml/
 cd me/kmom02/uml/ && ./Controller.py
 dbwebb validate uml
 
@@ -71,6 +79,7 @@ dbwebb validate uml
 #
 # flask2 http://dbwebb.se/oopython/kmom02
 #
+cp -ri me/kmom01/flask/ me/kmom02/flask2
 test -d me/kmom02/flask2
 dbwebb validate flask2
 
