@@ -100,9 +100,9 @@ cd me/kmom03/my_app2 && mkdir templates && touch templates/header.html templates
 
 #
 # Autogenerera uml och dokumentation https://dbwebb.se/kunskap/autogenerera-uml-och-dokumentation
-#
-cd me/kmom03/ && touch car.py && pyreverse -o png car
-pydoc -w car
+# && pyreverse -o png car
+# pydoc -w car
+cd me/kmom03/ && touch car.py 
 
 
 
