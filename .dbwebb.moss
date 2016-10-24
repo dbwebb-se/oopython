@@ -4,12 +4,21 @@
 #
 
 # kmom01
+me/kmom01/lab1/answer.py
+me/kmom01/my_app/app.py
 
 # kmom02
+me/kmom02/lab2/answer.py
+me/kmom02/minizoo/mini_zoo.py
+me/kmom02/test/test_zoo.py
 
 # kmom03
+me/kmom03/flask3/person.py
+me/kmom03/flask3/my_data.py
 
 # kmom04
+me/kmom04/lab3/answer.py
+me/kmom04/flask4/db/farm.sqlite
 
 # kmom05
 
