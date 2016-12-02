@@ -166,7 +166,8 @@ dbwebb validate lab4
 #
 # unorderedlist http://dbwebb.se/uppgift/terminalprogram-med-sortering-av-lista
 #
-test -d me/kmom05/unorderedlist
+cd me/ && cp -i ../example/unorderedlist/*.py kmom05/unorderedlist/
+test -e me/kmom05/unorderedlist/node.py && test -e me/kmom05/unorderedlist/unorderedlist.py
 dbwebb validate unorderedlist
 
 
@@ -175,6 +176,7 @@ dbwebb validate unorderedlist
 # flask5 http://dbwebb.se/oopython/kmom05
 #
 test -d me/kmom05/flask5
+cp -ri me/kmom04/flask4/* me/kmom05/flask5/
 dbwebb validate flask5
 
 
@@ -189,9 +191,11 @@ dbwebb validate flask5
 # booking http://dbwebb.se/uppgift/bokningssystem
 #
 test -d me/kmom06/booking
+cd me/kmom06/booking && touch main.py && touch handler.py
 dbwebb validate booking
 
 test -d me/kmom06/flask6
+cp -ri me/kmom05/flask5/* me/kmom06/flask6/
 dbwebb validate flask6
 
 
@@ -209,4 +213,5 @@ test -d me/kmom10/blackops
 dbwebb validate blackops
 
 test -d me/kmom10/flask7
+cp -ri me/kmom06/flask6/* me/kmom10/flask7/
 dbwebb validate flask7
