@@ -28,7 +28,7 @@ dbwebb validate lab1
 #
 # flask http://dbwebb.se/uppgift/en-me-sida-med-python-och-flask
 #
-test -d me/kmom01/flask
+test -d me/flask
 dbwebb validate flask
 
 
@@ -77,11 +77,10 @@ dbwebb validate uml
 
 
 #
-# flask2 http://dbwebb.se/oopython/kmom02
+# flask http://dbwebb.se/oopython/kmom02
 #
-cp -ri me/kmom01/flask/ me/kmom02/flask2
-test -d me/kmom02/flask2
-dbwebb validate flask2
+test -d me/flask
+dbwebb validate flask
 
 
 

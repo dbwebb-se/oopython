@@ -4,16 +4,16 @@
 # Map item to dirname while doing, for example, dbwebb validate lab1
 #
 
+# flask directory
+me/flask
 # kmom01
 me/kmom01/lab1
-me/kmom01/flask
 
 # kmom02
 me/kmom02/lab2
 me/kmom02/minizoo
 me/kmom02/test
 me/kmom02/uml
-me/kmom02/flask2
 
 # kmom03
 me/kmom03
