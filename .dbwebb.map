@@ -17,26 +17,21 @@ me/kmom02/uml
 
 # kmom03
 me/kmom03
-me/kmom03/flask3
 
 # kmom04
 me/kmom04
 me/kmom04/lab3
-me/kmom04/flask4
-me/kmom04/flask4/db
+me/flask/db
 
 # kmom05
 me/kmom05
 me/kmom05/lab4
 me/kmom05/unorderedlist
-me/kmom05/flask5
 
 # kmom06
 me/kmom06
 me/kmom06/booking
-me/kmom06/flask6
 
 # kmom10
 me/kmom10
 me/kmom10/blackops
-me/kmom10/flask7

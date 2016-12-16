@@ -15,12 +15,12 @@ me/kmom02/minizoo/mini_zoo.py
 me/kmom02/test/test_zoo.py
 
 # kmom03
-me/kmom03/flask3/person.py
-me/kmom03/flask3/my_data.py
+me/flask/person.py
+me/flask/my_data.py
 
 # kmom04
 me/kmom04/lab3/answer.py
-me/kmom04/flask4/db/farm.sqlite
+me/flask/db/farm.sqlite
 
 # kmom05
 me/kmom05/unorderedlist/main.py

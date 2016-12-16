@@ -109,11 +109,10 @@ cd me/kmom03/ && touch car.py
 # flask3 http://dbwebb.se/uppgift/skapa-dataobjekt-till-me-sida
 # flask3 http://dbwebb.se/uppgift/skapa-personobjekt-till-me-sida
 #
-test -d me/kmom03/flask3
-cp -ri me/kmom02/flask2/* me/kmom03/flask3/
-touch me/kmom03/flask3/person.py
-touch me/kmom03/flask3/my_data.py
-dbwebb validate flask3
+test -d me/flask
+touch me/flask/person.py
+touch me/flask/my_data.py
+dbwebb validate flask
 
 
 
@@ -137,12 +136,11 @@ dbwebb validate lab3
 # flask4 http://dbwebb.se/uppgift/skapa-en-bondgards-databas
 # flask4 http://dbwebb.se/uppgift/visa-bondgarden-pa-me-sida
 #
-install -d me/kmom04/db
-cp -ri me/kmom03/flask3/* me/kmom04/flask4/
-touch me/kmom04/flask4/db/farm.sqlite
-test -d me/kmom04/flask4
-test -d me/kmom04/flask4/db
-dbwebb validate flask4
+install -d me/flask/db
+touch me/flask/db/farm.sqlite
+test -d me/flask
+test -d me/flask/db
+dbwebb validate flask
 
 
 
@@ -174,9 +172,8 @@ dbwebb validate unorderedlist
 #
 # flask5 http://dbwebb.se/oopython/kmom05
 #
-test -d me/kmom05/flask5
-cp -ri me/kmom04/flask4/* me/kmom05/flask5/
-dbwebb validate flask5
+test -d me/flask
+dbwebb validate flask
 
 
 
@@ -193,9 +190,8 @@ test -d me/kmom06/booking
 cd me/kmom06/booking && touch main.py && touch handler.py
 dbwebb validate booking
 
-test -d me/kmom06/flask6
-cp -ri me/kmom05/flask5/* me/kmom06/flask6/
-dbwebb validate flask6
+test -d me/flask
+dbwebb validate flask
 
 
 
@@ -211,6 +207,5 @@ dbwebb validate flask6
 test -d me/kmom10/blackops
 dbwebb validate blackops
 
-test -d me/kmom10/flask7
-cp -ri me/kmom06/flask6/* me/kmom10/flask7/
-dbwebb validate flask7
+test -d me/flask
+dbwebb validate flask
