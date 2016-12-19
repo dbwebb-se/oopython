@@ -50,9 +50,9 @@ dbwebb validate lab2
 #
 # minizoo http://dbwebb.se/uppgift/skapa-objekt-efter-uml
 #
-test -d me/kmom02/minizoo
-cd me/kmom02/minizoo && touch mini_zoo.py animal.py house.py bird.py fish.py mammal.py
-dbwebb validate minizoo
+test -d me/kmom02/deck
+cd me/kmom02/deck && touch deck.py suit.py card.py main.py
+dbwebb validate deck
 
 
 
@@ -86,7 +86,7 @@ dbwebb validate flask
 
 # --------------------------------------------------------------------------
 #
-# Kmom03 
+# Kmom03
 #
 
 #
@@ -101,7 +101,7 @@ cd me/kmom03/my_app2 && mkdir templates && touch templates/header.html templates
 # Autogenerera uml och dokumentation https://dbwebb.se/kunskap/autogenerera-uml-och-dokumentation
 # && pyreverse -o png car
 # pydoc -w car
-cd me/kmom03/ && touch car.py 
+cd me/kmom03/ && touch car.py
 
 
 

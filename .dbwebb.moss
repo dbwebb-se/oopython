@@ -11,8 +11,8 @@ me/kmom01/my_app/app.py
 # kmom02
 me/flask
 me/kmom02/lab2/answer.py
-me/kmom02/minizoo/mini_zoo.py
-me/kmom02/test/test_zoo.py
+me/kmom02/deck/deck.py
+me/kmom02/test/test_deck.py
 
 # kmom03
 me/flask/person.py
