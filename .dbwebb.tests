@@ -59,8 +59,8 @@ dbwebb validate deck
 #
 # test http://dbwebb.se/uppgift/skriv-testfall-for-ett-objekt
 #
-cp -ri me/kmom02/minizoo/*.py me/kmom02/test/
-touch me/kmom02/test/test_zoo.py
+cp -ri me/kmom02/deck/*.py me/kmom02/test/
+touch me/kmom02/test/test_deck.py
 test -d me/kmom02/test
 dbwebb validate test
 
