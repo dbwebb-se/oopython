@@ -22,9 +22,18 @@ class Controller:
         """
         Registers books to the registry
         """
-        books = [Book("The Wheel of time", "Robert Jordan"),
-                 Book("The name of the wind", "Patrick Rothfuss"),
-                 Book("The painted man", "Peter V. Brett")]
+        books = [Book("'The Wheel of time'", "Robert Jordan"),
+                 Book("'The painted man'", "Peter V. Brett"),
+                 Book("'The name of the wind'", "Patrick Rothfuss"),
+                 Book("'Off to Be the Wizard'", "Scott Meyer"),
+                 Book("'Half a King'", "Joe Abercrombie "),
+                 Book("'The Way of Shadows'", "Brent Weeks"),
+                 Book("'Fool's Assassin'", "Robin Hobb"),
+                 Book("'The Golem and the Jinni'", "Helene Wecker"),
+                 Book("'The Way of Kings'", "Brandon Sanderson"),
+                 Book("'1984'", "George Orwell"),
+                 Book("'The Count of Monte Cristo'", "Alexandre Dumas"),
+                 Book("'Brott och straff'", "Fyodor Dostoyevsky")]
 
         for book in books:
             registry.register_book(book)

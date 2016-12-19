@@ -36,4 +36,4 @@ class Registry:
         """
         Print all registered books
         """
-        print(self.books)
+        print("\n".join(str(x) for x in self.books))

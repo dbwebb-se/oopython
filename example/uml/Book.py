@@ -19,3 +19,9 @@ class Book:
         okToRegister = randint(0, 1)
 
         return okToRegister
+        
+    def __str__(self):
+        """
+        Overriding str function for class
+        """
+        return "{} written by {}".format(self.title, self.author)
