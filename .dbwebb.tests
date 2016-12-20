@@ -51,7 +51,7 @@ dbwebb validate lab2
 # minizoo http://dbwebb.se/uppgift/skapa-objekt-efter-uml
 #
 test -d me/kmom02/deck
-cd me/kmom02/deck && touch deck.py suit.py card.py main.py
+cd me/kmom02/deck && touch deck.py hand.py card.py main.py
 dbwebb validate deck
 
 
