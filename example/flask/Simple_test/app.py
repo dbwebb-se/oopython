@@ -8,16 +8,22 @@ from car import Car
 
 app = Flask(__name__)
 
+# Make it easier to debug
+app.debug = True
+app.config.update(
+    PROPAGATE_EXCEPTIONS = True
+)
+
 volvo = Car("volvo", 1998, "green")
 test = volvo.make_sound()
 
 @app.route("/")
-def main():
-    """ Main route """
+def home():
+    """ Home route """
     return render_template("index.html", test444=test)
 
 @app.route('/about')
-def show_about():
+def about():
     """ About route """
     return render_template('about.html')
 
