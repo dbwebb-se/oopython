@@ -27,7 +27,7 @@ dependencies:
         #- which pip3
         #- which pylint
         #- pylint --version
-        
+
         #- python3 -m pip install -r requirements.txt
         #- whereis pylint
         #- which pylint
@@ -41,3 +41,10 @@ test:
         #- alias pylint=/opt/circleci/.pyenv/shims/pylint
         #- pylint --version
         - make test
+
+
+notify:
+  webhooks:
+    # A list of hook hashes, containing the url field
+    # gitter hook
+    - url: https://webhooks.gitter.im/e/4d538d49c841f4f172d6
