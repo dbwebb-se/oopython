@@ -1,8 +1,8 @@
 /slide/
 /tutorial/
 /literature/
-/.solution/
-/.solutions/
+.solution/
+.solutions/
 /.default/
 /bin
 /build
@@ -28,6 +28,9 @@
 vendor/**/.git/
 vendor/**/.gitmodules/
 vendor/**/.gitignore
+
+# Remove all node modules
+node_modules/
 
 # Anywhere ignore this
 old/

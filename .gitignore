@@ -2,7 +2,7 @@ bin/
 build/
 node_modules/
 vendor/
-me/
+/me
 
 __pycache__
 

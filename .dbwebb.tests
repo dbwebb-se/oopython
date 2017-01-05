@@ -29,6 +29,7 @@ dbwebb validate lab1
 # flask http://dbwebb.se/uppgift/en-me-sida-med-python-och-flask
 #
 test -d me/flask
+touch me/flask/app.py
 dbwebb validate flask
 
 

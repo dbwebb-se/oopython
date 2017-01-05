@@ -32,8 +32,10 @@ Feel free to help building up the repository with more content suited for traini
 History
 -------------------
 
-v0.1.0* (2016-08-17)
+v0.1.1 (2017-01-05)
 
+* Prepare to start course.
+* Adding more validators.
 * Running all tests on circleci.
 
 
@@ -51,5 +53,5 @@ v0.0.1 (2016-05-11)
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015-2016 Mikael Roos, me@mikaelroos.se   
+..:  Copyright (c) 2015-2017 Mikael Roos, mos@dbwebb.se   
 ```                                                            
