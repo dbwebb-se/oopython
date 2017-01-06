@@ -1,0 +1,24 @@
+#
+# This is a modified rewrite to fit Flask when working on both local development
+# environment and publishing to www.student.bth.se.
+#
+# Do NOT forget to change /~mosstud/ to your own student acronym.
+#
+RewriteEngine on
+
+# Igore real files (images, stylesheets etc.)
+RewriteCond %{REQUEST_FILENAME} -f
+#RewriteCond %{REQUEST_FILENAME} -f [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule (.*) - [NC,L]
+
+
+# Rewrite 1 - For request via www.student.bth.se
+RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
+#RewriteRule ^image/(.*)$ /~mosstud/kod-exempel/oopython/me/flask/app.cgi/$1 [QSA,NC,L] 
+RewriteRule ^image/(.*)$ /~mosstud/dbwebb-kurser/oopython/me/flask/app.cgi/$1 [QSA,NC,L]
+
+
+# Rewrite 2 - For other requests
+RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
+RewriteRule (.*) app.cgi/$1 [NC,L]

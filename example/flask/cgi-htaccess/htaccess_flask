@@ -1,0 +1,11 @@
+#
+# This is a Flask base for rewriting all requests to the frontcontroller
+# app.cgi, if the target route is not a file or a directory.
+#
+RewriteEngine on
+
+# Rewrite to Flask frontcontroller
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule (.*) app.cgi/$1 [NC,L]
