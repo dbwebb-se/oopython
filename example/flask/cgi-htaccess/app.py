@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Make it easier to debug
 app.debug = True
 app.config.update(
-    PROPAGATE_EXCEPTIONS = True
+    PROPAGATE_EXCEPTIONS=True
 )
 
 @app.route("/")
