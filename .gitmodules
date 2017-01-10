@@ -1,3 +1,6 @@
 [submodule ".solutions"]
 	path = .solutions
 	url = git@bitbucket.org:mosbth/oopython-solutions.git
+[submodule ".solution"]
+	path = .solution
+	url = git@bitbucket.org:mosbth/oopython-solutions.git
