@@ -30,6 +30,7 @@ dbwebb validate lab1
 #
 test -d me/flask
 touch me/flask/app.py
+touch me/flask/app.cgi
 dbwebb validate flask
 
 
