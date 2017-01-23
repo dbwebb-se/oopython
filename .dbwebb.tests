@@ -14,7 +14,7 @@ dbwebb init-me
 #
 # Kom igång med flask https://dbwebb.se/kunskap/kom-igang-med-flask
 #
-mkdir me/kmom01/my_app && touch me/kmom01/my_app/app.py
+touch me/kmom01/my_app/app.py
 
 #
 # lab1 http://dbwebb.se/uppgift/python-med-objekt-och-klasser
