@@ -100,20 +100,31 @@ cd me/kmom03/my_app2 && mkdir templates && touch templates/header.html templates
 
 
 #
-# Autogenerera uml och dokumentation https://dbwebb.se/kunskap/autogenerera-uml-och-dokumentation
+# Autogenerera uml och dokumentation
+# https://dbwebb.se/kunskap/autogenerera-uml-och-dokumentation
 # && pyreverse -o png car
 # pydoc -w car
-cd me/kmom03/ && touch car.py
+#cd me/kmom03/ && touch car.py
 
 
 
 #
 # flask3 http://dbwebb.se/uppgift/skapa-dataobjekt-till-me-sida
-# flask3 http://dbwebb.se/uppgift/skapa-personobjekt-till-me-sida
 #
 test -d me/flask
 touch me/flask/person.py
+touch me/flask/person.png
+touch me/flask/person.html
+
+
+
+#
+# flask3 http://dbwebb.se/uppgift/skapa-personobjekt-till-me-sida
+#
 touch me/flask/my_data.py
+touch me/flask/data.png
+touch me/flask/data.html
+
 dbwebb validate flask
 
 
