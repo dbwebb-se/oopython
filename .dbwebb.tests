@@ -121,11 +121,22 @@ touch me/flask/person.html
 #
 # flask3 http://dbwebb.se/uppgift/skapa-personobjekt-till-me-sida
 #
-touch me/flask/my_data.py
+touch me/flask/data.py
 touch me/flask/data.png
 touch me/flask/data.html
 
 dbwebb validate flask
+
+
+
+#
+# black jack https://dbwebb.se/uppgift/skapa_blackjack
+#
+test -d me/kmom03/blackjack
+cd me && cp -r kmom02/deck/* kmom03/blackjack/
+touch me/kmom03/blackjack/main.py
+
+dbwebb validate blackjack
 
 
 
