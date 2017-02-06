@@ -2,7 +2,7 @@
 
 """ Mapping of class """
 
-from sqlalchemy import Column, Float, String, Integer
+from sqlalchemy import Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -46,3 +46,5 @@ def add_to_db(name, age):
     person = Person(name=name, age=age)
     session.add(person)
     session.commit()
+    
+    
