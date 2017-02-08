@@ -17,7 +17,7 @@ app.config.update(
 )
 
 
-functions.add_to_db("Svenne", 67)
+# functions.add_to_db("Nisse", 21)
 
 persons = functions.get_all_as_list()
 
