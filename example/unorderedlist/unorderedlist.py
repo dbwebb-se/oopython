@@ -46,7 +46,7 @@ class UnorderedList:
         Set node-data in list at specific index
         """
         # Här gäller det att sätta nodens data till 'newdata' på rätt
-        # index-position. För att stega i listan kan du titta på metoden 'count()'
+        # index-position.
 
     def get(self, index):
         """
