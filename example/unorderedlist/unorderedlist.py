@@ -75,4 +75,3 @@ class UnorderedList:
         # Traversera listan och håll koll på föregående nod
         # och nästa nod. Om nuvarande 'data' är samma som 'item'
         # gäller det att koppla ihop föregående med nästa.
-
