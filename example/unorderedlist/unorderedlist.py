@@ -76,4 +76,3 @@ class UnorderedList:
         # och nästa nod. Om nuvarande 'data' är samma som 'item'
         # gäller det att koppla ihop föregående med nästa.
 
-        # Tips! Om föregående är 'None' gäller det att koppla 'self.head' till nästa nod.
