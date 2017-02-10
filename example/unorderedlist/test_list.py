@@ -5,9 +5,9 @@ Main file for testing
 """
 
 # Imports
+import unittest
 from my_bubblesort import bubble_sort
 from unorderedlist import UnorderedList
-import unittest
 
 
 
