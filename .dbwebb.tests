@@ -188,7 +188,7 @@ dbwebb validate lab4
 # unorderedlist http://dbwebb.se/uppgift/terminalprogram-med-sortering-av-lista
 #
 cd me/ && cp -i ../example/unorderedlist/*.py kmom05/unorderedlist/
-test -e me/kmom05/unorderedlist/node.py && test -e me/kmom05/unorderedlist/unorderedlist.py
+test -e me/kmom05/unorderedlist/node.py && test -e me/kmom05/unorderedlist/unorderedlist.py && test -e me/kmom05/unorderedlist/test_list.py
 dbwebb validate unorderedlist
 
 
