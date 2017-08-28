@@ -1,10 +1,13 @@
+me/
 bin/
 build/
-node_modules/
+.venv/
 vendor/
-/me
+node_modules/
+example/sqlite/ping.db
 
 __pycache__
+*.pyc
 
 # Mac OS
 .DS_Store

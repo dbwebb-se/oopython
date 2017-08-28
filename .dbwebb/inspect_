@@ -1,0 +1,237 @@
+#
+# Inspect, tools to inspect a kmom.
+#
+# Usage: dbwebb inspect kmom01
+#
+# Sequence executed:
+# python(), pythonkmom01(), pythonlast()
+#
+
+
+
+#
+# Test python general, always executed first
+#
+python()
+{
+    inspectIntro
+}
+
+
+
+#
+# Test general, always executed last in sequence
+#
+pythonlast()
+{
+    inspectMe "me/redovisa" "me.html" "redovisning.html" "" "redovisa"
+}
+
+
+
+#
+# Test python kmom01
+#
+pythonkmom01()
+{
+    inspectLab "uppgift/python-med-varden-och-variabler" "lab1" "answer.py" "python3 answer.py"
+
+    inspectExerciseHeader "plane" "uppgift/ditt-forsta-python-skript" "$KMOM/plane"
+    inspectCommand "plane.py" "$EXEC_DIR/$KMOM/plane" "python3 plane.py"
+}
+
+
+
+#
+# Test python kmom02
+#
+pythonkmom02()
+{
+    inspectLab "uppgift/python-med-villkor-och-loopar" "lab2" "answer.py" "python3 answer.py"
+
+    inspectExerciseHeader "marvin1" "uppgift/din-egen-chattbot-marvin-steg-1" "$KMOM/marvin1"
+    inspectCommand "marvin.py" "$EXEC_DIR/$KMOM/marvin1" "python3 marvin.py"
+}
+
+
+
+#
+# Test python kmom03
+#
+pythonkmom03()
+{
+    inspectLab "uppgift/python-med-funktioner" "lab3" "answer.py" "python3 answer.py"
+
+    inspectExerciseHeader "marvin2" "uppgift/din-egen-chattbot-marvin-steg-2" "$KMOM/marvin2"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/marvin2" "python3 main.py"
+}
+
+
+
+#
+# Test python kmom04
+#
+pythonkmom04()
+{
+    inspectLab "uppgift/python-listor" "lab4" "answer.py" "python3 answer.py"
+
+    inspectExerciseHeader "marvin3" "uppgift/din-egen-chattbot-marvin-steg-3\n-- ${DBW_WWW}uppgift/din-egen-chattbot-marvin-inventarie" "$KMOM/marvin2"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/marvin3" "python3 main.py"
+}
+
+
+#
+# Test python kmom05
+#
+pythonkmom05()
+{
+    inspectLab "uppgift/python-med-dictionaries-och-tupler" "lab5" "answer.py" "python3 answer.py"
+    
+    inspectExerciseHeader "analyzer" "uppgift/analysera-text-och-ord" "$KMOM/analyzer"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/analyzer" "python3 main.py lines phil.txt"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/analyzer" "python3 main.py all phil.txt"
+
+    pythonexercise "marvin4" "main.py" "uppgift/din-egen-chattbot-marvin-tictactoe\n-- ${DBW_WWW}uppgift/din-egen-chattbot-marvin-steg-4"
+}
+
+
+
+#
+# Test python kmom06
+#
+pythonkmom06()
+{
+    inspectExerciseHeader "analyzer2" "uppgift/din-egen-chattbot-marvin-steg-5" "$KMOM/analyzer2"
+    # inspectCommand "main.py" "$EXEC_DIR/$KMOM/analyzer2" "python3 main.py"
+    
+    pythonmarvin5 "analyzer2" "main.py" "uppgift/din-egen-chattbot-marvin-steg-5"
+}
+
+
+
+#
+# Test python kmom10
+#
+pythonkmom10()
+{
+    pythonAdventure "adventure" "adventure.py" "python/kmom10"
+}
+
+
+
+# ----------------------------------------------------------------------
+#
+# Test python marvin5
+#
+pythonmarvin5()
+{
+    local lab="$1"
+    local main="$2"
+    local url="$3"
+    local target="me/$KMOM/$lab"
+    local where="$EXEC_DIR/$KMOM/$lab"
+
+    headerForTest "-- $lab" "-- ${DBW_WWW}$url"
+    openFilesInEditor "$target"
+    checkKmomDir "$target"
+
+    # Exit status
+    # assertExit 0 "cd $where; python3 $main --version" "Should return exit status 0 but did not."
+    # assertExit 1 "cd $where; python3 $main --MISSINGOPTION" "Should return exit status 1 but did not."
+
+    # General options
+    opts="--help"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    opts="--version"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    # Ping
+    opts="ping ${DBW_WWW}humans.txt"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    opts="ping-history"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    # Get
+    opts="get ${DBW_WWW}blogg/introduktionsveckan-2017"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    opts="--output=humans.txt get ${DBW_WWW}blogg/introduktionsveckan-2017"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    assert 0 "test -f $where/humans.txt" "File humans.txt is missing."
+    cat "$where/humans.txt"
+
+    # Quote
+    opts="quote"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    # <title>
+    opts="title http://dbwebb.se"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    # analyzer2
+    opts="all humans.txt"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+    
+    # analyzer2 lines
+    opts="lines humans.txt"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+}
+
+
+
+#
+# Test python adventure
+#
+pythonAdventure()
+{
+    local lab="$1"
+    local main="$2"
+    local url="$3"
+    local target="me/$KMOM/$lab"
+    local where="$EXEC_DIR/$KMOM/$lab"
+
+    headerForTest "-- $lab" "-- ${DBW_WWW}$url"
+    openFilesInEditor "$target"
+    checkKmomDir "$target"
+
+    # Options
+    opts="--help"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    opts="--version"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    opts="--info"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    opts="--about"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    opts="--cheat"
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+
+    # run it
+    opts=""
+    inspectCommand "$main" "$where" "python3 $main $opts" "$opts"
+}
+
+
+
+#
+# Test python lab & marvin
+#
+pythonexercise()
+{
+    local lab="$1"
+    local main="$2"
+    local url="$3"
+    local target="me/$KMOM/$lab"
+
+    headerForTest "-- $lab" "-- ${DBW_WWW}$url"
+    openFilesInEditor "$target"
+    checkKmomDir "$target"
+    inspectCommand "$main" "$EXEC_DIR/$KMOM/$lab" "python3 $main"
+}
