@@ -29,29 +29,8 @@ Feel free to help building up the repository with more content suited for traini
 
 
 
-History
--------------------
-
-v0.1.1 (2017-01-05)
-
-* Prepare to start course.
-* Adding more validators.
-* Running all tests on circleci.
-
-
-v0.1.0 (2016-05-16)
-
-* Running all tests on travis.
-
-
-v0.0.1 (2016-05-11)
-
-* First tag, halfway through the course.
-* Started work in October 2015, planned release winter 2017.
-
-
 
 ```                                                            
  .                                                             
-..:  Copyright (c) 2015-2017 Mikael Roos, mos@dbwebb.se   
+..:  Copyright (c) 2015-2017 Mikael Roos et al, mos@dbwebb.se   
 ```                                                            
