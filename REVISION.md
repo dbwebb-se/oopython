@@ -8,6 +8,7 @@ v0.2.1 (2017-11-10)
 * Remove unused tutorial.
 * Enable lab v2.
 * Update validators for css and javascript.
+* Update makefile.
 
 
 v0.2.0 (2017-08-28)
