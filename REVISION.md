@@ -1,13 +1,20 @@
 Revision History
 =====================
 
-v0.2.0 (2018-08-28)
+v0.2.1 (2017-11-10)
+---------------------
+
+* Add and enable inspect in repo.
+* Remove unused tutorial.
+
+
+v0.2.0 (2017-08-28)
 ---------------------
 
 * After upgrade course repo to dbwebb-cli v2.
 
 
-v0.1.2 (2018-08-28)
+v0.1.2 (2017-08-28)
 ---------------------
 
 * Before upgrade course repo to dbwebb-cli v2.
