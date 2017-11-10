@@ -196,8 +196,8 @@ dbwebb-install: prepare
 	wget --quiet -O $(DBWEBB) https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2
 	chmod 755 $(DBWEBB)
 	$(DBWEBB) config create noinput
-	(cd bin; rm dbwebb-validate1; ln -s dbwebb-validate dbwebb-validate1)
-	(cd bin; rm dbwebb-inspect1; ln -s dbwebb-inspect dbwebb-inspect1)
+	(cd bin; rm -f dbwebb-validate1; ln -s dbwebb-validate dbwebb-validate1)
+	(cd bin; rm -f dbwebb-inspect1; ln -s dbwebb-inspect dbwebb-inspect1)
 
 
 
