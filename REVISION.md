@@ -9,6 +9,7 @@ v0.2.1 (2017-11-10)
 * Enable lab v2.
 * Update validators for css and javascript.
 * Update makefile.
+* Upgrade CircleCI to v2.
 
 
 v0.2.0 (2017-08-28)
