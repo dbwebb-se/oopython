@@ -37,3 +37,15 @@ me/kmom06/booking
 # kmom10
 me/kmom10
 me/kmom10/blackops
+
+# --------------------------------------------------------------------------
+#
+# Inspect
+#
+#make dbwebb-inspect options="--yes --no-validate" what=kmom01
+#make dbwebb-inspect options="--yes --no-validate" what=kmom02
+#make dbwebb-inspect options="--yes --no-validate" what=kmom03
+#make dbwebb-inspect options="--yes --no-validate" what=kmom04
+#make dbwebb-inspect options="--yes --no-validate" what=kmom05
+#make dbwebb-inspect options="--yes --no-validate" what=kmom06
+#make dbwebb-inspect options="--yes --no-validate" what=kmom10
