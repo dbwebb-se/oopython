@@ -6,6 +6,7 @@ v0.2.1 (2017-11-10)
 
 * Add and enable inspect in repo.
 * Remove unused tutorial.
+* Enable lab v2.
 
 
 v0.2.0 (2017-08-28)
