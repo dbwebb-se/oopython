@@ -12,7 +12,7 @@ dbwebb init-me
 #
 
 #
-# Kom igång med flask https://dbwebb.se/kunskap/kom-igang-med-flask
+# Kom igång med flask https://dbwebb.se/kunskap/flask-med-jinja2
 #
 touch me/kmom01/my_app/app.py
 
@@ -26,7 +26,7 @@ dbwebb validate lab1
 
 
 #
-# flask http://dbwebb.se/uppgift/en-me-sida-med-python-och-flask
+# flask http://dbwebb.se/uppgift/en-me-sida-med-flask
 #
 test -d me/flask
 touch me/flask/app.py
