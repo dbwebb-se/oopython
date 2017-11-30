@@ -28,7 +28,7 @@ print("")
 # Here comes the content of the webpage 
 content = """
 <h1>Hello The World of Web</h1>
-<p>Öhhhh!
+<p>Ohhh! CGI works!
 """
 
 

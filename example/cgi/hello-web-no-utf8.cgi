@@ -15,4 +15,4 @@ print("")
 
 # Write out the page content
 print("<h1>Hello World!</h1>")
-print("<p>Ohhh!")
+print("<p>Ohhh! CGI works!")
