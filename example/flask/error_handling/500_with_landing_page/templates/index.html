@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <title>Applikation i Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+
+    <div>
+        <h1>Stiligt!</h1>
+        <a href="{{ url_for('about') }}">About</a>
+    </div>
+</body>
+</html>
