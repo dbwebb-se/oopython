@@ -12,8 +12,7 @@ app = Flask(__name__)
 @app.route("/")
 def main():
     """ Main route """
-    test1 = 2 + "3" #Raises Internal server error 500
-    return render_template("index.html", test=test1)
+    return render_template("index.html")
 
 
 
