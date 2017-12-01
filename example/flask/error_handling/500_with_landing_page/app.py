@@ -16,14 +16,13 @@ def main():
     return render_template("index.html", test=test1)
 
 
-
 @app.errorhandler(500)
 def internal_server_error(e):
     """
     Handler for internal server error 500
     """
-    return render_template("500.html", error=e)
-
+    import traceback
+    return render_template("500.html", error=traceback.format_exc())
 
 
 if __name__ == "__main__":

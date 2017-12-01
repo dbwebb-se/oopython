@@ -16,14 +16,13 @@ def main():
     return "<h1>Hello World of Flask</h1><p>Rockn Roll..."
 
 
-
 @app.errorhandler(500)
 def internal_server_error(e):
     """
     Handler for internal server error 500
     """
-    return e.args
-
+    import traceback
+    return "<pre>" + traceback.format_exc()
 
 
 if __name__ == "__main__":
