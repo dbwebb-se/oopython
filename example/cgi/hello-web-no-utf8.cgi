@@ -5,7 +5,6 @@
 Test for CGI program which uses no UTF-8 characters, including error handling.
 """
 
-
 try:
     # Enable debugging 
     import cgitb

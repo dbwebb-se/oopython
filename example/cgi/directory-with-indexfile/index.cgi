@@ -2,17 +2,25 @@
 # -*- coding: UTF-8 -*-
 
 """
-Test for CGI program which uses no UTF-8 characters.
+Test for CGI program which uses no UTF-8 characters, including error handling.
 """
 
-# Enable debugging 
-import cgitb
-cgitb.enable()
+try:
+    # Enable debugging 
+    import cgitb
+    cgitb.enable()
 
-# Write out the HTTP header
-print("Content-Type: text/html;charset=utf-8")
-print("")
+    # Write out the HTTP header
+    print("Content-Type: text/html;charset=utf-8")
+    print("")
 
-# Write out the page content
-print("<h1>Hello World!</h1>")
-print("<p>Ohhh! CGI works!")
+    # Write out the page content
+    print("<h1>Hello World!</h1>")
+    print("<p>Ohhh! CGI works!")
+
+except Exception as e:
+    import traceback
+
+    print("Content-Type: text/plain;charset=utf-8")
+    print("")
+    print(traceback.format_exc())
