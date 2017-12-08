@@ -6,7 +6,7 @@ Test for CGI program which uses no UTF-8 characters, including error handling.
 """
 
 try:
-    # Enable debugging 
+    # Enable debugging
     import cgitb
     cgitb.enable()
 
@@ -18,7 +18,7 @@ try:
     print("<h1>Hello World!</h1>")
     print("<p>Ohhh! CGI works!")
 
-except Exception as e:
+except Exception as e: #pylint: disable=broad-except
     import traceback
 
     print("Content-Type: text/plain;charset=utf-8")

@@ -5,7 +5,8 @@
 from abc import ABCMeta, abstractmethod
 class Vehicle(object):
     """
-    A vehicle base class. Can be made into more classes, wheels, engine and so on.
+    A vehicle base class. Can be made into more classes, wheels, \
+        engine and so on.
 
 
     Attributes:
@@ -36,7 +37,7 @@ class Vehicle(object):
         pass
 
     @abstractmethod
-    def getVehicleType(self):
+    def get_vehicle_type(self):
         """
         Return the type of the vehicle
         """

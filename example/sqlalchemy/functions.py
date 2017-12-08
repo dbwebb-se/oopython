@@ -18,11 +18,12 @@ class Person(Base):
     """ Person class """
     __tablename__ = "persons"
 
+    # pylint: disable=C0103
     id = Column(Integer, primary_key=True)
     name = Column(String)
     age = Column(Integer)
-    
-        
+
+
     def __init__(self, name, age):
         """ init """
         self.name = name
@@ -40,11 +41,9 @@ def get_all_as_list():
     for row in session.query(Person):
         result.append({"name": row.name, "age": row.age})
     return result
-    
+
 def add_to_db(name, age):
     """ dfadf """
     person = Person(name=name, age=age)
     session.add(person)
     session.commit()
-    
-    

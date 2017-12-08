@@ -5,6 +5,7 @@
 Minimal Flask application, including useful error handlers.
 """
 
+import traceback
 from flask import Flask
 
 app = Flask(__name__)
@@ -13,25 +14,22 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     """ Home route """
-    return("<h1>Hello World of Flask</h1><p>Rockn Roll...")
+    return "<h1>Hello World of Flask</h1><p>Rockn Roll..."
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found(_):
     """
     Handler for page not found 404
     """
-    #pylint: disable=unused-argument
     return "Flask 404 here, but not the page you requested."
 
 
 @app.errorhandler(500)
-def internal_server_error(e):
+def internal_server_error(_):
     """
     Handler for internal server error 500
     """
-    #pylint: disable=unused-argument
-    import traceback
     return "<p>Flask 500<pre>" + traceback.format_exc()
 
 

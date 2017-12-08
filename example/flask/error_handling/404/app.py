@@ -5,7 +5,9 @@
 Minimal Flask application
 """
 
+import traceback
 from flask import Flask, render_template
+
 
 app = Flask(__name__)
 
@@ -17,7 +19,7 @@ def main():
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found():
     """
     Handler for page not found 404
     """
@@ -25,11 +27,10 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def internal_server_error(e):
+def internal_server_error(_):
     """
     Handler for internal server error 500
     """
-    import traceback
     return "<pre>" + traceback.format_exc()
 
 

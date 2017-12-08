@@ -21,7 +21,7 @@ try:
     print("Content-Type: text/html;charset=utf-8")
     print("")
 
-    # Here comes the content of the webpage 
+    # Here comes the content of the webpage
     content = """
     <h1>Hello The World of Web</h1>
     <p>Ohhh! CGI works!
@@ -31,7 +31,7 @@ try:
     sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
     sys.stdout.write(content)
 
-except Exception as e:
+except Exception as e: #pylint: disable=broad-except
     import traceback
 
     print("Content-Type: text/plain;charset=utf-8")

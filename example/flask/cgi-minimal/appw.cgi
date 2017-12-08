@@ -11,7 +11,7 @@ try:
 
     CGIHandler().run(app)
 
-except Exception as e:
+except Exception as e: #pylint: disable=broad-except
     import traceback
 
     print("Content-Type: text/plain;charset=utf-8")

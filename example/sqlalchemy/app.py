@@ -5,8 +5,8 @@
 A Flask app using SQLAlchemy to read a SQLite database.
 """
 
-from flask import Flask, render_template
 import functions
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def main():
 
 
 @app.errorhandler(500)
-def internal_server_error(e):
+def internal_server_error(_):
     """
     Handler for internal server error 500
     """

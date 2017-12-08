@@ -12,7 +12,7 @@ class Car(Vehicle):
     wheels = 4
     vehicleType = "car"
 
-    def getVehicleType(self):
+    def get_vehicle_type(self):
         """
         Return the price calculated with start price, year and miles
         """

@@ -3,6 +3,7 @@
 Flask test in python
 """
 
+import traceback
 from flask import Flask, render_template
 from car import Car
 
@@ -25,11 +26,10 @@ def about():
 
 
 @app.errorhandler(500)
-def internal_server_error(e):
+def internal_server_error(_):
     """
     Handler for internal server error 500
     """
-    import traceback
     return "<pre>" + traceback.format_exc()
 
 

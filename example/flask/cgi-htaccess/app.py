@@ -5,6 +5,7 @@
 Minimal Flask application
 """
 
+import traceback
 from flask import Flask
 
 app = Flask(__name__)
@@ -13,15 +14,14 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     """ Home route """
-    return("<h1>Hello World of Flask</h1><p>Rockn Roll...")
+    return "<h1>Hello World of Flask</h1><p>Rockn Roll..."
 
 
 @app.errorhandler(500)
-def internal_server_error(e):
+def internal_server_error(_):
     """
     Handler for internal server error 500
     """
-    import traceback
     return "<pre>" + traceback.format_exc()
 
 

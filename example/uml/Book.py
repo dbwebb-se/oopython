@@ -12,14 +12,15 @@ class Book:
         self.title = title
         self.author = author
 
-    def should_register(self):
+    @staticmethod
+    def should_register():
         """
         Returns wheter it is OK or not to add Book to the registry
         """
-        okToRegister = randint(0, 1)
+        ok_to_register = randint(0, 1)
 
-        return okToRegister
-        
+        return ok_to_register
+
     def __str__(self):
         """
         Overriding str function for class

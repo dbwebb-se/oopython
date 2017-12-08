@@ -53,7 +53,8 @@ class Testcase(unittest.TestCase):
     # Tests the interest as string
     def test_interest_as_string(self):
         """Should return programming, testing if correct"""
-        self.assertEqual(self.test.get_interests_as_string(), "programming, testing")
+        self.assertEqual(self.test.get_interests_as_string(), \
+                         "programming, testing")
 
     # Tests if the person is alive or not
     def test_is_alive(self):

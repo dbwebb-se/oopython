@@ -4,9 +4,7 @@
 Main file for testing
 """
 
-# Imports
 import unittest
-from my_bubblesort import bubble_sort
 from unorderedlist import UnorderedList
 
 
@@ -48,13 +46,13 @@ class TestList(unittest.TestCase):
         self.assertFalse(self.studlist.search(30))
         self.assertNotEqual(current_size, self.studlist.size())
 
-    def test_f_sort(self):
-        """ Test sort() """
-        bubble_sort(self.studlist)
-        self.assertEqual(self.studlist.get(0), 10)
-        self.assertEqual(self.studlist.get(1), 25)
-        self.assertEqual(self.studlist.get(2), 40)
-        self.assertEqual(self.studlist.get(3), 999)
+    # def test_f_sort(self):
+    #     """ Test sort() """
+    #     bubble_sort(self.studlist)
+    #     self.assertEqual(self.studlist.get(0), 10)
+    #     self.assertEqual(self.studlist.get(1), 25)
+    #     self.assertEqual(self.studlist.get(2), 40)
+    #     self.assertEqual(self.studlist.get(3), 999)
 
 
 if __name__ == '__main__':
