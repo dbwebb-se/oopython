@@ -82,7 +82,7 @@ cd me/kmom03/my_app2 && mkdir templates && touch templates/header.html templates
 # uml http://dbwebb.se/uppgift/skapa-objekt-efter-uml
 #
 test -d me/kmom03/uml
-cp -ri example/uml/*.py me/kmom02/uml/
+cp -ri example/uml/*.py me/kmom03/uml/
 cd me/kmom03/uml/ && touch sequenceDiagram.png && test -e sequenceDiagram.png && ./Controller.py
 dbwebb validate uml
 
@@ -121,11 +121,11 @@ dbwebb validate flask
 #
 # black jack https://dbwebb.se/uppgift/skapa_blackjack
 #
-test -d me/kmom03/blackjack
-cd me && cp -r kmom02/deck/* kmom03/blackjack/
-touch me/kmom03/blackjack/main.py
+#test -d me/kmom03/blackjack
+#cd me && cp -r kmom02/deck/* kmom03/blackjack/
+#touch me/kmom03/blackjack/main.py
 
-dbwebb validate blackjack
+#dbwebb validate blackjack
 
 
 
