@@ -50,31 +50,10 @@ dbwebb validate lab2
 
 
 #
-# minizoo http://dbwebb.se/uppgift/skapa-objekt-efter-uml
+# lab2 http://dbwebb.se/kunskap/klass-relationer
 #
-test -d me/kmom02/deck
-cd me/kmom02/deck && touch deck.py hand.py card.py main.py
-dbwebb validate deck
+test -d me/kmom02/relations
 
-
-
-#
-# test http://dbwebb.se/uppgift/skriv-testfall-for-ett-objekt
-#
-cp -ri me/kmom02/deck/*.py me/kmom02/test/
-touch me/kmom02/test/test_deck.py
-test -d me/kmom02/test
-dbwebb validate test
-
-
-
-#
-# uml http://dbwebb.se/uppgift/skapa-objekt-efter-uml
-#
-test -d me/kmom02/uml
-cp -ri example/uml/*.py me/kmom02/uml/
-cd me/kmom02/uml/ && touch sequenceDiagram.png && test -e sequenceDiagram.png && ./Controller.py
-dbwebb validate uml
 
 
 
@@ -96,6 +75,16 @@ dbwebb validate flask
 #
 cp -ri me/kmom01/my_app/ me/kmom03/my_app2/
 cd me/kmom03/my_app2 && mkdir templates && touch templates/header.html templates/footer.html
+
+
+
+#
+# uml http://dbwebb.se/uppgift/skapa-objekt-efter-uml
+#
+test -d me/kmom03/uml
+cp -ri example/uml/*.py me/kmom02/uml/
+cd me/kmom03/uml/ && touch sequenceDiagram.png && test -e sequenceDiagram.png && ./Controller.py
+dbwebb validate uml
 
 
 

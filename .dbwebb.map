@@ -13,11 +13,10 @@ me/kmom01/my_app
 
 # kmom02
 me/kmom02/lab2
-me/kmom02/deck
-me/kmom02/test
-me/kmom02/uml
+me/kmom02/relations
 
 # kmom03
+me/kmom03/uml
 me/kmom03/blackjack
 
 # kmom04

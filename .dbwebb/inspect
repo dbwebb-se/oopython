@@ -44,20 +44,8 @@ oopythonkmom01()
 #
 oopythonkmom02()
 {
-    inspectLab "uppgift/python-med-mer-objekt-och-klasser" "lab2" "answer.py" "python3 answer.py"
+    inspectLab "uppgift/python-med-klass-relationer" "lab2" "answer.py" "python3 answer.py"
 
-    inspectExerciseHeader "Skapa objekt efter UML-diagram" "uppgift/skapa-objekt-efter-uml" "$KMOM/deck"
-    fileIsReadable "me/$KMOM/deck/deck.py"
-    fileIsReadable "me/$KMOM/deck/hand.py"
-    fileIsReadable "me/$KMOM/deck/card.py"
-    inspectCommand "main.py" "$THEDIR/me/$KMOM/deck" "python3 main.py"
-
-    inspectExerciseHeader "Testfall för din kortlek" "uppgift/skriv-testfall-for-ett-objekt" "$KMOM/test"
-    viewFileContent "test_deck.py" "me/$KMOM/test"
-    inspectCommand "test_deck.py" "$THEDIR/me/$KMOM/test" "python3 test_deck.py"
-
-    inspectExerciseHeader "Sequence diagram" "uppgift/skapa-sequence-diagram" "$KMOM/uml"
-    printUrl "sequenceDiagram.png" "me/$KMOM/uml"
 }
 
 
