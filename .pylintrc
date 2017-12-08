@@ -14,6 +14,9 @@ argument-name-hint=[a-z_][a-z0-9_]{0,30}$
 attr-rgx=[a-z_][a-z0-9_]{0,30}$
 const-rgx=(([A-Za-z_][A-Za-z0-9_]*)|(__.*__))$
 
+# Min number of arguments
+max-args=6
+
 [REPORTS]
 
 #reports=no
