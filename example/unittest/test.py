@@ -7,7 +7,7 @@ import unittest
 from phone import Phone
 
 class Testcase(unittest.TestCase):
-    """Class Testcase"""
+    """Submodule for unittests, derives from unittest.TestCase"""
     phone = Phone("Samsung", "Galaxy S8", "Android")
     phone_two = Phone("Apple", "iPhone 8", "iOS")
 
