@@ -8,6 +8,7 @@ from phone import Phone
 
 class Testcase(unittest.TestCase):
     """Submodule for unittests, derives from unittest.TestCase"""
+    # Create instances to use in the tests
     phone = Phone("Samsung", "Galaxy S8", "Android")
     phone_two = Phone("Apple", "iPhone 8", "iOS")
 
