@@ -35,7 +35,11 @@ matrix:
 
 
 before_script:
-    - make install
+    - make python-venv
+    - . .venv/bin/activate
+    - make python-install install
+    #- make install
+
 
 
 script:
