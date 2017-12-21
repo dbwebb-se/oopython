@@ -31,16 +31,19 @@ WHERE-AM-I = $(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
 THIS_MAKEFILE := $(call WHERE-AM-I)
 
 # Echo some nice helptext based on the target comment
-HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"` "$(NO_COLOR)"
+HELPTEXT = $(ECHO) "$(ACTION)--->" $(shell egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g") "$(NO_COLOR)"
+
+# Check version  and path to command and display on one line
+CHECK_VERSION = printf "%-15s %-10s %s\n" "`basename $(1)`" "`$(1) --version $(2)`" "`which $(1)`"
 
 # target: help                    - Displays help with targets available.
 .PHONY:  help
 help:
 	@$(call HELPTEXT,$@)
-	@echo "Usage:"
-	@echo " make [target] ..."
-	@echo "target:"
-	@egrep "^# target:" Makefile | sed 's/# target: / /g'
+	@$(ECHO) "Usage:"
+	@$(ECHO) " make [target] ..."
+	@$(ECHO) "target:"
+	@egrep '^# target:' $(THIS_MAKEFILE) | sed 's/# target: / /g'
 
 
 
@@ -50,7 +53,8 @@ help:
 # 
 
 # Add local bin path for test tools
-PATH := "$(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)"
+PATH := $(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)
+SHELL := env PATH=$(PATH) $(SHELL)
 
 # Tools
 DBWEBB   		:= bin/dbwebb
@@ -98,7 +102,7 @@ check: dbwebb-validate-check
 
 
 
-# target: test                    - Install test tools & run tests.
+# target: test                    - Install test tools and run tests.
 .PHONY: test
 test: check dbwebb-publish-example dbwebb-testrepo
 	@$(call HELPTEXT,$@)

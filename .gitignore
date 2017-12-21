@@ -4,7 +4,7 @@ build/
 .venv/
 vendor/
 node_modules/
-example/sqlite/ping.db
+package-lock.json
 
 __pycache__
 *.pyc
