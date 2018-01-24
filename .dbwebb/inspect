@@ -55,18 +55,18 @@ oopythonkmom02()
 #
 oopythonkmom03()
 {
-    inspectExerciseHeader "Skapa ett person-objekt till me-sidan" "uppgift/skapa-personobjekt-till-me-sida" "flask"
-    fileIsReadable "me/flask/person.py"
-    printUrl "person.png" "me/flask"
-    printUrl "person.html" "me/flask"
 
-    inspectExerciseHeader "Skapa ett dataobjekt till me-sidan" "uppgift/skapa-dataobjekt-till-me-sida" "flask"
-    fileIsReadable "me/flask/data.py"
-    printUrl "data.png" "me/flask"
-    printUrl "data.html" "me/flask"
+    inspectExerciseHeader "Kortspelet War" "uppgift/bokningssystem" "$KMOM/war"
+    inspectCommand "test.py" "$EXEC_DIR/$KMOM/war" "python3 test.py"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/war" "python3 main.py"
 
-    inspectExerciseHeader "Skapa ett Black Jack spel" "uppgift/skapa_blackjack" "$KMOM/blackjack"
-    inspectCommand "main.py" "$EXEC_DIR/$KMOM/blackjack" "python3 main.py"
+    fileIsReadable "me/kmom03/war/uml.png"
+    printUrl "uml.png" "me/kmom03/war"
+
+    inspectExerciseHeader "Skapa sequence diagram" "uppgift/skapa-sequence-diagram2" "$KMOM/uml"
+    fileIsReadable "me/kmom03/uml/sequenceDiagram.png"
+    printUrl "sequenceDiagram.png" "me/kmom03/uml"
+
 }
 
 
