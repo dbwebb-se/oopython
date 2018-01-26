@@ -20,14 +20,12 @@ me/kmom03/uml
 me/kmom03/war
 
 # kmom04
-me/kmom04
-me/kmom04/lab3
-me/flask/db
+me/kmom04/queue
+me/kmom04/list
 
 # kmom05
-me/kmom05
-me/kmom05/lab4
-me/kmom05/unorderedlist
+me/kmom05/lab3
+me/kmom05/sort
 
 # kmom06
 me/kmom06

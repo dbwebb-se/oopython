@@ -70,11 +70,17 @@ dbwebb validate flask
 # Kmom03
 #
 
+
+
 #
-# Flask och Jinja2 https://dbwebb.se/kunskap/flask-och-jinja2
+# war https://dbwebb.se/uppgift/kortspelet-war
 #
-cp -ri me/kmom01/my_app/ me/kmom03/my_app2/
-cd me/kmom03/my_app2 && mkdir templates && touch templates/header.html templates/footer.html
+test -d me/kmom03/war
+cd me/kmom03/war/ && touch uml.png && test -e uml.png
+cd me/kmom03/war/ && touch main.py && test -e main.py && ./main.py
+cd me/kmom03/war/ && touch test.py && test -e test.py && ./test.py
+dbwebb validate war
+
 
 
 
@@ -89,43 +95,10 @@ dbwebb validate uml
 
 
 #
-# Autogenerera uml och dokumentation
-# https://dbwebb.se/kunskap/autogenerera-uml-och-dokumentation
-# && pyreverse -o png car
-# pydoc -w car
-#cd me/kmom03/ && touch car.py
-
-
-
-#
 # flask3 http://dbwebb.se/uppgift/skapa-dataobjekt-till-me-sida
 #
 test -d me/flask
-touch me/flask/person.py
-touch me/flask/person.png
-touch me/flask/person.html
-
-
-
-#
-# flask3 http://dbwebb.se/uppgift/skapa-personobjekt-till-me-sida
-#
-touch me/flask/data.py
-touch me/flask/data.png
-touch me/flask/data.html
-
 dbwebb validate flask
-
-
-
-#
-# black jack https://dbwebb.se/uppgift/skapa_blackjack
-#
-#test -d me/kmom03/blackjack
-#cd me && cp -r kmom02/deck/* kmom03/blackjack/
-#touch me/kmom03/blackjack/main.py
-
-#dbwebb validate blackjack
 
 
 
