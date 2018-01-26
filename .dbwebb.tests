@@ -110,23 +110,10 @@ dbwebb validate flask
 
 
 #
-# lab4 http://dbwebb.se/uppgift/python-med-regex
+# Queue/List
 #
-dbwebb recreate lab3
-cd me/kmom04/lab3 && ./answer.py; [[ $? = 42 ]]
-dbwebb validate lab3
-
-
-
-#
-# flask4 http://dbwebb.se/uppgift/skapa-en-bondgards-databas
-# flask4 http://dbwebb.se/uppgift/visa-bondgarden-pa-me-sida
-#
-install -d me/flask/db
-touch me/flask/db/farm.sqlite
-test -d me/flask
-test -d me/flask/db
-dbwebb validate flask
+test -d me/kmom04/queue
+test -d me/kmom04/list
 
 
 
@@ -140,9 +127,9 @@ dbwebb validate flask
 #
 # lab5 http://dbwebb.se/uppgift/python-med-rekursiva-funktioner
 #
-dbwebb recreate lab4
-cd me/kmom05/lab4 && ./answer.py; [[ $? = 42 ]]
-dbwebb validate lab4
+dbwebb recreate lab3
+cd me/kmom05/lab3 && ./answer.py; [[ $? = 42 ]]
+dbwebb validate lab3
 
 
 
@@ -153,13 +140,6 @@ cd me/ && cp -i ../example/unorderedlist/*.py kmom05/unorderedlist/
 test -e me/kmom05/unorderedlist/node.py && test -e me/kmom05/unorderedlist/unorderedlist.py && test -e me/kmom05/unorderedlist/test_list.py
 dbwebb validate unorderedlist
 
-
-
-#
-# flask5 http://dbwebb.se/oopython/kmom05
-#
-test -d me/flask
-dbwebb validate flask
 
 
 

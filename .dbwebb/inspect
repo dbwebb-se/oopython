@@ -85,6 +85,14 @@ oopythonkmom04()
     printUrl "sekvens.png" "me/kmom04/queue"
     fileIsReadable "me/kmom04/queue/klass.png"
     printUrl "klass.png" "me/kmom04/queue"
+    
+    
+    inspectExerciseHeader "Unordered List" "uppgift/skapa-lista" "$KMOM/list"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/list" "python3 main.py"
+    inspectCommand "test.py" "$EXEC_DIR/$KMOM/list" "python3 test.py"
+    viewFileContent "unorderedlist.py" "me/$KMOM/list"
+    viewFileContent "exceptions.py" "me/$KMOM/list"
+
 }
 
 
