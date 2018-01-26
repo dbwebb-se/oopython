@@ -55,18 +55,18 @@ oopythonkmom02()
 #
 oopythonkmom03()
 {
-    inspectExerciseHeader "Skapa ett person-objekt till me-sidan" "uppgift/skapa-personobjekt-till-me-sida" "flask"
-    fileIsReadable "me/flask/person.py"
-    printUrl "person.png" "me/flask"
-    printUrl "person.html" "me/flask"
 
-    inspectExerciseHeader "Skapa ett dataobjekt till me-sidan" "uppgift/skapa-dataobjekt-till-me-sida" "flask"
-    fileIsReadable "me/flask/data.py"
-    printUrl "data.png" "me/flask"
-    printUrl "data.html" "me/flask"
+    inspectExerciseHeader "Kortspelet War" "uppgift/bokningssystem" "$KMOM/war"
+    inspectCommand "test.py" "$EXEC_DIR/$KMOM/war" "python3 test.py"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/war" "python3 main.py"
 
-    inspectExerciseHeader "Skapa ett Black Jack spel" "uppgift/skapa_blackjack" "$KMOM/blackjack"
-    inspectCommand "main.py" "$EXEC_DIR/$KMOM/blackjack" "python3 main.py"
+    fileIsReadable "me/kmom03/war/uml.png"
+    printUrl "uml.png" "me/kmom03/war"
+
+    inspectExerciseHeader "Skapa sequence diagram" "uppgift/skapa-sequence-diagram2" "$KMOM/uml"
+    fileIsReadable "me/kmom03/uml/sequenceDiagram.png"
+    printUrl "sequenceDiagram.png" "me/kmom03/uml"
+
 }
 
 
@@ -76,13 +76,15 @@ oopythonkmom03()
 #
 oopythonkmom04()
 {
-    inspectLab "uppgift/python-med-regex" "lab3" "answer.py" "python3 answer.py"
 
-    inspectExerciseHeader "Skapa en bondgårdssdatabas" "uppgift/skapa-en-bondgards-databas" "flask"
-    executeSQLite "me/flask/db/farm.sqlite" ".schema"
+    inspectExerciseHeader "Queue" "uppgift/skapa-queue" "$KMOM/queue"
+    inspectCommand "main.py" "$EXEC_DIR/$KMOM/queue" "python3 main.py"
+    viewFileContent "queue.py" "me/$KMOM/queue"
 
-    inspectExerciseHeader "Visa bondgården på me-sidan" "uppgift/visa-bondgarden-pa-me-sida" "flask"
-    printUrl "app.cgi" "me/flask"
+    fileIsReadable "me/kmom04/queue/sekvens.png"
+    printUrl "sekvens.png" "me/kmom04/queue"
+    fileIsReadable "me/kmom04/queue/klass.png"
+    printUrl "klass.png" "me/kmom04/queue"
 }
 
 
