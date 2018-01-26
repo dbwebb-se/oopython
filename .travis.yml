@@ -35,7 +35,8 @@ matrix:
 
 
 before_script:
-    - make install
+    - make python-install install
+
 
 
 script:
