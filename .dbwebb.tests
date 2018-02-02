@@ -77,8 +77,8 @@ dbwebb validate flask
 #
 test -d me/kmom03/war
 cd me/kmom03/war/ && touch uml.png && test -e uml.png
-cd me/kmom03/war/ && touch main.py && test -e main.py && ./main.py
-cd me/kmom03/war/ && touch test.py && test -e test.py && ./test.py
+cd me/kmom03/war/ && touch main.py && test -e main.py
+cd me/kmom03/war/ && touch test.py && test -e test.py
 dbwebb validate war
 
 
@@ -110,10 +110,18 @@ dbwebb validate flask
 
 
 #
-# Queue/List
+# Queue http://dbwebb.se/uppgift/skapa-queue
 #
-test -d me/kmom04/queue
-test -d me/kmom04/list
+test -d me/kmom04/queue && cd me/kmom04/queue && touch node.py main.py queue.py
+dbwebb validate queue
+
+
+
+#
+# List http://dbwebb.se/uppgift/skapa-lista
+#
+test -d me/kmom04/list && cd me/kmom04/list && touch node.py main.py unorderedlist.py test.py
+dbwebb validate list
 
 
 
@@ -125,7 +133,7 @@ test -d me/kmom04/list
 
 
 #
-# lab5 http://dbwebb.se/uppgift/python-med-rekursiva-funktioner
+# lab3 http://dbwebb.se/uppgift/python-med-rekursiva-funktioner
 #
 dbwebb recreate lab3
 cd me/kmom05/lab3 && ./answer.py; [[ $? = 42 ]]
@@ -134,11 +142,12 @@ dbwebb validate lab3
 
 
 #
-# unorderedlist http://dbwebb.se/uppgift/terminalprogram-med-sortering-av-lista
+# sort http://dbwebb.se/uppgift/sortering-av-egen-lista
 #
-cd me/ && cp -i ../example/unorderedlist/*.py kmom05/unorderedlist/
-test -e me/kmom05/unorderedlist/node.py && test -e me/kmom05/unorderedlist/unorderedlist.py && test -e me/kmom05/unorderedlist/test_list.py
-dbwebb validate unorderedlist
+cd me/ && cp -i kmom04/list/*.py kmom05/sort/
+test -e me/kmom05/sort/main.py && test -e me/kmom05/sort/unorderedlist.py && test -e me/kmom05/sort/test.py
+touch me/kmom05/sort/sort.py && test -e me/kmom05/sort/sort.py
+dbwebb validate sort
 
 
 
