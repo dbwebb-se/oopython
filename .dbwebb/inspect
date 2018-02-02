@@ -59,6 +59,9 @@ oopythonkmom03()
     inspectExerciseHeader "Kortspelet War" "uppgift/bokningssystem" "$KMOM/war"
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/war" "python3 test.py -v"
     inspectCommand "main.py" "$EXEC_DIR/$KMOM/war" "python3 main.py"
+    viewFileContent "test.py" "me/$KMOM/war"
+    viewFileContent "main.py" "me/$KMOM/war"
+
 
     fileIsReadable "me/kmom03/war/uml.png"
     printUrl "uml.png" "me/kmom03/war"
