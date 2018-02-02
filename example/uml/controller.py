@@ -2,8 +2,8 @@
 """
 Controller class
 """
-from Registry import Registry
-from Book import Book
+from registry import Registry
+from book import Book
 
 class Controller:
     """

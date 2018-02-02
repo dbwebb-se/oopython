@@ -5,8 +5,8 @@
 A Flask app using SQLAlchemy to read a SQLite database.
 """
 
-import functions
 from flask import Flask, render_template
+import functions
 
 
 app = Flask(__name__)

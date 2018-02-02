@@ -6,8 +6,8 @@ A CGI-script for python, including error handling.
 """
 
 try:
-    from wsgiref.handlers import CGIHandler
     from app import app
+    from wsgiref.handlers import CGIHandler
 
     CGIHandler().run(app)
 

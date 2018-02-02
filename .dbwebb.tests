@@ -89,7 +89,7 @@ dbwebb validate war
 #
 test -d me/kmom03/uml
 cp -ri example/uml/*.py me/kmom03/uml/
-cd me/kmom03/uml/ && touch sequenceDiagram.png && test -e sequenceDiagram.png && ./Controller.py
+cd me/kmom03/uml/ && touch sequenceDiagram.png && test -e sequenceDiagram.png && ./controller.py
 dbwebb validate uml
 
 
