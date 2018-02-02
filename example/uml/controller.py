@@ -16,9 +16,9 @@ class Controller:
         """
         starts everything
         """
-        self.register_books(self.registry)
+        self.register_books()
 
-    def register_books(self, registry):
+    def register_books(self):
         """
         Registers books to the registry
         """
@@ -36,7 +36,7 @@ class Controller:
                  Book("'Brott och straff'", "Fyodor Dostoyevsky")]
 
         for book in books:
-            registry.register_book(book)
+            self.registry.register_book(book)
         self.registry.print_books()
 
 if __name__ == '__main__':
