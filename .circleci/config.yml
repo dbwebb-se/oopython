@@ -18,7 +18,7 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - run: sudo apt-get install -y node
+      - run: sudo apt-get install -y nodejs npm
 
       - checkout
 
