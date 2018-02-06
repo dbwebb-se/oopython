@@ -50,11 +50,11 @@ help:
 # ---------------------------------------------------------------------------
 #
 # Specifics
-# 
+#
 
 # Add local bin path for test tools
-PATH := $(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)
-SHELL := env PATH=$(PATH) $(SHELL)
+PATH := "$(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)"
+SHELL := env PATH='$(PATH)' $(SHELL)
 
 # Tools
 DBWEBB   		:= bin/dbwebb
@@ -66,8 +66,8 @@ PHPMD   := bin/phpmd
 
 
 # ----------------------------------------------------------------------------
-# 
-# Highlevel targets 
+#
+# Highlevel targets
 #
 # target: prepare                 - Prepare the build directory.
 .PHONY: prepare
@@ -88,8 +88,8 @@ install: prepare dbwebb-validate-install dbwebb-inspect-install dbwebb-install n
 
 	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
 
-	@# Shellcheck 
-	@# tree (inspect) 
+	@# Shellcheck
+	@# tree (inspect)
 	@# python through reqs and venv
 	@# Add to check on dbwebb-cli to try all parts php in path, make, composer, node, npm, python3, python, mm.
 
@@ -137,8 +137,8 @@ clean-all: clean
 
 
 # ----------------------------------------------------------------------------
-# 
-# Shortcuts for frequent usage 
+#
+# Shortcuts for frequent usage
 #
 # target: validate                - Execute dbwebb validate what=part-to-validate.
 .PHONY: validate
@@ -162,14 +162,14 @@ inspect: dbwebb-inspect
 
 
 # ----------------------------------------------------------------------------
-# 
-# Python 
+#
+# Python
 #
 # target: python-install          - Install Python utilities locally.
 .PHONY: python-install
 python-install: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -f .requirements.txt ] || python3 -m pip install --requirement .requirements.txt 
+	[ ! -f .requirements.txt ] || python3 -m pip install --requirement .requirements.txt
 
 
 
@@ -177,7 +177,7 @@ python-install: prepare
 .PHONY: python-upgrade
 python-upgrade: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -f .requirements.txt ] || python3 -m pip install --upgrade --requirement .requirements.txt 
+	[ ! -f .requirements.txt ] || python3 -m pip install --upgrade --requirement .requirements.txt
 
 
 
@@ -185,13 +185,13 @@ python-upgrade: prepare
 .PHONY: python-venv
 python-venv:
 	@$(call HELPTEXT,$@)
-	python3 -m venv .venv 
+	python3 -m venv .venv
 
 
 
 # ----------------------------------------------------------------------------
-# 
-# dbwebb cli 
+#
+# dbwebb cli
 #
 # target: dbwebb-install          - Download and install dbwebb-cli.
 .PHONY: dbwebb-install
@@ -200,8 +200,8 @@ dbwebb-install: prepare
 	wget --quiet -O $(DBWEBB) https://raw.githubusercontent.com/mosbth/dbwebb-cli/master/dbwebb2
 	chmod 755 $(DBWEBB)
 	$(DBWEBB) config create noinput
-	(cd bin; rm -f dbwebb-validate1; ln -s dbwebb-validate dbwebb-validate1)
-	(cd bin; rm -f dbwebb-inspect1; ln -s dbwebb-inspect dbwebb-inspect1)
+	(cd bin; rm -f dbwebb-validate1; cp dbwebb-validate dbwebb-validate1)
+	(cd bin; rm -f dbwebb-inspect1; cp dbwebb-inspect dbwebb-inspect1)
 
 
 
@@ -214,7 +214,7 @@ dbwebb-testrepo:
 
 
 # ----------------------------------------------------------------------------
-# 
+#
 # dbwebb validate & publish
 #
 # target: dbwebb-validate-install - Download and install dbwebb-validate.
@@ -258,8 +258,8 @@ dbwebb-publish-example: prepare
 
 
 # ----------------------------------------------------------------------------
-# 
-# dbwebb inspect 
+#
+# dbwebb inspect
 #
 # target: dbwebb-inspect-install  - Download and install dbwebb-inspect.
 .PHONY: dbwebb-inspect-install
@@ -287,14 +287,14 @@ dbwebb-inspect:
 
 
 # ----------------------------------------------------------------------------
-# 
+#
 # npm
 #
 # target: npm-install             - Install npm packages for development.
 .PHONY: npm-install
 npm-install: prepare
 	@$(call HELPTEXT,$@)
-	if [ -f package.json ]; then npm install --only=dev; fi
+	[ ! -f package.json ] || npm install --only=dev
 
 
 
@@ -302,19 +302,19 @@ npm-install: prepare
 .PHONY: npm-update
 npm-update:
 	@$(call HELPTEXT,$@)
-	if [ -f package.json ]; then npm update --only=dev; fi
+	[ ! -f package.json ] || npm update --only=dev
 
 
 
 # ----------------------------------------------------------------------------
-# 
-# composer 
+#
+# composer
 #
 # target: composer-install        - Install composer packages for development.
 .PHONY: composer-install
 composer-install: prepare
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; then composer install; fi
+	[ ! -f composer.json ] || composer install
 
 
 
@@ -322,4 +322,4 @@ composer-install: prepare
 .PHONY: composer-update
 composer-update:
 	@$(call HELPTEXT,$@)
-	if [ -f composer.json ]; composer update; fi
+	[ ! -f composer.json ] || composer update

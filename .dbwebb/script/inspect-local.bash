@@ -17,10 +17,10 @@
 
 # Include ./functions.bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source "$DIR/functions.bash" 
+source "$DIR/functions.bash"
 
 # Get arguments
-[[ $# == 2 || $# == 3 ]] || 
+[[ $# == 2 || $# == 3 ]] ||
     die "Needs at least two arguments <kmom> <acronym> and optionally <potato>"
 
 KMOM=$1
@@ -29,7 +29,8 @@ ACRONYM=$2
 # Potatoe if needed
 [ -z $3 ] || dbwebb run "sudo /usr/local/sbin/setpre-dbwebb-kurser.bash $ACRONYM"
 
-# Download it (what if we get it from GitHub instead?)
+# Download it
+[ -d me ] || dbwebb init-me
 dbwebb --yes --force download me $ACRONYM || exit 1
 
 # Do local inspect
