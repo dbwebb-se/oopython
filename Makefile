@@ -1,5 +1,5 @@
 #!/usr/bin/env make
-# 
+#
 # Course repo, to work with a dbwebb course.
 # See organisation on GitHub: https://github.com/dbwebb-se
 
@@ -210,7 +210,7 @@ dbwebb-install: prepare
 .PHONY: dbwebb-testrepo
 dbwebb-testrepo:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB) --silent --local testrepo
+	env PATH='$(PATH)' $(DBWEBB) --silent --local testrepo
 
 
 
@@ -231,7 +231,7 @@ dbwebb-validate-install: prepare
 .PHONY: dbwebb-validate-check
 dbwebb-validate-check:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --check
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --check
 
 
 
@@ -239,7 +239,7 @@ dbwebb-validate-check:
 .PHONY: dbwebb-validate
 dbwebb-validate:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) $(options) $(what)
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) $(options) $(what)
 
 
 
@@ -247,14 +247,14 @@ dbwebb-validate:
 .PHONY: dbwebb-publish
 dbwebb-publish: prepare
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) $(what)
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) $(what)
 
 
 # target: dbwebb-publish-example  - Execute dbwebb publish /example ro build/webroot
 .PHONY: dbwebb-publish-example
 dbwebb-publish-example: prepare
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) example
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) example
 
 
 
@@ -283,7 +283,7 @@ dbwebb-inspect-check:
 .PHONY: dbwebb-inspect
 dbwebb-inspect:
 	@$(call HELPTEXT,$@)
-	env PATH=$(PATH) $(DBWEBB_INSPECT) $(options) . $(what)
+	env PATH='$(PATH)' $(DBWEBB_INSPECT) $(options) . $(what)
 
 
 
