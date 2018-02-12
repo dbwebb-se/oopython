@@ -159,11 +159,12 @@ dbwebb validate sort
 
 
 
-# booking http://dbwebb.se/uppgift/bokningssystem
+# improve http://dbwebb.se/uppgift/improve-exectime
 #
-test -d me/kmom06/booking
-cd me/kmom06/booking && touch main.py && touch handler.py
-dbwebb validate booking
+test -d me/kmom06/improve
+cp example/improve/*.py me/kmom06/improve
+test -e me/kmom06/improve/test.py && test -e me/kmom06/improve/func.py
+dbwebb validate improve
 
 test -d me/flask
 dbwebb validate flask

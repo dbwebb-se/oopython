@@ -56,7 +56,7 @@ oopythonkmom02()
 oopythonkmom03()
 {
 
-    inspectExerciseHeader "Kortspelet War" "uppgift/bokningssystem" "$KMOM/war"
+    inspectExerciseHeader "Kortspelet War" "uppgift/kortspelet-war" "$KMOM/war"
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/war" "python3 test.py -v"
     inspectCommand "main.py" "$EXEC_DIR/$KMOM/war" "python3 main.py"
     viewFileContent "test.py" "me/$KMOM/war"
@@ -122,8 +122,11 @@ oopythonkmom05()
 #
 oopythonkmom06()
 {
-    inspectExerciseHeader "booking" "uppgift/bokningssystem" "$KMOM/booking"
-    inspectCommand "main.py" "$EXEC_DIR/$KMOM/booking" "python3 main.py"
+    inspectExerciseHeader "Förbättra exekveringstid" "uppgift/improve-exectime" "$KMOM/improve"
+    inspectCommand "test.py" "$EXEC_DIR/$KMOM/" "python3 test.py"
+    viewFileContent "test.py" "me/$KMOM/improve"
+    viewFileContent "func.py" "me/$KMOM/improve"
+    
 }
 
 
