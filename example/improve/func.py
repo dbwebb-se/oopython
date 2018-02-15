@@ -12,17 +12,17 @@ def func(numbers):
     Once you know what i does improve the code to lower the execution time.
     You are done when all the tests in test.py pass.
     """
-    m_sum = 0
+    m = 0
     for i in range(len(numbers)):
         for j in range(i, len(numbers)):
-            p_sum = 0
+            p = 0
 
             for k in range(i, j+1):
-                p_sum = p_sum + numbers[k]
-            if p_sum > m_sum:
-                m_sum = p_sum
+                p = p + numbers[k]
+            if p > m:
+                m = p
 
-    return m_sum
+    return m
 
 
 
