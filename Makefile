@@ -36,6 +36,13 @@ HELPTEXT = $(ECHO) "$(ACTION)--->" $(shell egrep "^\# target: $(1) " $(THIS_MAKE
 # Check version  and path to command and display on one line
 CHECK_VERSION = printf "%-15s %-10s %s\n" "`basename $(1)`" "`$(1) --version $(2)`" "`which $(1)`"
 
+# Get the name of the course
+#COURSE = `cat $(.dbwebb.course)`
+COURSE = $(shell cat .dbwebb/course)
+
+# Get current working directory, it may not exist as environment variable.
+PWD = $(shell pwd)
+
 # target: help                    - Displays help with targets available.
 .PHONY:  help
 help:
@@ -250,6 +257,15 @@ dbwebb-publish: prepare
 	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/ --publish-root . $(options) $(what)
 
 
+# target: dbwebb-publishpure      - Execute dbwebb publishpure options="" what=part-to-validate-publish.
+.PHONY: dbwebb-publishpure
+dbwebb-publishpure: prepare
+	@$(call HELPTEXT,$@)
+	install -d build/webroot/$(what)
+	env PATH='$(PATH)' $(DBWEBB_VALIDATE) --publish --publish-to build/webroot/$(what) --publish-root . --no-validate --no-minification $(options) $(what)
+
+
+
 # target: dbwebb-publish-example  - Execute dbwebb publish /example ro build/webroot
 .PHONY: dbwebb-publish-example
 dbwebb-publish-example: prepare
@@ -324,3 +340,87 @@ composer-install: prepare
 composer-update:
 	@$(call HELPTEXT,$@)
 	[ ! -f composer.json ] || composer update
+
+
+
+# ----------------------------------------------------------------------------
+#
+# docker
+#
+# target: docker-up               - Start docker container.
+.PHONY: docker-up
+docker-up:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml up -d
+
+
+
+# target: docker-stop             - Stop running docker container.
+.PHONY: docker-stop
+docker-stop:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml stop
+
+
+
+# target: docker-run              - Run what="" one off command.
+.PHONY: docker-run
+docker-run:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course $(what)
+
+
+
+# target: docker-exec              - Run what="" in running container.
+.PHONY: docker-exec
+docker-exec:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml exec course $(what)
+
+
+
+# target: docker-test             - Run make test in docker.
+.PHONY: docker-test
+docker-test:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make test
+
+
+
+# target: docker-test-clean       - Run make clean-me test in docker.
+.PHONY: docker-test-clean
+docker-test-clean:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make clean-me test
+
+
+
+# target: docker-validate         - Run dbwebb validate what="" in docker.
+.PHONY: docker-validate
+docker-validate:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make validate options="$(options)" what="$(what)"
+
+
+
+# target: docker-publish          - Run dbwebb publish what="" in docker.
+.PHONY: docker-publish
+docker-publish:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make publish options="$(options)" what="$(what)"
+
+
+
+# target: docker-publish-me       - Run dbwebb publishpure what="me" in docker.
+.PHONY: docker-publish-me
+docker-publish-me:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make dbwebb-publishpure options="$(options)" what="me"
+
+
+
+# target: docker-publish-example  - Run dbwebb publishpure what="example" in docker.
+.PHONY: docker-publish-example
+docker-publish-example:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make dbwebb-publishpure options="$(options)" what="example"

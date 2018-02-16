@@ -1,0 +1,13 @@
+version: "3"
+services:
+    course:
+        image: dbwebb/courserepo
+        ports:
+            - "10080:80"
+        volumes:
+            - ./:/dbwebb-kurs/
+            - /dbwebb-kurs/bin/
+            - /dbwebb-kurs/build/
+            - /dbwebb-kurs/example/utility/
+            - /dbwebb-kurs/node_modules/
+            #- /dbwebb-kurs/vendor/
