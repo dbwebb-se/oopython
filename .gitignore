@@ -5,6 +5,7 @@ build/
 vendor/
 node_modules/
 package-lock.json
+inspect.log
 
 __pycache__
 *.pyc
