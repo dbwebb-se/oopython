@@ -311,7 +311,7 @@ dbwebb-inspect:
 .PHONY: npm-install
 npm-install: prepare
 	@$(call HELPTEXT,$@)
-	[ ! -f package.json ] || npm install --only=dev
+	[ ! -f package.json ] || npm install
 
 
 
@@ -319,7 +319,7 @@ npm-install: prepare
 .PHONY: npm-update
 npm-update:
 	@$(call HELPTEXT,$@)
-	[ ! -f package.json ] || npm update --only=dev
+	[ ! -f package.json ] || npm update
 
 
 
@@ -368,6 +368,14 @@ docker-stop:
 docker-run:
 	@$(call HELPTEXT,$@)
 	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course $(what)
+
+
+
+# target: docker-bash             - Run what="bash" one off command.
+.PHONY: docker-bash
+docker-bash:
+	@$(call HELPTEXT,$@)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course bash
 
 
 
