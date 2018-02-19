@@ -17,7 +17,7 @@ class TestFunc(unittest.TestCase):
 
     def setUp(self):
         """ Setup each test. Create all lists. """
-        self.static = [3, -4, 6, 1, 1, -2, 2, 3]
+        self.static = [22, 34, -31, 50, -30, 18, -40, 26, -34, 21, 23, 27, -5, 37, 49, -38, 2, 46, 24, -5]
         self.generated_500 = generate_random(500, 24)
         self.generated_1000 = generate_random(1000, 24)
         self.generated_1200 = generate_random(1200, 24)
@@ -27,7 +27,7 @@ class TestFunc(unittest.TestCase):
 
     def test_a_func_working(self):
         """ Test the functionality on pre-defined list."""
-        self.assertEqual(func(self.static), 11)
+        self.assertEqual(func(self.static), 201)
 
     def test_b_func_time_500(self):
         """ Test speed of func on random list with 500 elements """
