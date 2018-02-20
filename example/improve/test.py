@@ -32,42 +32,50 @@ class TestFunc(unittest.TestCase):
     def test_b_func_time_500(self):
         """ Test speed of func on random list with 500 elements """
         start = time.time()
-        func(self.generated_500)
+        res = func(self.generated_500)
         end = time.time() - start
         print(end)
+        self.assertEqual(res, 1336)
         self.assertTrue(end < 1)
 
     def test_c_func_time_1000(self):
         """ Test speed of func on random list with 1000 elements """
         start = time.time()
-        func(self.generated_1000)
+        res = func(self.generated_1000)
         end = time.time() - start
         print(end)
+        self.assertEqual(res, 1336)
         self.assertTrue(end < 1.5)
+
 
     def test_d_func_time_1200(self):
         """ Test speed of func on random list with 1200 elements"""
         start = time.time()
-        func(self.generated_1200)
+        res = func(self.generated_1200)
         end = time.time() - start
         print(end)
+        self.assertEqual(res, 1398)
         self.assertTrue(end < 2)
 
-    # def test_e_func_time_5000(self):
-    #     """ Test so func works on random list with 5000 elements"""
-    #     start = time.time()
-    #     func(self.generated_5000)
-    #     end = time.time() - start
-    #     print(end)
-    #     self.assertTrue(end < 5)
-    #
-    # def test_f_func_time_15000(self):
-    #     """ Test so func works on random list with 15000 elements"""
-    #     start = time.time()
-    #     func(self.generated_15000)
-    #     end= time.time() - start
-    #     print(end)
-    #     self.assertTrue(end < 30)
+
+    def test_e_func_time_5000(self):
+        """ Test so func works on random list with 5000 elements"""
+        start = time.time()
+        res = func(self.generated_5000)
+        end = time.time() - start
+        print(end)
+        self.assertTrue(end < 5)
+        self.assertEqual(res, 7348)
+    
+    
+    def test_f_func_time_15000(self):
+        """ Test so func works on random list with 15000 elements"""
+        start = time.time()
+        res = func(self.generated_15000)
+        end= time.time() - start
+        print(end)
+        self.assertTrue(end < 30)
+        self.assertEqual(res, 7582)
 
 
 
