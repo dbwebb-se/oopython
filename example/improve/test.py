@@ -17,7 +17,8 @@ class TestFunc(unittest.TestCase):
 
     def setUp(self):
         """ Setup each test. Create all lists. """
-        self.static = [22, 34, -31, 50, -30, 18, -40, 26, -34, 21, 23, 27, -5, 37, 49, -38, 2, 46, 24, -5]
+        self.static = [22, 34, -31, 50, -30, 18, -40, 26,
+                       -34, 21, 23, 27, -5, 37, 49, -38, 2, 46, 24, -5]
         self.generated_500 = generate_random(500, 24)
         self.generated_1000 = generate_random(1000, 24)
         self.generated_1200 = generate_random(1200, 24)
@@ -66,8 +67,8 @@ class TestFunc(unittest.TestCase):
     #     print(end)
     #     self.assertTrue(end < 5)
     #     self.assertEqual(res, 7348)
-    # 
-    # 
+    #
+    #
     # def test_f_func_time_15000(self):
     #     """ Test so func works on random list with 15000 elements"""
     #     start = time.time()
