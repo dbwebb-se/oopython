@@ -180,8 +180,8 @@ dbwebb validate flask
 
 # blackops http://dbwebb.se/oopython/kmom10
 #
-test -d me/kmom10/blackops
-dbwebb validate blackops
+test -d me/kmom10/booking
+dbwebb validate booking
 
 test -d me/flask
 dbwebb validate flask
