@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
+
 """
 My first Flask app
 """
-# Importera relevanta moduler
+
 from flask import Flask, render_template, request
 from handler import Handler
+
 app = Flask(__name__)
 
 handler = Handler()

@@ -2,12 +2,34 @@ version: "3"
 services:
     course:
         image: dbwebb/courserepo
-        ports:
-            - "10080:80"
-        volumes:
-            - ./:/dbwebb-kurs/
-            - /dbwebb-kurs/bin/
-            - /dbwebb-kurs/build/
-            - /dbwebb-kurs/example/utility/
-            - /dbwebb-kurs/node_modules/
-            #- /dbwebb-kurs/vendor/
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+    base-all:
+        image: dbwebb/courserepo:base-all
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+    base-apache:
+        image: dbwebb/courserepo:base-apache
+        volumes: [ ".:/home/dbwebb/repo" ]
+        ports: [ "10042:80" ]
+    base-php:
+        image: dbwebb/courserepo:base-php
+        volumes: [ ".:/home/dbwebb/repo" ]
+    base-python:
+        image: dbwebb/courserepo:base-python
+        volumes: [ ".:/home/dbwebb/repo" ]
+    base-node:
+        image: dbwebb/courserepo:base-node
+        volumes: [ ".:/home/dbwebb/repo" ]
+    base:
+        image: dbwebb/courserepo:base
+        volumes: [ ".:/home/dbwebb/repo" ]
+    jessie:
+        image: dbwebb/courserepo:jessie
+        volumes: [ ".:/home/dbwebb/repo" ]
+    stretch:
+        image: dbwebb/courserepo:stretch
+        volumes: [ ".:/home/dbwebb/repo" ]
+    buster:
+        image: dbwebb/courserepo:buster
+        volumes: [ ".:/home/dbwebb/repo" ]
