@@ -35,6 +35,9 @@ oopythonlast()
 oopythonkmom01()
 {
     inspectLab "uppgift/python-med-objekt-och-klasser" "lab1" "answer.py" "python3 answer.py"
+    viewFileContent "classes.py" "me/$KMOM/lab1"
+    
+    viewFileContent "app.py" "me/flask"
 }
 
 
