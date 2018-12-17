@@ -36,13 +36,13 @@ class Handler:
         """Read data from json file to init handler"""
         with open(Handler.filename, "r") as f:
             data = json.load(f)
+        self.employees = []
+
         if data:
             for empl in data:
                 self.employees.append(Employee(empl["fname"],
                                                empl["lname"], empl["salary"],
                                                empl["iid"]))
-        else:
-            self.employees = []
 
     def write_data(self):
         """Transform all data to json object and write to file"""
