@@ -1,32 +1,37 @@
 #!/usr/bin/env python3
-# -*- coding: UTF-8 -*-
-
 """
-My first Flask app
+Main applikation for website
 """
-
-from flask import Flask, render_template, request
+import os
+import re
+from flask import Flask, render_template, request, session, redirect, url_for
 from handler import Handler
 
 app = Flask(__name__)
-
+app.secret_key = re.sub(r"[^a-z\d]", "", os.path.realpath(__file__))
 handler = Handler()
 
-@app.route("/", methods=["POST", "GET"])
+@app.route("/")
 def main():
+    """ Main route """
+    handler.read_session(session)
+    return render_template("index.html", people=handler.get_people())
+
+@app.route("/company", methods=["POST", "GET"])
+def company():
     """ Company route """
 
     if request.method == "POST":
         handler.add_employee(request.form)
-        handler.write_data()
+        handler.write_session(session)
 
     return render_template("company.html")
 
-@app.route("/showemployees", methods=["GET"])
-def showemployees():
-    """ showshapes route """
-    handler.read_data()
-    return render_template("show.html", empls=handler.get_employees())
+@app.route("/reset")
+def reset():
+    """ Route for reset session """
+    _ = [session.pop(key) for key in list(session.keys())]
+    return redirect(url_for('main'))
 
 @app.errorhandler(404)
 def page_not_found(e):

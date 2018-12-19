@@ -6,7 +6,7 @@ disable=locally-disabled,locally-enabled,too-many-instance-attributes,useless-su
 [FORMAT]
 
 # Maximum number of characters on a single line.
-max-line-length=79
+max-line-length=80
 # Min number of characters in names
 variable-rgx=[a-z_][a-z0-9_]{0,30}$
 argument-rgx=[a-z_][a-z0-9_]{0,30}$
