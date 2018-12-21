@@ -1,0 +1,4 @@
+<form role="form" method="POST" action="{{ url_for('question') }}">
+    {% include 'answer_types/' + question.get_type() + '.html' %}
+    <button type="submit" class="btn btn-success btn-lg btn-block">Answer</button>
+</form>
