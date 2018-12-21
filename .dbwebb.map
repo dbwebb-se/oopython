@@ -9,11 +9,14 @@ me/flask
 
 # kmom01
 me/kmom01/lab1
+me/kmom01/classes
 me/kmom01/my_app
 
 # kmom02
 me/kmom02/lab2
 me/kmom02/relations
+me/kmom02/get_post
+me/kmom02/questions
 
 # kmom03
 me/kmom03/uml

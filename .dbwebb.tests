@@ -26,6 +26,13 @@ dbwebb validate lab1
 
 
 #
+# guide http://dbwebb.se/guide/kom-igang-med-objektorienterad-programmering-i-python
+#
+test -d me/kmom01/classes
+
+
+
+#
 # flask http://dbwebb.se/uppgift/en-me-sida-med-flask
 #
 test -d me/flask
@@ -50,10 +57,26 @@ dbwebb validate lab2
 
 
 #
+# Questions http://dbwebb.se/uppgift/fragesport_med_flask
+#
+cp -ri example/flask/questions me/kmom02/
+cd me/kmom02/questions
+test -f me/kmom02/questions/app.py
+dbwebb validate questions
+
+
+
+#
 # lab2 http://dbwebb.se/kunskap/klass-relationer
 #
 test -d me/kmom02/relations
 
+
+
+#
+# get_post http://dbwebb.se/kunskap/flask-get-post
+#
+test -d me/kmom02/get_post
 
 
 
