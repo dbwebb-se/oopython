@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A Car class"""
 
-class Car(object):
+class Car():
 
     """Car class"""
 

@@ -1,6 +1,6 @@
 [MESSAGES CONTROL]
 
-disable=locally-disabled,locally-enabled,too-many-instance-attributes,useless-super-delegation,too-few-public-methods,useless-object-inheritance
+disable=locally-disabled,locally-enabled,too-many-instance-attributes,useless-super-delegation,too-few-public-methods
 
 
 [FORMAT]

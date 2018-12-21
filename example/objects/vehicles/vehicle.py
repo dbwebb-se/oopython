@@ -3,7 +3,7 @@
 """ Vehicle class """
 
 from abc import ABCMeta, abstractmethod
-class Vehicle(object):
+class Vehicle():
     """
     A vehicle base class. Can be made into more classes, wheels, \
         engine and so on.
