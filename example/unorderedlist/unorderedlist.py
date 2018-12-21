@@ -35,7 +35,7 @@ class UnorderedList:
         """
         current = self.head
         count = 0
-        while current != None:
+        while current:
             count = count + 1
             current = current.get_next()
 

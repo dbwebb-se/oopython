@@ -16,19 +16,16 @@ class Book:
         """
         Return string with details about book
         """
-        pass
 
     def number_of_pages(self):
         """
         Return number of pages
         """
-        pass
 
     def create_chapter(self, title, number, nr_pages):
         """
         Create a chapter for the book
         """
-        pass
 
 class Chapter:
     """

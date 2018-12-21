@@ -17,19 +17,16 @@ class Account:
         """
         Login account on service
         """
-        pass
 
     def logout(self):
         """
         Logut account from service
         """
-        pass
 
     def set_active(self, active):
         """
         Activare or de-activate account
         """
-        pass
 
 
 
@@ -47,10 +44,8 @@ class BannedAccounts:
         """
         Ban accounts
         """
-        pass
 
     def get_details(self):
         """
         Return the details about the banned accounts
         """
-        pass

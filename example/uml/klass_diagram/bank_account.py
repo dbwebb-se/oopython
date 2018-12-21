@@ -17,10 +17,8 @@ class BankAccount:
         """
         Deposit amount to balance
         """
-        pass
 
     def withdraw(self, amount):
         """
         Withdraw amount from balance
         """
-        pass

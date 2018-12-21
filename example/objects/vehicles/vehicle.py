@@ -34,11 +34,9 @@ class Vehicle(object):
         """
         Return the price calculated with start price, year and miles
         """
-        pass
 
     @abstractmethod
     def get_vehicle_type(self):
         """
         Return the type of the vehicle
         """
-        pass

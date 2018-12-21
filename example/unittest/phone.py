@@ -40,7 +40,7 @@ class Phone:
 
     def has_contacts(self):
         """ Returns True if phonebook has contacts, else False """
-        return True if self.phonebook else False
+        return bool(self.phonebook)
 
     def get_contacts_length(self):
         """ Returns amount of contacts """
