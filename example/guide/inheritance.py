@@ -27,6 +27,12 @@ class Video():
         """
         print(self.to_string())
 
+    def must_override(self):
+        """
+        Example method for forcing implementation of method
+        """
+        raise NotImplementedError("Subclasses must implement this!")
+
     def __draw_tax(self, revenue):
         """
         Draw tax from new revenue
@@ -62,9 +68,15 @@ class Movie(Video):
              rating=self.rating
          )
 
+    def must_override(self):
+        """
+        Overriding abstract method from base class 
+        """
+        print("Abstract method is overridden")
+
     def __draw_tax(self, revenue):
         """
-        Overshadows from Video to change taxation.
+        overrides from Video to change taxation.
         """
         self._revenue += revenue * 0.9
         print("Lowered taxes and new revenue is: {}".format(self._revenue))
