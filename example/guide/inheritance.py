@@ -70,7 +70,7 @@ class Movie(Video):
 
     def must_override(self):
         """
-        Overriding abstract method from base class 
+        Overriding abstract method from base class
         """
         print("Abstract method is overridden")
 
