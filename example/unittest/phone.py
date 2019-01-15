@@ -48,7 +48,25 @@ class Phone:
 
     def add_contact(self, name, number):
         """ Add contact to phonebook """
-        self.phonebook.append((name, number))
+        if self.validate_number(number):
+            self.phonebook.append((name, number))
+            return True
+
+        return False
+
+    @staticmethod
+    def validate_number(number):
+        """
+        Validate phonenumber
+        """
+        if len(number) == 13 and number[3] + number[7] + number[10] == "-  ":
+            n = number[4:].replace(" ", "")
+            for c in n:
+                if not c.isdigit():
+                    return False
+            return True
+
+        return False
 
     def get_contact(self, name):
         """ Returns tuple with name and number """

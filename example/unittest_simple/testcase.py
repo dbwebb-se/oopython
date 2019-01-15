@@ -34,4 +34,4 @@ class Testcase(unittest.TestCase):
             str1.split(2)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=3)
