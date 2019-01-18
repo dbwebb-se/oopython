@@ -100,28 +100,9 @@ dbwebb validate flask
 #
 test -d me/kmom03/war
 cd me/kmom03/war/ && touch uml.png && test -e uml.png
-cd me/kmom03/war/ && touch main.py && test -e main.py
+cd me/kmom03/war/ && touch war.py && test -e war.py
 cd me/kmom03/war/ && touch test.py && test -e test.py
 dbwebb validate war
-
-
-
-
-#
-# uml http://dbwebb.se/uppgift/skapa-objekt-efter-uml
-#
-test -d me/kmom03/uml
-cp -ri example/uml/*.py me/kmom03/uml/
-cd me/kmom03/uml/ && touch sequenceDiagram.png && test -e sequenceDiagram.png && ./controller.py
-dbwebb validate uml
-
-
-
-#
-# flask3 http://dbwebb.se/uppgift/skapa-dataobjekt-till-me-sida
-#
-test -d me/flask
-dbwebb validate flask
 
 
 

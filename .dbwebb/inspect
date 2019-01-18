@@ -65,18 +65,16 @@ oopythonkmom03()
 
     inspectExerciseHeader "Kortspelet War" "uppgift/kortspelet-war" "$KMOM/war"
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/war" "python3 test.py -v"
-    inspectCommand "main.py" "$EXEC_DIR/$KMOM/war" "python3 main.py"
+    inspectCommand "war.py" "$EXEC_DIR/$KMOM/war" "python3 war.py"
+    viewFileContent "card.py" "me/$KMOM/war"
+    viewFileContent "deck.py" "me/$KMOM/war"
+    viewFileContent "hand.py" "me/$KMOM/war"
+    viewFileContent "war.py" "me/$KMOM/war"
     viewFileContent "test.py" "me/$KMOM/war"
-    viewFileContent "main.py" "me/$KMOM/war"
 
 
     fileIsReadable "me/kmom03/war/uml.png"
     printUrl "uml.png" "me/kmom03/war"
-
-    inspectExerciseHeader "Skapa sequence diagram" "uppgift/skapa-sequence-diagram2" "$KMOM/uml"
-    fileIsReadable "me/kmom03/uml/sequenceDiagram.png"
-    printUrl "sequenceDiagram.png" "me/kmom03/uml"
-
 }
 
 
