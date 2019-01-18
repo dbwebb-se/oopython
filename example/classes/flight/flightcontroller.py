@@ -9,9 +9,9 @@ from flight import Flight
 
 
 
-class FlightControll():
+class FlightController():
     """
-    FlightControll class for handling flights and planes
+    FlightController class for handling flights and planes
     """
     def __init__(self):
         """
@@ -67,6 +67,6 @@ class FlightControll():
             print(flight)
 
 if __name__ == "__main__":
-    fc = FlightControll()
+    fc = FlightController()
     fc.schedule_flights()
     fc.display_flights()
