@@ -4,6 +4,7 @@
 Contains the Plane class
 """
 import random
+from math import floor
 
 class Plane():
     """
@@ -21,7 +22,7 @@ class Plane():
         Calculate flight duration for distance with max_speed
         """
         duration = (distance / self.max_speed) * 0.95
-        return duration
+        return floor(duration * 100)
 
     def get_flight_duration(self, distance):
         """
