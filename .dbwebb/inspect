@@ -100,6 +100,7 @@ oopythonkmom04()
     viewFileContent "errors.py" "me/$KMOM/list"
     viewFileContent "unorderedlist.py" "me/$KMOM/list"
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/list" "python3 test.py -v"
+    viewFileContent "test.py" "me/$KMOM/list"
 
 }
 
