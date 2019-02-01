@@ -90,8 +90,6 @@ oopythonkmom04()
     inspectCommand "main.py" "$EXEC_DIR/$KMOM/queue" "python3 main.py -v"
     viewFileContent "queue.py" "me/$KMOM/queue"
 
-    fileIsReadable "me/kmom04/queue/sekvens.png"
-    printUrl "sekvens.png" "me/kmom04/queue"
     fileIsReadable "me/kmom04/queue/klass.png"
     printUrl "klass.png" "me/kmom04/queue"
 
