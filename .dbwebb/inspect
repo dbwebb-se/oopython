@@ -38,6 +38,7 @@ oopythonkmom01()
     viewFileContent "classes.py" "me/$KMOM/lab1"
     
     viewFileContent "app.py" "me/flask"
+    viewFileContent "person.py" "me/flask"
 }
 
 
