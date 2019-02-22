@@ -66,14 +66,17 @@ class TestPhone(unittest.TestCase):
         self.assertEqual(self.phone.get_contact("Andreas"),
                          ("Andreas", "079-244 07 80"))
 
-    def test_get_contact_empty(self):
+    def test_get_contact_fail(self):
         """
         Test that correct value is returned
         when getting contact that does not exist or is empty
         """
-        self.assertFalse(self.phone.get_contact("Kenneth"))
+        with self.assertRaises(ValueError) as cm:
+            self.phone.get_contact("Nothing")
+
         self.phone.add_contact("Andreas", "079-244 07 80")
-        self.assertFalse(self.phone.get_contact("Kenneth"))
+        with self.assertRaises(ValueError) as cm:
+            self.phone.get_contact("Zeldah")
 
 
 

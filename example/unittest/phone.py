@@ -73,4 +73,4 @@ class Phone:
         for person in self.phonebook:
             if person[0] == name:
                 return person
-        return False
+        raise ValueError("No contact with name {}".format(name))
