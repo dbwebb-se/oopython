@@ -25,7 +25,7 @@ me/kmom05/unorderedlist/main.py
 me/kmom05/unorderedlist/unorderedlist.py
 
 # kmom06
-me/kmom06/booking/handler.py
+me/kmom06/tree/bst.py
 
 # kmom10
 me/kmom10/blackops/blackops.py

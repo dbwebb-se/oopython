@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch
 from io import StringIO
 import utils
+#pylint: disable=no-name-in-module,import-error
 from bst import BinarySearchTree as Bst
 
 

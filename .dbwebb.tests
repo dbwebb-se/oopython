@@ -163,12 +163,12 @@ dbwebb validate sort
 
 
 
-# improve http://dbwebb.se/uppgift/improve-exectime
+# binary search tree http://dbwebb.se/uppgift/binary-search-tree
 #
-test -d me/kmom06/improve
-cp example/improve/*.py me/kmom06/improve
-test -e me/kmom06/improve/test.py && test -e me/kmom06/improve/func.py
-dbwebb validate improve
+test -d me/kmom06/tree
+cp example/tree/*.py me/kmom06/tree
+test -e me/kmom06/tree/test.py && test -e me/kmom06/tree/utils.py
+dbwebb validate tree
 
 test -d me/flask
 dbwebb validate flask
