@@ -1,0 +1,5 @@
+{% for alternative in question.get_alternatives() %}
+<div class="radio">
+    <label><input type="radio" name="answer" value="{{alternative}}">{{alternative}}</label>
+</div>
+{% endfor %}

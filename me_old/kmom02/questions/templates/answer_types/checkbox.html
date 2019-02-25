@@ -1,0 +1,5 @@
+{% for alternative in question.get_alternatives() %}
+    <div class="checkbox">
+     <label><input type="checkbox" value="{{alternative}}" name="answer">{{alternative}}</label>
+    </div>
+{% endfor %}

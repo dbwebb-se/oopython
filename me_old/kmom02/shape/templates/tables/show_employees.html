@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+<tbody>
+    {% for person in people %}
+    <tr>
+        <td>{{ person.get_name() }}</td>
+        <td>{{ person.get_id() }}</td>
+        <td>{{ person.get_salary() }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>

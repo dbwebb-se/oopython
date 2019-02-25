@@ -1,0 +1,11 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>Här ska det lekas med python</h1>
+        <p>{{ christofer.description() }}</p>
+        <img src="static/images/{{ christofer.picture() }}" alt={{ christofer.get_givenname() }} width="120" height="90" />
+    </div>
+</div>
+
+{% include 'footer.html' %}

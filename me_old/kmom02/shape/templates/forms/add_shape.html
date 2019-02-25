@@ -1,0 +1,35 @@
+<form role="form" method="POST" action="{{ url_for('shape') }}">
+    <label for="shape_type" class="control-label">Shape type</label>
+    <div class="form-group">
+        <select class="form-control" id="shape_type" name="shape_type">
+            <option value="square">Square</option>
+            <option value="circle">Circle</option>
+            <option value="triangle">Triangle</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="width">Width (px): </label>
+        <input type="number" name="width" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="height">Height (px): </label>
+        <input type="number" name="height" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="pos_left">Left (px): </label>
+        <input type="number" name="pos_left" class="form-control" min="0"/>
+    </div>
+    <div class="form-group">
+        <label for="pos_top">Top (px): </label>
+        <input type="number" name="pos_top" class="form-control" min="0"/>
+    </div>
+    <div class="form-group">
+        <label for="bgcolor" class="control-label">Background color</label>
+        <select class="form-control" id="bgcolor" name="bgcolor">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Lägg till</button>
+</form>

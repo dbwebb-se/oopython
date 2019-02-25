@@ -1,0 +1,37 @@
+{% include 'header.html' %}
+{% for square in shapes["squares"] %}
+<div class="info" style="top:{{ square.get_pos()[1] }}px;
+left:{{ square.get_pos()[0] }}px">
+    <div class="shape {{ square.get_bgcolor() }}" style="
+    height:{{ square.get_height() }};
+    width:{{ square.get_width() }};"></div>
+        <pre>height: {{ square.get_height() }}
+width: {{ square.get_width() }}
+Area: {{ square.get_area() }}px<sup>2</sup></pre>
+    </div>
+{% endfor %}
+
+{% for circle in shapes["circles"] %}
+<div class="info" style="top:{{ circle.get_pos()[1] }}px;
+left:{{ circle.get_pos()[0] }}px">
+    <div class="shape circle {{ circle.get_bgcolor() }}" style="height:{{ circle.get_height() }};
+    width:{{ circle.get_width() }};"></div>
+    <pre>height: {{ circle.get_height() }}
+width: {{ circle.get_width() }}
+Area: {{ circle.get_area() }}px<sup>2</sup></pre>
+</div>
+{% endfor %}
+
+{% for tri in shapes["triangles"] %}
+    <div class="info" style="top:{{ tri.get_pos()[1] }}px;
+        left:{{ tri.get_pos()[0] }}px;">
+        <div class="shape triangle" style="
+        border-bottom: {{ tri.get_height() }} solid {{ tri.get_bgcolor() }};
+        border-right: {{ tri.get_width() }} solid transparent;"></div>
+        <pre>height: {{ tri.get_height() }}
+width: {{ tri.get_width() }}
+Area: {{ tri.get_area() }}px<sup>2</sup></pre>
+    </div>
+
+{% endfor %}
+{% include 'footer.html' %}

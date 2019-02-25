@@ -1,0 +1,1089 @@
+--- Log opened Sun Mar 29 18:35:21 2015
+--- Day changed Sat Jun 06 2015
+00:02 -!- Basic [~Adium@h83-209-77-186.dynamic.se.alltele.net] has quit []
+00:29 -!- zdevlin [53fa27f1@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+06:06 -!- luz [~chatzilla@94.234.170.45] has joined #db-o-webb
+06:53 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has joined #db-o-webb
+07:32 -!- Basic [~Adium@h83-209-77-186.dynamic.se.alltele.net] has joined #db-o-webb
+09:14 -!- Basic [~Adium@h83-209-77-186.dynamic.se.alltele.net] has quit [Quit: Leaving.]
+09:47 -!- feeloor_ [~felix@c-83-233-58-114.cust.bredband2.com] has joined #db-o-webb
+09:49 -!- feeloor [~felix@c-83-233-58-114.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+10:03 -!- toja14 [~Tommy@c-ef1fe255.53-6-64736c10.cust.bredbandsbolaget.se] has joined #db-o-webb
+10:11 <@mos> morrn morrn, nationaldag idag
+10:12 -!- JimboSlice [~JimboSlic@213-66-86-51-no224.tbcn.telia.com] has joined #db-o-webb
+10:16 -!- JimboSlice [~JimboSlic@213-66-86-51-no224.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+10:28 -!- JimboSlice [~JimboSlic@de3x.mullvad.net] has joined #db-o-webb
+10:40 -!- eline [5fc79a7e@ircip2.mibbit.com] has joined #db-o-webb
+10:41 < eline> Hej, ni som kan! Ska ha upp mitt projekt på GitHub, går det att bara ladda upp ett gäng filer från datorn eller måste man skapa varje inne på GitHub?
+11:12 < thebiffman> Det du måste göra är att skapa ett lokalt repository på din dator först
+11:12 < thebiffman> Repository håller koll på filerna och ändringar etc
+11:12 < thebiffman> Sen trycker du upp ditt lokala repository till github
+11:13 < thebiffman> https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+11:13 < thebiffman> Finns även en windows-klient från github nu för tiden
+11:20 < eline> Ah, tack! :)
+11:27 < eline> Om jag gör en respository direkt på github, hur tusan gör jag mappar att lägga olika filer i?
+11:31 -!- xt9 [~niklas.an@c-b14e72d5.015-878-6e6b701.cust.bredbandsbolaget.se] has joined #db-o-webb
+11:31 <+xt9> hoj
+11:32 < toja14> eline: det enklaste (tycker jag) är att skapa ett repo på github först (tacka ja till att skapa readme-fil när den frågar om det)
+11:32 < toja14> sedan klonar du det repot till en tom mapp i din dator
+11:32 < toja14> sedan stoppar du in alla dina filer i din mapp på datorn
+11:32 < eline> toga14: .. och sen tillbaka igen! du är ju briljant!
+11:32 < toja14> och pushar upp alltihop till github
+11:32 < eline> toja*
+11:32 < eline> tack!
+11:33 < toja14> är du med på hur man klonar och pushar?
+11:33 < toja14> finns bra dokumentation på github annars
+11:34 < eline> toja14 : inte helt hundra men jag tror det ska gå, googlar litta annars ;)
+11:34 < eline> toja14: gott!
+11:35 < toja14> np
+11:38 < toja14> alltså, jag har klarat mig igenom hela kurspaketet och har hyfsad koll på det mesta känns det som... men det gäller inte CSS
+11:38 < toja14> det är jäkla plockepinn som aldrig gör som jag vill...
+11:43 -!- luz [~chatzilla@94.234.170.45] has quit [Ping timeout: 240 seconds]
+11:46 <+xt9> toja14: CSS gör inte som man vill, summerar css ganska bra
+11:48 < toja14> xt9: precis... håller på att bli smått galen, skulle bara göra en sista liiiten ändring och nu flyger layouten fritt :-D
+11:58 < eline> alltså.. kan inte jag få göra er css så fixar ni min github? haha!
+12:01 < marvin> Forumet "htmlphp * Re: Valideringsproblem (KMOM07/10)!" av rala14 http://dbwebb.se/f/37027
+12:04 < MollyPorph> eline: Såvida du inte redan har ett git repository som du jobbar i, då blir det lättare att trycka upp det till github, istället för andra hållet :)
+12:07 < eline> http://www.student.bth.se/~elew14/javascript/projektet/hej.jpg
+12:07 < eline> inbillar mig
+12:08 < eline> att jag har fått in filerna lokalt nu?
+12:08 < eline> men ärligt talat har jag ingen aning om vad jag gör
+12:08 < eline> att detta skulle kunna vara så svårt, hade inte räknat in det i min pluggtid
+12:08 < eline> "sen slänger ni bara upp det på github" "yes sir!"
+12:18 < eline> "eller inte" liksom
+12:29 <+xt9> eline: Git är ju en liten lärningsprocess men det sitter nog snart :) rekommenderar att du kör git i command line, jag tyckte det var lättare än med GUIs
+12:36 -!- eline2 [5fc7968f@ircip1.mibbit.com] has joined #db-o-webb
+12:37 -!- eline [5fc79a7e@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+12:41 < marvin> Forumet "oophp * Blippande sidor" av johannaW http://dbwebb.se/f/37028
+13:20 < marvin> Forumet "oophp * Re: Dags att ge tillbaka (config för databaser, spara tid?)." av johannaW http://dbwebb.se/f/37030
+13:21 < MollyPorph> git i gui kan lätt bli överväldigande, då git innehåller väldigt mycket funktionalitet och guis försöker kasta alla dem i ansiktet på en. Git i grunden är väldigt simpelt, sen har det rätt jobbig syntax. Om du skapar ett repository på github så säger den nog vilka kommandon du ska använda för att komma igång
+13:21 < MollyPorph> annars: http://rogerdudler.github.io/git-guide/
+13:29 < eline2> Tack så jättemycket MollyPorph för att du orkar försöka rädda mig, haha ;) och tack alla andra! För nu har jag äntligen fått rätt på det!!
+13:30 < eline2> SOMMARLOV HERE I COME!
+13:30 < toja14> Grattis :-)
+13:30 < toja14> Har en stund kvar själv :-(
+13:30 < eline2> Hoppas ni alla har det extremt galet bra, vi får se om jag kommer tillbaka till chatten någon gång.. lär bli svårt att hålla sig härifrån ;)
+13:31 < eline2> Och hejjar på dig toja14! haha! you can do iit!
+13:31 < toja14> 8-) sure I can
+13:31 -!- tim [5efe5e82@ircip4.mibbit.com] has joined #db-o-webb
+13:31 <+xt9> eline2: Grattis!
+13:33 < eline2> xt9: tackarrr! :D
+13:34 < eline2> skulle varit på examensfest för fem minuter sedan så antar att jag borde börja röra på mig.. vi hörs! hejsveejs! ;)
+13:35 <+xt9> eline2: det är fint att komma sent
+13:36 -!- eline2 [5fc7968f@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+13:49 -!- xt9 [~niklas.an@c-b14e72d5.015-878-6e6b701.cust.bredbandsbolaget.se] has quit [Quit: Leaving]
+15:24 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has joined #db-o-webb
+15:25 -!- toja14 [~Tommy@c-ef1fe255.53-6-64736c10.cust.bredbandsbolaget.se] has left #db-o-webb []
+15:40 < marvin> Forumet "htmlphp * Re: Valideringsproblem (KMOM07/10)!" av chwi15 http://dbwebb.se/f/37034
+15:55 -!- Krri [d5727252@ircip1.mibbit.com] has joined #db-o-webb
+16:26 <@foiki> marvin dagen tube
+16:26 <@foiki> marvin: dagens tube
+16:26 < marvin> Idag är det lördag. En passande video är https://www.youtube.com/watch?v=GVCzdpagXOQ
+16:27 <@foiki> grym låt marvin! Tack för tipset
+17:27 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has quit [Ping timeout: 240 seconds]
+17:32 -!- tim [5efe5e82@ircip4.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+18:38 -!- Krri [d5727252@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+19:44 -!- palkess [~palkess@81-230-108-119-no123.bredband.skanova.com] has joined #db-o-webb
+19:46 -!- Krri [d5727252@ircip1.mibbit.com] has joined #db-o-webb
+19:46 -!- jompaglitter [257bad89@ircip4.mibbit.com] has joined #db-o-webb
+19:46 < Krri> God kväll folk. Fråga i mvcphp kursens projekt.
+19:47 < Krri> Det gäller taggarna. I databasen så kan man ju spara flera taggar per fråga. I databasen kan det se sparas dem med , emellan. Så 'hund,katt,ödla' kan en row innehålla
+19:48 < Krri> hur gör jag sen när jag ska söka efter en tag i databasen? I nuläget kan jag t.ex inte hitta katt i den row'en utan bara stället som har 1st tag hittas
+20:05 <+perlennartsson> krri du kan plocka ut hela strängen och splitta den till en array och jämföra mot allt arrayn var för sig?
+20:16 <+perlennartsson> eller nej det går inte då måste du hämta varje rad och kolla och det är inte så smart..
+20:25 < Krri> hmm, jag har hittat sql funktionen find_in_set men får den inte att funka..
+20:25 < Krri> hmm
+20:45 <+perlennartsson> finna något LIKE men har aldrig använt det så du får testa http://dev.mysql.com/doc/refman/5.0/en/string-comparison-functions.html#operator_like
+20:46 -!- palkess [~palkess@81-230-108-119-no123.bredband.skanova.com] has quit [Ping timeout: 240 seconds]
+20:47 < Krri> tack, såg precis det också. Ska försöka gå ihop en clause med WHERE tags like '%exempel%'
+21:01 < marvin> Forumet "oophp * Re: Blippande sidor" av rala14 http://dbwebb.se/f/37045
+22:19 -!- Basic [~Adium@h83-209-77-186.dynamic.se.alltele.net] has joined #db-o-webb
+22:33 -!- jompaglitter [257bad89@ircip4.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+22:47 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+23:13 -!- Basic [~Adium@h83-209-77-186.dynamic.se.alltele.net] has quit [Quit: Leaving.]
+23:21 < kitty> nationaldagsfirande nere i stan, jag sitter och försöker knacka fuelPHP. det går åt helvete
+--- Day changed Sun Jun 07 2015
+00:16 -!- Krri [d5727252@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+00:19 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has joined #db-o-webb
+02:05 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+03:17 -!- Krri [d5727252@ircip2.mibbit.com] has joined #db-o-webb
+04:22 -!- Krri [d5727252@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+06:55 -!- Basic [~Adium@h83-209-77-186.dynamic.se.alltele.net] has joined #db-o-webb
+07:40 < marvin> Forumet "oophp * Re: Blippande sidor" av johannaW http://dbwebb.se/f/37052
+09:32 -!- Krri [d5727252@ircip2.mibbit.com] has joined #db-o-webb
+09:33 -!- Basic [~Adium@h83-209-77-186.dynamic.se.alltele.net] has quit [Quit: Leaving.]
+09:38 -!- emil [55e23073@ircip4.mibbit.com] has joined #db-o-webb
+10:28 -!- Mango [~majo15@81-232-38-78-no36.tbcn.telia.com] has joined #db-o-webb
+10:41 -!- Trekka12 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has joined #db-o-webb
+10:43 < Trekka12> Goförmiddag :P lyckats rita ut min "snake-food" nu, men verkar inte kunna få kollisionen att funka http://www.student.bth.se/~ansy12/javascript/kmom05/classic_snake_game/ , koden för kollisionen: http://www.student.bth.se/~ansy12/javascript/kmom05/source.php?path=classic_snake_game/js/main.js#L626  & http://www.student.bth.se/~ansy12/javascript/kmom05/source.php?path=classic_snake_game/js/main.js#L728 - nå
+10:43 < Trekka12> gon som kan se vad jag gör fel? :/
+10:44 < Trekka12> food.update(snake) borde väl ge true när bådas koordinater överlappar?
+10:55 < Trekka12> nvm funkar nu
+10:55 < Trekka12> :P
+10:56 < emil> Jag provade snake-spelet på länken där, verkar behöva trycka flera gånger på piltangenterna för att svänga?
+10:59 < Trekka12> yepps, hade behövt djazz hjälp med varför det är så, och hur jag kan fixa det tror jag :/
+10:59 < Trekka12> tror det har ngt att göra med hur jag "saktar ned" min animation av ormen :(
+10:59 < Trekka12> dock om jag tar bort det verkar det bugga sönder och ormen blir super-speedad istället :/
+10:59 < emil> heh, men svängarna fungerar? :)
+10:59 < Trekka12> ?
+10:59 < Trekka12> svängarna?
+11:00 < Trekka12> Den kan röra sig - men ibland reagerar den inte
+11:00 < Trekka12> och har lite kvar att fixa på att avbryta spelet när den krockar med sig självt
+11:00 < Trekka12> just nu kan den liksom gå på sina egna kroppsdelar flertalet ggr utan avbrott :P
+11:00 < emil> var i koden sänker du farten?
+11:01 < Trekka12> sec
+11:01 < Trekka12> http://www.student.bth.se/~ansy12/javascript/kmom05/source.php?path=classic_snake_game/js/main.js#L747
+11:01 < Trekka12> där typ
+11:01 < Trekka12> mos som tipsade om att man kunde använda counter, men tror jag gjorde på fel sätt
+11:01 < Trekka12> för blir helt fucked up nu när jag tar bort den :/
+11:01 < Trekka12> ormen går typ in i hyperdrive xD
+11:02 < Trekka12> för att sen göra det lite mer avancerat oxå hade jag ju tänkt olika typer av mat som ger olika typer av boosts/storlekar, samt som bara existerar en viss tid beroende på mattyp, men sånt kommer sen eventuellt när allt det mest fundamentala fungerar isf :)
+11:02 < emil> ambitiöst :)
+11:03 < Trekka12> vi får se hur det går :P
+11:03 < Trekka12> har haft rätt svårt att komma såhär långt :) glad att det fungerar att växa ormen nu iaf :)
+11:03 < Trekka12> brukar ha extra svårt för "spelprogrammering" personligen ;P
+11:04 < emil> jo, samma här, inte mitt största intresseområde
+11:04 < Trekka12> testar du t ex. att hålla nere "vänster-pilen" och sen försöka trycka på "uppåt-pilen" för att gå upp, så ska den ju göra det, men dne gör inte det just nu :/ ännu en bugg
+11:04 < Trekka12> xP
+11:05 < Trekka12> höger-pil + nedåt-pil funkar inte heller verkar det som
+11:05 < Trekka12> :/
+11:05 < Trekka12> märkligt
+11:05 < emil> jag har också gjort ett snake där jag fixade fps via tips härifrån: http://creativejs.com/resources/requestanimationframe/
+11:05 < emil> kika på avsnittet som heter What if I want to set a frame rate?
+11:07 < Trekka12> oh ok
+11:07 < Trekka12> will do, thx
+11:08 < Trekka12> o.O
+11:08 < Trekka12> nice
+11:08 < Trekka12> så simpelt oxå :o
+11:08 < Trekka12> hallelujah om detta funkar :P
+11:10 < Trekka12> ska testa det nu ty
+11:12 < emil> np, ska återgå till att skriva en seg artikel om web 3.0
+11:12 < Trekka12> wth är web 3.0? :O
+11:12 < Trekka12> btw
+11:12 < Trekka12> blev samma fel med denna approachen som med min förra
+11:12 < Trekka12> :S
+11:13 < Trekka12> orm = hyperdrive
+11:13 < Trekka12> http://www.student.bth.se/~ansy12/javascript/kmom05/classic_snake_game/
+11:13 < emil> sänk fps från 60
+11:13 < emil> till typ 15 emil
+11:13 < emil> annars är det samma approach som tidigare
+11:15 < Trekka12> o.O
+11:15 < Trekka12> det funkade
+11:17 < Trekka12> gah hatar buggar
+11:17 < Trekka12> :P
+11:18 < Trekka12> blev betydligt trevligare utan gridnät dock :/
+11:23 < Trekka12> emil, vet du hur jag kan "stanna" game loopen?
+11:23 < Trekka12> typ om jag vill visa en gameover screen?
+11:31 < emil> jag har inte haft något sådant, men borde väl kunna köra någon boolean som håller koll på om det är okej eller inte. dead = true/false typ. sen kika på den när du ska rendera om i loopen
+11:32 < Trekka12> hm det kanske hade funkat, tänkte mer hur man "bryter sig ur" game loopen :P
+11:32 < Trekka12> får den att stanna upp
+12:10 -!- fynrir [2eec735f@ircip2.mibbit.com] has joined #db-o-webb
+12:46 -!- fynrir [2eec735f@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+13:52 -!- rabr14 [52631baf@ircip4.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+15:01 -!- Trekka12 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+16:54 -!- emil [55e23073@ircip4.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+17:03 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has joined #db-o-webb
+17:40 < marvin> Forumet "PHP * Hjälp med projektet" av Olov_Karlsson_92 http://dbwebb.se/f/37069
+17:52 -!- Krri [d5727252@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+18:31 -!- semirhuduti [57fbd662@ircip2.mibbit.com] has joined #db-o-webb
+18:34 -!- semirhuduti [57fbd662@ircip2.mibbit.com] has quit []
+18:34 -!- semirhuduti [57fbd662@ircip2.mibbit.com] has joined #db-o-webb
+18:37 -!- semirhuduti [57fbd662@ircip2.mibbit.com] has quit []
+19:33 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+19:43 -!- dbwebb_63 [588186fe@ircip4.mibbit.com] has joined #db-o-webb
+20:20 -!- toja14 [~Tommy@c-ef1fe255.53-6-64736c10.cust.bredbandsbolaget.se] has joined #db-o-webb
+20:23 < toja14> Hmmm, kom på att jag behövde ändra till gemener i filändelsen på en bildfil, men när jag pushar ändringen till Github, så ignorerar den ändringen, någon som vet hur man kan få till detta?
+20:39 -!- dbwebb_63 [588186fe@ircip4.mibbit.com] has quit [Ping timeout: 240 seconds]
+20:39 < Sharpless_> toja14: byt namn på filen helt och sedan byt till rätt, alternativt ta bort den (från git) och lägg till den igen med rätt namn
+20:41 -!- emil [~55e23073@ircip4.mibbit.com] has joined #db-o-webb
+20:45 -!- emil [~55e23073@ircip4.mibbit.com] has quit [Ping timeout: 240 seconds]
+20:50 -!- ake1 [~ake1@h-143-167.a192.priv.bahnhof.se] has quit [Quit: WeeChat 0.4.2]
+20:52 -!- dbwebb_63 [588186fe@ircip4.mibbit.com] has joined #db-o-webb
+20:53 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has joined #db-o-webb
+20:54 -!- ake1 [~gimers@h-143-167.a192.priv.bahnhof.se] has joined #db-o-webb
+20:54 -!- mode/#db-o-webb [+o ake1] by chan
+21:03 -!- dbwebb_63 [588186fe@ircip4.mibbit.com] has quit [Ping timeout: 240 seconds]
+21:08 < Mango> funderar lite på composer.json. jag ska lägga till mitt namn där efter mos eller minns jag helt tokigt?
+21:09 -!- dbwebb_63 [588186fe@ircip2.mibbit.com] has joined #db-o-webb
+21:13 -!- Basic [~Adium@c-ca3ae353.012-11-73746f12.cust.bredbandsbolaget.se] has joined #db-o-webb
+21:24 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+21:27 <@mos> Mango: namnet skall mappa mos på packagist
+21:29 < Mango> ok
+21:40 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has joined #db-o-webb
+21:41 < toja14> nvm, jag fick till det till slut, ha de gott i sommar allihop och tack för mig :-)
+21:42 -!- emil [55e23073@ircip1.mibbit.com] has joined #db-o-webb
+21:43 -!- toja14 [~Tommy@c-ef1fe255.53-6-64736c10.cust.bredbandsbolaget.se] has left #db-o-webb []
+21:52 -!- Trekka12 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has joined #db-o-webb
+22:09 -!- Trekka36 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has joined #db-o-webb
+22:11 -!- Trekka12 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+22:19 -!- dbwebb_63 [588186fe@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+22:21 < marvin> Forumet "Allmän kursinformation * Re: Jag hinner inte!" av eltu15 http://dbwebb.se/f/37098
+22:23 -!- emil [55e23073@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+23:20 < marvin> Forumet "Allmän kursinformation * Re: Kursutvärdering och kursutveckling" av eltu15 http://dbwebb.se/f/37108
+--- Day changed Mon Jun 08 2015
+00:01 < marvin> Forumet "Allmän kursinformation * Re: Kursutvärdering och kursutveckling" av Littlemeister http://dbwebb.se/f/37119
+00:04 -!- Mango [~majo15@81-232-38-78-no36.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+00:04 -!- Mango_ [~majo15@81-232-38-78-no36.tbcn.telia.com] has joined #db-o-webb
+00:08 -!- Mango [~majo15@81-232-38-78-no36.tbcn.telia.com] has joined #db-o-webb
+00:09 -!- Mango_ [~majo15@81-232-38-78-no36.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+00:09 -!- Mango [~majo15@81-232-38-78-no36.tbcn.telia.com] has quit []
+01:09 -!- fynrir [2eec735f@ircip1.mibbit.com] has joined #db-o-webb
+01:09 <-fynrir> Helvete...
+01:10 <-fynrir> Må betygsättarna ha mercy. :P
+01:10 <-fynrir> Godnatt.
+01:10 -!- fynrir [2eec735f@ircip1.mibbit.com] has quit []
+02:06 -!- Trekka36 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+02:24 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has quit [Quit: Nettalk6 - www.ntalk.de]
+07:45 <@foiki> måndag!
+07:47 <%pansar> korrekt
+07:48 <%pansar> visst fan..."morrn" ska man ju inleda med
+07:48 <%pansar> morrn
+07:48 <@foiki> fan pansar. Har du semester?
+07:49 <@foiki> inte "morron" innan kl 8a...
+07:49 <%pansar> hade i fredags...det är långhelgen som ställer till bekymmer med dygnsrytmen
+07:50 <@foiki> ajaj
+07:50 <@foiki> får lägga ner med dedär
+07:50 <@wasa> woho äntligen måndag!
+07:50 <@mos> morrn morrn
+08:07 <@Sylvanas> morrn
+08:15 -!- Trekka12 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has joined #db-o-webb
+08:36 < tomten> hej hopp
+08:37 <@mos> sista inlämningsdag innan sommaren var igår. snart sommar?
+08:41 <@wasa> fan säg inte såna hemska saker mos
+08:41 <@mos> bara att anmäla sig som semestervikarie, så slipper man säkert semestern
+08:42 <@wasa> ja vem fan vill ha semester
+08:42 <@wasa> sånt otyg
+08:52 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has joined #db-o-webb
+09:07 <%pansar> http://pcottle.github.io/learnGitBranching/
+09:10 -!- BasJohan [~johan@78-70-227-35-no163.tbcn.telia.com] has joined #db-o-webb
+09:15 <@wasa> stabila grejer pansar
+09:16 <%pansar> onekligen. jag han göra två commits, sen var jag tvungen att utföra "riktigt arbete" :(
+09:18 <@wasa> http://thecodinglove.com/post/120763028823/when-the-client-wants-to-change-a-feature-again
+09:18 <@wasa> http://thecodinglove.com/post/120681324151/when-i-am-waiting-for-an-answer-from-our-technical
+09:18 <@wasa> tihihi
+09:19 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has quit [Ping timeout: 240 seconds]
+09:20 < marvin> Forumet "oophp * Re: Problem med databasen i projektet?" av Sylvanas http://dbwebb.se/f/37136
+09:31 -!- luz [~chatzilla@host-95-199-29-138.mobileonline.telia.com] has joined #db-o-webb
+09:41 < marvin> Forumet "PHP * Re: Hjälp med projektet" av Sylvanas http://dbwebb.se/f/37137
+09:45 -!- andreasgia [53f9441b@ircip1.mibbit.com] has joined #db-o-webb
+09:51 -!- andreasgia [53f9441b@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+10:06 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has joined #db-o-webb
+10:38 < Trekka12> någon som kan hjälpa mig o se varför setTypeProperties bara sätter värdena till "undefined" med dessa satser och kallen? http://codeshare.io/8UmYR    - se konsollen för: http://www.student.bth.se/~ansy12/javascript/kmom05/classic_snake_game/
+10:38 < Trekka12> kan ej se vart felet ligger
+10:39 < Trekka12> i mina ögon ser switch-satsen med if-satserna bra ut
+10:40 < Trekka12> eller bör jag ändra så jag har en if som först kollar param, och sen kör en switch baserat på foodTypeIndex? hade det gjort ngn skillnad?
+10:46 < Trekka12> funkar det inte för att jag kanske inte kan ändra värden fastställda för prototyper efter att de redan skapats?
+10:46 < Trekka12> i JS
+11:05 < Trekka12> tror jag löste det
+11:39 -!- Trekka12 [~Trekka12@c-cbf1e355.226-2-64736c11.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+11:57 -!- emil [55e23073@ircip4.mibbit.com] has joined #db-o-webb
+12:40 < marvin> Forumet "PHP * Re: Hjälp med projektet" av lala14 http://dbwebb.se/f/37140
+13:02 <@wasa> haha fan va bra dn
+13:03 <@wasa> deras korkade "du har tittat på för många nyheter" block kommer man förbi genom att avbryta sidladdningen
+13:07 -!- luz [~chatzilla@host-95-199-29-138.mobileonline.telia.com] has quit [Quit: ChatZilla 0.9.91.1 [Firefox 38.0.5/20150525141253]]
+13:18 <%pansar> bättre eller sämre än svenska dagbladet där man kan starta ny inkognitosession för att få tillgång till ny omgång artiklar?
+13:19 <@wasa> de har nog samma system pansar
+13:19 <@wasa> för inkognito löser blocken på dn också
+14:20 < emil> tror inte de kör samma system, svd har i veckorna släppt sin egenutvecklade cms
+14:37 -!- xt9 [~niklas.an@c-b14e72d5.015-878-6e6b701.cust.bredbandsbolaget.se] has joined #db-o-webb
+15:01 < marvin> Forumet "Python * Re: kmom06 "--verbose" och "-s" funkar inte" av mimimi http://dbwebb.se/f/37141
+15:07 <@wasa> http://thecodinglove.com/post/121015698768/when-i-realize-that-i-let-the-client-in-the-copy
+15:07 <@wasa> hihi
+15:09 < Basic70> wasa: finns det någon maxgräns på hur många gånger man får låta den där loopa?
+15:17 <@wasa> nej Basic70
+15:17 < Basic70> bra
+15:18 <@wasa> samma regler som för http://lookatmyhorsemyhorseisamazing.com/
+15:18 < Basic70> <3
+15:19 <@wasa> dvs runt 9h sen får man lyssna på något annat
+16:16 <+xt9> *** det hände igen
+16:16 <+xt9> skrev i phalconphp istället för i denna kanal
+16:17 <+xt9> skjut mig
+16:18 -!- emil [55e23073@ircip4.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+16:25 <@mos> pang
+16:25 <+xt9> bra där
+16:34 <+xt9> kör det väl här med för skojs skull: "Vänta i 7 veckor på att github education pack ska gå igenom och inget händer, 30min efter man mailar har de approvat requesten, maila ftw?"
+16:34 <+xt9> kul att skriva det i en kanal ämnad för engelska
+16:35 < Basic70> xt9: sant, finns ju INGET ord de skulle förstå där
+16:36 <+xt9> bara 50% eller så :D
+18:47 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has quit [Quit: Leaving]
+19:34 -!- emil [55e23073@ircip1.mibbit.com] has joined #db-o-webb
+20:12 -!- dbwebb_07 [53fed10d@ircip4.mibbit.com] has joined #db-o-webb
+--- Log opened Wed Jun 10 09:49:45 2015
+09:49 -!- cc1 [~mos@dbwebb.se] has joined #db-o-webb
+09:49 -!- Irssi: #db-o-webb: Total of 44 nicks [10 ops, 3 halfops, 0 voices, 31 normal]
+09:49 -!- Irssi: Join to #db-o-webb was synced in 0 secs
+09:57 -!- emil [55e23073@ircip1.mibbit.com] has joined #db-o-webb
+10:08 -!- dela [~dela___@remote.quicksearch.se] has quit [Read error: Connection reset by peer]
+10:24 -!- luz [~chatzilla@94.234.170.45] has quit [Ping timeout: 240 seconds]
+10:29 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has joined #db-o-webb
+10:33 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has quit [Ping timeout: 240 seconds]
+11:01 <@mos> en översikt av resultatet från kursutvärderingarna: http://dbwebb.se/blogg/kursutvardering-for-varen-2015
+11:06 <@wasa> mos då.. missade du i höstas...
+11:10 <@mos> en dag...
+11:10 <@wasa> en hel evighet
+11:11 <@wasa> lite underligt att dom inte la ner hela programmet på studs efter ett sånt katastrofalt misstag
+11:16 <@mos> borde lagt ned mig
+11:16 <@wasa> helt klart
+11:16 <@wasa> vissa saker är helt enkelt för allvarliga
+11:40 < marvin> Forumet "Python * Re: kmom06 "--verbose" och "-s" funkar inte" av mos http://dbwebb.se/f/37154
+11:45 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has joined #db-o-webb
+12:01 < marvin> Forumet "python * Re: Hjälp med att skriva i JSON fil" av sahahm-3+1 http://dbwebb.se/f/37155
+12:19 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has quit [Ping timeout: 240 seconds]
+12:20 < marvin> Forumet "python * Re: Hjälp med att skriva i JSON fil" av sahahm-3+1 http://dbwebb.se/f/37157
+12:40 -!- sahahm-3 [d55943f0@ircip1.mibbit.com] has joined #db-o-webb
+12:40 < marvin> Forumet "Allmän kursinformation * Re: Snart sommar och den rekommenderade studieplanen" av mos http://dbwebb.se/f/37160
+12:41 < sahahm-3> Hej är det nån som gjort python uppgifterna med json? Har lite problem tt lägga till ett object i json filen
+12:44 <@mos> sahahm-3: kika i forumtråden igen
+12:45 -!- Jungstedt [~LowSociet@93.190.80.142] has joined #db-o-webb
+12:45 -!- Jungstedt [~LowSociet@93.190.80.142] has quit [Read error: Connection reset by peer]
+12:48 < sahahm-3> tack mos
+12:48 < sahahm-3> jag skrev ett svar oxå :)
+12:52 <@mos> check igen
+13:01 < marvin> Forumet "python * Re: Hjälp med att skriva i JSON fil" av mos+3 http://dbwebb.se/f/37161
+13:24 -!- sahahm-3 [d55943f0@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+13:38 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has joined #db-o-webb
+13:51 -!- luz [~chatzilla@c-5eeaaa2d-74736162.cust.telenor.se] has quit [Read error: Connection reset by peer]
+14:20 -!- Jungstedt [~LowSociet@93.190.80.142] has joined #db-o-webb
+14:29 -!- dbwebb_04 [53e24cbe@ircip2.mibbit.com] has joined #db-o-webb
+14:30 < dbwebb_04> http://www.student.bth.se/~irla15/Movies/webroot/home.php
+14:30 < dbwebb_04> Här får jag felmeddelande
+14:30 < dbwebb_04> Det är raden
+14:30 < dbwebb_04> EOD;
+14:30 < dbwebb_04> som gör det
+14:31 < dbwebb_04> men vad har jag missat att avsluta
+14:31 < dbwebb_04> Lyckas inte hitta vad jag glömt
+14:31 < dbwebb_04> Ändrar jag till
+14:32 < dbwebb_04> $movies['footer'] = '';
+14:32 < dbwebb_04> Så fungerar det
+14:32 < dbwebb_04> Men varför inte med EOD
+14:32 < dbwebb_04> $movies['footer'] = <<<EOD EOD;
+14:33 < Basic70> dbwebb_04 marvin budord1
+14:34 < Basic70> ingen marvin idag?
+14:34 < Basic70> dbwebb_04: det räcker med en "EOD"
+14:36 < dbwebb_04> Måste man inte avslita med EOD;
+14:36 < dbwebb_04> avsluta
+14:36 < dbwebb_04> $movies['footer'] = <<<EOD
+14:36 < dbwebb_04> EOD;
+14:36 < Basic70> lägg ut en länk till hela källkoden
+14:37 < Basic70> och för den delen, hur ser det ut på config.php rad 56?
+14:37 < dbwebb_04> EOD;
+14:38 <%pansar> utan blanksteg?
+14:38 < dbwebb_04> Ja
+14:39 < dbwebb_04> Har skrivit om flera gånger med samma resultat
+14:39 < Basic70> source-länk please?
+14:40 < dbwebb_04> Finns det något enkelt sätt att göra Source-länken på
+14:40 < Basic70> source.php-scriptet sedan tidigare?
+14:44 < dbwebb_04> Jag flyttade upp dessa rader en bit i skriptet. Då fungerar det helt plötsligt
+14:44 < dbwebb_04> Mycket märkligt
+14:44 < Basic70> då är förmodligen felet någonstans mellan de två raderna
+14:45 < dbwebb_04> Jag lade dem före site settings
+14:45 < dbwebb_04> Mellan vilka rader?
+14:46 < Basic70> mellan där det låg och där det ligger nu, fast det går ju inte att säga exakt hur utan att se källkoden
+14:47 < dbwebb_04> $anax['lang'] = 'sv';
+14:47 < Basic70> hela filen, mha source.php :)
+14:49 < dbwebb_04> Synd det i unicorn?
+14:49 < Basic70> nej, unicorn kan ju inte ladda sidan, eftersom felet ligger på php-nivå
+14:49 < Basic70> unicorn kommer inte se mer än browsern, dvs det där felmeddelandet
+14:59 <@Sylvanas> unicorn är till för HTML och CSS
+15:00 <@Sylvanas> unicorn ser bara resultatet när all PHP-kod har kört klart
+15:00 <@Sylvanas> PHP-koden däremot ligger och kör på servern, den måste man ha en source.php eller liknande som kan läsa av en fil för att se
+15:00 <@Sylvanas> om man nu inte har tillgång till filerna själv förstås
+15:00 <@Sylvanas> men det har du, det har inte vi
+15:01 <@Sylvanas> därför är det alltid viktigt att länka till filens källkod med source.php när man frågar om hjälp
+15:01 <@Sylvanas> ananrs gissar vi bara, och ser inte koden i sin helhet och därmed inte alltid kan hjälpa till alls
+15:01 < Basic70> även om vissa personer är väldigt bra på att gissa ibland :)
+15:02 <@Sylvanas> vissa fel är väldigt specifika och det är många studenter som gör
+15:02 < Basic70> "?>" *host*
+15:02 <@Sylvanas> typ det
+15:04 < dbwebb_04> Jag ska strax arbeta så jag får fixa källkoden en annan dag
+15:10 -!- emil [55e23073@ircip1.mibbit.com] has quit [Ping timeout: 240 seconds]
+15:20 < marvin> Forumet "SQL och Databaser * SQLlite och webbaserade klienter" av mos http://dbwebb.se/f/37165
+15:25 -!- dbwebb_04 [53e24cbe@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+16:35  * mos uppdaterar artikel om PHP PDO och SQLite: http://dbwebb.se/kunskap/kom-igang-med-sqlite-och-php-pdo
+16:35  * mos om att installera phpliteadmin, som phpmyadmin fast sqlite. http://dbwebb.se/kunskap/en-webbaserad-klient-for-sqlite-phpliteadmin
+16:37  * mos tycker "sådär" och att korrekturläsa sina egna artiklar. alldeles för mycket text att läsa... det blev säkert rätt från början... (eller hur...)
+17:00 < marvin> Forumet "SQL och Databaser * PHP PDO och SQLite" av mos http://dbwebb.se/f/37167
+17:22 <@foiki> * | mos får skriva test som kontrollerar texter
+19:05 -!- Jungstedt [~LowSociet@93.190.80.142] has quit [Quit: Leaving]
+19:25 -!- Jungstedt [~LowSociet@93.190.80.142] has joined #db-o-webb
+19:37 -!- Jungstedt [~LowSociet@93.190.80.142] has quit [Quit: Leaving]
+20:03 -!- Jungstedt [~LowSociet@93.190.80.142] has joined #db-o-webb
+20:22 -!- Jungstedt [~LowSociet@93.190.80.142] has quit [Quit: Leaving]
+21:35 <@mos> foiki: atom känns mycket mer stabil nu.
+21:58 <@wasa> dumheter mos
+21:59 <@wasa> code är det som gäller nu ju
+22:00 <%pansar> erejunte
+22:00 <@wasa> vafan pansar !
+22:01 <%pansar> våra förfäder använde notepad när de byggde kinesiska muren. dög det åt dem så duger det åt pss
+22:01 <%pansar> *oss
+22:01 <@wasa> ...
+22:01 <%pansar> :D
+22:02 <@wasa> ja du borde veta.. du var ju gammal redan på den tiden
+22:02 <%pansar> :)
+22:02 <%pansar> nu är det dags att gå till jobbet
+22:02 <@wasa> skoj med jour säger du
+22:03 <%pansar> idag är det faktiskt inte jour...det är leverans till produktion från 11-01
+22:03 <@wasa> skojsigt
+22:03 <%pansar> jouren har bara ringt och stört mig en gång sen jag började. och då fick jag någon annan till att göra jobbet ;)
+22:04 <@wasa> schyst jour
+22:05 <%pansar> onekligen...de kastar pengar över en och när något inträffar så kan man bara koppla vidare :P
+22:05 -!- JimboSlice [~JimboSlic@nl6x.mullvad.net] has quit [Ping timeout: 240 seconds]
+--- Day changed Thu Jun 11 2015
+01:02 -!- adde [~adde@c-efa5e655.01-171-616c761.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+01:05 -!- adde [~adde@c-efa5e655.01-171-616c761.cust.bredbandsbolaget.se] has joined #db-o-webb
+07:06 <%pansar> morrn
+07:13 <@djazz> morgon
+07:43 -!- JimboSlice [~JimboSlic@213-66-86-51-no224.tbcn.telia.com] has joined #db-o-webb
+08:27 -!- xt9 [~niklas.an@c-b14e72d5.015-878-6e6b701.cust.bredbandsbolaget.se] has joined #db-o-webb
+08:27 <+xt9> murrn
+09:14 <@mos> morrn morrn
+09:18 < Baronen> morrn
+09:31 -!- Jungstedt [~LowSociet@93.190.80.142] has joined #db-o-webb
+09:59 -!- jompaglitter [257bad89@ircip1.mibbit.com] has joined #db-o-webb
+10:03 -!- dbwebb_47 [53e24cdd@ircip2.mibbit.com] has joined #db-o-webb
+10:03 < dbwebb_47> http://www.student.bth.se/~irla15/Movies/home.php
+10:04 < dbwebb_47> Om jag lägger header och footer sist i config-filen så får jag felmeddelande.
+10:04 < dbwebb_47> Någon som vet varför?
+10:05 < dbwebb_47> Det står att jag missat en variabel i denna rad
+10:05 < dbwebb_47> EOD;
+10:05 < dbwebb_47> Därefter skall väl headern visa titeln i fet stil och mycket större text
+10:05 < dbwebb_47> Samt slogan ska stå på en rad under.
+10:06 < dbwebb_47> Det ser inte så snyggt ut
+10:06 < dbwebb_47> Varför?
+10:06 < dbwebb_47> Vad gör jag för fel
+10:06 < dbwebb_47> Vad har jag missat?
+10:07 < dbwebb_47> Så blev det inte i övningarna?
+10:10 < Basic70> dbwebb_47: du måste fortfarande ha med source.php, så det går att se källkoden
+10:13 < dbwebb_47> Nu har jagt in source.php
+10:14 < dbwebb_47> http://www.student.bth.se/~irla15/Movies/source.php
+10:15 < dbwebb_47> http://www.student.bth.se/~irla15/Movies/webroot/source.php
+10:16 < Basic70> och hur ser det ut i filen när du flyttar header och footer?
+10:16 < Basic70> (det verkar saknas en css-fil för source också, men det är ett mindre problem just nu)
+10:17 < dbwebb_47> Jo den saknas
+10:18 < dbwebb_47> http://www.student.bth.se/~irla15/Movies/webroot/home.php
+10:18 <%pansar> har du radbrytning efter EOD;?
+10:19 < dbwebb_47> Nej, det kollade jag
+10:19 <%pansar> prova att lägga till en radbrytning
+10:20 < Basic70> gör också en kopia på config.php som source.php kan använda, annars går source.php också sönder, vilket gör det hela lite knepigt
+10:20 < dbwebb_47> Då fungerar det
+10:20 <%pansar> stabilt
+10:20 <@Sylvanas> EOD; är knepi
+10:20 < Basic70> dagens lärdom: alltid ha en tom rad i slutet av filer (förutom XML)
+10:20 <@Sylvanas> det kan vara att EOF (end of file) påverkade om det låg direkt efter EOD;
+10:21 < dbwebb_47> Verkar som så
+10:21 < dbwebb_47> I headern
+10:21 < dbwebb_47> så vill jag ha RM Rental Movies på en rad
+10:21 < dbwebb_47> Och slogan under
+10:22 < dbwebb_47> Det ser så konstigt ut nu
+10:22 <@Sylvanas> kolla på koden
+10:22 <@Sylvanas> du har det i 2 olika spans
+10:22 <@Sylvanas> de har två olika klasser
+10:22 <@Sylvanas> så då är det bara att lägga till style på båda de klasserna
+10:23 <@Sylvanas> du har btw ingen style
+10:23 <@Sylvanas> så du vet
+10:23 <@Sylvanas> högerklicka på sidan -> visa källkod
+10:23 <@Sylvanas> ser du felmeddelandet i head-taggen?
+10:24 <@Sylvanas> dbwebb_47: gå till config.php. Det är där du anger vilken style sidan ska ha.
+10:24 <@Sylvanas> dbwebb_47: du gör det rätt tidigt i filen, eller hur?
+10:25 <@Sylvanas> dbwebb_47: kolla sen vad som händer ett par rader längre ner: $movies = array();
+10:25 <@Sylvanas> dbwebb_47: där nollställer du ju hela variabeln, det som fanns innan försvinner
+10:25 <@Sylvanas> dbwebb_47: det du vill göra är att deklarerar stylesheet och favicon senare i filen
+10:25 <@Sylvanas> efter att den variablen som ska användas faktiskt har skapats också
+10:26 <@Sylvanas> ordningen på koden är för sådanna saker fortfarande mycket viktig
+10:30 < dbwebb_47> Ja, nu blev det annat
+10:32 < dbwebb_47> Verkar som felmeddelandet försvann också :)
+10:32 <@Sylvanas> ja, det hade just med stylen att göra
+10:32 <@Sylvanas> felet var att den inte hittat någon som kallades stylesheet som variabel
+10:32 < dbwebb_47> Men med EOD var det knepigt
+10:33 <@Sylvanas> och det var för att du hade deklarerat den för tidigt i config.php så dne kom inte med
+10:33 <@Sylvanas> EOD kan vara tjurigt
+10:33 <@Sylvanas> man måste se till att det inte finns en massa skräp runt det som mellanslag och sånt
+10:33 <@Sylvanas> och tydligen räknas EOF som ett sådant som stör
+10:33 <@Sylvanas> därmed behövs en ny rad efter om det är i slutet oå filen
+10:34 <@Sylvanas> men nu vet du ;)
+10:34 < dbwebb_47> Tror jag hänger med
+10:34 < dbwebb_47> På båda felen
+10:39 -!- dbwebb_47 [53e24cdd@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+11:48 -!- Tim [5efe5e82@ircip4.mibbit.com] has joined #db-o-webb
+11:50 -!- jompaglitter [257bad89@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+12:05 -!- JimboSlice [~JimboSlic@213-66-86-51-no224.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+12:08  * djazz kodar i ES6 ^^
+12:09 <+xt9> djazz: Kollade previewen, ser ut som det är nice
+12:10 <@djazz> jag använder browserify + babeljs
+12:10 <@djazz> https://babeljs.io/
+12:10 <@djazz> gillar den nya modulsyntaxen och class-ical OO
+12:10 <+xt9> funkar classes bra då
+12:11 <@djazz> class A extends B { constructor() { super(); ... } method() {} .. }
+12:11 <@djazz> japp
+12:12 <@djazz> eslint <3
+12:12 <+xt9> :o
+12:12 <@djazz> mycket bättre än jshint imo
+12:12 <@djazz> och sourcemaps <3
+12:13 <+xt9> vet inte om det är pretentiöst eller genialt att ta eslint för att jslint är upptaget
+12:13 <@djazz> hehe
+12:16 <+xt9> Muntlig matteredovisning om 45min, wohoooooo
+12:17 -!- JimboSlice [~JimboSlic@se3x.mullvad.net] has joined #db-o-webb
+12:35 -!- Tim [5efe5e82@ircip4.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+13:22 -!- dbwebb_87 [53e24cda@ircip1.mibbit.com] has joined #db-o-webb
+13:23 < dbwebb_87> http://www.student.bth.se/~irla15/Movies/webroot/home.php
+13:23 < dbwebb_87> I css-filen style.css
+13:23 < marvin> Forumet "oophp * Re: Blippande sidor" av saham-3 http://dbwebb.se/f/37045
+13:23 < dbwebb_87> så sätter jag för .siteslogan left=220px
+13:24 < dbwebb_87> Men för .sitetitle så har jag bara left=130px
+13:24 < dbwebb_87> Jag fick ändra till 220 för siteslogan. annars hamnade texten mitt i bilden
+13:24 < dbwebb_87> Men det gör inte titeln.
+13:24 < dbwebb_87> vid 130px
+13:25 <@Sylvanas> dbwebb_87: den ena är bredare
+13:25 <@Sylvanas> dbwebb_87: ser du att det står "RM Rental Movies" ? inte bara "Rental Movies"
+13:25 < dbwebb_87> Ja
+13:25 <@Sylvanas> dbwebb_87: jag tror du bara har missat att det står RM, så de börjar på samma ställe om du anger samma left
+13:26 < dbwebb_87> Hur menar du nu?
+13:26 <@Sylvanas> ja, texten för den övre är ju mitt i bilden ändå
+13:27 < dbwebb_87> Just det
+13:27 <@Sylvanas> det syns knappt, men den är det
+13:28 < dbwebb_87> Då började de på samma ställe
+13:55 -!- dbwebb_87 [53e24cda@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+14:29 -!- Basic [~Adium@c-ca3ae353.012-11-73746f12.cust.bredbandsbolaget.se] has quit [Quit: Leaving.]
+15:34 -!- Jungstedt [~LowSociet@93.190.80.142] has quit [Quit: Leaving]
+15:38 <@wasa> https://www.kickstarter.com/projects/627324241/programming-languages-abc/description
+15:38 <@wasa> hihi
+15:46 -!- Jungstedt [~LowSociet@93.190.80.142] has joined #db-o-webb
+15:50 -!- Jungstedt [~LowSociet@93.190.80.142] has quit []
+16:38 <+xt9> wasa: haha slutet
+16:38 <+xt9> Kids being photoshopped
+16:43 -!- BasJohan [~johan@78-70-227-35-no163.tbcn.telia.com] has quit [Remote host closed the connection]
+17:45 -!- Basic [~Adium@c-ca3ae353.012-11-73746f12.cust.bredbandsbolaget.se] has joined #db-o-webb
+19:56 -!- jompaglitter [257bad89@ircip3.mibbit.com] has joined #db-o-webb
+19:58 -!- xt9 [~niklas.an@c-b14e72d5.015-878-6e6b701.cust.bredbandsbolaget.se] has quit [Quit: Leaving]
+20:00 -!- jompaglitter [257bad89@ircip3.mibbit.com] has quit []
+20:21 -!- BasJohan [~johan@78-70-227-35-no163.tbcn.telia.com] has joined #db-o-webb
+21:54 -!- Olund_ [~Olund@2a00:16d8:2:300:216:6fff:fe05:6260.] has joined #db-o-webb
+21:55 <@foiki> Olund: da slackar är online
+21:55 <@foiki> wtf
+21:55 <@foiki> :D
+21:55 < Olund_> wtf
+21:55 < Olund_> är inne dubbelt..
+21:56 < Olund_> men på vilken dator
+21:56 -!- Olund [~Olund@h-143-165.a192.priv.bahnhof.se] has quit [Quit: ZNC - http://znc.in]
+21:56 -!- Olund_ is now known as Olund
+21:57 -!- mode/#db-o-webb [+o Olund] by foiki
+21:59 -!- mode/#db-o-webb [-b Olund!*@*] by foiki
+21:59 -!- mode/#db-o-webb [-b hemlig!*@*] by foiki
+21:59 <@foiki> lol
+21:59 <@foiki> ops
+23:02 -!- JimboSlice [~JimboSlic@se3x.mullvad.net] has quit [Ping timeout: 240 seconds]
+23:03 -!- JimboSlice [~JimboSlic@se3x.mullvad.net] has joined #db-o-webb
+--- Day changed Fri Jun 12 2015
+00:34 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has joined #db-o-webb
+01:46 -!- BasJohan [~johan@78-70-227-35-no163.tbcn.telia.com] has quit [Remote host closed the connection]
+05:59 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+07:59 <@wasa> http://thecodinglove.com/post/121270927241/parameters-order-in-phps-array-functions
+07:59 <@wasa> hihihi
+07:59 < Basic> wasa: 1+
+08:07 <@foiki> morgon
+08:12 <@wasa> midda
+08:14 <@foiki> blir middag till frukost idag.. så varför inte
+08:14 <@foiki> midda
+08:16 -!- BasJohan [~johan@78-70-227-35-no163.tbcn.telia.com] has joined #db-o-webb
+08:27 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has joined #db-o-webb
+08:46 -!- Ankan [~ankan@c-31-208-35-60.cust.bredband2.com] has quit [Quit: Nettalk6 - www.ntalk.de]
+08:54 -!- luz [~chatzilla@94.234.170.190] has joined #db-o-webb
+10:02 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has joined #db-o-webb
+10:12 -!- luz [~chatzilla@94.234.170.190] has quit [Quit: ChatZilla 0.9.91.1 [Firefox 38.0.5/20150525141253]]
+10:20 < marvin> Forumet "Utvecklings- Drift- och Servermiljö * Ändra root-platsen på City Network?" av maof14 http://dbwebb.se/f/37171
+10:46 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has quit [Quit: Leaving]
+10:46 -!- mac3 [d573a88e@ircip3.mibbit.com] has joined #db-o-webb
+10:48 -!- yeti [~yeti2@80.78.219.34] has quit [Ping timeout: 240 seconds]
+10:50 -!- yeti [~yeti2@80.78.219.34] has joined #db-o-webb
+10:54 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has joined #db-o-webb
+10:54 -!- Malestrazza [~mhr@146.185.171.40] has quit [Ping timeout: 240 seconds]
+10:55 -!- pansar [~pansar@213-64-57-62-no55.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+10:55 -!- Baronen [~baron@37.139.7.63] has quit [Ping timeout: 240 seconds]
+10:55 -!- snafu [~snafu@h149n2-kr-a-13.ias.bredband.telia.com] has quit [Ping timeout: 240 seconds]
+10:55 -!- alz [~alz@h222n5-sde-a31.ias.bredband.telia.com] has quit [Ping timeout: 240 seconds]
+10:55 -!- Baronen [~baron@37.139.7.63] has joined #db-o-webb
+10:56 -!- Malestrazza [~mhr@flackblip.com] has joined #db-o-webb
+10:56 -!- pansar [~pansar@213-64-57-62-no55.tbcn.telia.com] has joined #db-o-webb
+10:56 -!- snafu [~snafu@h149n2-kr-a-13.ias.bredband.telia.com] has joined #db-o-webb
+10:56 -!- mode/#db-o-webb [+h snafu] by chan
+10:56 -!- yeti [~yeti2@80.78.219.34] has quit [Ping timeout: 240 seconds]
+10:56 -!- alz [~alz@h222n5-sde-a31.ias.bredband.telia.com] has joined #db-o-webb
+10:57 -!- mac3 [d573a88e@ircip3.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+10:58 -!- mac3 [d573a88e@ircip4.mibbit.com] has joined #db-o-webb
+11:24 -!- yeti [~yeti2@80.78.219.34] has joined #db-o-webb
+11:27 <@foiki> bara mig github är nere för?
+11:30 < mac3> tjenare alla datanördar
+11:30 <@foiki> yo
+11:30 < mac3> vad händer
+11:31 <@foiki> är frustrerad över att internet är ostabilt
+11:32 < mac3> ja , jag kan hålla med
+11:36 <@wasa> internet är hur stabilt som helst
+11:40 <@foiki> wtf
+11:40 < mac3> vet ej
+11:45 <@foiki> wasa: funkar github för dig alltså
+12:04 < Sharpless_> github verkar må dåligt för mig, och även slack
+12:05 < Sharpless_> å dropbox...
+12:06 -!- xt9 [~niklas.an@c-b14e72d5.015-878-6e6b701.cust.bredbandsbolaget.se] has joined #db-o-webb
+12:07 <+xt9> På bth eller :D? Slack funkar som vanligt för mig
+12:07 < Sharpless_> på mitt jobb (det funkar dock bra när jag kör på mobilen)
+12:08 < Sharpless_> fungerar inte hemifrån heller, vad jag kan se (availo respektive bahnhof)
+12:09 <%kh31d4r> verkar funka bra från /// nät
+12:09 < Sharpless_> https://www.bahnhof.se/kundservice/driftinfo#M3364880
+12:20 < marvin> Forumet "Utvecklings- Drift- och Servermiljö * Re: Ändra root-platsen på City Network?" av xt9 http://dbwebb.se/f/37173
+12:23 <@foiki> bagnhof plz
+12:24 <+xt9> Man kan väl tycka att man kan leva med lite strul för att behålla sin integritet foiki :D
+12:25 <@foiki> inte när man MÅSTE ha tillgång till github för att kunna fortsätta jobba-.-
+12:25 <+xt9> foiki: Nää, that's a bitch
+12:26 <@foiki> får inte tillgång till nodejs.org
+12:26 <@foiki> vilket oxå ä-r ett måste atm
+12:28 <@foiki> nu ble jag väldigt ledsen
+12:28 <@foiki> till och med reddit är segt :(
+12:28 <+xt9> foiki: Du får hitta en surrogatdator och remote controla :D
+12:28 <+xt9> noooo mah reddits
+12:31 <+xt9> Nää om man skulle svänga förbi MM idag och pilla lite på macbooks
+12:33 <+xt9> "OS X El Capitan will include Apple’s Metal framework, which makes graphics rendering 40x more efficient than OpenGL, reducing CPU load and improving battery life."
+12:33 <+xt9> Lite sugen blev man efter WWDC
+12:42 -!- BasJohan [~johan@78-70-227-35-no163.tbcn.telia.com] has quit [Remote host closed the connection]
+13:03 <@wasa> foiki: inte en aning men internet är stabilt som fan
+13:16 -!- mac3 [d573a88e@ircip4.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+14:22 < Sharpless_> xt9: låter som marketing bullcrap...
+14:22 <+xt9> Sharpless_: det kan jag lova att det inte är.
+14:26 < Sharpless_> xt9: 40 gånger mer effektivt? glöm det
+14:27 < Sharpless_> i ett extremt specialfall kanske, men inte vid normalt bruk
+14:28 <+xt9> Sharpless_: Ser ju lite extremt ut, och jag har inte sett någon benchmark än, men folk som har el capitan beta säger att det är extremt stor skillnad från yosemite
+14:29 <+xt9> sen vet jag inte var de fick 40x ifrån, men 10x nämndes iaf under WWDC
+14:36 <@wasa> lite som directx 12 som är sådär oändligt mycket bättre än dx11 i väldigt specifika tillfällen
+14:37 <@wasa> varför man nu inte pumpar in sina pengar i existerande produkter istället...
+14:37 < Basic70> wasa: ibland krävs en "gör om, gör rätt" om begränsningen ligger i arkitekturen
+14:38 <+xt9> Det är väl inte nödvändigtvis stort för spelutveckling på något sätt, men att de använder det för sin DE kan jag bara se som positivt.
+14:39 <@wasa> Basic70: true true
+14:39 <+xt9> Jag antar att det blir krångligare för folk som gör iOS appar etc.
+14:39 <+xt9> men iOS 8 hade väl redan metal
+14:40 -!- xt9 [~niklas.an@c-b14e72d5.015-878-6e6b701.cust.bredbandsbolaget.se] has quit [Quit: Leaving]
+15:11 < Basic70> http://xkcd.com/1537/
+15:11 < Basic70> Jag tror Randall har börjat hacka Javascript.
+15:26 <@wasa> mmmm tårta
+18:09 -!- JimboSlice [~JimboSlic@se3x.mullvad.net] has quit [Remote host closed the connection]
+18:41 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has quit [Quit: Leaving]
+19:09 -!- dino [~dino@88.129.134.132] has quit [Ping timeout: 240 seconds]
+19:09 -!- FusRoDah [sid48134@id-48134.highgate.irccloud.com] has quit [Ping timeout: 240 seconds]
+19:10 -!- rala14 [~rala14@82.199.155.105] has quit [Ping timeout: 240 seconds]
+19:10 -!- djazz [~djazz@78-72-46-146-no186.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+19:10 -!- Sharpless [~fredrik@h-13-120.a163.priv.bahnhof.se] has quit [Ping timeout: 240 seconds]
+19:10 -!- Limeliz [emja15@46.246.94.197] has quit [Ping timeout: 240 seconds]
+19:10 -!- wasa [~landie@90-226-222-161-no41.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+19:10 -!- rala14 [~rala14@82.199.155.105] has joined #db-o-webb
+19:10 -!- Sharpless_ [~fredrik@h-13-120.a163.priv.bahnhof.se] has quit [Ping timeout: 240 seconds]
+19:10 -!- do1_ [~mos@do1.dbwebb.se] has quit [Ping timeout: 240 seconds]
+19:10 -!- Sharpless [~fredrik@h-13-120.a163.priv.bahnhof.se] has joined #db-o-webb
+19:10 -!- Alfred [~pi@c-83-233-228-202.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+19:10 -!- MollyPorph [~mollyporp@shagbark.ninja] has quit [Ping timeout: 240 seconds]
+19:10 -!- snafu [~snafu@h149n2-kr-a-13.ias.bredband.telia.com] has quit [Ping timeout: 240 seconds]
+19:10 -!- adde [~adde@c-efa5e655.01-171-616c761.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+19:10 -!- lew [~lew@c83-254-220-165.bredband.comhem.se] has quit [Ping timeout: 240 seconds]
+19:10 -!- feeloor_ [~felix@c-83-233-58-114.cust.bredband2.com] has quit [Ping timeout: 240 seconds]
+19:10 -!- sedavand_ [~sedavand@bsdguru.net] has quit [Ping timeout: 240 seconds]
+19:10 -!- sedavand [~sedavand@bsdguru.net] has joined #db-o-webb
+19:10 -!- thebiffman [~thebiffma@109.228.150.211] has quit [Ping timeout: 240 seconds]
+19:10 -!- ake1 [~gimers@h-143-167.a192.priv.bahnhof.se] has quit [Ping timeout: 240 seconds]
+19:11 -!- Lurq [lurq@destiny2.et2605.com] has quit [Ping timeout: 240 seconds]
+19:11 -!- kh31d4r [~daniel@h-145-27.a192.priv.bahnhof.se] has quit [Ping timeout: 240 seconds]
+19:11 -!- feeloor [~felix@c-83-233-58-114.cust.bredband2.com] has joined #db-o-webb
+19:11 -!- pansar [~pansar@213-64-57-62-no55.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+19:11 -!- adde [~adde@c-efa5e655.01-171-616c761.cust.bredbandsbolaget.se] has joined #db-o-webb
+19:11 -!- lew [~lew@c83-254-220-165.bredband.comhem.se] has joined #db-o-webb
+19:11 -!- mode/#db-o-webb [+o lew] by chan
+19:11 -!- pansar [~pansar@213-64-57-62-no55.tbcn.telia.com] has joined #db-o-webb
+19:11 -!- Alfred [~pi@c-83-233-228-202.cust.bredband2.com] has joined #db-o-webb
+19:11 -!- Sharpless_ [~fredrik@h-13-120.a163.priv.bahnhof.se] has joined #db-o-webb
+19:11 -!- thebiffman [~thebiffma@109.228.150.211] has joined #db-o-webb
+19:11 -!- dino [~dino@88.129.134.132] has joined #db-o-webb
+19:11 -!- Limeliz_ [emja15@46.246.94.197] has joined #db-o-webb
+19:11 -!- ake1 [~gimers@h-143-167.a192.priv.bahnhof.se] has joined #db-o-webb
+19:11 -!- Limeliz_ is now known as Limeliz
+19:12 -!- MollyPorph [~mollyporp@shagbark.ninja] has joined #db-o-webb
+19:12 -!- snafu [~snafu@h149n2-kr-a-13.ias.bredband.telia.com] has joined #db-o-webb
+19:12 -!- mode/#db-o-webb [+h snafu] by chan
+19:12 -!- kh31d4r [~daniel@h-145-27.a192.priv.bahnhof.se] has joined #db-o-webb
+19:12 -!- mode/#db-o-webb [+h kh31d4r] by chan
+19:12 -!- do1 [~mos@do1.dbwebb.se] has joined #db-o-webb
+19:12 -!- FusRoDah [sid48134@id-48134.highgate.irccloud.com] has joined #db-o-webb
+19:12 -!- Lurq [lurq@destiny2.et2605.com] has joined #db-o-webb
+19:12 -!- djazz [~djazz@78-72-46-146-no186.tbcn.telia.com] has joined #db-o-webb
+19:12 -!- mode/#db-o-webb [+o djazz] by chan
+19:15 -!- wasa [~landie@90-226-222-161-no41.tbcn.telia.com] has joined #db-o-webb
+19:28 -!- dbwebb_08 [53e24c26@ircip2.mibbit.com] has joined #db-o-webb
+19:28 < dbwebb_08> Så har jag kört fast igen
+19:29 < dbwebb_08> Jag får till en navbar om jag kör som jag gjorde i övningen
+19:29 < dbwebb_08> Men tänkte nu göra navbaren lite snyggare men då fungerar det inte
+19:29 < dbwebb_08> http://www.student.bth.se/~irla15/Movies/webroot/home.php
+19:29 < dbwebb_08> Jag får varningar och felmeddelande
+19:30 < dbwebb_08> Att url inte fungerar
+19:31 < dbwebb_08> varnar den för
+19:32 < dbwebb_08> Någon som vet något
+19:35 -!- Tim [5efe5e82@ircip1.mibbit.com] has joined #db-o-webb
+19:42 < dbwebb_08> Ingen som har någon ide?
+19:53 -!- dbwebb_08 [53e24c26@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+19:54 -!- mode/#db-o-webb [+o wasa] by chan
+20:10 -!- Tim [5efe5e82@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+22:00 < marvin> Forumet "Utvecklings- Drift- och Servermiljö * Re: Ändra root-platsen på City Network?" av maof14 http://dbwebb.se/f/37175
+23:29 -!- wingsofbacon [wingsofbac@c151-177-31-204.bredband.comhem.se] has joined #db-o-webb
+23:38 -!- wingsofbacon [wingsofbac@c151-177-31-204.bredband.comhem.se] has quit [Read error: Connection reset by peer]
+--- Day changed Sat Jun 13 2015
+08:56 < Basic> foiki: for you: https://github.com/cjb/GitTorrent
+11:03 -!- ake1 [~gimers@h-143-167.a192.priv.bahnhof.se] has quit [Remote host closed the connection]
+13:16 < Basic> Vinet "Mia" fanns på systemet på Regeringsgatan, så jag åker dit.
+13:16 < Basic> oops, fel fönster :)
+19:42 -!- dbwebb_68 [d9d0df58@ircip3.mibbit.com] has joined #db-o-webb
+19:42 -!- dbwebb_68 [d9d0df58@ircip3.mibbit.com] has quit []
+20:06 <@wasa> vafan Basic.. köpa vin...
+20:30 < Basic> wasa: nom? :)
+21:07 < pansar> vintips i dbwebb...marvin har mycket att lära
+21:08 < Basic> pansar: "Mia" var bra iaf (och namnet på sambon, därav köpet) :)
+22:06 <@wasa> usch å fy.. vin kan man ju inte dricka
+08:43 < Trekka12> Hade en massa genombrott igårkväll vid 23:00-01:30 :D
+--- Day changed Sun Jun 14 2015
+02:06 -!- kh31d4r [~daniel@h-145-27.a192.priv.bahnhof.se] has quit [Ping timeout: 240 seconds]
+09:20 -!- kh31d4r [~daniel@h-145-27.a192.priv.bahnhof.se] has joined #db-o-webb
+09:20 -!- mode/#db-o-webb [+h kh31d4r] by chan
+09:21 <%kh31d4r> puh, inga trasiga diskar...
+10:16 <@wasa> jag har en stack med 5 trasiga här om du vill ha några :)
+11:12 -!- luz [~chatzilla@94.234.170.33] has joined #db-o-webb
+12:15 -!- luz [~chatzilla@94.234.170.33] has quit [Read error: Connection reset by peer]
+12:28 -!- luz [~chatzilla@94.234.170.33] has joined #db-o-webb
+12:52 -!- luz [~chatzilla@94.234.170.33] has quit [Ping timeout: 240 seconds]
+13:06 -!- luz [~chatzilla@94.234.170.33] has joined #db-o-webb
+13:11 -!- luz [~chatzilla@94.234.170.33] has quit [Read error: Connection reset by peer]
+13:33 -!- luz [~chatzilla@94.234.170.33] has joined #db-o-webb
+14:02 -!- luz [~chatzilla@94.234.170.33] has quit [Quit: ChatZilla 0.9.91.1 [Firefox 38.0.5/20150525141253]]
+14:46 -!- JimboSlice [~JimboSlic@213-66-86-51-no224.tbcn.telia.com] has joined #db-o-webb
+14:50 -!- JimboSlice [~JimboSlic@213-66-86-51-no224.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+15:02 -!- JimboSlice [~JimboSlic@nl13x.mullvad.net] has joined #db-o-webb
+15:07 -!- Tim [5efe5e82@ircip2.mibbit.com] has joined #db-o-webb
+15:12 < Tim> Hej! Jag försöker lösa ett problem med min CImage klass i kmom06 oophp. Jag har gjort guiden och försöker nu skapa en klass för att hantera koden. Jag misstänker att jag har något fel på min img path eftersom src är null. http://www.student.bth.se/~tijo15/htmlphp/oophp/kmom06/Lynx/webroot/img_test.php
+15:13 < Tim> http://www.student.bth.se/~tijo15/htmlphp/oophp/kmom06/Lynx/webroot/source.php?path=webroot/img.php   img.php  http://www.student.bth.se/~tijo15/htmlphp/oophp/kmom06/Lynx/webroot/source.php?path=src/CImage/CImage.php CImage
+15:19 <@Sylvanas> har du kollat felmeddelandena?
+15:19 <@Sylvanas> http://www.student.bth.se/~tijo15/htmlphp/oophp/kmom06/Lynx/webroot/img.php?src=kodim15.pnghttp://www.student.bth.se/~tijo15/htmlphp/oophp/kmom06/Lynx/webroot/img.php?src=kodim15.png
+15:20 <@Sylvanas> lös dem och kolla sen om det funkar
+15:20 <@Sylvanas> gör det inte det så går du vidare därifrån, men det går inte att få fram något vettigt med dessa fel
+15:20 <@Sylvanas> bilden kan inte visas
+15:23 < Tim> hum, hur fick du fram det medelandet? jag fick bara img.php says 404 - Must set src-attribute. när jag kollade min img.php
+15:24 <@Sylvanas> jag gick bara in i img.php med en src
+15:24 <@Sylvanas> du kanske inte länkade till en bild?
+15:25 <@Sylvanas> img.php funkar ju bara när man anger en bild, inte bara sådär av sig själv.
+15:26 < Tim> nä precis, det fungerar om jag kör utan klassen så jag förstår inte riktigt varför den säger att filen har invalide characters
+15:26 < Tim> har inte ändrat något där
+15:27 <@Sylvanas> men du har ju satt det i en klass
+15:27 <@Sylvanas> det är inte exakt samma kod utan klassen
+15:27 <@Sylvanas> så något när du byggde klassen blev fel
+15:27 <@Sylvanas> bry dig inte om att det blir fel, fokusera på att läsa felmeddelandena och lösa felet
+15:29 <@Sylvanas> och du ska ju använda klassen, så användning utan den spelar egentligen ingen roll längre
+15:31 < Tim> nä det är jag med på, jag kollar vidare! tack
+16:30 < Tim> Jag kan fortfarande inte klura ut vad som orsakar felet Sylvanas. Jag har bla. kollat img path och den stämmer, filnamnet på bilden har inga invalid characters. har du något tips?
+16:43 <@Sylvanas> Tim: har du läst felmeddelandet? hur har det med pathen att göra? Du har en notice om en variabel som inte finns, mime. När felmeddelandet skrivs ut så kan bilden inte tolkas som bild, för det finns text före
+16:43 <@Sylvanas> Tim: det samma gäller allting du skriver ut för att felsöka. all text du skriver ut på img.php (så länge det INTE är verbose) gör att bilden inte kan visas
+16:52 < Tim> ok, jag ser inte dessa felmeddelanden, jag får bara det som nämnts tidigare, hur ser du att mime saknas?
+16:54 -!- yesyes [588186fe@ircip1.mibbit.com] has joined #db-o-webb
+16:55 < yesyes> Tjena, tänkte se om någon skulle kunna hjälpa med ett regex uttryck... http://www.regexr.com/3b6so behöver kunna matcha både textraderna
+16:56 < yesyes> har någon nån ide vad jag behöver lägga till i sista gruppen?
+16:57 < yesyes> är mellanslaget i slutet av textraden som stökar till det för mig.. :(
+17:01 < Basic> yesyes: " ?"
+17:02 < yesyes> basic, var sätter du in det?
+17:03 < yesyes> ahh
+17:03 < yesyes> tack
+17:04 <@Sylvanas> Tim: länka vilken sida du kollar på.
+17:04 <@Sylvanas> Tim: som sagt så funkar img.php bara om du anger en src till den, en länk till en bild.
+17:04 <@Sylvanas> Tim: om du bara anger img.php och inget annat så kommer den inte ha en bild att visa. Det finns inget att visa, eller testa.
+17:04 < Tim> ja det är jag med på
+17:05 < Tim> jag har img_test som jag försöker få igång
+17:05 <@Sylvanas> Tim: du måste ange en src. typ img.php?src=kodim.png
+17:05 < Tim> http://www.student.bth.se/~tijo15/htmlphp/oophp/kmom06/Lynx/webroot/img_test.php
+17:05 <@Sylvanas> Tim: men den är ju bara resultatet av felen.
+17:05 <@Sylvanas> det är ju i img.php man ser felen
+17:05 <@Sylvanas> det är img.php som ska visa bilden, men inte lyckas
+17:05 <@Sylvanas> så det är den du måste kolla på vad den visar
+17:05 < Tim> http://www.student.bth.se/~tijo15/htmlphp/oophp/kmom06/Lynx/webroot/img.php
+17:05 < Tim> den säger att src är null
+17:05 <@Sylvanas> Tim: ja, och där måste du ange en src
+17:06 <@Sylvanas> Tim: för om du inte anger en src så finns ju ingen bild
+17:06 <@Sylvanas> det är det jag menar med img.php
+17:06 < Tim> nä det är ja gmed på
+17:06 < Tim> ok
+17:06 <@Sylvanas> men det är du ju inte för du testar ju inte img.php med en bild
+17:06 <@Sylvanas> så du ser inte felen
+17:06 < Tim> men jag anger väl en src i img_test ?
+17:06 <@Sylvanas> ja, precis
+17:06 < Tim> jag trodde att img_test gick via img.php
+17:06 <@Sylvanas> okej
+17:06 <@Sylvanas> det gör den
+17:07 <@Sylvanas> men det är i img.php felet finns
+17:07 <@Sylvanas> inte img_test
+17:07 < Tim> men den snappar inte upp min src där
+17:07 <@Sylvanas> eller hur?
+17:07 <@Sylvanas> Tim: okej, nog med att försöka förklara. försöker visa istället.
+17:07 <@Sylvanas> Tim: öppna img_test.php
+17:07 <@Sylvanas> Tim: gå till den första trasiga bilden.
+17:07 <@Sylvanas> Tim: högerklicka på bilden och välj att inspektera element
+17:07 < Tim> japp
+17:07 <@Sylvanas> Tim: där ser du att länken till bilden är img.php?src=kodim.png
+17:08 <@Sylvanas> Tim: högerklicka på bildlänken och öppna den
+17:08 <@Sylvanas> typ "open in a new tab" eller vad det nu kan heta
+17:08 <@Sylvanas> beror på spårk, webbläsare och sånt
+17:08 < Tim> japp ok, nu ser jag
+17:08 <@Sylvanas> Tim: Detta är vad img_test försöker visa som bild
+17:08 <@Sylvanas> Tim: Är det så konstigt då att ingen bild cisas?
+17:09 <@Sylvanas> visas*
+17:09 < Tim> hehe nä
+17:09 <@Sylvanas> du letade efter fel i img_test
+17:09 <@Sylvanas> men där fanns ju inget fel
+17:09 < Tim> Det var ett nytt sett att leta buggar för mig, visste inte om detta
+17:09 <@Sylvanas> du letade efter fel i img.php, men angav inte samma länk som faktiskt skapade bilden
+17:10 <@Sylvanas> du angav ingen src alls men img.php kan ju inte gissa vilken bild du vill visa
+17:10 <@Sylvanas> du gick fel väg för att hitta felet
+17:11 <@Sylvanas> så du hittade det inte alls och fokuserade på något som faktiskt inte var ett fel
+17:11 <@Sylvanas> (att src saknades, när det är självklart att src saknas om du inte anger en!)
+17:13 < Tim> näe jag tänkte fel där, jag tolkade felet som att den inte hittade vägen till filen
+17:14 <@Sylvanas> men hur skulle img.php kunna ta fram vägen till filen om du inte angav den=
+17:14 <@Sylvanas> och då menar jag när du kollade i img.php utan att ange src
+17:14 <@Sylvanas> PHP är inte så magisk
+17:15 <@Sylvanas> det förstår inte vad du vill göra om du inte talar om det för den
+17:17 < Tim> jag tänkte att det var fel på min img path som jag har i img.php och att den därför tolkade src fel som den skulle få från img_test. Läste en del på forumet innan då jag fick problem med just img path när jag gjorde guiden. var väl kvar i det tänket
+17:18 < Tim> Men nu är jag med på vad du menar, ska jobba vidare med att lösa mime nu :) tack för hjälpen!
+17:18 <@Sylvanas> lycka till
+18:04 -!- Tim [5efe5e82@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+18:50 -!- yesyes [588186fe@ircip1.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+23:06 -!- Trekka12 [~Trekka12@c-1bf2e355.226-2-64736c11.cust.bredbandsbolaget.se] has joined #db-o-webb
+23:21 < Trekka12> någon här som fortf. är vaken?
+23:22 < Trekka12> får inte rätt på collision detection för snake JS spel
+--- Day changed Mon Jun 15 2015
+01:33 -!- Trekka12 [~Trekka12@c-1bf2e355.226-2-64736c11.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+02:47 <@foiki> marvin: sol
+02:47 < marvin> Idag går solen upp 04:02 och ner 22:06. Iallafall i trakterna kring Jönköping.
+02:48 <@foiki>  fett sent marvin...
+02:48 <@foiki> du får lösa de
+04:06 <@foiki> du hade rätt rätt marvin
+04:06 <@foiki> solen är uppe nu
+04:12 <@foiki> marvin: hjälp
+04:12 < marvin> [ vem är | forum senaste | lyssna | le | lunch | citat | budord 1 - 5 | väder | solen | hjälp | php | js/javascript | attack | slap | dagens video | strip/comic [slump] ]
+04:12 <@foiki> vem är marvin
+04:12 < marvin> Jag är en tjänstvillig själ som gillar webbprogrammering. Jag bor på GitHub https://github.com/mosbth/irc2phpbb och du kan diskutera mig i forumet http://dbwebb.se/t/20
+04:12 <@foiki> marvin lyssna
+04:12 < marvin> Jag lyssnar just nu på Carola – Gloria
+04:12 <@foiki> marvin budord 1
+04:12 < marvin> Ställ din fråga, länka till exempel och källkod. Häng kvar och vänta på svar.
+04:12 <@foiki> marvin budord 2
+04:12 < marvin> Var inte rädd för att fråga och fråga tills du får svar: http://dbwebb.se/f/6249
+04:12 <@foiki> marvin budord 3
+04:12 < marvin> Öva dig ställa smarta frågor: http://dbwebb.se/f/7802
+04:12 <@foiki> marvin budord 4
+04:12 < marvin> When in doubt - gör ett testprogram. http://dbwebb.se/f/13570
+04:12 <@foiki> marvin budord 5
+04:12 < marvin> Hey Luke - use the source! http://catb.org/jargon/html/U/UTSL.html
+04:12 <@foiki> marvin budord 6
+04:12 <@foiki> marvin: värder
+04:12 <@foiki> ops
+04:12 <@foiki> marvin: väder
+04:12 < marvin> Prognos för sydöstra Götaland. Utsikter till  måndag kväll. Mest klart. I natt 6-11 grader. Imorgon växlande molnighet, mest uppehåll och 14-18 grader. Västlig vind, imorgon nordvästlig.
+06:22 < pansar> morrn
+06:33 <@foiki> morgon
+06:36 <@foiki> Har börjat kåda i visual code... Är positivt överraskad
+08:20 <@mos> morrn morrn
+08:42 -!- Trekka12 [~Trekka12@c-1bf2e355.226-2-64736c11.cust.bredbandsbolaget.se] has joined #db-o-webb
+08:43 < Trekka12> Morgon! :D
+08:43 < Trekka12> Hade en massa genombrott med mitt snakespel igårkväll vid 23:00-01:30 :D
+08:44 < Trekka12> har fortfarande några grejer kvar dock jag hade behövt hjälp med
+08:44 < Trekka12> men börjar närma sig slutet nu :)
+08:47 < Trekka12> Undrar bl. a. hur jag gör en "startskärm" samt GameOver skärm på rätt sätt när jag använder requestAnimFrame och så att spelaren kan trycka "ANY KEY" för att gå vidare till nästa steg
+08:47 < Trekka12> någon som vet hur man kan göra detta via HTML5 canvas & animations via JS?
+08:48 < Trekka12> http://www.student.bth.se/~ansy12/javascript/kmom05/classic_snake_game/
+09:10 <@wasa> jag säger ju det foiki ... code är bra grejer
+09:20 <@foiki> äter sönder minnet bara...
+09:20 <@foiki> annars nice
+09:24 <@mos> foiki: vi träffas imorgon alltså, det är tydligen midsommar på fredag...
+09:28 <@foiki> mos: om du inte ska till bth någon annan dag så får de bli fint
+09:31 < Trekka12> mos
+09:31 < Trekka12> När man använder sig av requestAnimFrame vet du hur jag kan "pausa" i början, och "pausa" i slutet för att visa startskärm, och slutskärm - samt hur man kan göra så "ANY KEY" återupptar requestAnimFrame?
+09:42 < Trekka12> Lyckades nu fixa game over skärmen, bara startskärmen kvar och fixa det här med ANY KEY för att resetta gamet :)
+09:49 -!- anderslutz [5eeaaa21@ircip2.mibbit.com] has joined #db-o-webb
+09:49 -!- anderslutz [5eeaaa21@ircip2.mibbit.com] has quit []
+09:50 -!- luz [~chatzilla@c-5eeaaa21-74736162.cust.telenor.se] has joined #db-o-webb
+10:02 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has joined #db-o-webb
+10:08 < Trekka12> Hur gör man ANY KEY listeners?
+10:23 <@foiki> läggen en lyssnare på knapptryck ner
+10:23 <@foiki> eller något sånt
+10:28 < Trekka12> tror jag kör på något jag är mer bekant med som timers :)
+10:28 < Trekka12> lärt mig de väldigt bra under detta kmom känns det som
+10:28 < Trekka12> men tack
+10:28 < Trekka12> :)
+10:28 < Trekka12> ser att den buggar just nu men ska se om jag inte kan hitta felet
+10:28 < Trekka12> :P
+10:28 < Trekka12> as kul nu när allt funkar! :D
+10:28 < Trekka12> Bara finliret kvar :P
+10:28 < Trekka12> typ*
+10:40 < Trekka12> foiki, verkar som jag måste göra en sån lyssnare för game over skärmen för då finns ingen animation loop att använda timer för
+10:40 < Trekka12> hade du kunnat hjälpa mig med hur jag kan skapa en sån lyssnare?
+11:15 -!- dbwebb_77 [d571b53d@ircip3.mibbit.com] has joined #db-o-webb
+11:22 -!- luz [~chatzilla@c-5eeaaa21-74736162.cust.telenor.se] has quit [Ping timeout: 240 seconds]
+14:22 <@wasa> http://www.dn.se/sthlm/efter-beslag-av-ol-pa-studentflak-ramaskri-pa-facebook/
+14:22 <@wasa> hur mycket man nu ska behöva informera om alkoholinnehav under 20...
+14:22 <@wasa> ^_^
+14:24 < Basic70> wasa: hahahaha #win
+14:27 <%kh31d4r> blir fin midsommarskiva hos polisen
+14:28 <@wasa> fulöl alltihopa säkert
+14:30 <@wasa> jag fattar verkligen inte varför man har så mycket sprit på flaket dock.. kanske vi på landet som inte hängde där hela dan/kvällen utan åkte vidare till andra ställen direkt
+14:30 <%kh31d4r> på lidingö dricker man väl inte fulöl?
+14:31 < Basic70> hade det varit på Södermalm hade det bara varit mikrobryggeri-IPA
+14:31 <%kh31d4r> det är grejer det
+14:31 <@wasa> då hade jag förståt polisens nitism
+14:33 < Trekka12> wasa
+14:33 < Trekka12> du hade rätt bra koll på kodning av snakespel va?
+14:33 <@wasa> slit inte ut nicket förfan
+14:33 < Trekka12> lols
+14:33 <@wasa> kan jag inte påstå
+14:33 < Trekka12> ah k, men vet du hur jag kan lägga in "press any key" via js?
+14:34 <@wasa> gått på lite föreläsningar tillsammans med civspel nissarna bara men det är ju sådär 8år sen nu
+14:34 < Trekka12> försökte med jQuery för document som det stod på: http://stackoverflow.com/questions/16089421/simplest-way-to-detect-keypresses-in-javascript
+14:34 < Trekka12> oh k
+14:35 < Trekka12> får inte rätt på det riktigt
+14:35 < Trekka12> när det är fixat så har jag mer eller mindre både start och avslut avklarat
+14:35 < Trekka12> tänkte att man kanske ska hålla utkik efter keypress i canvas eller ngt, men vet ej hur jag kunde göra detta såfall
+14:38 <@wasa> har inte tillräckligt koll på koden för att veta var canvas är i loopen men generellt vill man bara lyssna på keypress i början på mainloopen och då uppdaterar man underlaget till ritningen  sen rita, har man inte keypress så är det bara att rita
+14:39 <@wasa> sen hur man gör det i js det vetifan.. såna frontend språk beblandar jag mig minimalt med
+14:40 < Trekka12> ok :P
+14:40 < Trekka12> tack iaf.
+14:40 < Trekka12> ska kolla närmare på det om en stund
+14:43 -!- toja14 [~Tommy@c-ef1fe255.53-6-64736c10.cust.bredbandsbolaget.se] has joined #db-o-webb
+14:47 < toja14> Sylvanas, mos och ni andra: Såg att mitt projekt har blivit rättat. Tack för det. :)
+14:47 < toja14> Och tack för allt stöd under kurspaketet. Ha en skön sommar allihop!
+14:57 -!- toja14 [~Tommy@c-ef1fe255.53-6-64736c10.cust.bredbandsbolaget.se] has left #db-o-webb []
+15:00 < marvin> Forumet "Jobb och uppdrag * Senior Frontendutvecklare sökes till Hitta.se" av StanL http://dbwebb.se/f/37177
+15:31 <@wasa> mmmm kaka
+17:35 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has quit [Quit: Leaving]
+17:35 -!- Trekka12 [~Trekka12@c-1bf2e355.226-2-64736c11.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+21:38 -!- dbwebb_75 [257b9b26@ircip2.mibbit.com] has joined #db-o-webb
+21:44 < dbwebb_75> Hej, lämnade in projektredovisning för  Databaser och objektorienterad programemring den 7:e som inte blivit rättad. Tänkte bara kolla så den inte har blivit missad.
+21:45 < Basic> dbwebb_75: det verkar ta längre tid än så för projekten (större, fler som lämnar in nästan samtidigt, etc)
+21:45 <@mos> det rättas under denna och nästa vecka
+21:46 < dbwebb_75> okej tack för svar
+22:05 -!- dbwebb_75 [257b9b26@ircip2.mibbit.com] has quit [Quit: http://www.mibbit.com ajax IRC Client]
+--- Day changed Tue Jun 16 2015
+00:52 -!- perlennartsson [~per@per-lennartsson.se] has quit [Ping timeout: 240 seconds]
+00:52 -!- johan1 [~johan@95.85.38.155] has quit [Ping timeout: 240 seconds]
+00:52 -!- johan1 [~johan@95.85.38.155] has joined #db-o-webb
+00:52 -!- alz [~alz@h222n5-sde-a31.ias.bredband.telia.com] has quit [Ping timeout: 240 seconds]
+00:52 -!- foiki [~foiki@46.101.10.71] has quit [Ping timeout: 240 seconds]
+00:52 -!- wasa [~landie@90-226-222-161-no41.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+00:52 -!- pansar [~pansar@213-64-57-62-no55.tbcn.telia.com] has quit [Ping timeout: 240 seconds]
+00:52 -!- Baronen [~baron@37.139.7.63] has quit [Ping timeout: 240 seconds]
+00:52 -!- Baronen [~baron@37.139.7.63] has joined #db-o-webb
+00:52 -!- alz [~alz@h222n5-sde-a31.ias.bredband.telia.com] has joined #db-o-webb
+00:52 -!- rala14 [~rala14@82.199.155.105] has quit [Ping timeout: 240 seconds]
+00:52 -!- foiki [~foiki@46.101.10.71] has joined #db-o-webb
+00:52 -!- yeti [~yeti2@80.78.219.34] has quit [Ping timeout: 240 seconds]
+00:52 -!- Malestrazza [~mhr@flackblip.com] has quit [Ping timeout: 240 seconds]
+00:52 -!- wasa [~landie@90-226-222-161-no41.tbcn.telia.com] has joined #db-o-webb
+00:52 -!- pansar [~pansar@213-64-57-62-no55.tbcn.telia.com] has joined #db-o-webb
+00:52 -!- dbwebb_77 [d571b53d@ircip3.mibbit.com] has quit [Ping timeout: 240 seconds]
+00:53 -!- Malestrazza [~mhr@flackblip.com] has joined #db-o-webb
+00:55 -!- yeti [~yeti2@80.78.219.34] has joined #db-o-webb
+00:55 -!- rala14 [~rala14@82.199.155.105] has joined #db-o-webb
+00:57 -!- perlenna1tsson [~per@per-lennartsson.se] has joined #db-o-webb
+01:01 -!- rala14 [~rala14@82.199.155.105] has quit [Ping timeout: 240 seconds]
+01:10 -!- rala14 [~rala14@82.199.155.105] has joined #db-o-webb
+03:28 -!- adde [~adde@c-efa5e655.01-171-616c761.cust.bredbandsbolaget.se] has quit [Ping timeout: 240 seconds]
+03:29 -!- adde [~adde@c-efa5e655.01-171-616c761.cust.bredbandsbolaget.se] has joined #db-o-webb
+06:00 -!- luz [~chatzilla@94.234.170.33] has joined #db-o-webb
+07:29 -!- luz [~chatzilla@94.234.170.33] has quit [Ping timeout: 240 seconds]
+07:36 < foiki> morgon
+07:37 -!- mode/#db-o-webb [+o foiki] by chan
+07:39 < wasa> det sägs att det är det varje morgon
+07:54 <@foiki> wasa: du kör visual code sa du... Var hitta du inställningen för soft-tabs
+07:55 < wasa> sånt bryr vi oss inte om i c# världen :P
+07:55 <@foiki> -.-
+07:56 < wasa> http://gizmodo.com/how-one-twitter-troll-created-a-fake-islamic-state-batt-1711579420
+07:56 < wasa> fan va bra
+07:56 <@foiki> tror jag hitta
+07:56 <@foiki> :D
+08:18 <@mos> morrn morrn
+08:19 <@mos> på väg till kna, snart, nästan i tid...
+08:19 <@foiki> blir nästan i tid jag me
+08:20 <@mos> vi kan träffas i nix-salen
+08:20 <@foiki> oki
+08:21 -!- luz [~chatzilla@c-5eeaaa21-74736162.cust.telenor.se] has joined #db-o-webb
+08:48 -!- luz [~chatzilla@c-5eeaaa21-74736162.cust.telenor.se] has quit [Ping timeout: 240 seconds]
+08:59 -!- luz [~chatzilla@c-5eeaaa21-74736162.cust.telenor.se] has joined #db-o-webb
+09:06 -!- mode/#db-o-webb [+o wasa] by chan
+09:08 <@foiki> jaha mos....
+09:19 <@wasa> http://imgur.com/gallery/kAveT
+09:19 <@wasa> så tillfredställande
+09:21 < Basic70> bra människor
+09:31 <@wasa> http://imgur.com/gallery/FkeRhy5
+09:31 <@wasa> höhö
+09:55 -!- Slush [~slush@h38n1.affarsverken.ias.bredband.telia.com] has joined #db-o-webb
+09:58 -!- Jungstedt [~LowSociet@h-237-207.a137.corp.bahnhof.se] has joined #db-o-webb
+10:00 -!- andrease [d9d3b4fd@ircip2.mibbit.com] has joined #db-o-webb
+10:01 -!- andrease [d9d3b4fd@ircip2.mibbit.com] has quit []
+10:03 -!- dbwebb_77 [d571b53d@ircip2.mibbit.com] has joined #db-o-webb
+10:14 -!- luz [~chatzilla@c-5eeaaa21-74736162.cust.telenor.se] has quit [Quit: ChatZilla 0.9.91.1 [Firefox 38.0.5/20150525141253]]
+10:28 < Slush> Ligger dbwebb nere eller är det bara jag?
+10:29 < Basic70> Slush: http://downforeveryoneorjustme.com/dbwebb.se
+10:29 < Basic70> "It's just you." :)
+10:32 < Basic70> däremot verkar diverse kopplingar här och där vara trasiga på internettet just nu
+10:35 < Slush> Dang it :P
+08:43 <+xt9> Hade en massa genombrott med mitt snakespel igårkväll vid 21:00-01:34 :D
+10:35 < Slush> Har vägarbetarna varit i farten igen? :p
+10:37 < Slush> Tydligen så funkar kmom:et jag skulle andvända men inte startsidan :S
+10:40 < Sharpless_> Slush: loopia har problem
+10:40 < Sharpless_> antar att dbwebb.se har loopia som dns-leverantör
+10:42 < Sharpless_> jo, så var det
+10:43 -!- Trekka12 [~Trekka12@c-1bf2e355.226-2-64736c11.cust.bredbandsbolaget.se] has joined #db-o-webb
+10:43 < Slush> Sharpless
+10:43 < Slush> ops :p
+10:43 < Slush> okej! tack!
+10:44 -!- Sharpless [~fredrik@h-13-120.a163.priv.bahnhof.se] has quit [Killed (services.bsnet.se (Nickname Enforcement))]
+10:45 -!- Sharples1_ [~fredrik@h-13-120.a163.priv.bahnhof.se] has joined #db-o-webb
+10:45 -!- Sharpless_ is now known as Sharpless
+10:46 < Sharpless> sådär ;)
+10:46 < Slush> Välkommer åter
+10:46 < Sharpless> kanske borde ta och döda min irssi-klient någon gång
+10:49 <@wasa> men men tänk på uptimen?!
+10:49 <@Bobbzorzen> Morrn btw
+08:43 < Trekka12> Hade en massa genombrott med mitt igårkväll :D
+10:49 <@Bobbzorzen> Var ett tag sen jag tittade in här
+10:50 <@wasa> vafan Bobbzorzen
+10:50 <@wasa> det är ju snart kväll för i bövelen
+10:50 <@Bobbzorzen> njaaaa, den vet jag inte om jag håller med om wasa
+10:51 <@Bobbzorzen> Aja, vad händer?
+10:51 <@Bobbzorzen> Nått skojj?
+10:51 <@wasa> ja det kan nog bli en trevlig middag idag
+10:51 <@Bobbzorzen> Jasså? Bacon på menyn?
+10:51 <@wasa> skulle jag ha bacon i maten?
+10:52 <@wasa> ^_^
+10:52 < Slush> Skulle nån ha mat i baconet?
+10:52 <@Bobbzorzen> mjo, du känns nog som den typen av person man kan förvänta sig ha bacon i maten
+10:52 <@wasa> har mest mat till bacon
+10:52 <@wasa> bacon är ju trots allt grundstommen i all föda
+10:53 <@Bobbzorzen> så, bacon på menyn då antar jag? :P
+10:53 < Slush> Bacon bygger upp hela tallriksmodellen :)
+10:53 <@wasa> bacon är tallriken
+10:53 < Basic70> både glutenfritt och lowcarb #win
+10:53 < Sharpless> wasa: men jag kör ju främst med weechat nuförtiden
+10:54 <@wasa> Sharpless: inte okej
+10:54 < Slush> Baconmetoden, rekommenderas av 9/10 webbprogrammerare
+10:56 <@wasa> rekommenderas av 10/10 vettiga människor
+10:57 < Slush> Den 10:e dog av åderförkalkning
+10:57 <@wasa> trams
+10:58 <@wasa> finns ju inte kalk i bacon så hur skulle det gå till?
+10:58 <@wasa> :P
+10:58 < Slush> Åderbrock? :p
+11:00 <@wasa> njä nu är du ute å cyklar
+11:00 < Sharpless> för att "förkalkning" inte är förkalkning, utan förfettning
+11:01 < Basic70> yup, animaliskt fett är ofarligt, det är kh som ger problem
+11:01 <@wasa> ofarligt å ofarligt
+11:01 <@wasa> allt är farligt i rätt mängd
+11:03 < Basic70> även vatten, men man kan ju utgå från att man inte äter mer än vad man behöver för att bli mätt
+11:04 <@wasa> ska man ha en rimlig förmåga att känna av att man är mätt också
+11:05 < Basic70> alla dessa krav!
+11:06 <@wasa> bästaste kraven
+11:39 -!- xt9 [~niklas.an@c-091be255.015-878-6e6b701.cust.bredbandsbolaget.se] has joined #db-o-webb
+11:39 <+xt9> Kaffemetoden :)

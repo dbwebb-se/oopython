@@ -1,0 +1,29 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.info {
+    position: absolute;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+}

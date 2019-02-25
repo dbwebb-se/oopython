@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+<p>{{badresult}}</p>
+{% for shapes in test %}
+<div class="{{shapes.shape_type}} w3-tooltip"
+style="position:absolute;height:{{shapes.height}}px;width:{{shapes.width}}px;
+background:{{shapes.color}};left:{{shapes.left}}px;top:{{shapes.top}}px;
+border-top:{{shapes.border_top}};border-right:{{shapes.border_right}};">
+
+<p class="w3-text w3-tag w3-animate-opacity">Height:{{shapes.height}} Width:{{shapes.width}} Area:{{shapes.get_area()}}</p>
+</div>
+{% endfor %}
+
+{% include 'footer.html' %}

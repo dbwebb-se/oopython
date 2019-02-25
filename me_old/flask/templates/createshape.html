@@ -1,0 +1,38 @@
+{% include 'header.html' %}
+
+<form role="form" method="POST" action="{{ url_for('showshapes') }}">
+    <div class="form-group">
+        <label for="shapeType"> Shape type </label> <br>
+        <select name="shapes">
+            <option value="square">Square</option>
+            <option value="circle">Circle</option>
+            <option value="triangle">Triangle</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="width">Width (px): </label>
+        <input type="number" name="width" class="form-control" value=100 />
+    </div>
+    <div class="form-group">
+        <label for="height">Height (px): </label>
+        <input type="number" name="height" class="form-control"value=100 />
+    </div>
+    <div class="form-group">
+        <label for="left">Left (px): </label>
+        <input type="number" name="left" class="form-control"value=100 />
+    </div>
+    <div class="form-group">
+        <label for="top">Top (px): </label>
+        <input type="number" name="top" class="form-control"value=100 />
+    </div>
+    <label for="background_color">Background Color</label> <br>
+    <select name="colors">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+    <button type="submit" class="btn btn-default">Lägg till</button>
+</form>
+<div class="">
+</div>
+{% include 'footer.html' %}
