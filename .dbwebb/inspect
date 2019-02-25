@@ -132,6 +132,7 @@ oopythonkmom06()
     inspectExerciseHeader "Binary Search Tree" "uppgift/binary-search-tree" "$KMOM/tree"
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/tree" "python3 test.py"
     viewFileContent "test.py" "me/$KMOM/tree"
+    viewFileContent "node.py" "me/$KMOM/tree"
     viewFileContent "bst.py" "me/$KMOM/tree"
     
 }
