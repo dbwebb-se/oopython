@@ -28,4 +28,4 @@ me/kmom05/unorderedlist/unorderedlist.py
 me/kmom06/tree/bst.py
 
 # kmom10
-me/kmom10/blackops/blackops.py
+me/kmom10/spellchecker/trie.py

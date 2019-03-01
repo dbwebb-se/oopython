@@ -182,10 +182,13 @@ dbwebb validate flask
 
 
 
-# blackops http://dbwebb.se/oopython/kmom10
+# spellchecker http://dbwebb.se/oopython/kmom10
 #
-test -d me/kmom10/booking
-dbwebb validate booking
+test -d me/kmom10/spellchecker
+cp example/dictionary/*.txt me/kmom10/spellchecker
+test -e me/kmom10/spellchecker/dictionary.txt
+cd me/kmom10/spellchecker && touch spellchecker.py trie.py node.py test.py classdiagrams.png
+dbwebb validate spellchecker
 
 test -d me/flask
 dbwebb validate flask

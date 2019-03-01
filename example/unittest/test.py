@@ -71,11 +71,11 @@ class TestPhone(unittest.TestCase):
         Test that correct value is returned
         when getting contact that does not exist or is empty
         """
-        with self.assertRaises(ValueError) as cm:
+        with self.assertRaises(ValueError):
             self.phone.get_contact("Nothing")
 
         self.phone.add_contact("Andreas", "079-244 07 80")
-        with self.assertRaises(ValueError) as cm:
+        with self.assertRaises(ValueError):
             self.phone.get_contact("Zeldah")
 
 

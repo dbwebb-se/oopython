@@ -144,11 +144,13 @@ oopythonkmom06()
 #
 oopythonkmom10()
 {
-    inspectExerciseHeader "Förbättra exekveringstid" "kurser/oopython-v2/kmom10" "$KMOM/booking"
-    inspectCommand "main.py" "$EXEC_DIR/$KMOM/booking" "python3 main.py"
-    viewFileContent "main.py" "me/$KMOM/booking"
-    inspectCommand "test.py" "$EXEC_DIR/$KMOM/booking" "python3 test.py -v"
-    viewFileContent "test.py" "me/$KMOM/booking"
+    inspectExerciseHeader "Spellchecker" "kurser/oopython-v2/kmom10" "$KMOM/spellchecker"
+    inspectCommand "spellchecker.py" "$EXEC_DIR/$KMOM/spellchecker" "python3 spellchecker.py"
+    viewFileContent "spellchecker.py" "me/$KMOM/spellchecker"
+    viewFileContent "trie.py" "me/$KMOM/spellchecker"
+    viewFileContent "node.py" "me/$KMOM/spellchecker"
+    inspectCommand "test.py" "$EXEC_DIR/$KMOM/spellchecker" "python3 test.py -v"
+    viewFileContent "test.py" "me/$KMOM/spellchecker"
     
-    printUrl "classdiagrams.png" "me/kmom10/booking"
+    printUrl "classdiagrams.png" "me/kmom10/spellchecker"
 }
