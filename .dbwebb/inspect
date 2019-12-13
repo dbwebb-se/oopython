@@ -116,10 +116,10 @@ oopythonkmom05()
     inspectExerciseHeader "sort" "uppgift/sortering-av-egen-lista" "$KMOM/sort"
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/sort" "python3 test.py -v"
     inspectCommand "main.py" "$EXEC_DIR/$KMOM/sort" "python3 main.py"
-    viewFileContent "sort.py" "me/$KMOM/sort"
     viewFileContent "unorderedlist.py" "me/$KMOM/sort"
     viewFileContent "main.py" "me/$KMOM/sort"
     viewFileContent "test.py" "me/$KMOM/sort"
+    viewFileContent "sort.py" "me/$KMOM/sort"
 }
 
 
@@ -134,7 +134,6 @@ oopythonkmom06()
     viewFileContent "test.py" "me/$KMOM/tree"
     viewFileContent "node.py" "me/$KMOM/tree"
     viewFileContent "bst.py" "me/$KMOM/tree"
-    
 }
 
 
