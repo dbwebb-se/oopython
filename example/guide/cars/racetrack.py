@@ -2,6 +2,7 @@
 Conatins a RaceTrack class that use car objects to race to a finishline
 """
 import time
+import json
 from car import Car
 
 
@@ -24,13 +25,11 @@ class RaceTrack():
 
     def create_cars(self):
         """
-        Create four Car objects and add to cars
+        Read card data from file and create Car objects
         """
-        car1 = Car("model1", 20099, "Danica Patrick")
-        car2 = Car("model2", 100000, "Bo 'Bandi' Darville")
-        car3 = Car("model3", 300000, "Memphis Raines")
-        car4 = Car("model4", 305000, "Shirley Muldowney")
-        self.cars = [car1, car2, car3, car4]
+        json_cars = json.load(open("cars.json"))
+        for car in json_cars:
+            self.cars.append(Car.create_from_json(car))
 
 
 

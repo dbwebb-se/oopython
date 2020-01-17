@@ -102,6 +102,13 @@ class Car():
         return self
 
     @classmethod
+    def create_from_json(cls, json_data):
+        """
+        Factory method for creating obejct som JSON
+        """
+        return cls(json_data["model"], json_data["price"], json_data["driver"])
+
+    @classmethod
     def wheel_message(cls):
         """
         Print the static variable wheels
