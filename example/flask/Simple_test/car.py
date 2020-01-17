@@ -20,5 +20,9 @@ class Car():
 
     @classmethod
     def create_from_json(cls, filename):
+        """
+        Read data from json file. Create objekt with data and return it.
+        Called a factory method
+        """
         data = json.load(open(filename))
         return cls(data["model"], data["year"], data["color"])
