@@ -4,12 +4,14 @@ Flask test in python
 """
 
 import traceback
+import json
 from flask import Flask, render_template
 from car import Car
 
 app = Flask(__name__)
 
-volvo = Car("volvo", 1998, "green")
+
+volvo = Car.create_from_json("data.json")
 test = volvo.make_sound()
 
 

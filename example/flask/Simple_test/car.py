@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """A Car class"""
+import json
 
 class Car():
 
@@ -16,3 +17,8 @@ class Car():
     def make_sound():
         """Print a car sound"""
         return "Wrooom, wroom"
+
+    @classmethod
+    def create_from_json(cls, filename):
+        data = json.load(open(filename))
+        return cls(data["model"], data["year"], data["color"])
