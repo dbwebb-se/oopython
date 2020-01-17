@@ -4,7 +4,6 @@ Flask test in python
 """
 
 import traceback
-import json
 from flask import Flask, render_template
 from car import Car
 
