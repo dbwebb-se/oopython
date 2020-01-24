@@ -8,7 +8,7 @@ Minimal Flask application, including useful error handlers.
 import os
 import re
 from flask import Flask, render_template, request, redirect, url_for, session
-#pylint: disable=no-name-in-module
+#pylint: disable=no-name-in-module,no-member
 from handler import QuestionManager
 
 app = Flask(__name__)
@@ -18,14 +18,22 @@ qm = QuestionManager()
 
 @app.route("/")
 def main():
-    """ Home route """
+    """
+    Home route
+    Shows welcome page and link to start questions
+    """
     return render_template("index.html")
 
 
 
 @app.route("/question", methods=["POST", "GET"])
 def question():
-    """ question route """
+    """
+    Question route
+    Used to display current question.
+    If POST request, a user has answered a question.
+    If there are no more questions redirect to score screen route.
+    """
     qm.read_session(session)
 
     if request.method == "POST":
@@ -46,7 +54,10 @@ def question():
 
 @app.route("/score_screen", methods=["GET"])
 def score_screen():
-    """ Score screen """
+    """
+    Score screen
+    Shows how manny correct answers the user got and max score.
+    """
     qm.read_session(session)
     return render_template("score_screen.html",
                            score=qm.get_score(),
@@ -57,7 +68,9 @@ def score_screen():
 
 @app.route("/reset")
 def reset():
-    """ Reset questions """
+    """
+    Reset questcount and session so the user can start over.
+    """
     qm.reset()
     qm.write_session(session)
     return redirect(url_for('main'))
