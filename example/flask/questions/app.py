@@ -36,10 +36,11 @@ def question():
     """
     qm.read_session(session)
 
+    # happens when a user answers a question
     if request.method == "POST":
-        qm.correct_answer(request.form)
+        qm.correct_answer(request.form))
+        qm.write_session(session)
 
-    qm.write_session(session)
 
     if qm.has_next():
         return render_template("question.html",
