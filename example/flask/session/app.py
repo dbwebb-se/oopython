@@ -22,6 +22,7 @@ def company():
     """ Company route """
 
     if request.method == "POST":
+        handler.read_session(session)
         handler.add_employee(request.form)
         handler.write_session(session)
 
