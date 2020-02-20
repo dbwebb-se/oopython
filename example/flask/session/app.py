@@ -31,6 +31,8 @@ def company():
 @app.route("/reset")
 def reset():
     """ Route for reset session """
+    handler.people = []
+    handler.add_predefined_employees()
     _ = [session.pop(key) for key in list(session.keys())]
     return redirect(url_for('main'))
 
