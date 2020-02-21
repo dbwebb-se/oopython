@@ -8,7 +8,6 @@ import utils
 #pylint: disable=no-name-in-module,import-error
 from bst import BinarySearchTree as Bst
 
-
 class TestBst(unittest.TestCase):
     """Submodule for unittests, derives from unittest.TestCase"""
 
@@ -20,12 +19,16 @@ class TestBst(unittest.TestCase):
         """ teardown test """
         self.bst = None
 
+
+
     def test_insert(self):
         """ Test that insert creates binary search tree """
         size = 100
         seq = utils.random_seq(size)
         utils.list_to_bst(seq, self.bst)
         self.assertTrue(utils.is_bst(self.bst.root))
+
+
 
     def test_get(self):
         """ Test that get returns correct values """
@@ -38,6 +41,8 @@ class TestBst(unittest.TestCase):
         for v, k in enumerate(seq):
             self.assertEqual(v, self.bst.get(k))
 
+
+
     def test_get_error(self):
         """ Test that get raises KeyError """
         with self.assertRaises(KeyError):
@@ -45,6 +50,8 @@ class TestBst(unittest.TestCase):
         self.bst.insert(3, 16)
         with self.assertRaises(KeyError):
             self.bst.get(2)
+
+
 
     def test_del(self):
         """ Test that remove maintain correct structure in tree """
@@ -56,7 +63,11 @@ class TestBst(unittest.TestCase):
         for k in r_seq:
             v = seq.index(k)
             self.assertEqual(v, self.bst.remove(k))
+            with self.assertRaises(KeyError):
+                self.bst.get(k)
             self.assertTrue(utils.is_bst(self.bst.root))
+
+
 
     def test_del_error(self):
         """ Test that remove raise KeyError """
@@ -70,6 +81,8 @@ class TestBst(unittest.TestCase):
         with self.assertRaises(KeyError):
             self.bst.remove(size+1)
         self.assertTrue(utils.is_bst(self.bst.root))
+
+
 
     def test_inorder_traversal(self):
         """ Test the inorder traversal print"""
