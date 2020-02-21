@@ -129,6 +129,8 @@ oopythonkmom05()
 #
 oopythonkmom06()
 {
+    inspectLab "uppgift/python-med-dictionaries-i-oopython" "lab4" "answer.py" "python3 answer.py"
+
     inspectExerciseHeader "Binary Search Tree" "uppgift/binary-search-tree" "$KMOM/tree"
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/tree" "python3 test.py"
     viewFileContent "test.py" "me/$KMOM/tree"

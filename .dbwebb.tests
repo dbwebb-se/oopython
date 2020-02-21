@@ -162,6 +162,14 @@ dbwebb validate sort
 #
 
 
+#
+# lab4 https://dbwebb.se/uppgift/python-med-dictionaries-i-oopython
+#
+dbwebb recreate lab4
+cd me/kmom06/lab4 && ./answer.py; [[ $? = 42 ]]
+dbwebb validate lab4
+
+
 
 # binary search tree http://dbwebb.se/uppgift/binary-search-tree
 #
