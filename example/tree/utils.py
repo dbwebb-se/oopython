@@ -16,7 +16,7 @@ def shuffle(arr):
     """Shuffle an array"""
     random.shuffle(arr)
 
-def is_bst(root, l=None, r=None):
+def is_bst(root, l=None, r=None, parent=None):
     """Check is a tree fullfilles Binary Search Tree rules"""
     # Base condition
     if root is None:
@@ -31,9 +31,14 @@ def is_bst(root, l=None, r=None):
     # should be greater than root's key
     if r is not None and root.key > r.key:
         return False
+
+    # if has a parent check that the parent is correct node
+    if parent is not None and root.parent is not parent:
+        return False
+
     # check recursively for every node.
-    return is_bst(root.left, l, root) and \
-        is_bst(root.right, root, r)
+    return is_bst(root.left, l, root, root) and \
+        is_bst(root.right, root, r, root)
 
 
 def list_to_bst(seq, bst):
