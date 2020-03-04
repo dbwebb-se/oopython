@@ -32,8 +32,8 @@ def is_bst(root, l=None, r=None, parent=None):
     if r is not None and root.key > r.key:
         return False
 
-    # if has a parent check that the parent is correct node
-    if parent is not None and root.parent is not parent:
+    # if check that the parent is correct node
+    if root.parent is not parent:
         return False
 
     # check recursively for every node.
