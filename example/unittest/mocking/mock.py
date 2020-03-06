@@ -15,12 +15,15 @@ m.return_value = "magic"
 
 print(m())
 
-def foo():
+def koo():
+    """
+    Function used to return value in a Mock
+    """
     return "functional magic"
 
-# Om side_effect är satt till en funktion som returnerar ett värde kommer 
+# Om side_effect är satt till en funktion som returnerar ett värde kommer
 # det värdet returneras och inte värdet från ".return_value".
-m.side_effect = foo
+m.side_effect = koo
 print(m())
 
 # side_effect kan också vara en sekvens
@@ -39,7 +42,9 @@ m.something = "magic"
 print(m.something)
 
 # Låtsas skapa funktioner och bestämma vad de ska returnera
-m.foo.return_value = "funcational magic"
-print(m.foo())
+m.koo.return_value = "funcational magic"
+print(m.koo())
 
 # Vi kan göra väldigt mycket och dynamiska saker med Mock.
+# Detta var grunderna i Mock, för att testa input ska vi använda oss av
+# Mock.patch. Fortsätt kolla i filen patch.py.
