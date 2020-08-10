@@ -21,6 +21,13 @@ jobs:
     steps:
       - checkout
 
+     - run:
+         name: print python version
+         command: |
+            python -v
+            python3 -v
+            pip -v
+            pip3 -v
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -39,7 +46,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
+
       # run tests!
       - run:
           name: run tests
