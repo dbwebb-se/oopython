@@ -86,6 +86,7 @@ for k in n:
 # en helt ny lista medan genergators producer ett element åt gången.
 print("--------------")
 print("Generator vs list comprehension")
+#pylint: disable=unnecessary-comprehension
 print("List comprehension: ", [k for k in n])
 gen = (k for k in n)
 print("Generator expression: ", gen)

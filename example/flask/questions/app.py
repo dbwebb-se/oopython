@@ -8,7 +8,7 @@ Minimal Flask application, including useful error handlers.
 import os
 import re
 from flask import Flask, render_template, request, redirect, url_for, session
-#pylint: disable=no-name-in-module,no-member
+#pylint: disable=no-name-in-module,no-member,import-outside-toplevel
 from handler import QuestionManager
 
 app = Flask(__name__)

@@ -1,4 +1,6 @@
 #!C:\Users\mikae\AppData\Local\Programs\Python\Python36-32\python.exe
+# pylint: disable=import-outside-toplevel
+
 """
 A CGI-script for python, including error handling.
 

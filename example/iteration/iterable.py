@@ -75,10 +75,9 @@ class Counter:
         # Annars skapas en evighetsloop. Tänk rekursion, vi måste ha ett basfall
         if self._count > self.max_:
             raise StopIteration
-        else:
-            value = self._count
-            self._count += 1
-            return value
+        value = self._count
+        self._count += 1
+        return value
 
 print("Egen klass med iter och next")
 c = Counter(4)

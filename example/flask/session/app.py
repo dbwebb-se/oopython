@@ -50,7 +50,7 @@ def internal_server_error(e):
     """
     Handler for internal server error 500
     """
-    #pylint: disable=unused-argument
+    #pylint: disable=unused-argument,import-outside-toplevel
     import traceback
     return "<p>Flask 500<pre>" + traceback.format_exc()
 

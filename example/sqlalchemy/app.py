@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
+# pylint: disable=import-outside-toplevel
 
 """
 A Flask app using SQLAlchemy to read a SQLite database.

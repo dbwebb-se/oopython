@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
+# pylint: disable=import-outside-toplevel
 
 """
 A CGI-script for python, including error handling.
