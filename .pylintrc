@@ -1,12 +1,12 @@
 [MESSAGES CONTROL]
 
-disable=locally-disabled,locally-enabled,too-many-instance-attributes,useless-super-delegation,too-few-public-methods
+disable=locally-disabled,locally-enabled,too-many-instance-attributes,too-few-public-methods
 
 
 [FORMAT]
 
 # Maximum number of characters on a single line.
-max-line-length=80
+max-line-length=100
 # Min number of characters in names
 variable-rgx=[a-z_][a-z0-9_]{0,30}$
 argument-rgx=[a-z_][a-z0-9_]{0,30}$
@@ -14,7 +14,7 @@ argument-name-hint=[a-z_][a-z0-9_]{0,30}$
 attr-rgx=[a-z_][a-z0-9_]{0,30}$
 const-rgx=(([A-Za-z_][A-Za-z0-9_]*)|(__.*__))$
 
-# Min number of arguments
+# Max number of arguments
 max-args=6
 
 [REPORTS]
