@@ -36,7 +36,8 @@ oopythonkmom01()
 {
     inspectLab "uppgift/python-med-objekt-och-klasser" "lab1" "answer.py" "python3 answer.py"
     viewFileContent "classes.py" "me/$KMOM/lab1"
-    
+
+    inspectExerciseHeader "Skapa en me-sida med Python och Flask" "uppgift/en-me-sida-med-flask" "me/flask"
     viewFileContent "app.py" "me/flask"
     viewFileContent "person.py" "me/flask"
 }
