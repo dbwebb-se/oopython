@@ -16,7 +16,12 @@ ECHO = echo
 
 # Make adjustments based on OS
 ifneq (, $(findstring CYGWIN, $(OS)))
+	OS_CYGWIN = "true"
 	ECHO = /bin/echo -e
+else ifneq (, $(findstring Linux, $(OS)))
+	OS_LINUX = "true"
+else ifneq (, $(findstring Darwin, $(OS)))
+	OS_MAC = "true"
 endif
 
 # Colors and helptext
@@ -30,7 +35,7 @@ WARN_COLOR	= \033[33;01m
 ACTION_MESSAGE = $(ECHO) "$(ACTION)---> $(1)$(NO_COLOR)"
 
 # Which makefile am I in?
-WHERE-AM-I = $(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+WHERE-AM-I = "$(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))"
 THIS_MAKEFILE := $(call WHERE-AM-I)
 
 # Echo some nice helptext based on the target comment
@@ -59,7 +64,7 @@ help:
 # Specifics for this project.
 #
 # Default values for arguments
-container ?= course
+container ?= cli
 
 # Add local bin path for test tools
 PATH := $(PWD)/bin:$(PWD)/vendor/bin:$(PWD)/node_modules/.bin:$(PATH)
@@ -95,7 +100,18 @@ install: prepare dbwebb-validate-install dbwebb-inspect-install dbwebb-install n
 	@# Disable PHP tools with arguments
 	curl -Lso $(PHPCS) https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && chmod 755 $(PHPCS)
 
-	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
+	# curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
+	curl -Lso $(PHPMD) http://www.student.bth.se/~mosstud/download/phpmd && chmod 755 $(PHPMD)
+
+	# Shellcheck
+ifdef OS_LINUX
+	curl -Ls https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.x86_64.tar.xz | tar -xJ -C build/ && rm -f bin/shellcheck && ln build/shellcheck-latest/shellcheck bin/
+else ifdef OS_MAC
+	curl -Ls https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.darwin.x86_64.tar.xz | tar -xJ -C build/ && rm -f bin/shellcheck && ln build/shellcheck-latest/shellcheck bin/
+endif
+
+	# # Shellcheck
+	# curl -Ls https://github.com/koalaman/shellcheck/releases/download/latest/shellcheck-latest.linux.x86_64.tar.xz | tar -xJ -C build/ && rm -f bin/shellcheck && ln build/shellcheck-latest/shellcheck bin/
 
 	@# Shellcheck
 	@# tree (inspect)
@@ -116,7 +132,7 @@ check: dbwebb-validate-check docker-check
 .PHONY: test
 test: dbwebb-publish-example dbwebb-testrepo
 	@$(call HELPTEXT,$@)
-
+	[ ! -f composer.json ] || composer validate
 
 
 # target: testrepo                - Runs unit tests on course repo.
@@ -148,8 +164,9 @@ clean-me:
 clean-all: clean
 	@$(call HELPTEXT,$@)
 	rm -rf bin
-	rm -rf node_modules
+	rm -rf node_modules package-lock.json
 	rm -rf vendor composer.lock
+	rm -rf .venv
 
 
 
@@ -376,15 +393,23 @@ docker-stop:
 .PHONY: docker-run
 docker-run:
 	@$(call HELPTEXT,$@)
-	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) $(what)
+ifeq ($(what),)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run  $(container) bash
+else
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run  $(container) $(what)
+endif
 
 
 
-# target: docker-bash             - Run container="" with what="bash" one off command.
-.PHONY: docker-bash
-docker-bash:
+# target: docker-run-server       - Run --service-ports container="" with what="" one off command.
+.PHONY: docker-run-server
+docker-run-server:
 	@$(call HELPTEXT,$@)
-	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) bash
+ifeq ($(what),)
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run --service-ports $(container) bash
+else
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run --service-ports $(container) $(what)
+endif
 
 
 
@@ -416,7 +441,7 @@ docker-test:
 .PHONY: docker-test-clean
 docker-test-clean:
 	@$(call HELPTEXT,$@)
-	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make clean-me test
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make clean-me test
 
 
 
@@ -424,7 +449,7 @@ docker-test-clean:
 .PHONY: docker-validate
 docker-validate:
 	@$(call HELPTEXT,$@)
-	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make validate options="$(options)" what="$(what)"
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make validate options="$(options)" what="$(what)"
 
 
 
@@ -432,7 +457,7 @@ docker-validate:
 .PHONY: docker-publish
 docker-publish:
 	@$(call HELPTEXT,$@)
-	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make publish options="$(options)" what="$(what)"
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make publish options="$(options)" what="$(what)"
 
 
 
@@ -440,7 +465,7 @@ docker-publish:
 .PHONY: docker-publish-me
 docker-publish-me:
 	@$(call HELPTEXT,$@)
-	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make dbwebb-publishpure options="$(options)" what="me"
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make dbwebb-publishpure options="$(options)" what="me"
 
 
 
@@ -448,7 +473,7 @@ docker-publish-me:
 .PHONY: docker-publish-example
 docker-publish-example:
 	@$(call HELPTEXT,$@)
-	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run course make dbwebb-publishpure options="$(options)" what="example"
+	[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run $(container) make dbwebb-publishpure options="$(options)" what="example"
 
 
 
