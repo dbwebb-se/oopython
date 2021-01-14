@@ -24,10 +24,8 @@ jobs:
       - run:
           name: print python version
           command: |
-            python -v
-            python3 -v
-            pip -v
-            pip3 -v
+            python3 -V
+            pip3 -V
 
       # Download and cache dependencies
       - restore_cache:
