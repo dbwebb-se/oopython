@@ -1,0 +1,12 @@
+{
+    "Accounts": [
+        {
+            "type": "Account",
+            "balance": 9500.0
+        },
+        {
+            "type": "SavingsAccount",
+            "balance": 10495.0
+        }
+    ]
+}

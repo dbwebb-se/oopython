@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>Account overview</h1>
+    </div>
+    <div class="content">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Current Balance</th>
+                <th scope="col">Account Type</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for account in accounts %}
+                    <tr>
+                        <td>
+                            <a href="{{ url_for('account', account_id=account.id_)}}">
+                                {{ account.id_ }}
+                            </a>
+                        </td>
+                        <td>{{ account.balance | round(2) }}</td>
+                        <td>{{ account.type_ }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</div>
+
+{% include 'footer.html' %}

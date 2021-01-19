@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>#{{ account.id_ }} - {{ account.type_ }}</h1>
+    </div>
+    <div class="col-sm-offset-2 col-sm-8">
+        <div class="row">
+            <div class="col-sm-8">
+                <ul class="no-bullet">
+                    <li>
+                        Balance: <b>${{ account.balance | round(2) }}</b>
+                    </li>
+                    <li>
+                        Transaction fee / $100: <b>${{ account.calculate_transaction_fee(100) | round(2) }}</b>
+                    </li>
+                    {% if account.interest_rate %}
+                        <li>
+                            Interest rate / day: <b>${{ account.calculate_daily_interest_rate() | round(3) }}</b>
+                        </li>
+                    {% endif %}
+                    </ul>
+                </div>
+                {% if account.interest_rate %}
+                    <div class="col-sm-4">
+                        {% include 'forms/interest_form.html' %}
+                    </div>
+                {% endif %}
+            </div>
+            {% if interests %}
+            <div class="alert alert-info mt-3 col-sm-offset-1 col-sm-11" role="alert">
+                <div class="text-center">
+                    The calculated interests from Today to {{ time }}
+                    is ${{ interests | round(3) }}.
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% include 'footer.html' %}

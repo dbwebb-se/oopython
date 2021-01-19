@@ -1,0 +1,35 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    text-align: center;
+}
+
+input[type="date"].form-control {
+    line-height: 25px;
+}
+
+.no-bullet {
+    list-style-type: none;
+}
+
+.mt-6 {
+    margin-top: 60px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
