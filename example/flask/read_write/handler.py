@@ -10,7 +10,7 @@ class Handler:
     """
     Handler class
     """
-    filename = "data.json"
+    filename = "static/data/data.json"
 
     def __init__(self):
         """ Constructor
@@ -24,7 +24,8 @@ class Handler:
         Create and add Employee object from form
         """
         self.employees.append(Employee(form["firstname"],
-                                       form["lastname"], form["salary"]))
+                                       form["lastname"], form["salary"],
+                                       form["hired"]))
 
     def get_employees(self):
         """
@@ -39,16 +40,16 @@ class Handler:
         self.employees = []
 
         if data:
-            for empl in data:
+            for empl in data["employees"]:
                 self.employees.append(Employee(empl["fname"],
                                                empl["lname"], empl["salary"],
-                                               empl["iid"]))
+                                               empl["hired"], empl["iid"]))
 
     def write_data(self):
         """Transform all data to json object and write to file"""
-        data = []
+        data = {"employees": []}
         for empl in self.employees:
-            data.append(empl.to_dict())
+            data["employees"].append(empl.to_dict())
 
         with open(Handler.filename, "w") as f:
             json.dump(data, f)

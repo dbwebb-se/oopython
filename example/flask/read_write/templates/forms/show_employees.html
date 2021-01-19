@@ -4,6 +4,7 @@
             <th>Name</th>
             <th>Id</th>
             <th>Salary</th>
+            <th>Days Hired</th>
         </tr>
     </thead>
 <tbody>
@@ -12,6 +13,7 @@
         <td>{{ empl.get_name() }}</td>
         <td>{{ empl.get_id() }}</td>
         <td>{{ empl.get_salary() }}</td>
+        <td>{{ empl.get_days_hired() }}</td>
     </tr>
     {% endfor %}
 </tbody>

@@ -27,7 +27,7 @@ def main():
 @app.route("/showemployees", methods=["GET"])
 def showemployees():
     """ showshapes route """
-    handler.read_data()
+    #handler.read_data()
     return render_template("show.html", empls=handler.get_employees())
 
 @app.errorhandler(404)
