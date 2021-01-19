@@ -59,10 +59,10 @@ dbwebb validate lab2
 #
 # Questions http://dbwebb.se/uppgift/fragesport_med_flask
 #
-cp -ri example/flask/questions me/kmom02/
-cd me/kmom02/questions
-test -f me/kmom02/questions/app.py
-dbwebb validate questions
+cp -ri example/flask/bank me/kmom02/
+cd me/kmom02/bank
+test -f me/kmom02/bank/app.py
+dbwebb validate bank
 
 
 
