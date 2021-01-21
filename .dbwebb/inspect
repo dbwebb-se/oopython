@@ -51,10 +51,10 @@ oopythonkmom02()
 {
     inspectLab "uppgift/python-med-klass-relationer" "lab2" "answer.py" "python3 answer.py"
 
-    inspectExerciseHeader "Frågesport med Flask" "uppgift/fragesport_med_flask" "$KMOM/questions"
-    viewFileContent "app.py" "me/$KMOM/questions"
-    viewFileContent "handler.py" "me/$KMOM/questions"
-    viewFileContent "questions.py" "me/$KMOM/questions"
+    inspectExerciseHeader "Frågesport med Flask" "uppgift/bank_med_flask" "$KMOM/bank"
+    viewFileContent "app.py" "me/$KMOM/bank"
+    viewFileContent "account_manager.py.py" "me/$KMOM/bank"
+    viewFileContent "accounts.py" "me/$KMOM/bank"
 }
 
 
