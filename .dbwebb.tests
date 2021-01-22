@@ -93,16 +93,21 @@ dbwebb validate flask
 # Kmom03
 #
 
-
+#
+# uml https://dbwebb.se/uppgift/skapa_ett_uml_diagram
+#
+test -d me/kmom03/bank2
+cd me/kmom03/bank2 && touch app.py && test -e app.py
+cd me/kmom03/bank2 && touch test.py && test -e test.py
+cd me/kmom03/bank2 && touch persons.py && test -e persons.py
+cd me/kmom03/bank2 && touch account_manager.py && test -e account_manager.py
+dbwebb validate bank2
 
 #
-# war https://dbwebb.se/uppgift/kortspelet-war
+# uml https://dbwebb.se/uppgift/skapa_ett_uml_diagram
 #
 test -d me/kmom03/war
 cd me/kmom03/war/ && touch uml.png && test -e uml.png
-cd me/kmom03/war/ && touch war.py && test -e war.py
-cd me/kmom03/war/ && touch test.py && test -e test.py
-dbwebb validate war
 
 
 

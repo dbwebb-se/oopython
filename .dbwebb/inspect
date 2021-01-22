@@ -53,7 +53,7 @@ oopythonkmom02()
 
     inspectExerciseHeader "Frågesport med Flask" "uppgift/bank_med_flask" "$KMOM/bank"
     viewFileContent "app.py" "me/$KMOM/bank"
-    viewFileContent "account_manager.py.py" "me/$KMOM/bank"
+    viewFileContent "account_manager.py" "me/$KMOM/bank"
     viewFileContent "accounts.py" "me/$KMOM/bank"
 }
 
@@ -65,14 +65,12 @@ oopythonkmom02()
 oopythonkmom03()
 {
 
-    inspectExerciseHeader "Kortspelet War" "uppgift/kortspelet-war" "$KMOM/war"
-    inspectCommand "test.py" "$EXEC_DIR/$KMOM/war" "python3 test.py -v"
-    inspectCommand "war.py" "$EXEC_DIR/$KMOM/war" "python3 war.py"
-    viewFileContent "card.py" "me/$KMOM/war"
-    viewFileContent "deck.py" "me/$KMOM/war"
-    viewFileContent "hand.py" "me/$KMOM/war"
-    viewFileContent "war.py" "me/$KMOM/war"
-    viewFileContent "test.py" "me/$KMOM/war"
+    inspectExerciseHeader "Bank del 2" "uppgift/bank_med_flask_del_tva" "$KMOM/bank2"
+    inspectCommand "test.py" "$EXEC_DIR/$KMOM/bank2" "python3 test.py -v"
+    viewFileContent "test.py" "me/$KMOM/bank2"
+    viewFileContent "persons.py" "me/$KMOM/bank2"
+    viewFileContent "account_manager.py" "me/$KMOM/bank2"
+    viewFileContent "app.py" "me/$KMOM/bank2"
 
 
     fileIsReadable "me/kmom03/war/uml.png"
