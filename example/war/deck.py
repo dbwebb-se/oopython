@@ -13,11 +13,11 @@ class Deck():
     """
     counter = 0
 
-    def __init__(self, cards=[]):
+    def __init__(self, cards=None):
         """
         Initialize deck with 52 Cards
         """
-        self.cards = cards
+        self.cards = cards if cards else []
 
     def shuffle(self):
         """

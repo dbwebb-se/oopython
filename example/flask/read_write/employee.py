@@ -42,7 +42,7 @@ class Employee():
         Returns name
         """
         return self.firstname + " " + self.lastname
-    
+
     def get_days_hired(self):
         """
         Returns the number of days an Employee

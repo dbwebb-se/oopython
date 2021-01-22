@@ -11,7 +11,7 @@ class Hand(Deck):
     Hand class
     """
     def __init__(self, cards):
-        super(Hand, self).__init__(cards)
+        super().__init__(cards)
         self.base = []
 
     def reset_cards(self):
@@ -57,5 +57,5 @@ class Hand(Deck):
         self.base = []
 
     def count_cards(self):
-        """Returns amoutn of cards"""
+        """Returns amount of cards"""
         return len(self.cards)
