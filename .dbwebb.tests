@@ -57,7 +57,7 @@ dbwebb validate lab2
 
 
 #
-# Questions http://dbwebb.se/uppgift/fragesport_med_flask
+# Bank http://dbwebb.se/uppgift/bank_med_flask
 #
 cp -ri example/flask/bank me/kmom02/
 cd me/kmom02/bank
@@ -94,13 +94,11 @@ dbwebb validate flask
 #
 
 #
-# uml https://dbwebb.se/uppgift/skapa_ett_uml_diagram
+# Bank2 http://dbwebb.se/uppgift/bank_med_flask_del_tva
 #
-test -d me/kmom03/bank2
-cd me/kmom03/bank2 && touch app.py && test -e app.py
-cd me/kmom03/bank2 && touch test.py && test -e test.py
-cd me/kmom03/bank2 && touch persons.py && test -e persons.py
-cd me/kmom03/bank2 && touch account_manager.py && test -e account_manager.py
+cp -ri example/flask/bank2 me/kmom02/
+cd me/kmom02/bank2
+test -f me/kmom02/bank2/app.py
 dbwebb validate bank2
 
 #
