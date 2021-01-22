@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>Create {{ what }}</h1>
+    </div>
+
+    {% if message %}
+        <div class="alert alert-info" role="alert">
+            <div class="text-center">
+                {{ message }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="content py-5">
+        <div class="row">
+          <div class="mx-auto">
+                {% include 'forms/add_form.html' %}
+          </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}

@@ -1,0 +1,27 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>Connect Person to an Account</h1>
+    </div>
+
+    {% if message %}
+        <div class="alert alert-info" role="alert">
+            <div class="text-center">
+                {{ message }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="content py-5">
+        <div class="row">
+          <div class="mx-auto">
+            <form role="form" method="POST">
+                {% include 'forms/connect_form.html' %}
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}

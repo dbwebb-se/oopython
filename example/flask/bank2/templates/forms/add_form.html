@@ -1,0 +1,12 @@
+<form role="form" method="POST">
+    {% include 'forms/add/' + what + '.html' %}
+
+    <div class="form-group">
+        <button
+          class="col-sm-12 btn btn-default"
+          type="submit"
+          style="margin-top: 20px;"
+        > Add new {{ what }}
+        </button>
+    </div>
+</form>

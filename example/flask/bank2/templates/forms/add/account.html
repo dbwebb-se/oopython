@@ -1,0 +1,16 @@
+<div class="col-sm-12">
+    {% with title='Type', name='type', items=account_types %}
+      {% include 'components/dropdown.html' %}
+    {% endwith %}
+</div>
+<div style="margin-top: 10px;" class="col-sm-12">
+    <label class="mt-4"for="balance">Starting Balance</label>
+    <input
+        type="number"
+        name="balance"
+        class="form-control"
+        id="balance"
+        step="0.01"
+        value="0"
+    >
+</div>

@@ -1,0 +1,22 @@
+<form role="form" method="POST">
+    <div class="col-sm-12" style="margin-bottom: 20px;">
+        {% with title='Who?', name='person', items=persons %}
+            {% include 'components/dropdown.html' %}
+        {% endwith %}
+    </div>
+
+    <div class="col-sm-12">
+        {% with title='Account', name='account', items=accounts %}
+            {% include 'components/dropdown.html' %}
+        {% endwith %}
+    </div>
+
+    <div class="form-group">
+        <button
+          class="col-sm-12 btn btn-default"
+          style="margin-top: 20px;"
+          type="submit"
+        > Create connection
+        </button>
+    </div>
+</form>
