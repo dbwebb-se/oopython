@@ -1,0 +1,3 @@
+Din kod är objektorienterad och korrekt skriven, både i labben och flask. Inget att kommentera på.
+
+Du har bra definitioner i redovisningstexten, det känns som du har koll på klasser och objekt så här långt.
