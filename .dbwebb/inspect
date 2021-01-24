@@ -37,7 +37,7 @@ oopythonkmom01()
     inspectLab "uppgift/python-med-objekt-och-klasser" "lab1" "answer.py" "python3 answer.py"
     viewFileContent "classes.py" "me/$KMOM/lab1"
 
-    inspectExerciseHeader "Skapa en me-sida med Python och Flask" "uppgift/en-me-sida-med-flask" "me/flask"
+    inspectExerciseHeader "Skapa en me-sida med Python och Flask" "uppgift/en-me-sida-med-flask" "flask"
     viewFileContent "app.py" "me/flask"
     viewFileContent "person.py" "me/flask"
 }
@@ -69,10 +69,12 @@ oopythonkmom03()
     inspectCommand "test.py" "$EXEC_DIR/$KMOM/bank2" "python3 test.py -v"
     viewFileContent "test.py" "me/$KMOM/bank2"
     viewFileContent "persons.py" "me/$KMOM/bank2"
+    viewFileContent "accounts.py" "me/$KMOM/bank2"
     viewFileContent "account_manager.py" "me/$KMOM/bank2"
     viewFileContent "app.py" "me/$KMOM/bank2"
 
 
+    inspectExerciseHeader "Skapa ett UML Diagram" "uppgift/skapa_ett_uml_diagram" "$KMOM/war"
     fileIsReadable "me/kmom03/war/uml.png"
     printUrl "uml.png" "me/kmom03/war"
 }
