@@ -13,12 +13,13 @@ app = Flask(__name__)
 def add(what):
     """
     Route to add accounts or persons
+    - /add/person  returns a create form for the class Person
+    - /add/account returns a create form for the Account classes
     """
 
     return render_template(
         "add.html",
-        what=what,
-        account_types=[{}]
+        what=what
     )
 
 @app.route("/connect", methods=["POST", "GET"])
