@@ -1,6 +1,0 @@
-<label for="{{ name }}">{{ title }}</label>
-<select class="w-100 form-control" id="{{ name }}" name="{{ name }}">
-    {% for item in items %}
-        <option value="{{ item.get_id() }}">{{ item.get_id() }}</option>
-    {% endfor %}
-</select>
