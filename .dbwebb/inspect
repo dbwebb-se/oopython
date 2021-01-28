@@ -24,7 +24,7 @@ oopython()
 #
 oopythonlast()
 {
-    inspectMe "/flask" "app.cgi" "" "" "flask"
+    inspectMe "me/flask" "app.cgi" "" "" "flask"
 }
 
 
