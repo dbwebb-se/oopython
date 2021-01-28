@@ -6,8 +6,8 @@ version: "3"
 
 services:
     # Primary services to use with this course
-    python: &python
-        image: dbwebb/courserepo:python
+    oopython: &oopython
+        image: dbwebb/courserepo:oopython
         volumes:
             - ".:/home/dbwebb/repo"
             - "/home/dbwebb/repo/bin"
@@ -17,10 +17,10 @@ services:
             #- "./example/sql/inspect/my.cnf:/home/dbwebb/.my.cnf"
 
     cli:
-        <<: *python
+        <<: *oopython
 
     server:
-        <<: *python
+        <<: *oopython
         ports:
             - "18080:80"
 
