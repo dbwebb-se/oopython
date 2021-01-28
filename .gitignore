@@ -1,6 +1,7 @@
 me/
 me_old/
 bin/
+.log/
 build/
 .venv/
 vendor/
