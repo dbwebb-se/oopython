@@ -16,40 +16,20 @@ class Phone:
         self.model = model
         self.os = os
         self.owner = "No owner yet"
-        self.phonebook = []
-
-    def get_manufacturer(self):
-        """ Returns the manufacturer """
-        return self.manufacturer
-
-    def get_model(self):
-        """ Returns the model """
-        return self.model
-
-    def get_os(self):
-        """ Returns the os """
-        return self.os
-
-    def get_owner(self):
-        """ Returns the owner """
-        return self.owner
-
-    def change_owner(self, new_owner):
-        """ Changes the owner of the phone """
-        self.owner = new_owner
+        self._phonebook = []
 
     def has_contacts(self):
         """ Returns True if phonebook has contacts, else False """
-        return bool(self.phonebook)
+        return bool(self._phonebook)
 
     def get_contacts_length(self):
         """ Returns amount of contacts """
-        return len(self.phonebook)
+        return len(self._phonebook)
 
     def add_contact(self, name, number):
         """ Add contact to phonebook """
         if self.validate_number(number):
-            self.phonebook.append((name, number))
+            self._phonebook.append((name, number))
             return True
 
         return False
@@ -70,7 +50,7 @@ class Phone:
 
     def get_contact(self, name):
         """ Returns tuple with name and number """
-        for person in self.phonebook:
+        for person in self._phonebook:
             if person[0] == name:
                 return person
         raise ValueError("No contact with name {}".format(name))
