@@ -66,9 +66,13 @@ oopythonkmom03()
 {
 
     inspectExerciseHeader "Bank del 2" "uppgift/bank_med_flask_del_tva" "$KMOM/bank2"
-    inspectCommand "tests.py" "$EXEC_DIR/$KMOM/bank2" "python3 tests.py -v"
-    viewFileContent "tests.py" "me/$KMOM/bank2"
-    viewFileContent "person.py" "me/$KMOM/bank2"
+    inspectCommand "test.py" "$EXEC_DIR/$KMOM/bank2" "python3 test.py -v"
+    viewFileContent "test.py" "me/$KMOM/bank2"
+    viewFileContent "persons.py" "me/$KMOM/bank2"
+    viewFileContent "accounts.py" "me/$KMOM/bank2"
+    viewFileContent "account_manager.py" "me/$KMOM/bank2"
+    viewFileContent "app.py" "me/$KMOM/bank2"
+
 
     inspectExerciseHeader "Skapa ett UML Diagram" "uppgift/skapa_ett_uml_diagram" "$KMOM/war"
     fileIsReadable "me/kmom03/war/uml.png"
@@ -84,13 +88,14 @@ oopythonkmom04()
 {
 
     inspectExerciseHeader "Queue" "uppgift/skapa-queue" "$KMOM/queue"
-    inspectCommand "main.py" "$EXEC_DIR/$KMOM/queue" "python3 main.py -v"
+    inspectCommand "tests.py" "$EXEC_DIR/$KMOM/queue" "python3 tests.py -v"
+    viewFileContent "tests.py" "me/$KMOM/queue"
     viewFileContent "queue.py" "me/$KMOM/queue"
 
     # fileIsReadable "me/kmom04/queue/sekvens.png"
     # printUrl "sekvens.png" "me/kmom04/queue"
-    fileIsReadable "me/kmom04/queue/klass.png"
-    printUrl "klass.png" "me/kmom04/queue"
+    # fileIsReadable "me/kmom04/queue/klass.png"
+    # printUrl "klass.png" "me/kmom04/queue"
 
 
     inspectExerciseHeader "Unordered List" "uppgift/skapa-lista" "$KMOM/list"
