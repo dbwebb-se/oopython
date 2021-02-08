@@ -66,13 +66,9 @@ oopythonkmom03()
 {
 
     inspectExerciseHeader "Bank del 2" "uppgift/bank_med_flask_del_tva" "$KMOM/bank2"
-    inspectCommand "test.py" "$EXEC_DIR/$KMOM/bank2" "python3 test.py -v"
-    viewFileContent "test.py" "me/$KMOM/bank2"
-    viewFileContent "persons.py" "me/$KMOM/bank2"
-    viewFileContent "accounts.py" "me/$KMOM/bank2"
-    viewFileContent "account_manager.py" "me/$KMOM/bank2"
-    viewFileContent "app.py" "me/$KMOM/bank2"
-
+    inspectCommand "tests.py" "$EXEC_DIR/$KMOM/bank2" "python3 tests.py -v"
+    viewFileContent "tests.py" "me/$KMOM/bank2"
+    viewFileContent "person.py" "me/$KMOM/bank2"
 
     inspectExerciseHeader "Skapa ett UML Diagram" "uppgift/skapa_ett_uml_diagram" "$KMOM/war"
     fileIsReadable "me/kmom03/war/uml.png"
