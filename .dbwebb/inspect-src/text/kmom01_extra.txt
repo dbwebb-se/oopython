@@ -1,13 +1,13 @@
 Din kod är objektorienterad och korrekt skriven, både i labben och flask. Dock ska du i Cat klassen i labben använda dig av property för get och set för lives_left vilket du inte gör. https://dbwebb.se/guide/kom-igang-med-objektorienterad-programmering-i-python/privat#pythonic
-Kompletera med det.
+Komplettera med det.
 
 Du har bra definitioner i redovisningstexten, det känns som du har koll på klasser och objekt så här långt.
 
 ---------------------------------------------------------
 
 Din kod är objektorienterad och korrekt skriven. Förutom att du inte använder property för get och set i Cat klassen i labben. https://dbwebb.se/guide/kom-igang-med-objektorienterad-programmering-i-python/privat#pythonic
-Och du gör lives_left till ett statiskt attribut och sen instans i konstruktorn. Det ska bara vara ett statisk attribut. Lägg till lives_left=-1 i parameterlistan i konstruktorn.
+Och du gör lives_left till ett statiskt attribut och sen instans i konstruktorn. Det ska bara vara ett instans attribut. Lägg till lives_left=-1 i parameterlistan i konstruktorn.
 
-Kompleter med ovanstående.
+Komplettera med ovanstående.
 
 Du har bra definitioner i redovisningstexten, det känns som du har koll på klasser och objekt så här långt.

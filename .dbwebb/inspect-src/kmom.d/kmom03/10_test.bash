@@ -16,7 +16,7 @@ read -p "Press to view static/data/accounts.json" answer
 cat static/data/accounts.json
 
 read -p "Run tests.py" answer
-python3 tests.py
+python3 -m unittest tests.py
 
 read -p "view tests.py" answer
 cat tests.py
