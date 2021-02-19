@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ Module for unittests """
-
+# pylint: skip-file
 import unittest
 from queue import Queue
 from node import Node

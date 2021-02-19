@@ -4,7 +4,7 @@
 """
 Minimal Flask application, including useful error handlers.
 """
-
+# pylint: skip-file
 from datetime import date, timedelta
 from flask import Flask, render_template, request
 from account_manager import AccountManager

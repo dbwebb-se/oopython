@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Main file with Handler class """
-
+# pylint: skip-file
 import sys
 import inspect
 from queue import Queue

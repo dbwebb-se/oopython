@@ -46,9 +46,10 @@ class War():
                 self.players[0].clear_base()
                 print("\nplayer 2 wins the round and picks up all cards.")
 
-            print("Status: \nPlayer 1: {} cards\nPlayer 2: {} cards".format(
-                self.players[0].count_cards(),
-                self.players[1].count_cards())
+            print(
+                "Status: \nPlayer 1: {} cards\nPlayer 2: {} cards".format(
+                    self.players[0].count_cards(),
+                    self.players[1].count_cards())
             )
 
 
