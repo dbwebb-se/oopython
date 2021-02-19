@@ -21,10 +21,10 @@ class TestBst(unittest.TestCase):
 
 
 
+
     def test_insert(self):
         """ Test that insert creates binary search tree """
-        size = 100
-        seq = utils.random_seq(size)
+        seq = [3, 8, 5, 6, 1, 0, 2, 4, 9, 7]
         utils.list_to_bst(seq, self.bst)
         self.assertTrue(utils.is_bst(self.bst.root))
 
@@ -32,12 +32,11 @@ class TestBst(unittest.TestCase):
 
     def test_get(self):
         """ Test that get returns correct values """
-        size = 20
-        seq = utils.random_seq(size)
+        seq = [3, 8, 5, 6, 1, 0, 2, 4, 9, 7]
         utils.list_to_bst(seq, self.bst)
-        (seq[5], seq[16]) = (seq[16], seq[5])
+        (seq[5], seq[8]) = (seq[8], seq[5])
         self.bst.insert(seq[5], 5)
-        self.bst.insert(seq[16], 16)
+        self.bst.insert(seq[8], 8)
         for v, k in enumerate(seq):
             self.assertEqual(v, self.bst.get(k))
 
@@ -55,12 +54,11 @@ class TestBst(unittest.TestCase):
 
     def test_del(self):
         """ Test that remove maintain correct structure in tree """
-        size = 10
-        seq = utils.random_seq(size)
+        seq = [1, 5, 2, 4, 3, 0, 9, 7, 8, 6]
         utils.list_to_bst(seq, self.bst)
-        r_seq = utils.random_seq_from_list(seq)
+        remove_seq = [5, 0, 2, 3, 4, 1, 6, 7, 8, 9]
 
-        for k in r_seq:
+        for k in remove_seq:
             v = seq.index(k)
             self.assertEqual(v, self.bst.remove(k))
             with self.assertRaises(KeyError):
@@ -69,28 +67,30 @@ class TestBst(unittest.TestCase):
 
 
 
+
     def test_del_error(self):
         """ Test that remove raise KeyError """
         with self.assertRaises(KeyError):
             self.bst.remove(3)
-        size = 10
-        seq = utils.random_seq(size)
+        seq = [1, 5, 2, 4, 3, 0, 9, 7, 8, 6]
         utils.list_to_bst(seq, self.bst)
+
         with self.assertRaises(KeyError):
             self.bst.remove(-1)
         with self.assertRaises(KeyError):
-            self.bst.remove(size+1)
+            self.bst.remove(len(seq)+1)
         self.assertTrue(utils.is_bst(self.bst.root))
 
 
 
     def test_inorder_traversal(self):
         """ Test the inorder traversal print"""
-        size = 20
-        seq = utils.random_seq(size)
+        seq = [3, 10, 4, 14, 1, 8, 2, 9, 12, 18, 16, 7, 0, 11, 17, 5, 13, 6, 19, 15]
         utils.list_to_bst(seq, self.bst)
-        seq_dict = utils.list_to_dict(seq)
-        sorted_keys = sorted(seq_dict.keys())
+
+        seq_dict = utils.list_to_dict(seq)# Done to get index for each value.
+        sorted_keys = sorted(seq_dict.keys())# Get keys in order, values from seq list
+        # use sorted keys to get values for they keys in order
         res = [str(seq_dict[i]) for i in sorted_keys]
         with patch('sys.stdout', new=StringIO()) as fake_out:
             self.bst.inorder_traversal_print()
