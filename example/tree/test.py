@@ -21,7 +21,6 @@ class TestBst(unittest.TestCase):
 
 
 
-
     def test_insert(self):
         """ Test that insert creates binary search tree """
         seq = [3, 8, 5, 6, 1, 0, 2, 4, 9, 7]

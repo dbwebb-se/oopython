@@ -25,16 +25,19 @@ def is_bst(root, l=None, r=None, parent=None):
     # correct data or not i.e. left node's data
     # should be less than root's data
     if l is not None and root.key < l.key:
-        return False
+        raise KeyError(f"Node with key {root.key}'s left child is not lower, it is {l.key}")
     # if right node exist then check it has
     # correct key or not i.e. right node's key
     # should be greater than root's key
     if r is not None and root.key > r.key:
-        return False
+        raise KeyError(f"Node with key {root.key}'s right child is not higher, it is {r.key}")
 
     # if check that the parent is correct node
     if root.parent is not parent:
-        return False
+        raise KeyError((
+            f"Expected Node with key {root.key} to have parent with key {parent.key}"
+            f" but it is {root.parent.key}"
+        ))
 
     # check recursively for every node.
     return is_bst(root.left, l, root, root) and \
