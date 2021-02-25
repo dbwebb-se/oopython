@@ -1,0 +1,5 @@
+Du har rätt mycket kod i size metoden. Du hade kunna göra den mycket mindre genom att ha ett instans attribut du ökar med 1 varje gång det läggs till ett element i enqueue och minska den med 1 i dequueue metoden.
+
+I din lista använder du exceptions och du Node objekten korrekt.
+
+Testerna ser bra ut, du verifierar värden efter du kört metoderna. Det jag saknar är ett test där du verifierar att ett fel lyfts, men det stod inte explicit i uppgiften så du behöver inte kompletera det.

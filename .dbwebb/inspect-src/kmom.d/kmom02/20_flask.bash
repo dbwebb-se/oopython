@@ -3,7 +3,7 @@ cd me/$KMOM/bank || exit
 e() { exit; }; export -f e
 f() { exit 1; }; export -f f
 
-echo "View account_manager.py"
+read -p  "Press to view account_manager.py" answer
 cat account_manager.py
 
 read -p "Press to view accounts.py" answer

@@ -49,11 +49,11 @@ case $KMOM in
         printf "$url\n" 2>&1
         eval "$BROWSER" "$url" &
     ;;
-#     kmom04)
-#         url="$baseMeUrl/kmom04/me4"
-#         printf "$url\n" 2>&1
-#         eval "$BROWSER" "$url" &
-#     ;;
+    kmom04)
+        url="$baseMeUrl/kmom04/queue"
+        printf "$url\n" 2>&1
+        eval "$BROWSER" "$url" &
+    ;;
 #     kmom05)
 #         url="$baseMeUrl/kmom05/me5"
 #         printf "$url\n" 2>&1
