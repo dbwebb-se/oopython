@@ -10,6 +10,7 @@ Vilket vi vill göra för att ersätta input() med ett Mock objekt.
 """
 from io import StringIO
 from unittest import mock, TestCase, main
+import a_module
 
 def func_with_one_input():
     """
@@ -104,8 +105,57 @@ class TestPatch(TestCase):
             # print(fake_out.getvalue())
 
 
+class TestPatchModule(TestCase):
+    """
+    Här visar vi hur man kan mocka functioner i en annan modul.
+    """
+
+    def test_get_number_of_line_in_file(self):
+        """
+        Mocka funktionen som läser en fil. Så vi inte behöver ha en fil med rätt innehåll.
+        """
+        with mock.patch('a_module.read_file_content', return_value=[0, 1, 2, 3, 4]):
+            length = a_module.get_number_of_line_in_file()
+            self.assertEqual(length, 5)
 
 
+
+    @mock.patch('a_module.read_file_content')
+    def test_get_number_of_line_in_file_decorator(self, read_mock):
+        """
+        Mocka funktionen som läser en fil. Så vi inte behöver ha en fil med rätt innehåll.
+        Här mockar vi via en dekorator istället.
+        """
+        read_mock.return_value = [0, 1, 2, 3, 4]
+        length = a_module.get_number_of_line_in_file()
+        self.assertEqual(length, 5)
+
+
+
+
+    @mock.patch('a_module.read_file_content_with_arg')
+    def test_get_number_of_line_in_file_argument(self, read_mock):
+        """
+        Mocka funktionen som läser en fil. Så vi inte behöver ha en fil med rätt innehåll.
+        Här mockar vi via en dekorator istället.
+        Vi kan säkerställa vilket värde som använts som argument till en mockad funktion.
+        """
+        read_mock.return_value = [0, 1, 2, 3, 4]
+        length = a_module.get_number_of_line_in_file_with_arg("a file.txt")
+        self.assertEqual(length, 5)
+        read_mock.assert_called_once_with("a file.txt")
+
+
+#pylint: disable=pointless-string-statement
+"""
+När ska man använda dekorator eller context manager för att patcha?
+Det går dessutom att lägga dekoratorn på vårt test klass. Då är funktionen
+mockad i alla testerna som ligger i klassen.
+
+Jag brukar använda dekorator när vi inte behöver använda funktionens orginal beteende i koden.
+Jag använder context manager om jag av någon anledning behöver att funktionen funkar
+som den ska i en del av koden och sen vill vi mocka den i en annan.
+"""
 
 if __name__ == "__main__":
     main(verbosity=3)
