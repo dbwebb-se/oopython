@@ -19,6 +19,8 @@ m.return_value = "magic"
 
 print(m())
 
+
+
 def koo():
     """
     Function used to return value in a Mock
@@ -30,14 +32,18 @@ def koo():
 m.side_effect = koo
 print(m())
 
+
+
 # side_effect kan också vara en sekvens
 m.side_effect = [1, 2, 3]
-# Då returveras nästa element varje gång mocken anropas.
+# Då returneras nästa element varje gång mocken anropas.
 print(m())
 print(m())
 print(m())
 # Kastar StopIteration
 # print(m())
+
+
 
 # Kan också använda side_effect för att kasta ett exception när en metod anropas.
 def raise_exception():
@@ -50,6 +56,8 @@ m.chaos = raise_exception
 # m.chaos()
 # ValueError
 
+
+
 # Vi kan lägga till attribut på Mock objektet också
 m.something = "magic"
 print(m.something)
@@ -57,6 +65,8 @@ print(m.something)
 # Låtsas skapa funktioner och bestämma vad de ska returnera
 m.boo.return_value = "funcational magic"
 print(m.boo())
+
+
 
 # Vi kan göra väldigt mycket och dynamiska saker med Mock.
 # Detta var grunderna i Mock, för att testa input ska vi använda oss av

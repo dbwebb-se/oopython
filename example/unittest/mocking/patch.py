@@ -67,6 +67,8 @@ class TestPatch(TestCase):
             # körs i detta scopet/namespace
             self.assertEqual(func_with_one_input(), inp[0])
 
+
+
     def test_func_with_input_list_value(self):
         """
         Test function with a while loop asking for multiple inputs
