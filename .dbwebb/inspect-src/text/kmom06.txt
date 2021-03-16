@@ -1,3 +1,7 @@
-Bra jobbar, alla tester går igenom och koden validerar.
+Alla tester ger OK!
 
-Jag hittade heller inget i din kod att kommentera på.
+Koden i trädet ser överlag bra ut. Remove koden kan generaliseras så du inte behöver lika många special fall.
+
+Du förklarar hur trädet fungerar väldigt bra. 
+
+Tydlig och genomgående förklaring av de olika datastrukturerna. Det verkar ha väldigt bra kolla på de olika och deras för och nackdelar.
