@@ -3,3 +3,5 @@ Du har rätt mycket kod i size metoden. Du hade kunna göra den mycket mindre ge
 I din lista använder du exceptions och du Node objekten korrekt.
 
 Testerna ser bra ut, du verifierar värden efter du kört metoderna. Det jag saknar är ett test där du verifierar att ett fel lyfts, men det stod inte explicit i uppgiften så du behöver inte kompletera det.
+
+Bra förklaring av listor kontra arrayer.
