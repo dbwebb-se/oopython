@@ -1,0 +1,7 @@
+Jag har kollat på dina rekursiva funktioner och sorteringen.
+
+Kul att du gillar visualgo.  Den är en väldigt användbar sida.
+
+Du verkar förstå BigO.
+
+Rekursion är svårt, det är verkligen annat tänk än de flesta är vana vid. Bra att du lyckades få ihop det.
