@@ -3,29 +3,39 @@
 # action params file/dirname
 #
 
-# kmom01
-me/flask
+[kmom01]
 me/kmom01/lab1/answer.py
-me/kmom01/my_app/app.py
-
-# kmom02
-me/flask
-me/kmom02/lab2/answer.py
-
-# kmom03
+me/kmom01/lab1/classes.py
 me/flask/person.py
-me/flask/data.py
 
-# kmom04
-me/kmom04/lab3/answer.py
-me/flask/db/farm.sqlite
+[kmom02]
+me/kmom02/lab2/answer.py
+me/kmom02/lab2/classes.py
+me/kmom02/bank/account_manager.py
+me/kmom02/bank/accounts.py
 
-# kmom05
-me/kmom05/unorderedlist/main.py
-me/kmom05/unorderedlist/unorderedlist.py
+[kmom03]
+me/kmom03/bank2/person.py
+me/kmom03/bank2/tests.py
+me/kmom03/bank2/account_manager.py
 
-# kmom06
+[kmom04]
+me/kmom04/queue/queue.py
+me/kmom04/list/unorderedlist.py
+me/kmom04/list/main.py
+me/kmom04/list/test.py
+
+[kmom05]
+me/kmom05/lab3/answer.py
+me/kmom05/sort/sort.py
+# comma separated values for multiple optional names
+me/kmom05/sort/tests.py=test.py,testing.py
+
+[kmom06]
 me/kmom06/tree/bst.py
 
-# kmom10
+[kmom10]
 me/kmom10/spellchecker/trie.py
+me/kmom10/spellchecker/spellchecker.py
+me/kmom10/spellchecker/test.py
+me/kmom10/spellchecker/node.py
