@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd me/tentamen || exit
+cd me/kmom10/spellchecker || exit
 e() { exit; }; export -f e
 f() { exit 1; }; export -f f
 
