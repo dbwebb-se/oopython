@@ -123,15 +123,15 @@ export -f doLog
 examiner="examiner"
 lab="lab"
 validate="validate"
+student_tests="student_tests"
 # can't have space in filenames
 timeout_files=($lab $examiner)
 
 case "$TESTSUITE" in
     "kmom10"            )
-        TESTSUITE="try1"
-        files=($validate $examiner)
+        files=($validate $examiner $student_tests)
         ;;
-    kmom0[1-6]          ) files=($validate $lab $examiner)      ;;
+    kmom0[1-6]          ) files=($validate $lab $examiner $student_tests)      ;;
     lab[1-9]            ) files=($validate $lab)                ;;
     *                   )
 
