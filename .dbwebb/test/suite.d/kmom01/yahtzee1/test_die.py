@@ -22,7 +22,6 @@ if REPO_PATH not in sys.path:
 
 # Path to file and basename of the file to import
 die = import_module(REPO_PATH, 'src/die')
-hand = import_module(REPO_PATH, 'src/hand')
 
 
 class Test1Die(ExamTestCase):
@@ -132,104 +131,18 @@ class Test1Die(ExamTestCase):
         self.assertEqual(str(d1), "1")
 
 
-class Test2Hand(ExamTestCase):
-    """
-    Testing the class Hand.
-    """
-    def setUp(self):
-        random.seed("yahtzee")
-        self.hand = hand.Hand()
-
-    @tags("hand")
-    def test_to_create_a_hand(self):
+    @tags("die")
+    def test_roll(self):
         """
-        Testar att skapa en hand som innehåller 5 tärningar med slumpade värden.
-        Förväntar att attributet dice är en lista med 5 tärningar:
+        Testar att roll() slumpar nytt värde.
+        Förväntar att _value tilldelades nya värdet:
         {correct}
-        Innehöll följande:
+        _value tilldelades följande:
         {student}
         """
-        self.assertTrue(hasattr(self.hand, "dice"))
-        self.assertEqual(len(self.hand.dice), 5)
-        self.assertEqual(self.hand.dice[0].get_value(), 2)
-        self.assertEqual(self.hand.dice[1].get_value(), 4)
-        self.assertEqual(self.hand.dice[2].get_value(), 6)
-        self.assertEqual(self.hand.dice[3].get_value(), 2)
-        self.assertEqual(self.hand.dice[4].get_value(), 1)
-
-    @tags("hand")
-    def test_to_create_a_hand_with_dice(self):
-        """
-        Testar att skapa en hand som innehåller 5 tärningar med värden.
-        Förväntar att attributet dice är en lista med 5 tärningar:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        new_hand = hand.Hand([6, 6, 6, 6, 6])
-        self.assertTrue(hasattr(new_hand, "dice"))
-        self.assertEqual(len(new_hand.dice), 5)
-        self.assertEqual(new_hand.dice[0].get_value(), 6)
-        self.assertEqual(new_hand.dice[1].get_value(), 6)
-        self.assertEqual(new_hand.dice[2].get_value(), 6)
-        self.assertEqual(new_hand.dice[3].get_value(), 6)
-        self.assertEqual(new_hand.dice[4].get_value(), 6)
-
-    @tags("hand")
-    def test_to_reset_hand(self):
-        """
-        Testar att nollställa handen.
-        Förväntar att attributet dice är nollställt:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        dice = self.hand.dice
-        self.hand.reset()
-        self.assertEqual(len(self.hand.dice), 5)
-        self.assertNotEqual(self.hand.dice, dice)
-
-    @tags("hand")
-    def test_to_roll_hand_specific_dice(self):
-        """
-        Testar att slå om vissa av tärningarna i handen.
-        Förväntar att attributet dice har fått följande värden:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        new_hand = self.hand
-        new_hand.roll([0, 3, 4])
-        self.assertEqual(new_hand.dice[0].get_value(), 4)
-        self.assertEqual(new_hand.dice[1].get_value(), 4)
-        self.assertEqual(new_hand.dice[2].get_value(), 6)
-        self.assertEqual(new_hand.dice[3].get_value(), 1)
-        self.assertEqual(new_hand.dice[4].get_value(), 2)
-
-    @tags("hand")
-    def test_to_roll_hand_specific_dice_out_of_index(self):
-        """
-        Testar att slå om vissa av tärningarna i handen.
-        Förväntar att attributet dice har fått följande värden:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        with self.assertRaises(IndexError):
-            self.hand.roll([0, 6])
-
-
-    @tags("hand")
-    def test_magical_method_str(self):
-        """
-        Testar att den magiska funktionen __str__ funkar med str().
-        Förväntar att värdet "1" returneras:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        self.assertEqual(str(self.hand), "available: ['2', '4', '6', '2', '1']")
-
+        d1 = die.Die()
+        d1.roll()
+        self.assertEqual(d1._value, 4)
 
 if __name__ == '__main__':
     runner = TextTestRunner(resultclass=ExamTestResult, verbosity=2)
