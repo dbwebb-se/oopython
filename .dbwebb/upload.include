@@ -20,6 +20,15 @@
 /example/**
 
 /me/
+- /me/anax-lite/.bin
+- /me/anax-lite/cache/cimage/*
+- vendor/mos/cimage/webroot
+- vendor/**/config
+- vendor/**/docs
+- vendor/**/test
+- node_modules/
+- **/.vscode
+- **/.idea
 /me/**
 
 - */

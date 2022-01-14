@@ -11,35 +11,34 @@ me/flask
 me/kmom01/lab1
 me/kmom01/classes
 me/kmom01/my_app
+me/kmom01/yahtzee1
 
 # kmom02
 me/kmom02/lab2
 me/kmom02/relations
 me/kmom02/get_post
-me/kmom02/bank
+me/kmom02/yahtzee2
 
 # kmom03
 me/kmom03/uml
 me/kmom03/unittest
-me/kmom03/war
-me/kmom03/bank2
+me/kmom03/yahtzee3
 
 # kmom04
+me/kmom04/structures
 me/kmom04/queue
 me/kmom04/list
 
 # kmom05
+me/kmom05/algorithms
 me/kmom05/lab3
 me/kmom05/sort
 
 # kmom06
-me/kmom06
-me/kmom06/improve
 me/kmom06/tree
 me/kmom06/lab4
 
 # kmom10
-me/kmom10
 me/kmom10/spellchecker
 
 # --------------------------------------------------------------------------
