@@ -97,7 +97,7 @@ class Test2Hand(ExamTestCase):
         Innehöll följande:
         {student}
         """
-        self.assertEqual(str(self.hand), "['2', '4', '6', '2', '1']")
+        self.assertEqual(str(self.hand), "2, 4, 6, 2, 1")
 
 
 if __name__ == '__main__':
