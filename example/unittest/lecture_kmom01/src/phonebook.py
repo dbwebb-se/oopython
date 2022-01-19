@@ -29,3 +29,7 @@ class Phonebook:
             if person.name == name:
                 return person
         return None
+
+    def get_contacts(self):
+        """ return all contacts"""
+        return self._contacts

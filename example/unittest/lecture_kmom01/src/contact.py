@@ -11,14 +11,11 @@ class Contact():
         """
         Constructor
         """
-        if self.is_number_valid(number):
-            self.name = name
-            if number is None:
-                self.number = number
-            else:
-                self.number = self.create_number()
+        if number is None or not self.is_number_valid(number):
+            self.number = self.create_number()
         else:
-            raise ValueError()
+            self.number = number
+        self.name = name
 
 
     @staticmethod
@@ -34,17 +31,14 @@ class Contact():
     def is_number_valid(number):
         """
         Validate phonenumber
-        Must be 10 number and have "-  " in places
+        format "xxx-xxx xx xx"
         """
-        print(f".{number}.")
         if len(number) == 13 and number[3] + number[7] + number[10] == "-  ":
             n = number.replace(" ", "").replace("-", "")
             for c in n:
                 if not c.isdigit():
-                    print(c)
                     return False
             return True
-        print("No")
         return False
 
     def __str__(self):
