@@ -7,6 +7,7 @@
 # ignore non assignment folders
 -./me/kmom01/classes/*
 -./me/kmom01/my_app/*
+-./me/kmom01/unittest/*
 -./me/kmom02/relations/*
 -./me/kmom02/get_post/*
 -./me/kmom03/uml/*
