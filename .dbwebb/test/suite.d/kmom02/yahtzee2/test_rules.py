@@ -226,14 +226,14 @@ class Test6ThreeOfAKind(ExamTestCase):
     def test_three_of_a_kind_points_all_the_same(self):
         """
         Testar att ThreeOfAKind ger ifrån sig rätt antal poäng även om det är 5 6:or.
-        Förväntar att 18 returneras:
+        Förväntar att 30 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
         self.a_rule = rules.ThreeOfAKind()
         self.hand = hand.Hand([6, 6, 6, 6, 6])
-        self.assertEqual(self.a_rule.points(self.hand), 6*3)
+        self.assertEqual(self.a_rule.points(self.hand), 6*5)
 
 class Test6FourOfAKind(ExamTestCase):
     """
@@ -256,14 +256,14 @@ class Test6FourOfAKind(ExamTestCase):
     def test_four_of_a_kind_points_all_the_same(self):
         """
         Testar att FourOfAKind ger ifrån sig rätt antal poäng även om det är 5 6:or.
-        Förväntar att 18 returneras:
+        Förväntar att 30 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
         self.a_rule = rules.FourOfAKind()
         self.hand = hand.Hand([6, 6, 6, 6, 6])
-        self.assertEqual(self.a_rule.points(self.hand), 6*4)
+        self.assertEqual(self.a_rule.points(self.hand), 6*5)
 
 class Test7FullHouse(ExamTestCase):
     """
