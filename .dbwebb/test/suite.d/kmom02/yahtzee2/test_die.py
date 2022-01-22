@@ -46,12 +46,15 @@ class Test1Die(ExamTestCase):
     @tags("die")
     def test_get_value(self):
         """
-        Testar att rätt värde returneras.
+        Testar att `get_value()` returnerar rätt värde.
+        Skapar tärning med följande värde:
+        {arguments}
         Förväntar att värdet 6 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
+        self._argument = 6
         d1 = die.Die(6)
         self.assertEqual(d1.get_value(), 6)
 
@@ -59,11 +62,14 @@ class Test1Die(ExamTestCase):
     def test_get_name(self):
         """
         Testar att rätt namn på värdet returneras.
+        Skapar tärning med följande värde:
+        {arguments}
         Förväntar att "six" returneras:
         {correct}
         Innehöll följande:
         {student}
         """
+        self._argument = 6
         d1 = die.Die(6)
         self.assertEqual(d1.get_name(), "six")
 
@@ -122,7 +128,7 @@ class Test1Die(ExamTestCase):
     def test_magical_method_str(self):
         """
         Testar att den magiska funktionen __str__ funkar med str().
-        Förväntar att värdet "1" returneras:
+        Förväntar att värdet "1" returneras, om tärningen skapas med värdet 1:
         {correct}
         Innehöll följande:
         {student}
@@ -147,7 +153,8 @@ class Test1Die(ExamTestCase):
     @tags("die")
     def test_magical_method_eq(self):
         """
-        Testar att den magiska funktionen __eq__ funkar med ==.
+        Testar att den magiska funktionen __eq__ kan jämföra heltal.
+        Tärning skapas med värdet 5 och 5 används som heltal vi jämförelse.
         Förväntar att värdet True returneras:
         {correct}
         Innehöll följande:
@@ -157,16 +164,32 @@ class Test1Die(ExamTestCase):
         self.assertTrue(d1 == 5)
 
     @tags("die")
-    def test_magical_method_eq_false(self):
+    def test_magical_method_eq_die(self):
         """
-        Testar att den magiska funktionen __eq__ funkar med ==.
+        Testar att den magiska funktionen __eq__ kan jämföra med Die objekt.
+        Skapar två Die objekt med värde 3 och jämför.
         Förväntar att värdet True returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        d1 = die.Die(5)
-        self.assertFalse(d1 == "5")
+        d1 = die.Die(3)
+        d2 = die.Die(3)
+        self.assertTrue(d1 == d2)
+
+    @tags("die")
+    def test_magical_method_eq_false(self):
+        """
+        Testar att den magiska funktionen __eq__ kan jämföra med Die objekt.
+        Skapar ett Die objekt med värde 2 och ett med värde 4.
+        Förväntar att värdet True returneras:
+        {correct}
+        Innehöll följande:
+        {student}
+        """
+        d1 = die.Die(2)
+        d2 = die.Die(4)
+        self.assertFalse(d1 == d2)
 
 if __name__ == '__main__':
     runner = TextTestRunner(resultclass=ExamTestResult, verbosity=2)
