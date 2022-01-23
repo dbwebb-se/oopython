@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.4/brython.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.4/brython_stdlib.js">
+    </script>
+</head>
+
+<body onload="brython()">
+
+    <textarea style="color:var(--dark-3);font-family: Consolas;" id="code" class="codearea" rows="20" cols="80"></textarea>
+
+
+    <script type="text/python">
+        import sys
+        from interpreter import Interpreter
+        print(dir(Interpreter)) # is seen in the web console
+
+        sys.path.insert(0,'{{ url_for("code", path=code_path) }}') # url for where brython should try to import files from.
+
+        i = Interpreter("code", rows=30, cols=84, default_css=True)
+
+        #i.write("hello") # Using write() does not enter an "enter" after writing text.
+        #i.flush() # Need to use flush() after write() for it to show in interpreter.
+        i.feed("# The output from executing files is shown in the web console!")
+        i.feed("# Press F12 to open console!")
+        i.feed("# Try importing and running files from the directory!")
+    </script>
+
+
+</body>
+
+</html>
