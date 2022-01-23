@@ -24,5 +24,6 @@ class Car():
         Read data from json file. Create objekt with data and return it.
         Called a factory method
         """
-        data = json.load(open(filename))
+        with open(filename, encoding="utf-8") as fd:
+            data = json.load(fd)
         return cls(data["model"], data["year"], data["color"])

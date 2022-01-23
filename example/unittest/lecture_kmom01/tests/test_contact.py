@@ -1,24 +1,33 @@
+"""
+How to write unittests for a Class.
+"""
 import unittest
 import random
 from src.contact import Contact
 
 class TestContactCreate(unittest.TestCase):
+    """
+    Contins tests for Contact class
+    """
     def setUp(self):
         print("hejhej")
         random.seed("lecture")
 
 
     def test_create_valid_number(self):
+        """Simple test of instance attribute"""
         c = Contact("andreas", "234-123 23 12")
         self.assertEqual("andreas", c.name)
         self.assertEqual("234-123 23 12", c.number)
 
     def test_create_no_number(self):
+        """Simple test of instance attribute"""
         c = Contact("andreas")
         self.assertEqual("andreas", c.name)
         self.assertEqual("267-751 82 74", c.number)
 
     def test_create_invalid_number(self):
+        """Simple test of instance attribute"""
         c = Contact("marie", "ijiolkj")
         self.assertEqual("marie", c.name)
         self.assertEqual("267-751 82 74", c.number)

@@ -2,6 +2,8 @@
 """
 Example of inheritance
 """
+
+# pylint: disable=unused-private-member
 class Video():
     """
     Class representing a video

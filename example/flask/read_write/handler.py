@@ -35,7 +35,7 @@ class Handler:
 
     def read_data(self):
         """Read data from json file to init handler"""
-        with open(Handler.filename, "r") as f:
+        with open(Handler.filename, "r", encoding="utf-8") as f:
             data = json.load(f)
         self.employees = []
 
@@ -51,5 +51,5 @@ class Handler:
         for empl in self.employees:
             data["employees"].append(empl.to_dict())
 
-        with open(Handler.filename, "w") as f:
+        with open(Handler.filename, "w", encoding="utf-8") as f:
             json.dump(data, f)

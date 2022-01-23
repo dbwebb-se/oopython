@@ -27,7 +27,8 @@ class RaceTrack():
         """
         Read card data from file and create Car objects
         """
-        json_cars = json.load(open("cars.json"))
+        with open("cars.json", encoding="utf-8") as fd:
+            json_cars = json.load(fd)
         for car in json_cars:
             self.cars.append(Car.create_from_json(car))
 

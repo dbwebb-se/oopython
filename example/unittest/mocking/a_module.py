@@ -17,7 +17,7 @@ def read_file_content():
     """
     This function will be mocked
     """
-    with open("a file.txt") as fd:
+    with open("a file.txt", encoding="utf-8") as fd:
         return fd.readlines()
 
 
@@ -37,5 +37,5 @@ def read_file_content_with_arg(filename):
     """
     This function will be mocked and has an argument with can be asserted
     """
-    with open(filename) as fd:
+    with open(filename, encoding="utf-8") as fd:
         return fd.readlines()
