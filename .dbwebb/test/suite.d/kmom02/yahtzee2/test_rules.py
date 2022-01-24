@@ -92,14 +92,14 @@ class Test4SameValueRule(ExamTestCase):
     def test_has_name(self):
         """
         Testar att SameValueRule har attributet name.
-        Instansierar SameValueRule med argumenten 2 och "2".
+        Instansierar SameValueRule med argumenten 2 och "two".
         Förväntar att .name innehåller följande.
         {correct}
         Innehöll följande:
         {student}
         """
-        rule = rules.SameValueRule(1, "one")
-        self.assertEqual(rule.name, "one")
+        rule = rules.SameValueRule(2, "two")
+        self.assertEqual(rule.name, "two")
 
 
 
