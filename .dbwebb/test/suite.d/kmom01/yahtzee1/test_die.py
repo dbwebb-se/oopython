@@ -46,8 +46,8 @@ class Test1Die(ExamTestCase):
     @tags("die")
     def test_get_value(self):
         """
-        Testar att rätt värde returneras.
-        Förväntar att värdet 6 returneras:
+        Testar att `get_value()` returnerar rätt värde.
+        Skapar tärning med följande värde:
         {correct}
         Innehöll följande:
         {student}
@@ -59,7 +59,7 @@ class Test1Die(ExamTestCase):
     def test_get_name(self):
         """
         Testar att rätt namn på värdet returneras.
-        Förväntar att "six" returneras:
+        Skapar tärning med följande värde:
         {correct}
         Innehöll följande:
         {student}
@@ -108,7 +108,7 @@ class Test1Die(ExamTestCase):
     @tags("die")
     def test_set_value_below_min_rolls(self):
         """
-        Testar att maxvärdet returneras även om värdet sätts till -1 då
+        Testar att minvärdet returneras även om värdet sätts till -1 då
         en tärning skapas.
         Förväntar att värdet 1 returneras:
         {correct}
@@ -122,19 +122,21 @@ class Test1Die(ExamTestCase):
     def test_magical_method_str(self):
         """
         Testar att den magiska funktionen __str__ funkar med str().
-        Förväntar att värdet "1" returneras:
+        Förväntar att värdet "1" returneras om tärningen skapas med värdet 1:
         {correct}
         Innehöll följande:
         {student}
         """
-        d1 = die.Die(-1)
+        d1 = die.Die(1)
         self.assertEqual(str(d1), "1")
 
 
     @tags("die")
     def test_roll(self):
         """
-        Testar att roll() slumpar nytt värde.
+        Testar att roll() slumpar fram ett nytt värde. Först skapas tärningen
+        utan värde och får då det slumpade värdet 2. Sen slås tärningen och ett
+        nytt värde slumpas fram.
         Förväntar att _value tilldelades nya värdet:
         {correct}
         _value tilldelades följande:
@@ -142,7 +144,7 @@ class Test1Die(ExamTestCase):
         """
         d1 = die.Die()
         d1.roll()
-        self.assertEqual(d1._value, 4)
+        self.assertEqual(d1.get_value(), 4)
 
 if __name__ == '__main__':
     runner = TextTestRunner(resultclass=ExamTestResult, verbosity=2)

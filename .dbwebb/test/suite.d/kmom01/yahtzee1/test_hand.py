@@ -49,6 +49,8 @@ class Test2Hand(ExamTestCase):
     def test_to_create_a_hand_with_dice(self):
         """
         Testar att skapa en hand som innehåller 5 tärningar med värden.
+        Skapar handen med listan:
+        [6, 6, 6, 6, 6]
         Förväntar att attributet dice är en lista med 5 tärningar:
         {correct}
         Innehöll följande:
@@ -92,7 +94,8 @@ class Test2Hand(ExamTestCase):
     def test_magical_method_str(self):
         """
         Testar att den magiska funktionen __str__ funkar med str().
-        Förväntar att värdet "1" returneras:
+        Skapar en Hand med slumpade tärningar,
+        Förväntar att följande sträng returneras:
         {correct}
         Innehöll följande:
         {student}
