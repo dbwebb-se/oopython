@@ -31,11 +31,13 @@ file_to_exec="answer.py"
 LAB_VERSION="$(cat $COURSE_REPO_BASE/.dbwebb/lab.version)"
 source "$COURSE_REPO_BASE/.dbwebb.course"
 
+lab_found=0
 for lab in $lab_array; do
     temp_arr=(${lab//\// })
     res="$(contains_lab)"
 
     if [[ $res == "1" ]]; then
+        lab_found=1
         lab_file="${COURSE_REPO_BASE}/${lab}/${file_to_exec}"
 
         lab_link="https://lab.dbwebb.se/?course=$DBW_COURSE&lab=$(basename $lab)&version=$LAB_VERSION&acronym=$ACRONYM&doGenerate=Submit"
@@ -52,15 +54,24 @@ Executing $lab/$file_to_exec ...
             bash -c "set -o pipefail && cd "$COURSE_REPO_BASE/$lab" &&  ${PYTHON_EXECUTER} -u "${lab_file}"  2>&1  | tee -a "$LOG" "
             status=$?
         fi
-    fi
-done;
 
-printf "
+        printf "
 Link to lab: $lab_link
 $FOOTER
 $SEPARATOR
 " | tee -a "$LOG"
+    fi
+done;
 
+if [[ $lab_found == 0 ]]; then
+    status=0
+    printf "
+No lab this kmom.
+
+$FOOTER
+$SEPARATOR
+" | tee -a "$LOG"
+fi
 
 if [[ $status == 0 ]]; then
     exit 0
