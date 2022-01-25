@@ -26,26 +26,43 @@ DBWEBB_MAP="$COURSE_REPO_BASE/.dbwebb.map"
 map_paths_array="$(cat $DBWEBB_MAP | awk "/[\/]$TESTSUITE/")"
 
 # takes name from dir name in suit.d/kmom0x/
-ASSIGNMENT_NAMES="$(ls $(find "${COURSE_REPO_BASE}/.dbwebb/test/suite.d" -name ${TESTSUITE} -and -type d))"
+SUITE_PATH="$(find "${COURSE_REPO_BASE}/.dbwebb/test/suite.d" -name ${TESTSUITE} -and -type d)"
+if [ "$SUITE_PATH" = "" ];
+then
+    printf "
+No test suite found for 'dbwebb test', so not looking for a tests dir.
+" | tee -a "$LOG"
+    status=0
+else
+    ASSIGNMENT_NAMES="$(ls $SUITE_PATH)"
 
-# match part of mapp path with assignment name to find assignment path
-for name in $ASSIGNMENT_NAMES; do
-    for path in $map_paths_array; do
-        path_pars=(${path//\// })
-        res="$(contains_name)"
-        if [[ $res == "1" ]]; then
-            printf "$HEADER
-
+    printf "$HEADER
+" | tee -a "$LOG"
+    # match part of mapp path with assignment name to find assignment path
+    for name in $ASSIGNMENT_NAMES; do
+        for path in $map_paths_array; do
+            path_pars=(${path//\// })
+            res="$(contains_name)"
+            if [[ $res == "1" ]]; then
+                ASSIGNMENT_PATH="$COURSE_REPO_BASE/$path"
+                if [ -d "$ASSIGNMENT_PATH/tests" ]; then
+                    printf "
 Running test files in $path/tests
 " | tee -a "$LOG"
 
-            ASSIGNMENT_PATH="$COURSE_REPO_BASE/$path"
-            bash -c "set -o pipefail && cd "$ASSIGNMENT_PATH" &&  ${PYTHON_EXECUTER} -m unittest discover tests""  2>&1  | tee -a "$LOG" "
-            status=$?
-        fi
+                    bash -c "set -o pipefail && cd "$ASSIGNMENT_PATH" &&  ${PYTHON_EXECUTER} -m unittest discover tests""  2>&1  | tee -a "$LOG" "
+                    status=$?
+                else
+                    printf "
+Directory '$path/tests' was not found. Should i be there?
+" | tee -a "$LOG"
+                    status=0
+                fi
+            fi
 
+        done;
     done;
-done;
+fi
 
 
 printf "

@@ -54,24 +54,21 @@ Executing $lab/$file_to_exec ...
             bash -c "set -o pipefail && cd "$COURSE_REPO_BASE/$lab" &&  ${PYTHON_EXECUTER} -u "${lab_file}"  2>&1  | tee -a "$LOG" "
             status=$?
         fi
-
-        printf "
-Link to lab: $lab_link
-$FOOTER
-$SEPARATOR
-" | tee -a "$LOG"
     fi
 done;
 
 if [[ $lab_found == 0 ]]; then
     status=0
     printf "
-No lab this kmom.
+No lab in this kmom.
+" | tee -a "$LOG"
+fi
 
+printf "
+Link to lab: $lab_link
 $FOOTER
 $SEPARATOR
 " | tee -a "$LOG"
-fi
 
 if [[ $status == 0 ]]; then
     exit 0
