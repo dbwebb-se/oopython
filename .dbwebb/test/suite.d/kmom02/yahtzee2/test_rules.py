@@ -72,7 +72,7 @@ class Test4SameValueRule(ExamTestCase):
         {student}
         """
         rule = rules.SameValueRule(1, "1")
-        self.hand.dice = [1, 3, 1, 4, 6]
+        self.hand = hand.Hand([1, 3, 1, 4, 6])
         self.assertEqual(rule.points(self.hand), 1*2)
 
     @tags("rules", "SameValueRule")
@@ -85,7 +85,7 @@ class Test4SameValueRule(ExamTestCase):
         {student}
         """
         rule = rules.SameValueRule(2, "2")
-        self.hand.dice = [1, 3, 1, 4, 6]
+        self.hand = hand.Hand([1, 3, 1, 4, 6])
         self.assertEqual(rule.points(self.hand), 2*0)
 
     @tags("rules", "SameValueRule")
