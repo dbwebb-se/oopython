@@ -103,7 +103,7 @@ class Test1Scoreboard(ExamTestCase):
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
+        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, 50, -1])
         h = hand.Hand([6, 6, 6, 6, 6])
         with self.assertRaises(ValueError):
             sb.add_points("Yahtzee", h)
