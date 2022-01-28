@@ -12,6 +12,7 @@
 -./me/kmom02/get_post/*
 -./me/kmom03/uml/*
 -./me/kmom03/unittest/*
+-./me/kmom03/classes/*
 -./me/kmom04/structures/*
 -./me/kmom05/algorithms/*
 
