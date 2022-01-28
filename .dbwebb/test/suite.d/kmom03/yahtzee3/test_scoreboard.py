@@ -95,6 +95,20 @@ class Test1Scoreboard(ExamTestCase):
         self.assertEqual(sb.get_total_points(), 53)
 
     @tags("scoreboard")
+    def test_add_points_rule_yahtzee_again(self):
+        """
+        Testar att add_points för Yahtzee igen kastar exception.
+        Förväntar att ValueError ska returneras:
+        {correct}
+        Innehöll följande:
+        {student}
+        """
+        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
+        h = hand.Hand([6, 6, 6, 6, 6])
+        with self.assertRaises(ValueError):
+            sb.add_points("Yahtzee", h)
+
+    @tags("scoreboard")
     def test_get_points_from_rule_with_score(self):
         """
         Testar att get_points hämtar poäng för "Ones" med följande
