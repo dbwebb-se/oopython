@@ -29,67 +29,122 @@ class Test1Scoreboard(ExamTestCase):
     """
     Testing the class Scoreboard.
     """
-    @tags("scoreboard")
-    def test_if_points_is_private(self):
-        """
-        Testar att attributet är privat och heter _points.
-        Förväntar att attributet heter _points:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        sb = scoreboard.Scoreboard()
-        self.assertTrue(hasattr(sb, "_points"))
+    # @tags("scoreboard")
+    # def test_if_points_is_private(self):
+    #     """
+    #     Testar att attributet är privat och heter _points.
+    #     Förväntar att attributet heter _points:
+    #     {correct}
+    #     Innehöll följande:
+    #     {student}
+    #     """
+    #     sb = scoreboard.Scoreboard()
+    #     self.assertTrue(hasattr(sb, "_points"))
+
+    def setUp(self):
+        self.empty_dict = {
+            "Ones": -1,
+            "Twos": -1,
+            "Threes": -1,
+            "Fours": -1,
+            "Fives": -1,
+            "Sixes": -1,
+            "Three Of A Kind": -1,
+            "Four Of A Kind": -1,
+            "Full House": -1,
+            "Small Straight": -1,
+            "Large Straight": -1,
+            "Yahtzee": -1,
+            "Chance": -1,
+        }
+        self.a_dict = {
+            "Ones": 3,
+            "Twos": -1,
+            "Threes": -1,
+            "Fours": -1,
+            "Fives": -1,
+            "Sixes": -1,
+            "Three Of A Kind": -1,
+            "Four Of A Kind": -1,
+            "Full House": -1,
+            "Small Straight": -1,
+            "Large Straight": -1,
+            "Yahtzee": -1,
+            "Chance": -1,
+        }
+        self.full_dict = {
+            "Ones": 3,
+            "Twos": 2,
+            "Threes": 0,
+            "Fours": 4,
+            "Fives": 0,
+            "Sixes": 0,
+            "Three Of A Kind": 0,
+            "Four Of A Kind": 0,
+            "Full House": 0,
+            "Small Straight": 0,
+            "Large Straight": 0,
+            "Yahtzee": 0,
+            "Chance": 10
+        }
 
     @tags("scoreboard")
     def test_get_total_points_empty_scoreboard(self):
         """
         Testar att get_total_points returnerar 0 från en tom scoreboard.
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet 0 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard()
+        self._argument = self.empty_dict
+        sb = scoreboard.Scoreboard.from_dict(self.empty_dict)
         self.assertEqual(sb.get_total_points(), 0)
 
     @tags("scoreboard")
     def test_get_total_points_rule_one(self):
         """
         Testar att get_total_points returnerar 3 från scoreboard med 3 ettor.
-        scoreboard: [3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet 3 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
+        self._argument = self.a_dict
+        sb = scoreboard.Scoreboard.from_dict(self.a_dict)
         self.assertEqual(sb.get_total_points(), 3)
+
 
     @tags("scoreboard")
     def test_get_total_points_several_rules(self):
         """
         Testar att get_total_points returnerar rätt poängsumma med följande
-        scoreboard: [3, -1, 9, -1, -1, -1, -1, -1, -1, -1, 50, -1]
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet 62 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
-        self.assertEqual(sb.get_total_points(), 3)
+        self.a_dict["Threes"] = 9
+        self.a_dict["Yahtzee"] = 50
+        self._argument = self.a_dict
+        sb = scoreboard.Scoreboard.from_dict(self.a_dict)
+        self.assertEqual(sb.get_total_points(), 62)
 
     @tags("scoreboard")
     def test_add_points_rule_yahtzee(self):
         """
         Testar att add_points funkar för Yahtzee med hand [6, 6, 6, 6, 6] och följande
-        scoreboard: [3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet 53 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
+        self._argument = self.a_dict
+        sb = scoreboard.Scoreboard.from_dict(self.a_dict)
         h = hand.Hand([6, 6, 6, 6, 6])
         sb.add_points("Yahtzee", h)
         self.assertEqual(sb.get_total_points(), 53)
@@ -97,13 +152,16 @@ class Test1Scoreboard(ExamTestCase):
     @tags("scoreboard")
     def test_add_points_rule_yahtzee_again(self):
         """
-        Testar att add_points för Yahtzee igen kastar exception.
-        Förväntar att ValueError ska returneras:
+        Testar att add_points för Yahtzee kastar exception när den redan har poäng.
+        Scoreboard.from_dict: {arguments}
+        Förväntar att ValueError ska lyftas:
         {correct}
-        Innehöll följande:
+        Inget Error lyftes
         {student}
         """
-        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, 50, -1])
+        self.a_dict["Yahtzee"] = 50
+        self._argument = self.a_dict
+        sb = scoreboard.Scoreboard.from_dict(self.a_dict)
         h = hand.Hand([6, 6, 6, 6, 6])
         with self.assertRaises(ValueError):
             sb.add_points("Yahtzee", h)
@@ -112,65 +170,58 @@ class Test1Scoreboard(ExamTestCase):
     def test_get_points_from_rule_with_score(self):
         """
         Testar att get_points hämtar poäng för "Ones" med följande
-        scoreboard: [3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet 3 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
+        self._argument = self.a_dict
+        sb = scoreboard.Scoreboard.from_dict(self.a_dict)
         self.assertEqual(sb.get_points("Ones"), 3)
 
     @tags("scoreboard")
     def test_get_points_from_rule_without_score(self):
         """
         Testar att get_points hämtar poäng för "Twos" med följande
-        scoreboard: [3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet -1 returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
+        self._argument = self.a_dict
+        sb = scoreboard.Scoreboard.from_dict(self.a_dict)
         self.assertEqual(sb.get_points("Twos"), -1)
 
     @tags("scoreboard")
     def test_finished_not_true(self):
         """
-        Testar att finished returnerar False från en tom scoreboard.
+        Testar att finished returnerar False från en icke full 
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet False returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard()
+        self._argument = self.a_dict
+        sb = scoreboard.Scoreboard.from_dict(self.a_dict)
         self.assertFalse(sb.finished())
 
     @tags("scoreboard")
     def test_finished_true(self):
         """
-        Testar att finished returnerar True från följande scoreboard:
-        [3, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0]
+        Testar att finished returnerar True från följande
+        Scoreboard.from_dict: {arguments}
         Förväntar att värdet True returneras:
         {correct}
         Innehöll följande:
         {student}
         """
-        sb = scoreboard.Scoreboard([3, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0])
+        self._argument = self.full_dict
+        sb = scoreboard.Scoreboard.from_dict(self.full_dict)
         self.assertTrue(sb.finished())
 
-    @tags("scoreboard")
-    def test_from_dict(self):
-        """
-        Testar att from_dict med följande scoreboard:
-        {[3, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0]}
-        Förväntar att värdet True returneras:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        sb = scoreboard.Scoreboard.from_dict([3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
-        self.assertTrue(sb.get_total_points(), 3)
 
 
 if __name__ == '__main__':
