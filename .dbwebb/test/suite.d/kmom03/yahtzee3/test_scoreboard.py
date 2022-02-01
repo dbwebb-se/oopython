@@ -88,6 +88,13 @@ class Test1Scoreboard(ExamTestCase):
             "Chance": 10
         }
 
+    def tearDown(self):
+        self.empty_dict = {}
+        self.a_dict = {}
+        self.full_dict = {}
+
+
+
     @tags("scoreboard")
     def test_get_total_points_empty_scoreboard(self):
         """
