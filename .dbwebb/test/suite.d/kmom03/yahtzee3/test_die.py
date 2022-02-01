@@ -44,9 +44,9 @@ class Test1Die(ExamTestCase):
         self.assertTrue(hasattr(d1, "_value"))
 
     @tags("die")
-    def test_get_value(self):
+    def test_value(self):
         """
-        Testar att `get_value()` returnerar rätt värde.
+        Testar att property `value` returnerar rätt värde.
         Skapar tärning med följande värde:
         {arguments}
         Förväntar att värdet 6 returneras:
@@ -56,7 +56,20 @@ class Test1Die(ExamTestCase):
         """
         self._argument = 6
         d1 = die.Die(6)
-        self.assertEqual(d1.get_value(), 6)
+        self.assertEqual(d1.value, 6)
+
+    @tags("die")
+    def test_value_property(self):
+        """
+        Testar att `value` är ett property.
+        Förväntar att följande rad returnerar True, isinstance(type(d1).value, property):
+        {correct}
+        Innehöll följande:
+        {student}
+        """
+        self._argument = 6
+        d1 = die.Die(6)
+        self.assertTrue(isinstance(type(d1).value, property))
 
     @tags("die")
     def test_get_name(self):
@@ -109,7 +122,7 @@ class Test1Die(ExamTestCase):
         {student}
         """
         d1 = die.Die(100)
-        self.assertEqual(d1.get_value(), 6)
+        self.assertEqual(d1._value, 6)
 
     @tags("die")
     def test_set_value_below_min_rolls(self):
@@ -122,7 +135,7 @@ class Test1Die(ExamTestCase):
         {student}
         """
         d1 = die.Die(-1)
-        self.assertEqual(d1.get_value(), 1)
+        self.assertEqual(d1._value, 1)
 
     @tags("die")
     def test_magical_method_str(self):

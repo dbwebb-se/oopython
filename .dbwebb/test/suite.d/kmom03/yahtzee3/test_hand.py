@@ -42,7 +42,7 @@ class Test2Hand(ExamTestCase):
         Innehöll följande:
         {student}
         """
-        student_dice_value = [self.hand.dice[0].get_value(), self.hand.dice[1].get_value(), self.hand.dice[2].get_value(), self.hand.dice[3].get_value(), self.hand.dice[4].get_value()]
+        student_dice_value = [self.hand.dice[0]._value, self.hand.dice[1]._value, self.hand.dice[2]._value, self.hand.dice[3]._value, self.hand.dice[4]._value]
         self.assertEqual(student_dice_value, [2, 4, 6, 2, 1])
 
     @tags("hand")
@@ -57,7 +57,7 @@ class Test2Hand(ExamTestCase):
         {student}
         """
         new_hand = hand.Hand([6, 6, 6, 6, 6])
-        student_dice_value = [new_hand.dice[0].get_value(), new_hand.dice[1].get_value(), new_hand.dice[2].get_value(), new_hand.dice[3].get_value(), new_hand.dice[4].get_value()]
+        student_dice_value = [new_hand.dice[0]._value, new_hand.dice[1]._value, new_hand.dice[2]._value, new_hand.dice[3]._value, new_hand.dice[4]._value]
         self.assertEqual(student_dice_value, [6, 6, 6, 6, 6])
 
     @tags("hand")
@@ -74,7 +74,7 @@ class Test2Hand(ExamTestCase):
         new_hand = self.hand
         self._argument = [0, 3, 4]
         new_hand.roll([0, 3, 4])
-        student_dice_value = [new_hand.dice[0].get_value(), new_hand.dice[1].get_value(), new_hand.dice[2].get_value(), new_hand.dice[3].get_value(), new_hand.dice[4].get_value()]
+        student_dice_value = [new_hand.dice[0]._value, new_hand.dice[1]._value, new_hand.dice[2]._value, new_hand.dice[3]._value, new_hand.dice[4]._value]
         self.assertEqual(student_dice_value, [4, 4, 6, 1, 2])
 
     # @tags("hand")
