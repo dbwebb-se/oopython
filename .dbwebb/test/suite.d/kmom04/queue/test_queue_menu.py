@@ -19,7 +19,7 @@ REPO_PATH = find_path_to_assignment(FILE_DIR)
 if REPO_PATH not in sys.path:
     sys.path.insert(0, REPO_PATH)
 
-from main import Handler
+Handler = import_module(REPO_PATH, 'main').Handler
 
 class Test2QueueMenu(ExamTestCase):
     """
@@ -27,7 +27,7 @@ class Test2QueueMenu(ExamTestCase):
     The different asserts https://docs.python.org/3.6/library/unittest.html#test-cases
     """
 
-    link_to_assignment = "https://dbwebb.se/uppgift/din-egen-chattbot-marvin-steg-1-v3"
+    link_to_assignment = "https://dbwebb.se/uppgift/skapa-queue"
 
     @classmethod
     def setUpClass(cls):

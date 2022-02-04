@@ -60,8 +60,8 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_set_ok(self):
         """
-        Testar att lägga till 2 noder "one" och "two" i listan. Ändrar data i listan
-        första node till "new_one".
+        Testar att lägga till 2 noder "one" och "two" med append(). Ändrar data i listan
+        på första noden med set() till "new_one".
         Förväntar att listans första node innehåller "new_one":
         {correct}
         Innehöll följande:
@@ -75,8 +75,8 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_set_exception(self):
         """
-        Testar att lägga till 2 noder "one" och "two" i listan. Ändrar data i listan
-        tredje node till "new_three".
+        Testar att lägga till 2 noder "one" och "two" i listan med append(). Testar använda set() för att
+        ändra på node med index 3.
         Förväntar att ett MissingIndex exception skickas:
         {correct}
         Innehöll följande:
@@ -90,7 +90,7 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_size(self):
         """
-        Testar att lägga till 2 noder i listan.
+        Testar att lägga till 2 noder i listan med append.
         Förväntar att listans längd med size() är:
         {correct}
         Innehöll följande:
@@ -103,7 +103,7 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_size_0(self):
         """
-        Testar att storleken på en tom lista.
+        Testar att storleken på en tom lista är 0.
         Förväntar att listans längd med size() är:
         {correct}
         Innehöll följande:
@@ -114,7 +114,7 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_get_ok(self):
         """
-        Testar att lägga till 2 noder i listan.
+        Testar att lägga till 2 noder i listan med append() och sen hämta dem med get().
         Förväntar att listan ska innehålla:
         {correct}
         Innehöll följande:
@@ -129,7 +129,7 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_get_exception(self):
         """
-        Testar att lägga till 1 noder i listan och hämtar tredje noden, som inte finns.
+        Testar att lägga till 1 nod i listan och hämtar tredje noden med get(), som inte finns.
         Förväntar att MissingIndex ska kastas:
         {correct}
         Innehöll följande:
@@ -142,8 +142,8 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_index_of_ok(self):
         """
-        Testar att lägga till 2 noder ("one" och "two") i listan och kollar index
-        på noden med "two".
+        Testar att lägga till 2 noder ("one" och "two") i listan med append() och kollar att index_of()
+        returnerar rätt värde för "two".
         Förväntar att indexet till node "two" är:
         {correct}
         Innehöll följande:
@@ -157,8 +157,8 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_index_of_exception(self):
         """
-        Testar att lägga till 1 nod "one" i listan och vill hämta ut index för
-        nod "two" som inte finns i listan.
+        Testar att lägga till värdet "one" i listan med append() och använder index_of() för
+        att hämta index för värde om inte finns, "two".
         Förväntar att MissingValue ska kastas:
         {correct}
         Innehöll följande:
@@ -171,8 +171,8 @@ class Test2List(ExamTestCase):
     @tags("list")
     def test_remove_middle_node_ok(self):
         """
-        Testar att lägga till 3 noder ("one", "two" och "three") i listan och tar
-        bort "two".
+        Testar att lägga till 3 noder ("one", "two" och "three") i listan med append() och tar
+        bort "two" med remove().
         Förväntar att listans innehåller:
         {correct}
         Innehöll följande:
@@ -184,14 +184,14 @@ class Test2List(ExamTestCase):
         self.list.append(input[1])
         self.list.append(input[2])
         self.list.remove("two")
-        new_list = [self.list.get(i) for i in range(len(self.list))]
+        new_list = [self.list.get(i) for i in range(self.list.size())]
         self.assertEqual(new_list, result)
 
     @tags("list")
     def test_remove_first_node_ok(self):
         """
-        Testar att lägga till 3 noder ("one", "two" och "three") i listan och tar
-        bort "one".
+        Testar att lägga till 3 noder ("one", "two" och "three") i listan med append() och tar
+        bort "one" med remove().
         Förväntar att listans innehåller:
         {correct}
         Innehöll följande:
@@ -203,14 +203,14 @@ class Test2List(ExamTestCase):
         self.list.append(input[1])
         self.list.append(input[2])
         self.list.remove("one")
-        new_list = [self.list.get(i) for i in range(len(self.list))]
+        new_list = [self.list.get(i) for i in range(self.list.size())]
         self.assertEqual(new_list, result)
 
     @tags("list")
     def test_remove_last_node_ok(self):
         """
-        Testar att lägga till 3 noder ("one", "two" och "three") i listan och tar
-        bort "three".
+        Testar att lägga till 3 noder ("one", "two" och "three") i listan med append() och tar
+        bort "three" med remove().
         Förväntar att listans innehåller:
         {correct}
         Innehöll följande:
@@ -222,13 +222,14 @@ class Test2List(ExamTestCase):
         self.list.append(input[1])
         self.list.append(input[2])
         self.list.remove("three")
-        new_list = [self.list.get(i) for i in range(len(self.list))]
+        new_list = [self.list.get(i) for i in range(self.list.size())]
         self.assertEqual(new_list, result)
 
     @tags("list")
     def test_remove_exception(self):
         """
-        Testar att lägga till 1 nod "one" i listan.
+        Testar att lägga till 1 nod "one" i listan med append() och tar bort "two" som inte finns
+        med remove(). 
         Förväntar att MissingValue ska kastas:
         {correct}
         Innehöll följande:
@@ -237,12 +238,6 @@ class Test2List(ExamTestCase):
         self.list.append("one")
         with self.assertRaises(MissingValue):
             self.list.remove("two")
-
-    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def assert_stdout(self, expected_output, mock_stdout=""):
-        """ Tests standard output and compares it with expected_output """
-        self.list.print_list()
-        self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     @tags("list")
     def test_print_list(self):
@@ -256,31 +251,11 @@ class Test2List(ExamTestCase):
         input = ["one",  "two"]
         self.list.append(input[0])
         self.list.append(input[1])
-        fact = "Node 1 contains data: one.\n"
-        fact += "Node 2 contains data: two.\n\n"
-        self.assert_stdout(fact)
-
-    @tags("list")
-    def test_print_list_with_content(self):
-        """
-        Testar att lägga till 2 noder ("one" och "two") i listan och skriver ut den.
-        Förväntar att listans vid print_list() innehåller "one" och "two":
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        input = ["one",  "two"]
-        self.list.append(input[0])
-        self.list.append(input[1])
         with patch("sys.stdout", new=StringIO()) as fake_out:
-            try:
-                self.list.print_list()
-            except SystemExit:
-                pass
-            data = fake_out.getvalue()
-            # self.assertIn(", ".join(input), data)
-            for val in input:
-                self.assertIn(val, data)
+            self.list.print_list()
+            text = fake_out.getvalue()
+        for value in input:
+            self.assertIn(value, text)
 
 
 if __name__ == '__main__':

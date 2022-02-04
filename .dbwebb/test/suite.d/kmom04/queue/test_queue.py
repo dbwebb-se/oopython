@@ -64,7 +64,7 @@ class Test1Queue(ExamTestCase):
     def test_enqueue_node(self):
         """
         Testar att skapa en kö och lägga till 1 nod i kön.
-        Förväntar att queue.head.data returnerar "value":
+        Förväntar att queue.head.data innehåller "value":
         {correct}
         Innehöll följande:
         {student}
