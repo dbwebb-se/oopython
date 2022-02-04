@@ -16,9 +16,13 @@ $SEPARATOR
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TEST_TARGET=$(find "${DIR}/../suite.d" -name "${TESTSUITE}" -and -type d)
+ASSIGNMENT_NAMES="$(ls $TEST_TARGET)"
 
-bash -c "set -o pipefail && cd "${DIR}/.." && ${PYTHON_EXECUTER} -m ${EXAMINER_RUNNER} --what="${TEST_TARGET}" ${ARGUMENTS} 2>&1 | tee -a "$LOG" "
-status=$?
+status=0
+for name in $ASSIGNMENT_NAMES; do
+    bash -c "set -o pipefail && cd "${DIR}/.." && ${PYTHON_EXECUTER} -m ${EXAMINER_RUNNER} --what="${TEST_TARGET}/${name}" ${ARGUMENTS} 2>&1 | tee -a "$LOG" "
+    status=$(($? + $status))
+done;
 
 printf "
 $FOOTER
