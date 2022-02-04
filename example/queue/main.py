@@ -22,8 +22,6 @@ class Handler:
     def __init__(self):
         """ Initialize class """
         self.queue = Queue()
-        self.start()
-
 
     def _get_method(self, method_name):
         """
@@ -61,14 +59,14 @@ class Handler:
         try:
             print(f"{self.queue.dequeue()} has been removed.")
         except EmptyQueueException as e:
-            print(f"Error: {e}")
+            print(f"Queue is empty")
 
     def get_first_item(self):
         """ Prints the value of the first queue node. """
         try:
             print(self.queue.peek())
         except EmptyQueueException as e:
-            print(f"Error: {e}")
+            print(f"Queue is empty")
 
     def get_queue_size(self):
         """ Shows the queue length. """
@@ -83,7 +81,7 @@ class Handler:
         """ Quit the program """
         sys.exit()
 
-    def start(self):
+    def main(self):
         """ Start method """
         while True:
             self._print_menu()
@@ -97,4 +95,5 @@ class Handler:
             input("\nPress any key to continue ...")
 
 if __name__ == "__main__":
-    Handler()
+    h = Handler()
+    h.main()
