@@ -238,22 +238,6 @@ class Test2List(ExamTestCase):
         with self.assertRaises(MissingValue):
             self.list.remove("two")
 
-    # def test_print_list(self, inp, correct=None):
-    #     """
-    #     One function for testing print input functions.
-    #     """
-    #     with patch("builtins.input", side_effect=inp):
-    #         with patch("sys.stdout", new=StringIO()) as fake_out:
-    #             h = Handler()
-    #             try:
-    #                 h.main()
-    #             except SystemExit:
-    #                 pass
-    #             str_data = fake_out.getvalue()
-    #             if correct is not None:
-    #                 for val in correct:
-    #                     self.assertIn(val, str_data)
-    #             return h
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def assert_stdout(self, expected_output, mock_stdout=""):
         """ Tests standard output and compares it with expected_output """
@@ -277,7 +261,7 @@ class Test2List(ExamTestCase):
         self.assert_stdout(fact)
 
     @tags("list")
-    def test_print_list2(self):
+    def test_print_list_with_content(self):
         """
         Testar att lägga till 2 noder ("one" och "two") i listan och skriver ut den.
         Förväntar att listans vid print_list() innehåller "one" och "two":
