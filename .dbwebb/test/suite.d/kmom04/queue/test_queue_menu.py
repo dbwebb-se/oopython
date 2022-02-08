@@ -123,7 +123,7 @@ class Test2QueueMenu(ExamTestCase):
         Använder följande som input:
         {arguments}
         Förväntar att följande skrivs ut:
-        {corrent}
+        {correct}
         Innehöll:
         {student}
         """
@@ -138,7 +138,7 @@ class Test2QueueMenu(ExamTestCase):
         Använder följande som input:
         {arguments}
         Förväntar att följande skrivs ut:
-        {corrent}
+        {correct}
         Innehöll:
         {student}
         """
