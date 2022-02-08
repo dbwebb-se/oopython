@@ -35,17 +35,6 @@ class Test2List(ExamTestCase):
         self.list = list.UnorderedList()
 
     @tags("list")
-    def test_if_list_is_empty(self):
-        """
-        Testar att listan som skapas är tom med metoden is_empty().
-        Förväntar att self.list.is_empty() returnerar True:
-        {correct}
-        Innehöll följande:
-        {student}
-        """
-        self.assertEqual(self.list.is_empty(), True)
-
-    @tags("list")
     def test_append(self):
         """
         Testar att lägga till 1 nod med innehåll "one" i listan.
