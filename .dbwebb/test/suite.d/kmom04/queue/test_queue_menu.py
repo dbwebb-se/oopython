@@ -107,7 +107,8 @@ class Test2QueueMenu(ExamTestCase):
         Testar att rätt sak skrivs ut när kön är tom och man använder menyval 3.
         Använder följande som input:
         {arguments}
-        Förväntar att 42 skrivs ut och kön innehåller 3 element:
+        Förväntar att följande skrivs ut:
+        {corrent}
         Innehöll:
         {student}
         """
