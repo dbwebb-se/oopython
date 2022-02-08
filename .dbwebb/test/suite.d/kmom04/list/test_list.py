@@ -55,7 +55,7 @@ class Test2List(ExamTestCase):
         {student}
         """
         self.list.append("one")
-        self.assertEqual(self.list.head.data, "one")
+        self.assertEqual(self.list.get(0), "one")
 
     @tags("list")
     def test_set_ok(self):
@@ -70,7 +70,7 @@ class Test2List(ExamTestCase):
         self.list.append("one")
         self.list.append("two")
         self.list.set(0, "new_one")
-        self.assertEqual(self.list.head.data, "new_one")
+        self.assertEqual(self.list.get(0), "new_one")
 
     @tags("list")
     def test_set_exception(self):
