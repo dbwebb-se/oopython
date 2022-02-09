@@ -112,8 +112,9 @@ class Test1Queue(ExamTestCase):
 
     def test_dequeue(self):
         """
-        Testar att attributet är privat och heter _value.
-        Förväntar att attributet heter _value:
+        Testar att skapa en kö och lägga till 2 noder. Den första med värde "value"
+        och den andra med värde "value_two". Därefter körs dequeue().
+        Förväntar att värdet med peek() är:
         {correct}
         Innehöll följande:
         {student}
