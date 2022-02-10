@@ -28,12 +28,18 @@ class Test5Tests(ExamTestCase):
 
 
     @tags("struct", "tests")
-    def test_tests_dir_exist(self):
+    def test_a_tests_dir_exist(self):
         """
         Testerna hittar inte mappen 'tests' som ska innehålla test filer.
         """
         self.assertTrue(os.path.isdir(f"{REPO_PATH}/tests/"))
 
+    @tags("struct", "tests")
+    def test_b_tests_dir_contain_tests(self):
+        """
+        'tests' mappen innehåller inte några test filer.
+        """
+        self.assertTrue(os.listdir(f"{REPO_PATH}/tests/"))
 
 
 
