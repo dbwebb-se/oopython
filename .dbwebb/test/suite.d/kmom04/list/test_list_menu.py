@@ -133,7 +133,7 @@ class Test2ListMenu(ExamTestCase):
         self.norepr = True
         self._multi_arguments  = ["1", "100", "continue", "1", "142", "continue", "4", "1, 122", "continue", "q"]
         h = self.check_print_contain(self._multi_arguments)
-        self.assertEqual(str(h.list.get(1)), "142")
+        self.assertEqual(str(h.list.get(1)), "122")
 
     @tags("5")
     def test_f_print(self):
