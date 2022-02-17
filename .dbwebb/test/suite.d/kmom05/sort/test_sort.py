@@ -134,7 +134,14 @@ class Test1Sort(ExamTestCase):
         {student}
         """
         self._argument = self.int_list
-        sort.recursive_insertion(self.int_ulist)
+
+        try:
+            sort.recursive_insertion(self.int_ulist)
+        except TypeError as e:
+            if "missing 1 required positional argument" in str(e):
+                sort.recursive_insertion(self.int_ulist, self.int_ulist.size())
+            else:
+                raise e
         sorted_list = sorted(self.int_list)
         for i in range(len(self.int_list)):
             self.assertEqual(self.int_ulist.get(i), sorted_list[i])
@@ -152,7 +159,13 @@ class Test1Sort(ExamTestCase):
         {student}
         """
         self._argument = self.str_list
-        sort.recursive_insertion(self.str_ulist)
+        try:
+            sort.recursive_insertion(self.str_ulist)
+        except TypeError as e:
+            if "missing 1 required positional argument" in str(e):
+                sort.recursive_insertion(self.str_ulist, self.str_ulist.size())
+            else:
+                raise e
         sorted_list = sorted(self.str_list)
         for i in range(len(self.str_list)):
             self.assertEqual(self.str_ulist.get(i), sorted_list[i])
@@ -169,8 +182,15 @@ class Test1Sort(ExamTestCase):
         {student}
         """
         self._argument = self.int_list
-        sort.recursive_insertion(self.int_ulist)
-        sort.recursive_insertion(self.int_ulist)
+        try:
+            sort.recursive_insertion(self.int_ulist)
+            sort.recursive_insertion(self.int_ulist)
+        except TypeError as e:
+            if "missing 1 required positional argument" in str(e):
+                sort.recursive_insertion(self.int_ulist, self.int_ulist.size())
+                sort.recursive_insertion(self.int_ulist, self.int_ulist.size())
+            else:
+                raise e
         sorted_list = sorted(self.int_list)
         for i in range(len(self.int_list)):
             self.assertEqual(self.int_ulist.get(i), sorted_list[i])
@@ -186,7 +206,13 @@ class Test1Sort(ExamTestCase):
         """
         self._argument = []
         ul = list.UnorderedList()
-        sort.recursive_insertion(ul)
+        try:
+            sort.recursive_insertion(ul)
+        except TypeError as e:
+            if "missing 1 required positional argument" in str(e):
+                sort.recursive_insertion(ul, ul.size())
+            else:
+                raise e
         self.assertEqual(ul.size(), 0)
 
 if __name__ == '__main__':
