@@ -47,9 +47,16 @@ Executing $lab/$file_to_exec ...
 " | tee -a "$LOG"
 
         if [[ ! -f "$lab_file" ]]; then
-            printf "Error, lab is not created.
+            # special case for kmom06 where lab is optional
+            if [[ $lab_file == *"kmom06"* ]]; then
+                printf "Lab not created. But is optional so it still pass!
 " | tee -a "$LOG"
-            status=1
+                status=0
+            else
+                printf "Error, lab is not created.
+" | tee -a "$LOG"
+                status=1
+            fi
         else
             bash -c "set -o pipefail && cd "$COURSE_REPO_BASE/$lab" &&  ${PYTHON_EXECUTER} -u "${lab_file}"  2>&1  | tee -a "$LOG" "
             status=$?
