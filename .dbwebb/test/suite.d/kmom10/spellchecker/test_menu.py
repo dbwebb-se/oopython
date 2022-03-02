@@ -140,16 +140,22 @@ class Test1SpellcheckMenu(ExamTestCase):
             self.assertEqual(f'{word[0]} {output.count(word[0])}', f"{word[0]} {word[1]}")
 
 
+    @staticmethod
+    def find_index(word, container):
+        for index, element in enumerate(container):
+            if word == element.split(" ")[0]:
+                return index
+        return -1
 
     @tags("4")
     def test_e_print_all_words(self):
         """
-        Testar kolla att skriva in fler bokstäver som prefix visar korrekt ord rätt antal gånger.
+        Testar att orden skrivs ut i bokstavsordning i menyval 4.
         Använder följande som input:
         {arguments}
-        Förväntar att följande ord skrivs ut rätt antal gånger:
+        Förväntar att följande ord skrivs ut i rätt ordning (siffran är index position från första ordet i utskriften):
         {correct}
-        Skrevs ut X gånger:
+        Skrevs ut med index (-1 betyder att ordet inte skrevs ut):
         {student}
         """
         self.norepr = True
@@ -158,24 +164,59 @@ class Test1SpellcheckMenu(ExamTestCase):
         for index, line in enumerate(output):
             if "aachen" in line:
                 start_index = index
-                break
-        for index, line in enumerate(output, -1):
             if "zymotic" in line:
                 end_index = index
                 break
-
+        only_words = output[start_index:end_index+1]
         words = [
             ("aachen", "0"),
-            ("zymotic", "1"),
-            ("pyrotechnics", "3"),
-            ("pyramidical", "1"),
-            ("pyrargyrite", "1"),
-            ("pyrite", "2"),
-            ("pyrotechny", "3"),
-            ("pyrogallol", "2"),
+            ("aargau", "1"),
+            ("abalones", "9"),
+            ("zouave", "25392"),
+            ("affliction", "787"),
+            ("driving", "7193"),
+            ("comparing", "4782"),
+            ("outlandish", "15889"),
+            ("disallowed", "6672"),
+            ("rusticate", "19352"),
+            ("acquirer", "524"),
+            ("zyme", "25400"),
+            ("zymotic", "25401"),
         ]
         for word in words:
-            self.assertEqual(f'{word[0]} {output.count(word[0])}', f"{word[0]} {word[1]}")
+            self.assertEqual(f'{word[0]} {self.find_index(word[0], only_words)}', f"{word[0]} {word[1]}")
+
+
+    @tags("5")
+    def test_f_remove_word(self):
+        """
+        Kollar först att ordet "toolbox" finns, raderar det och kollar att ordet inte finns.
+        Använder följande som input:
+        {arguments}
+        Förväntar att följande skrivs ut:
+        {correct}
+        Följande skrevs ut:
+        {student}
+        """
+        self.norepr = True
+        self._multi_arguments  = ["1", "toolbox", "continue", "5", "toolbox", "continue", "1", "toolbox", "continue", "6"]
+        h = self.check_print_contain(self._multi_arguments, ["word is spelled correctly", "word does not exist"])
+
+    @tags("5")
+    def test_g_remove_non_existing_word(self):
+        """
+        Testar ta bort ord som inte finns.
+        Använder följande som input:
+        {arguments}
+        Förväntar att följande skrivs ut:
+        {correct}
+        Följande skrevs ut:
+        {student}
+        """
+        self.norepr = True
+        self._multi_arguments  = ["5", "kosadel", "continue", "6"]
+        h = self.check_print_contain(self._multi_arguments, ["word is missing"])
+
 
 
 if __name__ == '__main__':
