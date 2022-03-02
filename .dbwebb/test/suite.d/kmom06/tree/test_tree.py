@@ -328,8 +328,39 @@ class Test2BST(ExamTestCase):
 
 
 
+    @tags("remove")
+    def test_k_always_remove_root(self):
+        """
+        remove().
+        Testar att ta bort alla noder i trädet, genom alltid ta bort root noden.
+        Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
+        {arguments}
+        Noderna tas bort i följande ordning:
+        [3, 4, 5, 6, 7, 8, 9, 1, 2, 0]
+        Om värdet nedanför är en siffra, betyder det att remove() returnerade fel värde för nyckeln.
+        Om värdet nedanför är True/False, betyder det att trädet inte har korrekt struktur efter remove().
+        Om KeyError inte lyfts beyder det att efter remove() finns nyckel fortfarande kvar.
+        {correct}
+        Fick istället:
+        {student}
+        """
+        seq = [3, 8, 5, 6, 1, 0, 2, 4, 9, 7]
+        remove_seq = [3, 4, 5, 6, 7, 8, 9, 1, 2, 0]
+        self._argument = seq
+        bst = BST()
+        self.list_to_bst(seq, bst)
+        print(f"This print show which Keys have been removed in test 'always_remove_root':")
+        for i, key in enumerate(remove_seq):
+            self.assertEqual(bst.remove(key), str(key))
+            self.assertTrue(self.is_bst(bst.root))
+            with self.assertRaises(KeyError):
+                bst.get(key)
+            print(f"Successfully remove root {key}")
+        self.assertEqual(bst.root, None)
+
+
     @tags("print")
-    def test_k_print(self):
+    def test_l_print(self):
         """
         inorder_traversal_print().
         Testar att skriva ut alla noder i trädet.
