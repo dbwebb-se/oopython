@@ -124,21 +124,19 @@ class Test1SpellcheckMenu(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments  = ["2", "pyr", "o", "t", "o", "quit", "continue", "6"]
+        self._multi_arguments  = ["2", "lot", "t", "e", "r", "quit", "continue", "6"]
         output = self.check_print_contain(self._multi_arguments)
         words = [
-            ("pyramids", "1"),
-            ("pyrites", "1"),
-            ("pyrotechnics", "3"),
-            ("pyramidical", "1"),
-            ("pyrargyrite", "1"),
-            ("pyrite", "2"),
-            ("pyrotechny", "3"),
-            ("pyrogallol", "2"),
+            ("lots", "1"),
+            ("loth", "2"),
+            ("lottery", "4"),
+            ("lotus", "1"),
+            ("lothario", "1"),
+            ("lotto", "2"),
+            ("lotta", "2"),
         ]
         for word in words:
             self.assertEqual(f'{word[0]} {output.count(word[0])}', f"{word[0]} {word[1]}")
-
 
     @staticmethod
     def find_index(word, container):
