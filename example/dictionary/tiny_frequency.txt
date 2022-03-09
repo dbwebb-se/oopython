@@ -32,13 +32,10 @@ weariness 10041.0
 skirts 9590.13
 ascent 9086.18
 shoe 8618.62
-Roy 8227.79
 outfit 7836.18
-Valentine 7492.04
 thrilled 7131.28
 glories 6810.87
 clutched 6484.93
-Harrison 6195.37
 inquisition 5929.55
 ghostly 5601.23
 perspiration 5346.48
@@ -69,13 +66,11 @@ chops 1807.74
 unpaid 1727.83
 tome 1657.42
 enact 1594.92
-Alton 1536.38
 doughty 1473.88
 darn 1419.29
 annex 1371.82
 disintegration 1315.65
 spicy 1266.60
-Albion 1210.43
 palette 1158.22
 freshman 1119.45
 glum 1079.10
@@ -126,7 +121,6 @@ hullo 149.524
 sponsored 142.404
 camino 134.492
 transfuse 128.163
-Abilene 121.043
 sunup 115.505
 timetable 109.176
 dag 102.847
