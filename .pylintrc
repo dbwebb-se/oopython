@@ -1,6 +1,6 @@
 [MESSAGES CONTROL]
 
-disable=locally-disabled,locally-enabled,too-many-instance-attributes,too-few-public-methods,too-many-arguments
+disable=locally-disabled,too-many-instance-attributes,too-few-public-methods,too-many-arguments
 
 
 [FORMAT]
@@ -10,10 +10,9 @@ max-line-length=100
 # Min number of characters in names
 variable-rgx=[a-z_][a-z0-9_]{0,30}$
 argument-rgx=[a-z_][a-z0-9_]{0,30}$
-argument-name-hint=[a-z_][a-z0-9_]{0,30}$
 attr-rgx=[a-z_][a-z0-9_]{0,30}$
 const-rgx=(([A-Za-z_][A-Za-z0-9_]*)|(__.*__))$
-
+include-naming-hint=true
 # Max number of arguments
 max-args=6
 
