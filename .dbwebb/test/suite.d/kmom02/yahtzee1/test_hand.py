@@ -80,7 +80,7 @@ class Test2Hand(ExamTestCase):
     @tags("hand")
     def test_to_roll_hand(self):
         """
-        Testar att slå om alla tärningarna i handen, med roll() metoden.
+        Testar att slå om alla tärningarna i handen, med roll() metoden, två gånger.
         Förväntar att attributet dice innehåller följande värden på sina tärningar efter .roll():
         {correct}
         Innehöll följande:
@@ -90,6 +90,9 @@ class Test2Hand(ExamTestCase):
         new_hand.roll()
         student_dice_value = [new_hand.dice[0].get_value(), new_hand.dice[1].get_value(), new_hand.dice[2].get_value(), new_hand.dice[3].get_value(), new_hand.dice[4].get_value()]
         self.assertEqual(student_dice_value, [4, 1, 2, 6, 3])
+        new_hand.roll()
+        student_dice_value = [new_hand.dice[0].get_value(), new_hand.dice[1].get_value(), new_hand.dice[2].get_value(), new_hand.dice[3].get_value(), new_hand.dice[4].get_value()]
+        self.assertEqual(student_dice_value, [2, 1, 5, 3, 3])
 
     # @tags("hand")
     # def test_to_roll_hand_specific_dice_out_of_index(self):
