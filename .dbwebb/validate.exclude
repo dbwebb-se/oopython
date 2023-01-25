@@ -8,7 +8,6 @@
 -./me/kmom01/classes/*
 -./me/kmom02/my_app/*
 -./me/kmom02/unittest/*
--./me/kmom02/my_app/*
 -./me/kmom03/relations/*
 -./me/kmom03/get_post/*
 -./me/kmom04/uml/*
