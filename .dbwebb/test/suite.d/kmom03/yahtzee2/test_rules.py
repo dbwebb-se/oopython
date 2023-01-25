@@ -218,6 +218,23 @@ class Test5Fours(ExamTestCase):
         self.hand = hand.Hand([1, 3, 1, 4, 6])
         self.assertEqual(self.fours.points(self.hand), 4*1)
 
+
+    @tags("rules", "Fours")
+    def test_fours_no_points(self):
+        """
+        Testar att points() hos ett Fours objekt returnerar rätt antal poäng när det inte finns några fyror i handen.
+        Använder en Hand med följande tärningar som argument.
+        [1, 3, 1, 2, 6]
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self.fours = rules.Fours()
+        self.hand = hand.Hand([1, 3, 1, 2, 6])
+        self.assertEqual(self.fours.points(self.hand), 0)
+
+
     @tags("rules", "Fours")
     def test_has_name(self):
         """
@@ -280,6 +297,21 @@ class Test5Sixes(ExamTestCase):
         self.sixes = rules.Sixes()
         self.hand = hand.Hand([1, 3, 6, 6, 6])
         self.assertEqual(self.sixes.points(self.hand), 6*3)
+
+    @tags("rules", "Sixes")
+    def test_sixes_no_points(self):
+        """
+        Testar att points() hos ett Sixes objekt returnerar rätt antal poäng när det inte finns några sexor.
+        Använder en Hand med följande tärningar som argument.
+        [1, 3, 2, 2, 3]
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self.sixes = rules.Sixes()
+        self.hand = hand.Hand([1, 3, 2, 2, 3])
+        self.assertEqual(self.sixes.points(self.hand), 0)
 
     @tags("rules", "Sixes")
     def test_has_name(self):
@@ -373,6 +405,21 @@ class Test6FourOfAKind(ExamTestCase):
         self.a_rule = rules.FourOfAKind()
         self.hand = hand.Hand([6, 6, 6, 6, 6])
         self.assertEqual(self.a_rule.points(self.hand), 6*5)
+
+    @tags("rules", "FourOfAKind")
+    def test_four_of_a_kind_points_none_same(self):
+        """
+        Testar att points() hos ett FourOfAKind objekt returnerar rätt antal poäng när inga tärningar är lika.
+        Använder en Hand med följande tärningar som argument.
+        [1, 2, 3, 4, 5]
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self.a_rule = rules.FourOfAKind()
+        self.hand = hand.Hand([1, 2, 3, 4, 5])
+        self.assertEqual(self.a_rule.points(self.hand), 0)
 
     @tags("rules", "FourOfAKind")
     def test_has_name(self):
