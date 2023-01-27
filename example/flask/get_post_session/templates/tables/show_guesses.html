@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Value</th>
+            <th>Attempt</th>
+        </tr>
+    </thead>
+<tbody>
+    {% for guess in game.guesses %}
+    <tr>
+        <td>{{ guess.value }}</td>
+        <td>{{ guess.attempt }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>

@@ -1,0 +1,16 @@
+body {
+    padding-top: 4em;
+    padding-bottom: 2em;
+}
+
+.die {
+    width: 50px;
+}
+
+footer {
+    margin-top: 4em;
+}
+
+button {
+    margin-top: 1em;
+}

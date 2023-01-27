@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="container" style="min-height:20em">
+        <div class="row marketing">
+        {% include 'tables/show_guesses.html' %}
+        {% if game.get_if_guessed_correct() %}
+            <h2>Congratulations you guessed correctly: {{ game.get_correct_value() }}</h2>
+        {% else %}
+            {% include 'forms/make_guess.html' %}
+        {% endif %}
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}

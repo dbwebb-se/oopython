@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="container" style="min-height:20em">
+        <div class="jumbotron">
+            <h1>Welcome to a guessing game!</h1>
+        </div>
+
+        <div class="row marketing">
+            <a href="{{ url_for('init') }}"  class="btn btn-success btn-lg btn-block">Starta spelet!</a>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
