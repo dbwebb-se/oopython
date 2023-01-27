@@ -40,7 +40,6 @@ def check_guess():
     """Make a new guess with users form value"""
     game = GuessGame(session["correct"], session["guesses"])
     game.make_guess(int(request.form.get("value")))
-    session["correct"] = game.get_correct_value()
     session["guesses"] = game.to_list()
     return redirect(url_for('guess'))
 
