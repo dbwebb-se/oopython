@@ -18,10 +18,7 @@ class Video():
         """
         Return object as string
         """
-        return  "{title} is {length} minute(s) long".format(
-            title=self.title,
-            length=self.length,
-        )
+        return  f"{self.title} is {self.length} minute(s) long"
 
     def print_info(self):
         """
@@ -40,7 +37,7 @@ class Video():
         Draw tax from new revenue
         """
         self._revenue += revenue * 0.7
-        print("New revenue is: {}".format(self._revenue))
+        print(f"New revenue is: {self._revenue}")
 
     def add_revenue(self, money):
         """
@@ -63,12 +60,8 @@ class Movie(Video):
         """
         Return object as string
         """
-        return  "{base_msg}, has the director {dir}\
-         and a rating of {rating}".format(
-             base_msg=super().to_string(),
-             dir=self.director,
-             rating=self.rating
-         )
+        return  f"{super().to_string()}, has the director {self.director}\
+         and a rating of {self.rating}"
 
     def must_override(self):
         """
@@ -81,7 +74,7 @@ class Movie(Video):
         overrides from Video to change taxation.
         """
         self._revenue += revenue * 0.9
-        print("Lowered taxes and new revenue is: {}".format(self._revenue))
+        print(f"Lowered taxes and new revenue is: {self._revenue}")
 
 
 charlie = Video("Charlie bit my finger", 1, 10000)

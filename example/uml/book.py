@@ -25,4 +25,4 @@ class Book:
         """
         Overriding str function for class
         """
-        return "{} written by {}".format(self.title, self.author)
+        return f"{self.title} written by {self.author}"

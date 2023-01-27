@@ -46,11 +46,10 @@ class War():
                 self.players[0].clear_base()
                 print("\nplayer 2 wins the round and picks up all cards.")
 
-            print(
-                "Status: \nPlayer 1: {} cards\nPlayer 2: {} cards".format(
-                    self.players[0].count_cards(),
-                    self.players[1].count_cards())
-            )
+            print((
+                f"Status: \nPlayer 1: {self.players[0].count_cards()} cards\n"
+                f"Player 2: {self.players[1].count_cards()} cards"
+            ))
 
 
 
@@ -68,7 +67,7 @@ class War():
                     sys.exit()
                 else:
                     drawn_card = player.take_card()
-                    print("\nPlayer {} draws {}\n".format(index+1, drawn_card))
+                    print(f"\nPlayer {index+1} draws {drawn_card}\n")
                     player.add_to_base(drawn_card)
 
 

@@ -13,5 +13,4 @@ class Car():
 
     def present_car(self):
         """ Returns a string presenting the car """
-        return "This car is of model {m} and costs {p}$.".format(
-            m=self.model, p=self.price)
+        return f"This car is of model {self.model} and costs {self.price}$."

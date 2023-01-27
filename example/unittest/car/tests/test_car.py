@@ -2,15 +2,16 @@
 """ Module for testing the class Car """
 
 import unittest
+import random
 from src.car import Car
 
 class TestCar(unittest.TestCase):
     """ Submodule for unittests, derives from unittest.TestCase """
-    
+
     def setUp(self):
         """ Setup that runs before every testcase """
         random.seed("car")
-        
+
     def test_no_of_wheels_ok(self):
         """ Test if number of wheels is 4 """
         my_car = Car("Volvo", 50000) # Act
@@ -27,4 +28,3 @@ class TestCar(unittest.TestCase):
         print("First number: ", random.randint(1, 100))
         print("Second number: ", random.randint(1, 100))
         # Assert random number 1 and 2
-        

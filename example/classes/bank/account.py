@@ -6,6 +6,9 @@ Account class
 import random
 
 class Account:
+    """
+    A bank account class
+    """
     interest = 1.12
 
     def __init__(self, amount, name, owner):
@@ -15,18 +18,27 @@ class Account:
         self.number = random.randint(1000000, 20000000)
 
     def withdraw(self, amount):
+        """
+        Withdraw money from account if has enoug
+        """
         if self._balance >= amount:
             self._balance -= amount
             return True
         return False
 
     def deposit(self, amount):
+        """
+        Deposit a postivit amount of money to the account
+        """
         if amount > 0:
             self._balance += amount
             return True
         return False
 
     def transfer(self, amount, other_account):
+        """
+        If account has enough funds, transfer it to other account
+        """
         if self.withdraw(amount):
             if other_account.deposit(amount):
                 return True
@@ -36,9 +48,15 @@ class Account:
 
     @staticmethod
     def calc_interest(amount):
+        """
+        Static method to calculate how much money will increase with the interest
+        """
         return Account.interest * amount
 
     def get_balance(self):
+        """
+        Return private attribute balance
+        """
         return self._balance
 
     def __add__(self, other):

@@ -32,4 +32,4 @@ class Card():
         """
         Override str to return card name and suit
         """
-        return "{} of {}".format(Card.names[self.value], Card.suits[self.suit])
+        return f"{Card.names[self.value]} of {Card.suits[self.suit]}"

@@ -12,11 +12,7 @@ class Date():
         self.day = day
 
     def __repr__(self):
-        return "{year}-{month}-{day}".format(
-            year=self.year,
-            month=self.month,
-            day=self.day,
-        )
+        return f"{self.year}-{self.month}-{self.day}"
 
 class Person:
     """
@@ -27,10 +23,7 @@ class Person:
         self.date_of_birth = Date(year, month, day)
 
     def __repr__(self):
-        return "My name is {name} and my date of birth is {date}".format(
-            name=self.name,
-            date=self.date_of_birth,
-        )
+        return f"My name is {self.name} and my date of birth is {self.date_of_birth}"
 
 pers = Person("James", 1993, 5, 14)
 print(pers)

@@ -40,4 +40,4 @@ class Plane():
         return self.calc_flight_duration(distance)
 
     def __repr__(self):
-        return "{id}|{type}".format(id=self.id, type=self.type)
+        return f"{self.id}|{self.type}"

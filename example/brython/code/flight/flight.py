@@ -31,11 +31,9 @@ class Flight():
         self.arriving_time = self.departure_time + self.duration
 
     def __repr__(self):
-        return """
-            {ffrom} - {to}
-            Departure: {leave} Arrival: {arrive}
-            Duration: {dur}
-            Plane: {plane}
-            """.format(ffrom=self.departing_from, to=self.destination,
-                       leave=self.departure_time, arrive=self.arriving_time,
-                       dur=self.duration, plane=self.assigned_plane)
+        return (
+            f"{self.departing_from} - {self.destination}\n"
+            f"Departure: {self.departure_time} Arrival: {self.arriving_time}\n"
+            f"Duration: {self.duration}\n"
+            f"Plane: {self.assigned_plane}"
+        )

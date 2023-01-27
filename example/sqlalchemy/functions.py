@@ -32,7 +32,7 @@ class Person(Base):
 
     def __str__(self):
         """ overloading str """
-        return "Name: {n}, Age: {a}".format(n=self.name, a=self.age)
+        return f"Name: {self.name}, Age: {self.age}"
 
 
 def get_all_as_list():

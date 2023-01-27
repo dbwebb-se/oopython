@@ -63,10 +63,7 @@ class Handler():
             docstring = inspect.getdoc(method)
 
             # format meny choice text
-            menu += "{choice}: {explanation}\n".format(
-                choice=key,
-                explanation=docstring
-            )
+            menu += f"{key}: {docstring}\n"
 
         print(menu,)
 

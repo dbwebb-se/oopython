@@ -4,12 +4,15 @@ Owner class
 """
 
 class Owner:
-
+    """
+    Represents an owner of a bank account
+    """
     def __init__(self, name, ssn, adress):
         self.name = name
-        self.ssn = ssn
+        self._ssn = ssn
         self.adress = adress
         self.accounts = []
 
     def get_ssn(self):
-        return self.ssn
+        """Return private attribute """
+        return self._ssn

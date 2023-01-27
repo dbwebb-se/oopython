@@ -76,7 +76,7 @@ class Car():
         """
         if float(new_price) / float(self._price) > 0.7:
             self._price = new_price
-            return "New price is " + str(self._price)
+            return f"New price is {self._price}"
 
         return "New price is too low. You can max lower it with 30%."
 
@@ -84,9 +84,8 @@ class Car():
         """
         Return string that represent a car object.
         """
-        return "{d} with the car {m}. The car costs {p}$.".format(
-            m=self.model, p=self._price, d=self.driver
-        )
+        return f"{self.model} with the car {self._price}. The car costs {self.driver}$."
+
 
     def __add__(self, other):
         """
@@ -113,7 +112,7 @@ class Car():
         """
         Print the static variable wheels
         """
-        print("A car normally have {nr} wheels".format(nr=cls.wheels))
+        print(f"A car normally have {cls.wheels} wheels")
 
 
 if __name__ == "__main__":

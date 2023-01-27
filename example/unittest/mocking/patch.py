@@ -101,7 +101,7 @@ class TestPatch(TestCase):
                 # som printades i funktionen. Returnerar en sträng.
                 content = fake_out.getvalue().strip().split("\n")
                 for i, v in enumerate(inp):
-                    p_value = "{} {}".format(v, i)
+                    p_value = f"{v} {i}"
                     self.assertEqual(content[i], p_value)
             # print(fake_out)
             # print(fake_out.getvalue())
