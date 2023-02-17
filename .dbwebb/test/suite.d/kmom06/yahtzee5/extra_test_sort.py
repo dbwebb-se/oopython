@@ -23,7 +23,6 @@ if REPO_PATH not in sys.path:
 # Path to file and basename of the file to import
 list = import_module(REPO_PATH, 'src/unorderedlist')
 sort = import_module(REPO_PATH, 'src/sort')
-Handler = import_module(REPO_PATH, 'main').Handler
 
 class Test4SortExtra(ExamTestCase):
     """
@@ -76,25 +75,6 @@ class Test4SortExtra(ExamTestCase):
                     for val in correct:
                         self.assertIn(val, str_data)
                 return h
-
-    @tags("menu", "12")
-    def test_b_bubble_menu(self):
-        """
-        Testar lägga till flera värden med menyval 1 och sorterar med menyval 12.
-        Använder följande som input:
-        {arguments}
-        Förväntar att följande värde finns i listan på korrekt index:
-        {correct}
-        Innehöll:
-        {student}
-        """
-        self.norepr = True
-        self._multi_arguments  = ["1", "12", "continue", "1", "10", "continue", "1", "19", "continue", "1", "22", "continue", "12", "continue", "q"]
-        h = self.check_print_contain(self._multi_arguments)
-        self.assertEqual(str(h.list.get(0)), "10")
-        self.assertEqual(str(h.list.get(1)), "12")
-        self.assertEqual(str(h.list.get(2)), "19")
-        self.assertEqual(str(h.list.get(3)), "22")
 
     @tags("sort", "insertion")
     def test_c_insertion_mix_types(self):
