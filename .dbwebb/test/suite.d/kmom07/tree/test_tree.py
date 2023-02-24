@@ -46,7 +46,7 @@ class Test2BST(ExamTestCase):
 
     @staticmethod
     def is_bst(root, l=None, r=None, parent=None):
-        """Check is a tree fullfilles Binary Search Tree rules"""
+        """Check is a tree fullfiles Binary Search Tree rules"""
         # Base condition
         if root is None:
             return True
@@ -110,22 +110,6 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         self.assertTrue(self.is_bst(bst.root))
 
-    @tags("insert")
-    def test_a_insert_small(self):
-        """
-        insert().
-        Testar att lägg till element från följande lista i ordning. Elementet används som nyckel och görs till en sträng för värdet.
-        {arguments}
-        Förväntar strukturen ska vara ett giltigt BST:
-        {correct}
-        Strukturen på trädet är inte ett giltigt träd.:
-        {student}
-        """
-        seq = [5, 2, 10]
-        self._argument = seq
-        bst = BST()
-        self.list_to_bst(seq, bst)
-        self.assertTrue(self.is_bst(bst.root))
 
 
     @tags("insert")
@@ -206,10 +190,7 @@ class Test2BST(ExamTestCase):
         Testar att ta bort ett löv från BST.
         Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
         {arguments}
-        Testet kollar att remove(7) returnerar korrekt värde, att trädet fortfarande är ett giltigt bst och att noden med värdet inte finns kvar.
-        Om värdet nedanför är en siffra, betyder det att remove(7) returnerade fel värde.
-        Om värdet nedanför är True/False, betyder det att trädet inte har korrekt struktur efter remove(7).
-        Om KeyError inte lyfts beyder det att efter remove(7) finns nyckel fortfarande kvar.
+        Testet kollar att remove(7) returnerar korrekt värde.
         {correct}
         Fick istället:
         {student}
@@ -220,8 +201,8 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
 
         self.assertEqual(bst.remove(7), "7")
-        self.assertTrue(self.is_bst(bst.root))
-        with self.assertRaises(KeyError):
+        self.assertTrue(self.is_bst(bst.root), ["Testet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove(7).", "Det uppfyller inte BST kraven efter remove(7)."])
+        with self.assertRaises(KeyError, msg=["Testet förväntar att get(7) lyfter exception efter remove(7)", "Exception lyftes inte vilket betyder att 7 finns kvar i trädet efter remove(7)."]):
             bst.get(7)
 
 
@@ -234,6 +215,8 @@ class Test2BST(ExamTestCase):
         {arguments}
         Förväntar att KeyError lyfts
         {correct}
+        Exceptions lyftes inte:
+        {student}
         """
         seq = [5, 2, 10, 7]
         self._argument = seq
@@ -250,10 +233,7 @@ class Test2BST(ExamTestCase):
         Testar att ta bort en förälder nod från BST.
         Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
         {arguments}
-        Testet kollar att remove(10) returnerar korrekt värde, att trädet fortfarande är ett giltigt bst och att noden med värdet inte finns kvar.
-        Om värdet nedanför är en siffra, betyder det att remove(10) returnerade fel värde.
-        Om värdet nedanför är True/False, betyder det att trädet inte har korrekt struktur efter remove(10).
-        Om KeyError inte lyfts beyder det att efter remove(10) finns nyckel fortfarande kvar.
+        Testet kollar att remove(10) returnerar korrekt värde:
         {correct}
         Fick istället:
         {student}
@@ -264,8 +244,8 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
 
         self.assertEqual(bst.remove(10), "10")
-        self.assertTrue(self.is_bst(bst.root))
-        with self.assertRaises(KeyError):
+        self.assertTrue(self.is_bst(bst.root), ["Testet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove(10).", "Det uppfyller inte BST kraven efter remove(10)."])
+        with self.assertRaises(KeyError, msg=["Testet förväntar att get(10) lyfter exception efter remove(10)", "Exception lyftes inte vilket betyder att 10 finns kvar i trädet efter remove(10)."]):
             bst.get(10)
 
 
@@ -276,10 +256,7 @@ class Test2BST(ExamTestCase):
         Testar att ta bort root noden från BST.
         Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
         {arguments}
-        Testet kollar att remove(5) returnerar korrekt värde, att trädet fortfarande är ett giltigt bst och att noden med värdet inte finns kvar.
-        Om värdet nedanför är en siffra, betyder det att remove(5) returnerade fel värde.
-        Om värdet nedanför är True/False, betyder det att trädet inte har korrekt struktur efter remove(5).
-        Om KeyError inte lyfts beyder det att efter remove(5) finns nyckel fortfarande kvar.
+        Testet kollar att remove(5) returnerar korrekt värde:.
         {correct}
         Fick istället:
         {student}
@@ -290,8 +267,8 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
 
         self.assertEqual(bst.remove(5), "5")
-        self.assertTrue(self.is_bst(bst.root))
-        with self.assertRaises(KeyError):
+        self.assertTrue(self.is_bst(bst.root), ["Testet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove(5).", "Det uppfyller inte BST kraven efter remove(5)."])
+        with self.assertRaises(KeyError, msg=["Testet förväntar att get(5) lyfter exception efter remove(5)", "Exception lyftes inte vilket betyder att 5 finns kvar i trädet efter remove(5)."]):
             bst.get(5)
 
 
@@ -300,13 +277,11 @@ class Test2BST(ExamTestCase):
         """
         remove().
         Testar att ta bort alla noder i trädet.
-        Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
-        {arguments}
         Noderna tas bort i följande ordning:
         [5, 0, 2, 3, 14, 16, 4, 15, 1, 6, 12, 10, 7, 11, 8, 9]
-        Om värdet nedanför är en siffra, betyder det att remove() returnerade fel värde för nyckeln.
-        Om värdet nedanför är True/False, betyder det att trädet inte har korrekt struktur efter remove().
-        Om KeyError inte lyfts beyder det att efter remove() finns nyckel fortfarande kvar.
+        Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
+        {arguments}
+        Testet kollar att remove() returnerar korrekt värde:
         {correct}
         Fick istället:
         {student}
@@ -317,14 +292,39 @@ class Test2BST(ExamTestCase):
         bst = BST()
         self.list_to_bst(seq, bst)
 
-        print(f"This print show which Keys have been removed in test 'remove_every_node':")
+        success_elements = "Har lyckats ta bort: "
         for i, key in enumerate(remove_seq):
-            self.assertEqual(bst.remove(key), str(key))
-            self.assertTrue(self.is_bst(bst.root))
-            with self.assertRaises(KeyError):
+            tmp = f"{success_elements}\nTestet kollar att remove({key}) returnerar korrekt värde:"
+
+            self.fail_msg.what_msgs_from_assert = [tmp, f"Fick istället:"] # if error occurs in remove. Then the comments from previous loop is used. Since error in remove occurs before we send new values to the assertEqual method.
+
+            self.assertEqual(bst.remove(key), str(key), [
+                tmp,
+                f"Fick istället:"
+            ])
+
+            tmp = f"{success_elements}\nTestet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove({key})."
+            tmp2 = f"Det uppfyller inte BST kraven efter remove({key})."
+            self.fail_msg.what_msgs_from_assert = [tmp, tmp2]
+
+            self.assertTrue(
+                self.is_bst(bst.root), [
+                    tmp,
+                    tmp2
+            ])
+
+            tmp = f"{success_elements}\nTestet förväntar att get({key}) lyfter exception efter remove({key})"
+            tmp2 = f"Exception lyftes inte vilket betyder att {key} finns kvar i trädet efter remove({key})."
+
+            with self.assertRaises(
+                KeyError,
+                msg=[
+                    tmp,
+                    tmp2
+            ]):
                 bst.get(key)
-            print(f"Successfully remove {key}")
-        self.assertEqual(bst.root, None)
+            success_elements += f"{key}, "
+        self.assertEqual(bst.root, None, [f"{success_elements}\nTestet kollar att bst.root är None efter att alla element har tagits bort:", f"bst.root innehöll:"])
 
 
 
@@ -333,13 +333,11 @@ class Test2BST(ExamTestCase):
         """
         remove().
         Testar att ta bort alla noder i trädet, genom alltid ta bort root noden.
-        Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
-        {arguments}
         Noderna tas bort i följande ordning:
         [3, 4, 5, 6, 7, 8, 9, 1, 2, 0]
-        Om värdet nedanför är en siffra, betyder det att remove() returnerade fel värde för nyckeln.
-        Om värdet nedanför är True/False, betyder det att trädet inte har korrekt struktur efter remove().
-        Om KeyError inte lyfts beyder det att efter remove() finns nyckel fortfarande kvar.
+        Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
+        {arguments}
+        Testet kollar att remove() returnerar korrekt värde:
         {correct}
         Fick istället:
         {student}
@@ -349,14 +347,39 @@ class Test2BST(ExamTestCase):
         self._argument = seq
         bst = BST()
         self.list_to_bst(seq, bst)
-        print(f"This print show which Keys have been removed in test 'always_remove_root':")
+        success_elements = "Har lyckats ta bort: "
         for i, key in enumerate(remove_seq):
-            self.assertEqual(bst.remove(key), str(key))
-            self.assertTrue(self.is_bst(bst.root))
-            with self.assertRaises(KeyError):
+            tmp = f"{success_elements}\nTestet kollar att remove({key}) returnerar korrekt värde:"
+
+            self.fail_msg.what_msgs_from_assert = [tmp, f"Fick istället:"] # if error occurs in remove. Then the comments from previous loop is used. Since error in remove occurs before we send new values to the assertEqual method.
+
+            self.assertEqual(bst.remove(key), str(key), [
+                tmp,
+                f"Fick istället:"
+            ])
+
+            tmp = f"{success_elements}\nTestet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove({key})."
+            tmp2 = f"Det uppfyller inte BST kraven efter remove({key})."
+            self.fail_msg.what_msgs_from_assert = [tmp, tmp2]
+
+            self.assertTrue(
+                self.is_bst(bst.root), [
+                    tmp,
+                    tmp2
+            ])
+
+            tmp = f"{success_elements}\nTestet förväntar att get({key}) lyfter exception efter remove({key})"
+            tmp2 = f"Exception lyftes inte vilket betyder att {key} finns kvar i trädet efter remove({key})."
+            with self.assertRaises(
+                KeyError,
+                msg=[
+                    tmp,
+                    tmp2
+            ]):
                 bst.get(key)
-            print(f"Successfully remove root {key}")
-        self.assertEqual(bst.root, None)
+            success_elements += f"{key}, "
+
+        self.assertEqual(bst.root, None, [f"Testet kollar att bst.root är None efter att alla element har tagits bort:", f"bst.root innehöll:"])
 
 
     @tags("print")
