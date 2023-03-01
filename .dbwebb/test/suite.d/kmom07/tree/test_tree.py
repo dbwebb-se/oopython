@@ -297,6 +297,7 @@ class Test2BST(ExamTestCase):
             tmp = f"{success_elements}\nTestet kollar att remove({key}) returnerar korrekt värde:"
 
             self.fail_msg.what_msgs_from_assert = [tmp, f"Fick istället:"] # if error occurs in remove. Then the comments from previous loop is used. Since error in remove occurs before we send new values to the assertEqual method.
+            self.fail_msg.correct_answer = str(key)
 
             self.assertEqual(bst.remove(key), str(key), [
                 tmp,
@@ -306,6 +307,7 @@ class Test2BST(ExamTestCase):
             tmp = f"{success_elements}\nTestet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove({key})."
             tmp2 = f"Det uppfyller inte BST kraven efter remove({key})."
             self.fail_msg.what_msgs_from_assert = [tmp, tmp2]
+            self.fail_msg.correct_answer = True
 
             self.assertTrue(
                 self.is_bst(bst.root), [
@@ -348,10 +350,12 @@ class Test2BST(ExamTestCase):
         bst = BST()
         self.list_to_bst(seq, bst)
         success_elements = "Har lyckats ta bort: "
+
         for i, key in enumerate(remove_seq):
             tmp = f"{success_elements}\nTestet kollar att remove({key}) returnerar korrekt värde:"
 
             self.fail_msg.what_msgs_from_assert = [tmp, f"Fick istället:"] # if error occurs in remove. Then the comments from previous loop is used. Since error in remove occurs before we send new values to the assertEqual method.
+            self.fail_msg.correct_answer = str(key)
 
             self.assertEqual(bst.remove(key), str(key), [
                 tmp,
@@ -361,6 +365,7 @@ class Test2BST(ExamTestCase):
             tmp = f"{success_elements}\nTestet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove({key})."
             tmp2 = f"Det uppfyller inte BST kraven efter remove({key})."
             self.fail_msg.what_msgs_from_assert = [tmp, tmp2]
+            self.fail_msg.correct_answer = True
 
             self.assertTrue(
                 self.is_bst(bst.root), [
