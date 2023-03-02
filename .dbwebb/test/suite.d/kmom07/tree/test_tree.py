@@ -64,8 +64,8 @@ class Test2BST(ExamTestCase):
         # if check that the parent is correct node
         if root.parent is not parent:
             raise KeyError((
-                f"Expected Node with key {root.key} to have parent with key {parent.key}"
-                f" but it is {root.parent.key}"
+                f"Expected Node with key {repr(root.key)} to have parent with key {repr(parent.key)}"
+                f" but it is {repr(root.parent.key)}"
             ))
 
         # check recursively for every node.
