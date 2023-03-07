@@ -18,15 +18,15 @@ REPO_PATH = find_path_to_assignment(FILE_DIR)
 if REPO_PATH not in sys.path:
     sys.path.insert(0, REPO_PATH)
 
-SpellChecker = import_module(REPO_PATH, 'spellchecker').SpellChecker
+Trie = import_module(REPO_PATH, 'src/trie').Trie
 
-class Test2SpellcheckMenuExtra(ExamTestCase):
+class Test2TrieExtra(ExamTestCase):
     """
     Each assignment has 1 testcase with multiple asserts.
     The different asserts https://docs.python.org/3.6/library/unittest.html#test-cases
     """
 
-    link_to_assignment = "https://dbwebb.se/kurser/oopython-v2/kmom10"
+    link_to_assignment = "https://dbwebb.se/kurser/oopython-v3/kmom10"
 
     @classmethod
     def setUpClass(cls):
@@ -36,25 +36,6 @@ class Test2SpellcheckMenuExtra(ExamTestCase):
         os.chdir(REPO_PATH)
 
 
-    def check_print_contain(self, inp, correct=None):
-        """
-        One function for testing print input functions.
-        """
-        with patch("builtins.input", side_effect=inp):
-            with patch("sys.stdout", new=StringIO()) as fake_out:
-                h = SpellChecker()
-                try:
-                    h.main()
-                except SystemExit:
-                    pass
-                str_data = fake_out.getvalue()
-                if correct is not None:
-                    for val in correct:
-                        self.assertIn(val, str_data)
-                return str_data
-
-
-
     @staticmethod
     def find_index(word, container):
         for index, element in enumerate(container):
@@ -62,44 +43,169 @@ class Test2SpellcheckMenuExtra(ExamTestCase):
                 return index
         return -1
 
-    @tags("2")
-    def test_a_prefix_with_frequency(self):
+    # @tags("2")
+    # def test_a_prefix_with_frequency(self):
+    #     """
+    #     Testar att orden skrivs ut i frekvens ordning i menyval 2.
+    #     Använder följande som argument:
+    #     {arguments}
+    #     Förväntar att följande ord skrivs ut i rätt ordning (siffran är index position från första ordet i utskriften):
+    #     {correct}
+    #     Skrevs ut med index (-1 betyder att ordet inte skrevs ut):
+    #     {student}
+    #     """
+    #     self.norepr = True
+    #     self._multi_arguments  = ["2", "alo", "quit", "continue", "6"]
+    #     output = self.check_print_contain(self._multi_arguments).split("\n")
+    #     for index, line in enumerate(output):
+    #         if "alone" == line.split(" ")[0]:
+    #             print(line)
+    #             start_index = index
+    #         if "alopecia" == line.split(" ")[0]:
+    #             end_index = index
+    #             break
+    #     only_words = output[start_index:end_index+1]
+    #     print(only_words)
+    #     words = [
+    #         ("alone", "0"),
+    #         ("along", "1"),
+    #         ("aloud", "2"),
+    #         ("alongside", "3"),
+    #         ("aloft", "4"),
+    #         ("aloof", "5"),
+    #         ("aloofness", "6"),
+    #         ("aloe", "7"),
+    #         ("aloneness", "8"),
+    #         ("alopecia", "9"),
+    #     ]
+    #     for word in words:
+    #         self.assertEqual(f'{word[0]} {self.find_index(word[0], only_words)}', f"{word[0]} {word[1]}")
+
+
+
+
+    @tags("5")
+    def test_b_correct_same_word(self):
         """
-        Testar att orden skrivs ut i frekvens ordning i menyval 2.
-        Använder följande som input:
+        Testar att correct_spelling returnerar korrekt när argumentet är ett befintligt ord.
+        Trie objektet innehåller följande ord: [hej, hoj, haj, dej]
+        Använder följande som argument:
         {arguments}
-        Förväntar att följande ord skrivs ut i rätt ordning (siffran är index position från första ordet i utskriften):
+        Förväntar att följande returneras:
         {correct}
-        Skrevs ut med index (-1 betyder att ordet inte skrevs ut):
+        Fick istället:
         {student}
         """
-        self.norepr = True
-        self._multi_arguments  = ["2", "alo", "quit", "continue", "6"]
-        output = self.check_print_contain(self._multi_arguments).split("\n")
-        for index, line in enumerate(output):
-            if "alone" == line.split(" ")[0]:
-                print(line)
-                start_index = index
-            if "alopecia" == line.split(" ")[0]:
-                end_index = index
-                break
-        only_words = output[start_index:end_index+1]
-        print(only_words)
-        words = [
-            ("alone", "0"),
-            ("along", "1"),
-            ("aloud", "2"),
-            ("alongside", "3"),
-            ("aloft", "4"),
-            ("aloof", "5"),
-            ("aloofness", "6"),
-            ("aloe", "7"),
-            ("aloneness", "8"),
-            ("alopecia", "9"),
-        ]
-        for word in words:
-            self.assertEqual(f'{word[0]} {self.find_index(word[0], only_words)}', f"{word[0]} {word[1]}")
+        self._argument  = "hej"
+        trie = Trie()
+        trie.add_word("hej")
+        trie.add_word("hoj")
+        trie.add_word("haj")
+        trie.add_word("dej")
+        self.assertEqual(["hej"], trie.correct_spelling("hej"))
 
+
+    @tags("5")
+    def test_b_correct_first_letter(self):
+        """
+        Testar att correct_spelling returnerar korrekt när argumentet har felstavad första bokstav.
+        Trie objektet innehåller följande ord: [absent, obsent, absene, xbsnt]
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick istället:
+        {student}
+        """
+        self._argument  = "xbsent"
+        trie = Trie()
+        trie.add_word("absent")
+        trie.add_word("obsent")
+        trie.add_word("absene")
+        trie.add_word("xbsnt")
+        self.assertEqual(['absent', 'obsent'], trie.correct_spelling("xbsent"))
+
+
+    @tags("5")
+    def test_b_correct_middle_letter(self):
+        """
+        Testar att correct_spelling returnerar korrekt när argumentet har felstavad bokstav mitt i.
+        Trie objektet innehåller följande ord: [flare, flake, fxary, glare, xare]
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick istället:
+        {student}
+        """
+        self._argument  = "fxare"
+        trie = Trie()
+        trie.add_word("flare")
+        trie.add_word("flake")
+        trie.add_word("fxary")
+        trie.add_word("glare")
+        trie.add_word("xare")
+        self.assertEqual(['flake', 'flare'], trie.correct_spelling("fxare"))
+
+
+    @tags("5")
+    def test_b_correct_many_matches(self):
+        """
+        Testar att correct_spelling returnerar korrekt när argumentet har möjliga matchningar.
+        Skapar Trie objektet med Trie.create_from_file().
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick istället:
+        {student}
+        """
+        self._argument  = "xlare"
+        trie = Trie.create_from_file()
+        self.assertEqual(['blade', 'blame', 'blate', 'blaze', 'flake', 'flame', 'flare', 'glade', 'glare', 'glaze', 'place', 'plane', 'plate', 'slate', 'slave'], trie.correct_spelling("xlare"))
+
+
+    @tags("5")
+    def test_b_correct_no_matches(self):
+        """
+        Testar att correct_spelling returnerar korrekt när argumentet inte har några möjliga matchningar.
+        Skapar Trie objektet med Trie.create_from_file().
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick istället:
+        {student}
+        """
+        self._argument  = "ntax"
+        trie = Trie.create_from_file()
+        self.assertEqual([], trie.correct_spelling("ntax"))
+
+
+
+    @tags("5")
+    def test_b_correct_no_matches(self):
+        """
+        Testar att correct_spelling returnerar korrekt när argumentet har flera möjliga matchningar på olika sätt.
+        Trie objektet innehåller följande ord: [frake, great, flore, glare, fnate, frami, fldre]
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick istället:
+        {student}
+        """
+        self._argument  = "flare"
+        trie = Trie()
+        trie.add_word("glare")
+        trie.add_word("flore")
+        trie.add_word("great")
+        trie.add_word("frake")
+        trie.add_word("fnate")
+        trie.add_word("frami")
+        trie.add_word("fldre")
+
+        self.assertEqual(['fldre', 'flore', 'fnate', 'frake', 'glare'], trie.correct_spelling("flare"))
 
 
 if __name__ == '__main__':
