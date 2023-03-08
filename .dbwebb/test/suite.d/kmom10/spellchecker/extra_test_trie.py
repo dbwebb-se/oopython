@@ -57,16 +57,16 @@ class Test2TrieExtra(ExamTestCase):
         self._argument  = "alo"
         trie = Trie.create_from_file()
         words = [
-            ('alone', 272173.0),
-            ('along', 251163.0),
-            ('aloud', 32565.4),
-            ('alongside', 10349.6),
-            ('aloft', 10098.0),
-            ('aloof', 6721.47),
-            ('aloofness', 1044.29),
-            ('aloe', 439.079),
-            ('aloneness', 74.3666),
-            ('alopecia', 15.8226)
+            'alone',
+            'along',
+            'aloud',
+            'alongside',
+            'aloft',
+            'aloof',
+            'aloofness',
+            'aloe',
+            'aloneness',
+            'alopecia'
         ]
         respons = trie.prefix_search("alo")
         self.assertEqual(respons, words)
@@ -86,16 +86,16 @@ class Test2TrieExtra(ExamTestCase):
         self._argument  = "hel"
         trie = Trie.create_from_file()
         words = [
-            ('help', 243712.0),
-            ('held', 235474.0),
-            ('helped', 40487.8),
-            ('hell', 31770.3),
-            ('helpless', 23213.4),
-            ('helping', 14882.8),
-            ('helm', 7541.09),
-            ('helmet', 7365.46),
-            ('helpful', 4989.68),
-            ('helper', 2847.29)
+            'help',
+            'held',
+            'helped',
+            'hell',
+            'helpless',
+            'helping',
+            'helm',
+            'helmet',
+            'helpful',
+            'helper'
         ]
         respons = trie.prefix_search("hel")
         self.assertEqual(respons, words)
