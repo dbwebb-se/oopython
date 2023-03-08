@@ -43,44 +43,80 @@ class Test2TrieExtra(ExamTestCase):
                 return index
         return -1
 
-    # @tags("2")
-    # def test_a_prefix_with_frequency(self):
-    #     """
-    #     Testar att orden skrivs ut i frekvens ordning i menyval 2.
-    #     Använder följande som argument:
-    #     {arguments}
-    #     Förväntar att följande ord skrivs ut i rätt ordning (siffran är index position från första ordet i utskriften):
-    #     {correct}
-    #     Skrevs ut med index (-1 betyder att ordet inte skrevs ut):
-    #     {student}
-    #     """
-    #     self.norepr = True
-    #     self._multi_arguments  = ["2", "alo", "quit", "continue", "6"]
-    #     output = self.check_print_contain(self._multi_arguments).split("\n")
-    #     for index, line in enumerate(output):
-    #         if "alone" == line.split(" ")[0]:
-    #             print(line)
-    #             start_index = index
-    #         if "alopecia" == line.split(" ")[0]:
-    #             end_index = index
-    #             break
-    #     only_words = output[start_index:end_index+1]
-    #     print(only_words)
-    #     words = [
-    #         ("alone", "0"),
-    #         ("along", "1"),
-    #         ("aloud", "2"),
-    #         ("alongside", "3"),
-    #         ("aloft", "4"),
-    #         ("aloof", "5"),
-    #         ("aloofness", "6"),
-    #         ("aloe", "7"),
-    #         ("aloneness", "8"),
-    #         ("alopecia", "9"),
-    #     ]
-    #     for word in words:
-    #         self.assertEqual(f'{word[0]} {self.find_index(word[0], only_words)}', f"{word[0]} {word[1]}")
+    @tags("4")
+    def test_a_prefix_with_frequency_10(self):
+        """
+        Testar att anropa prefix_search() med argument där det finns 10 förslag.
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._argument  = "alo"
+        trie = Trie.create_from_file()
+        words = [
+            ('alone', 272173.0),
+            ('along', 251163.0),
+            ('aloud', 32565.4),
+            ('alongside', 10349.6),
+            ('aloft', 10098.0),
+            ('aloof', 6721.47),
+            ('aloofness', 1044.29),
+            ('aloe', 439.079),
+            ('aloneness', 74.3666),
+            ('alopecia', 15.8226)
+        ]
+        respons = trie.prefix_search("alo")
+        self.assertEqual(respons, words)
 
+
+    @tags("4")
+    def test_a_prefix_with_frequency_more_10(self):
+        """
+        Testar att anropa prefix_search() med argument där det finns mer än 10 förslag.
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._argument  = "hel"
+        trie = Trie.create_from_file()
+        words = [
+            ('help', 243712.0),
+            ('held', 235474.0),
+            ('helped', 40487.8),
+            ('hell', 31770.3),
+            ('helpless', 23213.4),
+            ('helping', 14882.8),
+            ('helm', 7541.09),
+            ('helmet', 7365.46),
+            ('helpful', 4989.68),
+            ('helper', 2847.29)
+        ]
+        respons = trie.prefix_search("hel")
+        self.assertEqual(respons, words)
+
+
+    @tags("4")
+    def test_a_prefix_no_match(self):
+        """
+        Testar att anropa prefix_search() med argument där prefix inte finns.
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._argument  = "xyz"
+        trie = Trie.create_from_file()
+        words = []
+        respons = trie.prefix_search("xyz")
+        self.assertEqual(respons, words)
 
 
 
@@ -102,7 +138,7 @@ class Test2TrieExtra(ExamTestCase):
         trie.add_word("hoj")
         trie.add_word("haj")
         trie.add_word("dej")
-        self.assertEqual(["hej"], trie.correct_spelling("hej"))
+        self.assertEqual(trie.correct_spelling("hej"), ["hej"])
 
 
     @tags("5")
@@ -123,7 +159,7 @@ class Test2TrieExtra(ExamTestCase):
         trie.add_word("obsent")
         trie.add_word("absene")
         trie.add_word("xbsnt")
-        self.assertEqual(['absent', 'obsent'], trie.correct_spelling("xbsent"))
+        self.assertEqual(trie.correct_spelling("xbsent"), ['absent', 'obsent'])
 
 
     @tags("5")
@@ -145,7 +181,7 @@ class Test2TrieExtra(ExamTestCase):
         trie.add_word("fxary")
         trie.add_word("glare")
         trie.add_word("xare")
-        self.assertEqual(['flake', 'flare'], trie.correct_spelling("fxare"))
+        self.assertEqual(trie.correct_spelling("fxare"), ['flake', 'flare'])
 
 
     @tags("5")
@@ -162,7 +198,7 @@ class Test2TrieExtra(ExamTestCase):
         """
         self._argument  = "xlare"
         trie = Trie.create_from_file()
-        self.assertEqual(['blade', 'blame', 'blate', 'blaze', 'flake', 'flame', 'flare', 'glade', 'glare', 'glaze', 'place', 'plane', 'plate', 'slate', 'slave'], trie.correct_spelling("xlare"))
+        self.assertEqual(trie.correct_spelling("xlare"), ['blade', 'blame', 'blate', 'blaze', 'flake', 'flame', 'flare', 'glade', 'glare', 'glaze', 'place', 'plane', 'plate', 'slate', 'slave'])
 
 
     @tags("5")
@@ -179,12 +215,12 @@ class Test2TrieExtra(ExamTestCase):
         """
         self._argument  = "ntax"
         trie = Trie.create_from_file()
-        self.assertEqual([], trie.correct_spelling("ntax"))
+        self.assertEqual(trie.correct_spelling("ntax"), [])
 
 
 
     @tags("5")
-    def test_b_correct_no_matches(self):
+    def test_b_correct_many_different_matches(self):
         """
         Testar att correct_spelling returnerar korrekt när argumentet har flera möjliga matchningar på olika sätt.
         Trie objektet innehåller följande ord: [frake, great, flore, glare, fnate, frami, fldre]
@@ -205,7 +241,69 @@ class Test2TrieExtra(ExamTestCase):
         trie.add_word("frami")
         trie.add_word("fldre")
 
-        self.assertEqual(['fldre', 'flore', 'fnate', 'frake', 'glare'], trie.correct_spelling("flare"))
+        self.assertEqual(trie.correct_spelling("flare"), ['fldre', 'flore', 'fnate', 'frake', 'glare'])
+
+
+
+    @tags("6")
+    def test_c_suffix(self):
+        """
+        Testar att anropa suffix_search() med argument där ord matchar flera.
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._argument  = "alo"
+        trie = Trie.create_from_file()
+        words = [
+            'buffalo',
+            'cembalo',
+            'halo'
+        ]
+        respons = trie.suffix_search("alo")
+        self.assertEqual(respons, words)
+
+    @tags("6")
+    def test_c_suffix_is_a_word(self):
+        """
+        Testar att anropa suffix_search() med argument där suffixet också är ett ord.
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._argument  = "chief"
+        trie = Trie.create_from_file()
+        words = ['chief', 'handkerchief', 'kerchief', 'mischief']
+        # respons = trie.suffix_search("shed")
+        # respons = trie.suffix_search("appointed")
+        # respons = trie.suffix_search("chief")
+        respons = trie.suffix_search("chief")
+        self.assertEqual(respons, words)
+
+
+
+    @tags("6")
+    def test_c_suffix_no_match(self):
+        """
+        Testar att anropa suffix_search() med argument där suffixet inte finns.
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._argument  = "xyz"
+        trie = Trie.create_from_file()
+        words = []
+        respons = trie.suffix_search("xyz")
+        self.assertEqual(respons, words)
 
 
 if __name__ == '__main__':
