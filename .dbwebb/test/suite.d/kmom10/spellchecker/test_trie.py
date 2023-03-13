@@ -20,7 +20,7 @@ if REPO_PATH not in sys.path:
 
 Trie = import_module(REPO_PATH, 'src/trie').Trie
 
-class Test1SpellcheckMenu(ExamTestCase):
+class Test1Trie(ExamTestCase):
     """
     Each assignment has 1 testcase with multiple asserts.
     The different asserts https://docs.python.org/3.6/library/unittest.html#test-cases
