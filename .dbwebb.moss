@@ -20,19 +20,35 @@ me/kmom03/bank2/tests.py
 me/kmom03/bank2/account_manager.py
 
 [kmom04]
-me/kmom04/queue/queue.py
-me/kmom04/list/unorderedlist.py
-me/kmom04/list/main.py
-me/kmom04/list/test.py
+me/kmom04/yahtzee3/app.py
+me/kmom04/yahtzee3/src/die.py
+me/kmom04/yahtzee3/src/hand.py
+me/kmom04/yahtzee3/src/rules.py
+me/kmom04/yahtzee3/src/scoreboard.py
+me/kmom04/yahtzee3/tests/test_hand.py
 
 [kmom05]
-me/kmom05/lab3/answer.py
-me/kmom05/sort/sort.py
+me/kmom05/yahtzee4/app.py
+me/kmom05/yahtzee4/src/unorderedlist.py
+me/kmom05/yahtzee4/src/scoreboard.py
+me/kmom05/yahtzee4/tests/test_unorderedlist.py
+
 # comma separated values for multiple optional names
-me/kmom05/sort/tests.py=test.py,testing.py
+# me/kmom05/sort/tests.py=test.py,testing.py
 
 [kmom06]
-me/kmom06/tree/bst.py
+me/kmom06/yahtzee5/app.py
+me/kmom06/yahtzee5/src/die.py
+me/kmom06/yahtzee5/src/hand.py
+me/kmom06/yahtzee5/src/unorderedlist.py
+me/kmom06/yahtzee5/src/sort.py
+me/kmom06/yahtzee5/tests/test_die.py
+me/kmom06/yahtzee5/tests/test_hand.py
+me/kmom06/yahtzee5/tests/test_sort.py
+me/kmom06/yahtzee5/tests/test_unorderedlist.py
+
+[kmom07]
+me/kmom07/tree/bst.py
 
 [kmom10]
 me/kmom10/spellchecker/trie.py
