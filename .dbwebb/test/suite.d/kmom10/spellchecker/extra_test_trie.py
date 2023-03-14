@@ -202,6 +202,25 @@ class Test2TrieExtra(ExamTestCase):
 
 
     @tags("5")
+    def test_b_correct_many_matches2(self):
+        """
+        Testar att correct_spelling returnerar korrekt när argumentet har möjliga matchningar.
+        Skapar Trie objektet med Trie.create_from_file().
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick istället:
+        {student}
+        """
+        self._argument  = "hillo"
+        trie = Trie.create_from_file()
+        # för en student gick alla tester igenom men inte detta. Oklart varför detta var så svårt. Har därför lagt till det som eget test.
+        self.assertEqual(trie.correct_spelling("hillo"), ['bilbo', 'hallo', 'hello', 'hullo'])
+
+
+
+    @tags("5")
     def test_b_correct_no_matches(self):
         """
         Testar att correct_spelling returnerar korrekt när argumentet inte har några möjliga matchningar.
