@@ -54,18 +54,18 @@ class Test2BST(ExamTestCase):
         # correct data or not i.e. left node's data
         # should be less than root's data
         if l is not None and root.key < l.key:
-            raise KeyError(f"Node with key {root.key}'s left child is not lower, it is {l.key}")
+            raise KeyError(f"Node with key {repr(root.key)}'s left child is not lower, it is {repr(l.key)}")
         # if right node exist then check it has
         # correct key or not i.e. right node's key
         # should be greater than root's key
         if r is not None and root.key > r.key:
-            raise KeyError(f"Node with key {root.key}'s right child is not higher, it is {r.key}")
+            raise KeyError(f"Node with key {repr(root.key)}'s right child is not higher, it is {repr(r.key)}")
 
         # if check that the parent is correct node
         if root.parent is not parent:
             raise KeyError((
-                f"Expected Node with key {repr(root.key)} to have parent with key {repr(parent.key)}"
-                f" but it is {repr(root.parent.key)}"
+                f"Expected Node with key {repr(root.key)} ({id(root)}) to have parent with key {repr(parent.key)} ({id(parent)})"
+                f" but it is {repr(root.parent.key)} ({id(root.parent)})"
             ))
 
         # check recursively for every node.
