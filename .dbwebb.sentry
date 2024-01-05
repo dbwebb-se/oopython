@@ -1,0 +1,3 @@
+SENTRY_URL="https://fb9a28c535ba13be66961f327bf6718e@sentry.umbridge.arnesson.dev/2"
+SENTRY_RELEASE="VT24"
+SENTRY_SAMPLE_RATE=0.75
