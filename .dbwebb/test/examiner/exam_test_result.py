@@ -5,7 +5,7 @@ import sys
 import traceback
 from unittest.result import failfast
 from unittest.runner import TextTestResult
-from examiner import common_errors
+from examiner import common_errors, sentry
 from examiner import helper_functions as hf
 try:
     from examiner.colorama import init, Fore, Back, Style
@@ -37,9 +37,12 @@ class ExamTestResult(TextTestResult):
         Code is copied from baseclass and then changed/added to.
         """
         exctype, value, tb = err
+
         # Skip test runner traceback levels
         while tb and self._is_relevant_tb_level(tb):
             tb = tb.tb_next
+
+        sentry.add_exception(value, err)
 
         #----------------------
         # here starts the interesting code, which we changed. If test failed
@@ -155,6 +158,9 @@ class ExamTestResult(TextTestResult):
 
         self.startTestBase()
 
+        # for cleaner code, the code below should be moved to method _write_status. 
+        # But tha method is only used i from 3.11
+        # When 3.11 is our minimum version, move this code there.
         MAX_TEST_FUNCNAME_LEN = 40
         TEST_INDENT = 4
 
@@ -164,6 +170,19 @@ class ExamTestResult(TextTestResult):
         self.stream.write("... ")
         self.stream.flush()
 
+
+    def _write_status(self, _, status):
+        """
+        This method is called in unittest from python3.11.
+        Older version skip this method by doing write in addSuccess/Fail in parent class.
+        In newer versions parent class call this method from addSuccess/Fail.
+
+        _ was called test and contain the test that was ran.
+        Renamed it to make code validate.
+        """
+        self.stream.writeln(status)
+        self.stream.flush()
+        self._newline = True # pylint: disable=attribute-defined-outside-init
 
 
     @failfast
