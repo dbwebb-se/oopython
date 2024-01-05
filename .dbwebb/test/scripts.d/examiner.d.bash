@@ -41,7 +41,7 @@ fi
 
 status=0
 for path_ in $PATHS; do
-    bash -c "set -o pipefail && cd "${DIR}/.." && ${PYTHON_EXECUTER} -m ${EXAMINER_RUNNER} --what="${path_}" ${disable_sentry} --sentry_url=${SENTRY_URL} --sentry_release=${SENTRY_RELEASE} --sentry_sample_rate=${SENTRY_SAMPLE_RATE} ${ARGUMENTS} 2>&1 | tee -a "$LOG" "
+    bash -c "set -o pipefail && cd '${DIR}/..' && '${PYTHON_EXECUTER}' -m '${EXAMINER_RUNNER}' --what='${path_}' '${disable_sentry}' --sentry_url='${SENTRY_URL}' --sentry_release='${SENTRY_RELEASE}' --sentry_sample_rate='${SENTRY_SAMPLE_RATE}' ${ARGUMENTS} 2>&1 | tee -a "$LOG" "
     status=$(($? + $status))
 done;
 
