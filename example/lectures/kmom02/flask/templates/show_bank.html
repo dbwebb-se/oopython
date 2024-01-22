@@ -1,0 +1,19 @@
+{% include "header.html" %}
+
+<h1>Bank</h1>
+
+{{ owner.name }}
+{{ owner.get_ssn() }}
+{{ owner.adress }}
+
+{% for account in owner.accounts %}
+<div>
+    {{ account.name }}
+    {{ account.get_balance() }}
+    {{ account.number }}
+</div>
+{% endfor %}
+
+
+
+{% include "footer.html" %}
