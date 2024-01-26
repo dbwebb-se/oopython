@@ -64,26 +64,26 @@ class Test1Queue(ExamTestCase):
     def test_enqueue_node(self):
         """
         Testar att skapa en kö och lägga till 1 nod i kön.
-        Förväntar att queue.head.data innehåller "value":
+        Förväntar att queue._head.data innehåller "value":
         {correct}
         Innehöll följande:
         {student}
         """
         self.queue.enqueue(self.first_node_value)
-        self.assertEqual(self.queue.head.data, self.first_node_value)
+        self.assertEqual(self.queue._head.data, self.first_node_value)
 
     def test_enqueue_2_nodes(self):
         """
         Testar att skapa en kö och lägga till 2 noder i kön. Första noden innehåller
         "value" och andra noden "value_two". Andra noden ska läggas sist i kön.
-        Förväntar att queue.head.data returnerar "value":
+        Förväntar att queue._head.data returnerar "value":
         {correct}
         Innehöll följande:
         {student}
         """
         self.queue.enqueue(self.first_node_value)
         self.queue.enqueue(self.second_node_value)
-        self.assertEqual(self.queue.head.data, self.first_node_value)
+        self.assertEqual(self.queue._head.data, self.first_node_value)
 
     def test_peek(self):
         """
