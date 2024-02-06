@@ -7,10 +7,10 @@ class Owner:
     """
     Represents an owner of a bank account
     """
-    def __init__(self, name, ssn, adress):
+    def __init__(self, name, ssn, address):
         self.name = name
         self._ssn = ssn
-        self.adress = adress
+        self.address = address
         self.accounts = []
 
     def get_ssn(self):
