@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Balance</th>
+                    <th>Owner</th>
+                    <th>Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for account in bank.accounts %}
+                <tr>
+                    <td>{{ account.name }}</td>
+                    <td>{{ account.get_balance() }}</td>
+                    <td>{{ account.owner }}</td>
+                    <td>{{ account.number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

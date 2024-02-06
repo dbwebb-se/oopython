@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>SSN</th>
+                    <th>Adress</th>
+                    <th>Connect Accounts to owner</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for owner in bank.owners %}
+                <tr>
+                    <td>{{ owner.name }}</td>
+                    <td>{{ owner.get_ssn() }}</td>
+                    <td>{{ owner.adress }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>

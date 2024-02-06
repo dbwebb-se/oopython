@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <form role="form" method="POST" action="{{url_for('add_account')}}">
+            <div class="form-group">
+                <label for="amount">Amount of money</label>
+                <input type="number" class="form-control" name="amount" placeholder="1000">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="A name">
+            </div>
+            <div class="form-group">
+                <label for="owner">Who owns account</label>
+                <input type="text" class="form-control" name="owner" placeholder="An owner">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>
