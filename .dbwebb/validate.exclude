@@ -9,7 +9,7 @@
 -./me/kmom02/my_app/*
 -./me/kmom02/unittest/*
 -./me/kmom03/relations/*
--./me/kmom03/get_post/*
+-./me/kmom04/get_post/*
 -./me/kmom04/uml/*
 -./me/kmom04/unittest/*
 -./me/kmom04/classes/*
