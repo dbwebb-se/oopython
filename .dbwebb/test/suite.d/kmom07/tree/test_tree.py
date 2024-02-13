@@ -91,6 +91,7 @@ class Test2BST(ExamTestCase):
         bst = BST()
         self.list_to_bst(seq, bst)
         self.assertTrue(self.is_bst(bst.root))
+        self.assertEqual(bst.size(), 3, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("insert")
@@ -109,6 +110,7 @@ class Test2BST(ExamTestCase):
         bst = BST()
         self.list_to_bst(seq, bst)
         self.assertTrue(self.is_bst(bst.root))
+        self.assertEqual(bst.size(), 10, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
 
@@ -130,6 +132,8 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         bst.insert(3, "ny")
         self.assertEqual(bst.root.value, "ny")
+        self.assertEqual(bst.size(), 10, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
+
 
     @tags("get")
     def test_c_get(self):
@@ -150,6 +154,7 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         for key in seq:
             self.assertEqual(bst.get(key), str(key))
+        self.assertEqual(bst.size(), 4, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
     @tags("get")
     def test_d_get_error(self):
@@ -168,6 +173,7 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         with self.assertRaises(KeyError):
             bst.get(0)
+        self.assertEqual(bst.size(), 4, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("get")
@@ -181,6 +187,7 @@ class Test2BST(ExamTestCase):
         bst = BST()
         with self.assertRaises(KeyError):
             bst.get(2)
+        self.assertEqual(bst.size(), 0, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("remove")
@@ -204,6 +211,7 @@ class Test2BST(ExamTestCase):
         self.assertTrue(self.is_bst(bst.root), ["Testet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove(7).", "Det uppfyller inte BST kraven efter remove(7)."])
         with self.assertRaises(KeyError, msg=["Testet förväntar att get(7) lyfter exception efter remove(7)", "Exception lyftes inte vilket betyder att 7 finns kvar i trädet efter remove(7)."]):
             bst.get(7)
+        self.assertEqual(bst.size(), 3, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("remove")
@@ -247,6 +255,7 @@ class Test2BST(ExamTestCase):
         self.assertTrue(self.is_bst(bst.root), ["Testet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove(10).", "Det uppfyller inte BST kraven efter remove(10)."])
         with self.assertRaises(KeyError, msg=["Testet förväntar att get(10) lyfter exception efter remove(10)", "Exception lyftes inte vilket betyder att 10 finns kvar i trädet efter remove(10)."]):
             bst.get(10)
+        self.assertEqual(bst.size(), 5, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("remove")
@@ -270,6 +279,7 @@ class Test2BST(ExamTestCase):
         self.assertTrue(self.is_bst(bst.root), ["Testet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove(5).", "Det uppfyller inte BST kraven efter remove(5)."])
         with self.assertRaises(KeyError, msg=["Testet förväntar att get(5) lyfter exception efter remove(5)", "Exception lyftes inte vilket betyder att 5 finns kvar i trädet efter remove(5)."]):
             bst.get(5)
+        self.assertEqual(bst.size(), 3, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("remove")
@@ -327,6 +337,7 @@ class Test2BST(ExamTestCase):
                 bst.get(key)
             success_elements += f"{key}, "
         self.assertEqual(bst.root, None, [f"{success_elements}\nTestet kollar att bst.root är None efter att alla element har tagits bort:", f"bst.root innehöll:"])
+        self.assertEqual(bst.size(), 0, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
 
@@ -385,6 +396,7 @@ class Test2BST(ExamTestCase):
             success_elements += f"{key}, "
 
         self.assertEqual(bst.root, None, [f"Testet kollar att bst.root är None efter att alla element har tagits bort:", f"bst.root innehöll:"])
+        self.assertEqual(bst.size(), 0, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("print")
