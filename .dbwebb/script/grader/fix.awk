@@ -15,7 +15,7 @@ BEGIN {
     kmoms[temp][6] = 0 # Kmom07
     kmoms[temp][7] = 0 # Kmom10
     kmoms[temp][8] = 0 # total %
-    kmoms[temp]["G"] = 0 # amount of G's
+    #kmoms[temp]["G"] = 0 # amount of G's
   }
 }
 
