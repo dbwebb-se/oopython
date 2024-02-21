@@ -1,0 +1,91 @@
+digraph {
+graph [
+  rankdir=TB
+];
+node [
+  style=rounded,
+  shape=rectangle
+];
+edge [
+  arrowsize=1,
+  color=black,
+  fontsize=10,
+  fontcolor=gray45
+];
+
+9062592 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([2, 5, 1, 5, 2, 6, 6, 3, 8])</TD></TR><HR/><TR><TD>return [1, 2, 2, 3, 5, 5, 6, 6, 8]</TD></TR></TABLE>>
+];
+9062624 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([2, 1, 2, 3])</TD></TR><HR/><TR><TD>return [1, 2, 2, 3]</TD></TR></TABLE>>
+];
+9062656 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([])</TD></TR><HR/><TR><TD>return []</TD></TR></TABLE>>
+];
+9062688 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([2, 2, 3])</TD></TR><HR/><TR><TD>return [2, 2, 3]</TD></TR></TABLE>>
+];
+9062720 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([])</TD></TR><HR/><TR><TD>return []</TD></TR></TABLE>>
+];
+9062752 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([3])</TD></TR><HR/><TR><TD>return [3]</TD></TR></TABLE>>
+];
+9062784 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([6, 6, 8])</TD></TR><HR/><TR><TD>return [6, 6, 8]</TD></TR></TABLE>>
+];
+9062816 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([])</TD></TR><HR/><TR><TD>return []</TD></TR></TABLE>>
+];
+9062848 [
+  label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"><TR><TD>quicksort([8])</TD></TR><HR/><TR><TD>return [8]</TD></TR></TABLE>>
+];
+9062592 -> 9062624 [
+  label="#1"
+];
+9062624 -> 9062656 [
+  label="#2"
+];
+9062656 -> 9062624 [
+  label="#3"
+];
+9062624 -> 9062688 [
+  label="#4"
+];
+9062688 -> 9062720 [
+  label="#5"
+];
+9062720 -> 9062688 [
+  label="#6"
+];
+9062688 -> 9062752 [
+  label="#7"
+];
+9062752 -> 9062688 [
+  label="#8"
+];
+9062688 -> 9062624 [
+  label="#9"
+];
+9062624 -> 9062592 [
+  label="#10"
+];
+9062592 -> 9062784 [
+  label="#11"
+];
+9062784 -> 9062816 [
+  label="#12"
+];
+9062816 -> 9062784 [
+  label="#13"
+];
+9062784 -> 9062848 [
+  label="#14"
+];
+9062848 -> 9062784 [
+  label="#15"
+];
+9062784 -> 9062592 [
+  label="#16"
+];
+}
