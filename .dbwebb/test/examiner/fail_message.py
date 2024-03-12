@@ -20,7 +20,7 @@ class FailMessage():
         if methodDoc is None:
             raise AttributeError(
                 "Test is missing docstring."
-                " Docstring is needed to explainin the test when Something goes wrong."
+                " Docstring is needed to explain the test when Something goes wrong."
             )
         self.docstring = re.sub("\n +", "\n", methodDoc)
         #pylint: enable=protected-access

@@ -91,6 +91,9 @@ class Test2BST(ExamTestCase):
         bst = BST()
         self.list_to_bst(seq, bst)
         self.assertTrue(self.is_bst(bst.root))
+
+        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.correct_answer = 3
         self.assertEqual(bst.size(), 3, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
@@ -110,6 +113,8 @@ class Test2BST(ExamTestCase):
         bst = BST()
         self.list_to_bst(seq, bst)
         self.assertTrue(self.is_bst(bst.root))
+        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.correct_answer = 10
         self.assertEqual(bst.size(), 10, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
@@ -132,6 +137,8 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         bst.insert(3, "ny")
         self.assertEqual(bst.root.value, "ny")
+        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.correct_answer = 10
         self.assertEqual(bst.size(), 10, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
@@ -154,6 +161,8 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         for key in seq:
             self.assertEqual(bst.get(key), str(key))
+        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.correct_answer = 4
         self.assertEqual(bst.size(), 4, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
     @tags("get")
@@ -173,6 +182,9 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         with self.assertRaises(KeyError):
             bst.get(0)
+        
+        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.correct_answer = 4
         self.assertEqual(bst.size(), 4, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
@@ -180,14 +192,18 @@ class Test2BST(ExamTestCase):
     def test_e_get_error_empty(self):
         """
         get().
-        Testar att KeyError lyfts när man försöker hämta värde i ett tomt träd.
+        Testar att KeyError lyfts när man försöker hämta värde i ett tomt träd och att size() returnerar korrekt.
         Förväntar att KeyError lyfts
         {correct}
+        Fick istället:
+        {student}
         """
         bst = BST()
         with self.assertRaises(KeyError):
             bst.get(2)
-        self.assertEqual(bst.size(), 0, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
+        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.correct_answer = 0
+        self.assertEqual(bst.size(), 0, msg=["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("remove")
@@ -211,6 +227,9 @@ class Test2BST(ExamTestCase):
         self.assertTrue(self.is_bst(bst.root), ["Testet kollar att trädet fortfarande uppfyller strukturen hos ett BST efter remove(7).", "Det uppfyller inte BST kraven efter remove(7)."])
         with self.assertRaises(KeyError, msg=["Testet förväntar att get(7) lyfter exception efter remove(7)", "Exception lyftes inte vilket betyder att 7 finns kvar i trädet efter remove(7)."]):
             bst.get(7)
+        
+        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.correct_answer = 3
         self.assertEqual(bst.size(), 3, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
