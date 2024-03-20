@@ -96,7 +96,7 @@ class Test1Trie(ExamTestCase):
         Innehöll:
         {student}
         """
-        self._argument  = ["mos"]
+        self._argument  = ["them"]
         words = [
             'them',
             'themselves',
