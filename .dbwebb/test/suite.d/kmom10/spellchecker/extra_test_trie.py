@@ -202,6 +202,28 @@ class Test2TrieExtra(ExamTestCase):
 
 
     @tags("5")
+    def test_b_not_matching_shorter_word(self):
+        """
+        Testar att correct_spelling inte tar med ord som är kortare än sökningen.
+        Trie objektet innehåller följande ord: [beat, heat, beet, belt, debt, boot, bot, beto]
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick istället:
+        {student}
+        """
+        self._argument  = "beot"
+        word_list = ["beat", "heat", "beet", "belt", "debt", "boot", "bot", "beto"]
+        trie = Trie()
+        for word in word_list:
+            trie.add_word(word)
+        word_list.pop(-1)
+        word_list.pop(-1)
+        self.assertCountEqual(trie.correct_spelling("beot"), word_list)
+
+
+    @tags("5")
     def test_b_correct_many_matches2(self):
         """
         Testar att correct_spelling returnerar korrekt när argumentet har möjliga matchningar.
@@ -268,6 +290,7 @@ class Test2TrieExtra(ExamTestCase):
     def test_c_suffix(self):
         """
         Testar att anropa suffix_search() med argument där ord matchar flera.
+        Skapar Trie objektet med Trie.create_from_file().
         Använder följande som argument:
         {arguments}
         Förväntar att följande returneras:
@@ -286,9 +309,31 @@ class Test2TrieExtra(ExamTestCase):
         self.assertEqual(respons, words)
 
     @tags("6")
+    def test_suffix_search_same_branch(self):
+        """
+        Testar att anropa suffix_search() med argument där ord matchar flera på samma gren.
+        Trie objektet innehåller följande ord: ["bana","banana","cana", "canana","helobana","gram"]
+        Använder följande som argument:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._argument  = "na"
+        trie = Trie()
+        word_list = ["bana","banana","cana", "canana","helobana","gram"]
+        for word in word_list:
+            trie.add_word(word)
+        word_list.pop(-1) #Remove gram
+        self.assertEqual(trie.suffix_search("na"), word_list)
+
+
+    @tags("6")
     def test_c_suffix_is_a_word(self):
         """
         Testar att anropa suffix_search() med argument där suffixet också är ett ord.
+        Trie objektet innehåller följande ord: ['chief', 'handkerchief', 'kerchief', 'mischief']
         Använder följande som argument:
         {arguments}
         Förväntar att följande returneras:
@@ -311,6 +356,7 @@ class Test2TrieExtra(ExamTestCase):
     def test_c_suffix_no_match(self):
         """
         Testar att anropa suffix_search() med argument där suffixet inte finns.
+        Skapar Trie objektet med Trie.create_from_file().
         Använder följande som argument:
         {arguments}
         Förväntar att följande returneras:
