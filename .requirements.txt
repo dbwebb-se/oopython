@@ -1,4 +1,4 @@
 Werkzeug==2.2.2
 Flask == 2.2.2
 sentry-sdk == 1.39.1
-pylint == 2.15.4
+pylint == 2.16.2
