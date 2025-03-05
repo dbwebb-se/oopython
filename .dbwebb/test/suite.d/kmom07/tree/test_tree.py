@@ -142,11 +142,11 @@ class Test2BST(ExamTestCase):
         self.assertEqual(bst.size(), 10, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
-    @tags("get")
+    @tags("get", "size()")
     def test_c_get(self):
         """
-        get().
-        Testar att hämta värden från BST.
+        get(), size()
+        Testar att hämta värden från BST. Efter det kollar vi att size() returnerar korrekt.
         Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
         {arguments}
         Förväntar att en nyckel som argument returnerar samma värde som en sträng:
@@ -161,19 +161,21 @@ class Test2BST(ExamTestCase):
         self.list_to_bst(seq, bst)
         for key in seq:
             self.assertEqual(bst.get(key), str(key))
-        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.what_msgs_from_assert = ["size(). Förväntar att trädet innehåller antalet noder", "Innehåller:"]
         self.fail_msg.correct_answer = 4
-        self.assertEqual(bst.size(), 4, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
+        self.assertEqual(bst.size(), 4, ["size(). Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
-    @tags("get")
+    @tags("get", "size()")
     def test_d_get_error(self):
         """
-        get().
-        Testar att KeyError lyfts när man försöker hämta värde med nyckel som inte finns.
+        get(), size()
+        Testar att KeyError lyfts när man försöker hämta värde med nyckel som inte finns. Efter det kollar vi att size() returnerar korrekt.
         Trädet är skapat med följande element. Elementet används som nyckel och görs till en sträng för värdet.
         {arguments}
         Förväntar att KeyError lyfts
         {correct}
+        Fick istället:
+        {student}
         """
         self.norepr = True
         seq = [5, 2, 10, 7]
@@ -183,9 +185,9 @@ class Test2BST(ExamTestCase):
         with self.assertRaises(KeyError):
             bst.get(0)
         
-        self.fail_msg.what_msgs_from_assert = ["Förväntar att trädet innehåller antalet noder", "Innehåller:"]
+        self.fail_msg.what_msgs_from_assert = ["siez(). Förväntar att trädet innehåller antalet noder", "Innehåller:"]
         self.fail_msg.correct_answer = 4
-        self.assertEqual(bst.size(), 4, ["Förväntar att trädet innehåller antalet noder", "Innehåller:"])
+        self.assertEqual(bst.size(), 4, ["size(). Förväntar att trädet innehåller antalet noder", "Innehåller:"])
 
 
     @tags("get")
